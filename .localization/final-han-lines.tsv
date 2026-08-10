@@ -1,0 +1,78 @@
+file	line	text
+src/components/ChartDataEditor.vue	71	图表类型：{{ CHART_TYPE_MAP[chartType] }}
+src/hooks/useImport.ts	457	if (!el.isFlipV && !el.isFlipH) { // 右下
+src/hooks/useImport.ts	461	else if (el.isFlipV && el.isFlipH) { // 左上
+src/hooks/useImport.ts	465	else if (el.isFlipV && !el.isFlipH) { // 右上
+src/hooks/useImport.ts	469	else { // 左下
+src/hooks/useImport.ts	600	ax: number, // A 的 x
+src/hooks/useImport.ts	601	ay: number, // A 的 y
+src/hooks/useImport.ts	602	aw: number, // A 的宽
+src/hooks/useImport.ts	603	ah: number, // A 的高
+src/hooks/useImport.ts	604	bx: number, // B 相对 A 的 x (ox)
+src/hooks/useImport.ts	605	by: number, // B 相对 A 的 y (oy)
+src/hooks/useImport.ts	606	bw: number, // B 的宽
+src/hooks/useImport.ts	607	bh: number, // B 的高
+src/hooks/useImport.ts	608	ak: number, // A 的旋转角度（度，正顺时针）
+src/hooks/useImport.ts	609	bk: number, // B 的旋转角度（度，正顺时针）
+src/store/keyboard.ts	11	ctrlKeyState: false, // ctrl键按下状态
+src/store/keyboard.ts	12	shiftKeyState: false, // shift键按下状态
+src/store/keyboard.ts	13	spaceKeyState: false, // space键按下状态
+src/store/main.ts	50	activeElementIdList: [], // 被选中的元素ID集合，包含 handleElementId
+src/store/main.ts	51	handleElementId: '', // 正在操作的元素ID
+src/store/main.ts	52	activeGroupElementId: '', // 组合元素成员中，被选中可独立操作的元素ID
+src/store/main.ts	53	hiddenElementIdList: [], // 被隐藏的元素ID集合
+src/store/main.ts	54	canvasPercentage: 90, // 画布可视区域百分比
+src/store/main.ts	55	canvasScale: 1, // 画布缩放比例（基于宽度{{slidesStore.viewportSize}}像素）
+src/store/main.ts	56	canvasDragged: false, // 画布被拖拽移动
+src/store/main.ts	57	thumbnailsFocus: false, // 左侧导航缩略图区域聚焦
+src/store/main.ts	58	editorAreaFocus: false, //  编辑区域聚焦
+src/store/main.ts	59	disableHotkeys: false, // 禁用快捷键
+src/store/main.ts	60	gridLineSize: 0, // 网格线尺寸（0表示不显示网格线）
+src/store/main.ts	61	showRuler: false, // 显示标尺
+src/store/main.ts	62	showBubbleMenu: false, // 显示浮动菜单
+src/store/main.ts	63	creatingElement: null, // 正在插入的元素信息，需要通过绘制插入的元素（文字、形状、线条）
+src/store/main.ts	64	creatingCustomShape: false, // 正在绘制任意多边形
+src/store/main.ts	65	toolbarState: ToolbarStates.SLIDE_DESIGN, // 右侧工具栏状态
+src/store/main.ts	66	clipingImageElementId: '', // 当前正在裁剪的图片ID
+src/store/main.ts	67	richTextAttrs: defaultRichTextAttrs, // 富文本状态
+src/store/main.ts	68	selectedTableCells: [], // 选中的表格单元格
+src/store/main.ts	69	isScaling: false, // 正在进行元素缩放
+src/store/main.ts	70	selectedSlidesIndex: [], // 当前被选中的页面索引集合
+src/store/main.ts	71	dialogForExport: '', // 导出面板
+src/store/main.ts	72	databaseId, // 标识当前应用的indexedDB数据库ID
+src/store/main.ts	73	textFormatPainter: null, // 文字格式刷
+src/store/main.ts	74	shapeFormatPainter: null, // 形状格式刷
+src/store/main.ts	75	showSelectPanel: false, // 打开选择面板
+src/store/main.ts	76	showSearchPanel: false, // 打开查找替换面板
+src/store/main.ts	77	showNotesPanel: false, // 打开批注面板
+src/store/main.ts	78	showSymbolPanel: false, // 打开符号面板
+src/store/main.ts	79	showMarkupPanel: false, // 打开类型标注面板
+src/store/main.ts	80	showImageLibPanel: false, // 打开图片库面板
+src/store/main.ts	81	showAIPPTDialog: false, // 打开AIPPT创建窗口
+src/store/screen.ts	9	screening: false, // 是否进入放映状态
+src/store/slides.ts	33	title: 'Презентация без названия', // 幻灯片标题
+src/store/slides.ts	50	}, // 主题样式
+src/store/slides.ts	51	slides: [], // 幻灯片页面数据
+src/store/slides.ts	52	slideIndex: 0, // 当前页面索引
+src/store/slides.ts	53	viewportSize: 1000, // 可视区域宽度基数
+src/store/slides.ts	54	viewportRatio: 0.5625, // 可视区域比例，默认16:9
+src/store/slides.ts	64	], // 模板
+src/store/snapshot.ts	15	snapshotCursor: -1, // 历史快照指针
+src/store/snapshot.ts	16	snapshotLength: 0, // 历史快照长度
+src/views/Editor/Canvas/hooks/useDragElement.ts	49	let duplicateTriggered = false // 标记是否已触发 Ctrl+拖拽复制
+src/views/Editor/Canvas/index.vue	239	width: 200 / canvasScale.value, // 除以 canvasScale 是为了与点击选区创建的形式保持相同的宽度
+src/views/Editor/Canvas/index.vue	282	message.success(`元素气泡菜单已${showBubbleMenu.value ? 'Включить' : 'Отключить'}`)
+src/views/Editor/ExportDialog/ExportPDF.vue	53	建议：请在弹出的打印窗口中勾选「背景图形」选项，边距选择「默认」。
+src/views/Editor/ExportDialog/ExportPPTX.vue	63	提示：1. 支持导出格式：avi、mp4、mov、wmv、mp3、wav；2. 跨域资源无法导出。
+src/views/Editor/ExportDialog/ExportSpecificFile.vue	27	提示：.pptist 是本应用的特有文件后缀，支持将该类型的文件导入回应用中。
+src/views/Editor/NotesPanel.vue	65	:placeholder="`输入批注（为${handleElementId ? 'Выбранный элемент' : 'Текущий слайд' }）`"
+src/views/Editor/Toolbar/ElementAnimationPanel.vue	46	<i-icon-park-outline:effects /> 添加动画
+src/views/Editor/Toolbar/ElementPositionPanel.vue	38	水平：
+src/views/Editor/Toolbar/ElementPositionPanel.vue	50	垂直：
+src/views/Editor/Toolbar/ElementPositionPanel.vue	67	宽度：
+src/views/Editor/Toolbar/ElementPositionPanel.vue	87	高度：
+src/views/Editor/Toolbar/ElementPositionPanel.vue	106	旋转：
+src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/ThemeColorsSetting.vue	26	<i-icon-park-outline:plus /> 添加主题色
+src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/index.vue	4	<i-icon-park-outline:edit /> 编辑图表
+src/views/Mobile/MobileEditor/SlideToolbar.vue	20	<i-icon-park-outline:picture class="icon" /> 图片
+src/views/Screen/hooks/useFullscreen.ts	21	document.addEventListener('webkitfullscreenchange', handleFullscreenChange) // Safari 兼容

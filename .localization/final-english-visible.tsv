@@ -1,0 +1,22 @@
+file	line	kind	text
+src/components/Input.vue	18	attr	placeholder
+src/components/LaTeXEditor/index.vue	6	attr	Введите формулу LaTeX
+src/components/NumberInput.vue	17	attr	placeholder
+src/components/Select.vue	25	attr	searchLabel
+src/components/TextArea.vue	12	attr	placeholder
+src/views/Editor/AIPPTDialog.vue	4	text	AIPPT
+src/views/Editor/AIPPTDialog.vue	15	attr	Введите тему PPT, например: Планирование карьеры студентов
+src/views/Editor/AIPPTDialog.vue	107	attr	template.name
+src/views/Editor/CanvasTool/MediaInput.vue	10	attr	Введите URL видео, напр. https://xxx.mp4
+src/views/Editor/CanvasTool/MediaInput.vue	23	attr	Введите URL аудио, напр. https://xxx.mp3
+src/views/Editor/EditorHeader/index.vue	10	text	AIPPT
+src/views/Editor/EditorHeader/index.vue	24	text	PPTX
+src/views/Editor/EditorHeader/index.vue	32	text	JSON
+src/views/Editor/EditorHeader/index.vue	40	text	PPTIST
+src/views/Editor/EditorHeader/index.vue	70	attr	title
+src/views/Editor/ExportDialog/ExportImage.vue	21	text	JPEG
+src/views/Editor/ExportDialog/ExportImage.vue	22	text	PNG
+src/views/Editor/ImageLibPanel.vue	13	attr	Библиотека изображений (pexels.com)
+src/views/Editor/NotesPanel.vue	6	attr	`Комментарии к слайду ${slideIndex + 1}`
+src/views/Editor/SelectPanel.vue	6	attr	`(${activeElementIdList.length}/${currentSlide.elements.length})`
+src/views/Mobile/MobilePreview.vue	17	text	AIPPT
