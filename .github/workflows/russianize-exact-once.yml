@@ -1,0 +1,326 @@
+name: Russianize PPTist UI — exact one-shot
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.run-russianize-exact'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pptist-russianize-exact
+  cancel-in-progress: false
+
+jobs:
+  russianize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout localization branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Require one-shot trigger
+        run: test -f .run-russianize-exact
+
+      - name: Fetch Russian localization donor
+        run: git clone --depth 1 https://github.com/robbin2012/PPTist-i18n.git /tmp/pptist-i18n
+
+      - name: Apply exact translations
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json, re
+
+          donor = Path('/tmp/pptist-i18n/src/locales')
+          zh = json.loads((donor / 'zh-CN.json').read_text(encoding='utf-8'))
+          en = json.loads((donor / 'en-US.json').read_text(encoding='utf-8'))
+          ru = json.loads((donor / 'ru-RU.json').read_text(encoding='utf-8'))
+
+          def flatten(obj, prefix=''):
+              out = {}
+              if isinstance(obj, dict):
+                  for key, value in obj.items():
+                      path = f'{prefix}.{key}' if prefix else key
+                      out.update(flatten(value, path))
+              elif isinstance(obj, str):
+                  out[prefix] = obj
+              return out
+
+          zhf, enf, ruf = flatten(zh), flatten(en), flatten(ru)
+          han = re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff]')
+          cyr = re.compile(r'[А-Яа-яЁё]')
+
+          zh_map = {}
+          en_map = {}
+          for key, target in ruf.items():
+              if not isinstance(target, str) or not target.strip():
+                  continue
+              source = zhf.get(key)
+              if isinstance(source, str) and han.search(source) and source != target:
+                  zh_map[source.strip()] = target.strip()
+              source = enf.get(key)
+              if isinstance(source, str) and source != target and cyr.search(target):
+                  en_map[source.strip()] = target.strip()
+
+          # Match a complete single/double/backtick literal on one source line. Replacement
+          # occurs only when the whole literal value equals a donor phrase — never substrings.
+          literal_rx = re.compile(r'''(?P<q>["'`])(?P<value>(?:\\.|(?!\1).)*?)(?P=q)''')
+          text_node_rx = re.compile(r'>(?P<value>[^<>\n]+)<')
+          visible_attr_rx = re.compile(
+              r'(?P<name>\b(?:title|placeholder|aria-label|alt|label|tip))(?P<sep>\s*=\s*)(?P<q>["\'])(?P<value>[^"\']*)(?P=q)',
+              re.I,
+          )
+
+          def translate_exact_literals(text):
+              hits = 0
+              def repl(match):
+                  nonlocal hits
+                  raw = match.group('value')
+                  core = raw.strip()
+                  target = zh_map.get(core)
+                  if target is None:
+                      return match.group(0)
+                  q = match.group('q')
+                  if q in target:
+                      return match.group(0)
+                  lead = raw[:len(raw) - len(raw.lstrip())]
+                  trail = raw[len(raw.rstrip()):]
+                  hits += 1
+                  return f'{q}{lead}{target}{trail}{q}'
+              return literal_rx.sub(repl, text), hits
+
+          def translate_vue_template(template):
+              zh_hits = 0
+              en_hits = 0
+
+              def text_repl(match):
+                  nonlocal zh_hits, en_hits
+                  raw = match.group('value')
+                  core = re.sub(r'\s+', ' ', raw).strip()
+                  target = zh_map.get(core)
+                  if target is not None:
+                      zh_hits += 1
+                  else:
+                      target = en_map.get(core)
+                      if target is not None:
+                          en_hits += 1
+                  if target is None:
+                      return match.group(0)
+                  lead = raw[:len(raw) - len(raw.lstrip())]
+                  trail = raw[len(raw.rstrip()):]
+                  return f'>{lead}{target}{trail}<'
+
+              template = text_node_rx.sub(text_repl, template)
+
+              def attr_repl(match):
+                  nonlocal en_hits
+                  raw = match.group('value')
+                  core = raw.strip()
+                  # Chinese visible attrs were already handled as exact literals. English
+                  # is deliberately limited to known visible attrs to avoid identifiers.
+                  target = en_map.get(core)
+                  if target is None:
+                      return match.group(0)
+                  q = match.group('q')
+                  if q in target:
+                      return match.group(0)
+                  en_hits += 1
+                  return f"{match.group('name')}{match.group('sep')}{q}{target}{q}"
+
+              return visible_attr_rx.sub(attr_repl, template), zh_hits, en_hits
+
+          exts = {'.vue', '.ts', '.tsx', '.js', '.jsx', '.html'}
+          files = [p for p in Path('src').rglob('*') if p.is_file() and p.suffix in exts]
+          if Path('index.html').exists():
+              files.append(Path('index.html'))
+
+          changed = []
+          literal_hits = template_zh_hits = template_en_hits = 0
+
+          for path in sorted(set(files)):
+              text = path.read_text(encoding='utf-8')
+              original = text
+
+              text, hits = translate_exact_literals(text)
+              literal_hits += hits
+
+              if path.suffix == '.vue':
+                  match = re.search(r'(<template\b[^>]*>)(.*?)(</template>)', text, flags=re.S)
+                  if match:
+                      body, zh_hits, en_hits = translate_vue_template(match.group(2))
+                      template_zh_hits += zh_hits
+                      template_en_hits += en_hits
+                      text = text[:match.start(2)] + body + text[match.end(2):]
+
+              if text != original:
+                  path.write_text(text, encoding='utf-8')
+                  changed.append(str(path))
+
+          index = Path('index.html')
+          if index.exists():
+              text = index.read_text(encoding='utf-8')
+              if re.search(r'<html[^>]*\blang=', text):
+                  text = re.sub(r'(<html[^>]*\blang=)["\'][^"\']*["\']', r'\1"ru"', text, count=1)
+              else:
+                  text = text.replace('<html', '<html lang="ru"', 1)
+              text = re.sub(r'<title>.*?</title>', '<title>PPTist — редактор презентаций</title>', text, flags=re.S)
+              text = re.sub(
+                  r'<meta name="description" content="[^"]*"\s*/?>',
+                  '<meta name="description" content="PPTist — браузерный редактор презентаций: создание, импорт, редактирование, показ и экспорт PPT." />',
+                  text,
+                  count=1,
+              )
+              text = text.replace('正在加载中，请稍等 ...', 'Загрузка, пожалуйста, подождите ...')
+              index.write_text(text, encoding='utf-8')
+
+          Path('.localization').mkdir(exist_ok=True)
+          Path('.localization/pass-1-report.json').write_text(json.dumps({
+              'strategy': 'whole-literal / whole-template-node only',
+              'donor': 'robbin2012/PPTist-i18n',
+              'zh_dictionary': len(zh_map),
+              'en_dictionary': len(en_map),
+              'exact_literal_hits': literal_hits,
+              'template_chinese_hits': template_zh_hits,
+              'template_english_hits': template_en_hits,
+              'files_changed': len(changed),
+              'changed_files': changed,
+          }, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+
+      - name: Audit residual visible Chinese and English
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json, re
+
+          han = re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff]')
+          literal_rx = re.compile(r'''(?P<q>["'`])(?P<value>[^"'`\n]*[\u3400-\u4dbf\u4e00-\u9fff][^"'`\n]*)(?P=q)''')
+          text_node_rx = re.compile(r'>(?P<value>[^<>\n]*[\u3400-\u4dbf\u4e00-\u9fff][^<>\n]*)<')
+          visible_attr_rx = re.compile(r'''(?:title|placeholder|aria-label|alt|label|tip)\s*=\s*["'](?P<value>[^"']+)["']''', re.I)
+          english_text_rx = re.compile(r'>\s*(?P<value>[A-Za-z][A-Za-z0-9 /+&()_.:,!?#-]{2,})\s*<')
+
+          exts = {'.vue', '.ts', '.tsx', '.js', '.jsx', '.html'}
+          files = [p for p in Path('src').rglob('*') if p.is_file() and p.suffix in exts]
+          if Path('index.html').exists():
+              files.append(Path('index.html'))
+
+          chinese_literals = []
+          chinese_template = []
+          english_visible = []
+          chinese_noncomment_lines = []
+
+          for path in sorted(set(files)):
+              content = path.read_text(encoding='utf-8')
+              in_template = False
+              in_block_comment = False
+              for lineno, line in enumerate(content.splitlines(), 1):
+                  stripped = line.strip()
+                  if '/*' in stripped and '*/' not in stripped:
+                      in_block_comment = True
+                  is_comment = in_block_comment or stripped.startswith('//') or stripped.startswith('*') or stripped.startswith('<!--')
+                  if '<template' in line:
+                      in_template = True
+
+                  if han.search(line) and not is_comment:
+                      chinese_noncomment_lines.append({'file': str(path), 'line': lineno, 'text': stripped})
+                      for m in literal_rx.finditer(line):
+                          value = m.group('value').strip()
+                          if value:
+                              chinese_literals.append({'file': str(path), 'line': lineno, 'text': value})
+                      if in_template:
+                          for m in text_node_rx.finditer(line):
+                              value = re.sub(r'\s+', ' ', m.group('value')).strip()
+                              if value:
+                                  chinese_template.append({'file': str(path), 'line': lineno, 'text': value})
+
+                  if in_template:
+                      for m in visible_attr_rx.finditer(line):
+                          value = m.group('value').strip()
+                          if re.search(r'[A-Za-z]', value):
+                              english_visible.append({'file': str(path), 'line': lineno, 'kind': 'attr', 'text': value})
+                      for m in english_text_rx.finditer(line):
+                          english_visible.append({'file': str(path), 'line': lineno, 'kind': 'text', 'text': m.group('value').strip()})
+
+                  if '</template>' in line:
+                      in_template = False
+                  if '*/' in stripped:
+                      in_block_comment = False
+
+          def dedupe(items):
+              seen, out = set(), []
+              for item in items:
+                  key = (item['file'], item['line'], item['text'])
+                  if key not in seen:
+                      seen.add(key)
+                      out.append(item)
+              return out
+
+          chinese_literals = dedupe(chinese_literals)
+          chinese_template = dedupe(chinese_template)
+          english_visible = dedupe(english_visible)
+          chinese_noncomment_lines = dedupe(chinese_noncomment_lines)
+
+          report = {
+              'stats': {
+                  'chinese_noncomment_lines': len(chinese_noncomment_lines),
+                  'chinese_string_literals': len(chinese_literals),
+                  'chinese_template_text_nodes': len(chinese_template),
+                  'english_visible_candidates': len(english_visible),
+              },
+              'chinese_string_literals': chinese_literals,
+              'chinese_template_text_nodes': chinese_template,
+              'english_visible_candidates': english_visible,
+              'chinese_noncomment_lines': chinese_noncomment_lines,
+          }
+          Path('.localization/residual-ui.json').write_text(
+              json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8'
+          )
+          print(json.dumps(report['stats'], ensure_ascii=False, indent=2))
+          PY
+
+      - name: Reject known substring-corruption artifacts
+        shell: bash
+        run: |
+          if grep -R -n -E '正在加载Средняя|Применить注销|Крупная部分|边框Линия|Уместить点|Диаграмма数据' src index.html; then
+            echo 'Detected mixed Chinese/Russian substring corruption' >&2
+            exit 1
+          fi
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        env:
+          HUSKY: 0
+        run: npm ci
+
+      - name: Production build
+        run: npm run build-only -- --base=/PPTist/
+
+      - name: Type check
+        run: npm run type-check
+
+      - name: Commit controlled pass and remove trigger
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -f .run-russianize-exact
+          git add -A
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'No localization changes generated'
+            exit 0
+          fi
+          git commit -m "feat: Russianize PPTist UI with exact translations"
+          git push origin HEAD:${{ github.head_ref }}
