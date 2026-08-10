@@ -1,0 +1,70 @@
+name: Bootstrap PPTist upstream
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout target repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
+
+      - name: Clone upstream PPTist
+        run: git clone --depth 1 --branch master https://github.com/pipipi-pikachu/PPTist.git /tmp/pptist
+
+      - name: Sync upstream source
+        shell: bash
+        run: |
+          rsync -a --delete \
+            --exclude='.git/' \
+            --exclude='.github/workflows/' \
+            /tmp/pptist/ ./
+          mkdir -p .github/workflows
+          cat > .upstream-source <<EOF
+          source=https://github.com/pipipi-pikachu/PPTist
+          branch=master
+          commit=$(git -C /tmp/pptist rev-parse HEAD)
+          EOF
+
+      - name: Commit imported source
+        shell: bash
+        env:
+          TARGET_BRANCH: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: import PPTist upstream"
+            git push origin HEAD:"$TARGET_BRANCH"
+          fi
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        env:
+          HUSKY: 0
+        run: npm ci
+
+      - name: Build GitHub Pages bundle
+        run: npm run build-only -- --base=/PPTist/
+
+      - name: Verify bundle
+        shell: bash
+        run: |
+          test -f dist/index.html
+          grep -q '/PPTist/' dist/index.html
+          echo "PPTist static bundle is ready"
