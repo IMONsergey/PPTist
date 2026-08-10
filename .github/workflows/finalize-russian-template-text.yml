@@ -1,0 +1,141 @@
+name: Finalize Russian Vue template text
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.run-finalize-russian-template-text'
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+      - run: test -f .run-finalize-russian-template-text
+      - name: Install fallback translator
+        run: python -m pip install --disable-pip-version-check deep-translator==1.11.4
+      - name: Build exact map for remaining visible Chinese template nodes
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from deep_translator import GoogleTranslator
+          import json, re, time
+
+          audit = json.loads(Path('.localization/residual-after-pass-3.json').read_text(encoding='utf-8'))
+          sources=[]; seen=set()
+          for item in audit['chinese_template_text_nodes']:
+              text=item['text'].strip()
+              if text and text not in seen:
+                  seen.add(text); sources.append(text)
+
+          protect_rx=re.compile(r'(\$\{[^{}]*\}|\{\{.*?\}\}|\b(?:PPTX?|JSON|SVG|LaTeX|AI|API|Ctrl|Shift|ESC|Space|Q|C)\b)',re.I)
+          han=re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff]')
+
+          overrides={
+            '点击更换':'Нажмите, чтобы заменить','取消':'Отмена','清空数据':'Очистить данные',
+            '语言：':'Язык:','风格：':'Стиль:','模型：':'Модель:','配图：':'Изображения:',
+            '覆盖已有幻灯片':'Заменить существующие слайды','选择模板':'Выбрать шаблон','返回重新生成':'Назад к генерации',
+            '生成':'Создать','返回大纲':'Назад к структуре','边框颜色：':'Цвет обводки:','边框粗细：':'Толщина обводки:',
+            '边框':'Обводка','类型':'Тип','颜色':'Цвет','样式':'Стиль','填充':'Заливка','添加':'Добавить','删除':'Удалить',
+            '直线':'Прямая','曲线Q':'Кривая Q','曲线C':'Кривая C','水平：':'По горизонтали:','垂直：':'По вертикали:',
+            '控制点：':'Опорная точка:','1-水平：':'1 — по горизонтали:','1-垂直：':'1 — по вертикали:',
+            '2-水平：':'2 — по горизонтали:','2-垂直：':'2 — по вертикали:','圆弧：':'Дуга:',
+            '水平半径：':'Горизонтальный радиус:','垂直半径：':'Вертикальный радиус:','旋转：':'Поворот:',
+            '行数：':'Строки:','列数：':'Столбцы:','上传图片':'Загрузить изображение','在线图库':'Онлайн-библиотека',
+            '横向文本框':'Горизонтальный текст','竖向文本框':'Вертикальный текст','预设形状':'Готовые фигуры',
+            '自由绘制':'Свободное рисование','路径绘制':'Рисование контура','适应屏幕':'По размеру экрана',
+            '编辑数据':'Редактировать данные','编辑 LaTeX':'Редактировать LaTeX','裁剪':'Обрезать','裁剪图片':'Обрезать изображение',
+            '更换':'Заменить','更换动画':'Заменить анимацию','应用到主题':'Применить к теме','从当前页中提取':'Извлечь с текущего слайда',
+            '从全部幻灯片提取':'Извлечь со всех слайдов','字体：':'Шрифт:','文字颜色：':'Цвет текста:','背景颜色：':'Цвет фона:',
+            '主题色：':'Цвет темы:','主题颜色：':'Цвет темы:','自定义配色':'Своя палитра','线条样式：':'Стиль линии:',
+            '启用滤镜：':'Фильтры:','启用边框：':'Обводка:','启用阴影：':'Тень:','图标颜色：':'Цвет значка:',
+            '不透明度：':'Непрозрачность:','水平阴影：':'Смещение тени по X:','垂直阴影：':'Смещение тени по Y:',
+            '模糊距离：':'Размытие:','阴影颜色：':'Цвет тени:','着色（蒙版）：':'Цветовая маска:','蒙版颜色：':'Цвет маски:',
+            '自动播放：':'Автовоспроизведение:','设置首帧为封面':'Первый кадр как обложка','当前色块：':'Текущий цвет:',
+            '上边距：':'Верхний отступ:','下边距：':'Нижний отступ:','左边距：':'Левый отступ:','右边距：':'Правый отступ:',
+            '行间距：':'Межстрочный интервал:','减小首行缩进':'Уменьшить отступ первой строки','增大首行缩进':'Увеличить отступ первой строки',
+            '第一列':'Первый столбец','最后一列':'Последний столбец','标题行':'Строка заголовка','汇总行':'Итоговая строка',
+            '自定义画布尺寸':'Размер холста','宽高范围：500 ~ 2000':'Ширина и высота: 500–2000',
+            '导出模式：':'Режим экспорта:','标准版':'Стандартный','纯图版':'Только изображения',
+            '墨迹粗细：':'Толщина пера:','橡皮大小：':'Размер ластика:','观众视图':'Режим аудитории',
+            '添加幻灯片':'Добавить слайд','插入全部':'Вставить все','快捷操作':'Горячие клавиши',
+            '查找替换':'Найти и заменить','确定':'ОК','确认':'Подтвердить','移除':'Удалить','精简':'Сократить','扩写':'Расширить','美化':'Улучшить',
+            '触发方式：':'Запуск:','持续时长：':'Длительность:','点击替换线条类型':'Нажмите, чтобы изменить тип линии',
+            '预览：':'Предпросмотр:','背景填充：':'Заливка фона:','填充颜色：':'Цвет заливки:',
+            '垂直均匀分布':'Распределить по вертикали','水平均匀分布':'Распределить по горизонтали',
+          }
+
+          translator=GoogleTranslator(source='zh-CN',target='ru')
+          result={}; errors={}
+
+          def protect(text):
+              tokens=[]
+              def repl(m):
+                  token=f'ZXQNODE{len(tokens)}QXZ'; tokens.append((token,m.group(0))); return token
+              return protect_rx.sub(repl,text),tokens
+          def restore(text,tokens):
+              for token,original in tokens:
+                  for variant in (token,token.lower(),token.upper(),token.capitalize()): text=text.replace(variant,original)
+              return text
+
+          for index,source in enumerate(sources,1):
+              if source in overrides:
+                  result[source]=overrides[source]; continue
+              protected,tokens=protect(source); translated=None; last=None
+              for attempt in range(4):
+                  try:
+                      translated=translator.translate(protected); break
+                  except Exception as exc:
+                      last=repr(exc); time.sleep(1.5*(attempt+1))
+              if translated is None:
+                  errors[source]=last or 'translation failed'; continue
+              translated=restore(translated,tokens).strip()
+              if not translated or han.search(translated) or '\n' in translated:
+                  errors[source]=f'invalid translation: {translated!r}'; continue
+              result[source]=translated
+
+          remaining=[x for x in sources if x not in result]
+          payload={'stats':{'source_nodes':len(sources),'translated':len(result),'errors':len(errors),'remaining':len(remaining)},
+                   'translations':dict(sorted(result.items())),'errors':errors,'remaining':remaining}
+          Path('.localization/ru-template-final.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print(json.dumps(payload['stats'],ensure_ascii=False,indent=2))
+          if remaining:
+              raise SystemExit(f'Could not translate {len(remaining)} visible template nodes')
+          PY
+      - name: Load trusted exact applier from main
+        shell: bash
+        run: |
+          git fetch origin main
+          git show origin/main:tools/localization/apply_ru_residual_v3.py > /tmp/apply_ru_residual_v3.py
+      - name: Apply final template map and audit
+        run: python /tmp/apply_ru_residual_v3.py --root . --map .localization/ru-template-final.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        env:
+          HUSKY: 0
+        run: npm ci
+      - name: Production build
+        run: npm run build-only -- --base=/PPTist/
+      - name: Type check
+        run: npm run type-check
+      - name: Commit final visible-template pass
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -f .run-finalize-russian-template-text
+          git add -A
+          git diff --cached --check
+          git commit -m "feat: finish Russian Vue template localization"
+          git push origin HEAD:${{ github.head_ref }}
