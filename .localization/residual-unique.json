@@ -1,0 +1,5000 @@
+{
+  "stats": {
+    "unique_chinese_ui_candidates": 488
+  },
+  "items": [
+    {
+      "text": "类别1",
+      "count": 7,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/chart.ts:16",
+        "src/configs/chart.ts:21",
+        "src/configs/chart.ts:26",
+        "src/configs/chart.ts:31",
+        "src/configs/chart.ts:36",
+        "src/configs/chart.ts:41",
+        "src/configs/chart.ts:46"
+      ]
+    },
+    {
+      "text": "类别2",
+      "count": 7,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/chart.ts:16",
+        "src/configs/chart.ts:21",
+        "src/configs/chart.ts:26",
+        "src/configs/chart.ts:31",
+        "src/configs/chart.ts:36",
+        "src/configs/chart.ts:41",
+        "src/configs/chart.ts:46"
+      ]
+    },
+    {
+      "text": "类别3",
+      "count": 7,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/chart.ts:16",
+        "src/configs/chart.ts:21",
+        "src/configs/chart.ts:26",
+        "src/configs/chart.ts:31",
+        "src/configs/chart.ts:36",
+        "src/configs/chart.ts:41",
+        "src/configs/chart.ts:46"
+      ]
+    },
+    {
+      "text": "类别4",
+      "count": 7,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/chart.ts:16",
+        "src/configs/chart.ts:21",
+        "src/configs/chart.ts:26",
+        "src/configs/chart.ts:31",
+        "src/configs/chart.ts:36",
+        "src/configs/chart.ts:41",
+        "src/configs/chart.ts:46"
+      ]
+    },
+    {
+      "text": "类别5",
+      "count": 7,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/chart.ts:16",
+        "src/configs/chart.ts:21",
+        "src/configs/chart.ts:26",
+        "src/configs/chart.ts:31",
+        "src/configs/chart.ts:36",
+        "src/configs/chart.ts:41",
+        "src/configs/chart.ts:46"
+      ]
+    },
+    {
+      "text": "系列1",
+      "count": 5,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/chart.ts:17",
+        "src/configs/chart.ts:22",
+        "src/configs/chart.ts:27",
+        "src/configs/chart.ts:42",
+        "src/configs/chart.ts:47"
+      ]
+    },
+    {
+      "text": "系列2",
+      "count": 5,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/chart.ts:17",
+        "src/configs/chart.ts:22",
+        "src/configs/chart.ts:27",
+        "src/configs/chart.ts:42",
+        "src/configs/chart.ts:47"
+      ]
+    },
+    {
+      "text": "官方制作",
+      "count": 4,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/store/slides.ts:56",
+        "src/store/slides.ts:57",
+        "src/store/slides.ts:58",
+        "src/store/slides.ts:59"
+      ]
+    },
+    {
+      "text": "社区贡献+官方深度完善优化",
+      "count": 4,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/store/slides.ts:60",
+        "src/store/slides.ts:61",
+        "src/store/slides.ts:62",
+        "src/store/slides.ts:63"
+      ]
+    },
+    {
+      "text": "下划线",
+      "count": 3,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:131",
+        "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue:75",
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:88"
+      ]
+    },
+    {
+      "text": "删除列",
+      "count": 3,
+      "kinds": [
+        "literal",
+        "template"
+      ],
+      "refs": [
+        "src/views/components/element/TableElement/EditableTable.vue:750",
+        "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue:34",
+        "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue:137"
+      ]
+    },
+    {
+      "text": "删除行",
+      "count": 3,
+      "kinds": [
+        "literal",
+        "template"
+      ],
+      "refs": [
+        "src/views/components/element/TableElement/EditableTable.vue:755",
+        "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue:33",
+        "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue:123"
+      ]
+    },
+    {
+      "text": "加粗",
+      "count": 3,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:129",
+        "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue:63",
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:76"
+      ]
+    },
+    {
+      "text": "取消组合",
+      "count": 3,
+      "kinds": [
+        "literal",
+        "template"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:98",
+        "src/views/Editor/Canvas/EditableElement.vue:145",
+        "src/views/Editor/Toolbar/MultiPositionPanel.vue:22"
+      ]
+    },
+    {
+      "text": "墨迹粗细：",
+      "count": 3,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Screen/WritingBoardTool.vue:35",
+        "src/views/Screen/WritingBoardTool.vue:52",
+        "src/views/Screen/WritingBoardTool.vue:63"
+      ]
+    },
+    {
+      "text": "应用到主题",
+      "count": 3,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue:18",
+        "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue:31",
+        "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue:44"
+      ]
+    },
+    {
+      "text": "弹跳",
+      "count": 3,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:10",
+        "src/configs/animation.ts:101",
+        "src/configs/animation.ts:207"
+      ]
+    },
+    {
+      "text": "微软雅黑",
+      "count": 3,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/hooks/useExport.ts:556",
+        "src/hooks/useExport.ts:702",
+        "src/hooks/useExport.ts:894"
+      ]
+    },
+    {
+      "text": "按住 Ctrl 或 Shift",
+      "count": 3,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:55",
+        "src/configs/hotkey.ts:101",
+        "src/configs/hotkey.ts:103"
+      ]
+    },
+    {
+      "text": "斜体",
+      "count": 3,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:130",
+        "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue:69",
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:82"
+      ]
+    },
+    {
+      "text": "新的一项",
+      "count": 3,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/OutlineEditor.vue:228",
+        "src/components/OutlineEditor.vue:239",
+        "src/components/OutlineEditor.vue:243"
+      ]
+    },
+    {
+      "text": "无法正确读取 / 解析该文件",
+      "count": 3,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/hooks/useImport.ts:358",
+        "src/hooks/useImport.ts:391",
+        "src/hooks/useImport.ts:677"
+      ]
+    },
+    {
+      "text": "该模型API的并发数过高，请更换其他模型重试",
+      "count": 3,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:197",
+        "src/views/Editor/AIPPTDialog.vue:245",
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:355"
+      ]
+    },
+    {
+      "text": "边框样式：",
+      "count": 3,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/BorderPanel.vue:9",
+        "src/views/Editor/Toolbar/SlideDesignPanel/index.vue:175",
+        "src/views/Editor/Toolbar/common/ElementOutline.vue:14"
+      ]
+    },
+    {
+      "text": "通用",
+      "count": 3,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:44",
+        "src/views/Editor/AIPPTDialog.vue:47",
+        "src/views/Editor/AIPPTDialog.vue:147"
+      ]
+    },
+    {
+      "text": "上边距：",
+      "count": 2,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue:161",
+        "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue:82"
+      ]
+    },
+    {
+      "text": "下边距：",
+      "count": 2,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue:171",
+        "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue:92"
+      ]
+    },
+    {
+      "text": "不是正确的网页链接地址",
+      "count": 2,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/hooks/useLink.ts:14",
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:322"
+      ]
+    },
+    {
+      "text": "中文",
+      "count": 2,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:34",
+        "src/views/Editor/AIPPTDialog.vue:146"
+      ]
+    },
+    {
+      "text": "倍",
+      "count": 2,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue:114",
+        "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue:23"
+      ]
+    },
+    {
+      "text": "值",
+      "count": 2,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/chart.ts:32",
+        "src/configs/chart.ts:37"
+      ]
+    },
+    {
+      "text": "切换下一页",
+      "count": 2,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:67",
+        "src/configs/hotkey.ts:68"
+      ]
+    },
+    {
+      "text": "删除线",
+      "count": 2,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue:81",
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:94"
+      ]
+    },
+    {
+      "text": "加载中...",
+      "count": 2,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/ImageLibPanel.vue:16",
+        "src/views/Editor/Thumbnails/Templates.vue:11"
+      ]
+    },
+    {
+      "text": "右边距：",
+      "count": 2,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue:192",
+        "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue:113"
+      ]
+    },
+    {
+      "text": "垂直：",
+      "count": 2,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/SVGPathEditor.vue:119",
+        "src/views/Editor/CanvasTool/SVGPathEditor.vue:147"
+      ]
+    },
+    {
+      "text": "左边距：",
+      "count": 2,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue:182",
+        "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue:103"
+      ]
+    },
+    {
+      "text": "控制点：",
+      "count": 2,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/SVGPathEditor.vue:127",
+        "src/views/Editor/CanvasTool/SVGPathEditor.vue:156"
+      ]
+    },
+    {
+      "text": "新的一章",
+      "count": 2,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/OutlineEditor.vue:200",
+        "src/components/OutlineEditor.vue:208"
+      ]
+    },
+    {
+      "text": "新的一节",
+      "count": 2,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/OutlineEditor.vue:212",
+        "src/components/OutlineEditor.vue:224"
+      ]
+    },
+    {
+      "text": "方形",
+      "count": 2,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/ImageLibPanel.vue:102",
+        "src/views/Editor/ImageLibPanel.vue:108"
+      ]
+    },
+    {
+      "text": "晃动",
+      "count": 2,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:192",
+        "src/configs/animation.ts:198"
+      ]
+    },
+    {
+      "text": "未命名演示文稿",
+      "count": 2,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/store/slides.ts:33",
+        "src/store/slides.ts:116"
+      ]
+    },
+    {
+      "text": "横向",
+      "count": 2,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/ImageLibPanel.vue:100",
+        "src/views/Editor/ImageLibPanel.vue:106"
+      ]
+    },
+    {
+      "text": "水平：",
+      "count": 2,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/SVGPathEditor.vue:109",
+        "src/views/Editor/CanvasTool/SVGPathEditor.vue:137"
+      ]
+    },
+    {
+      "text": "测试用户",
+      "count": 2,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/NotesPanel.vue:124",
+        "src/views/Editor/NotesPanel.vue:156"
+      ]
+    },
+    {
+      "text": "浮现",
+      "count": 2,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:21",
+        "src/configs/animation.ts:112"
+      ]
+    },
+    {
+      "text": "移除",
+      "count": 2,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Canvas/ElementFloatLayer/LinkHandler.vue:8",
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:156"
+      ]
+    },
+    {
+      "text": "纵向",
+      "count": 2,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/ImageLibPanel.vue:101",
+        "src/views/Editor/ImageLibPanel.vue:107"
+      ]
+    },
+    {
+      "text": "编辑 LaTeX",
+      "count": 2,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/LatexToolbar.vue:5",
+        "src/views/Editor/Toolbar/ElementStylePanel/LatexStylePanel.vue:4"
+      ]
+    },
+    {
+      "text": "翻转",
+      "count": 2,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:72",
+        "src/configs/animation.ts:163"
+      ]
+    },
+    {
+      "text": "行内代码",
+      "count": 2,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:132",
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:115"
+      ]
+    },
+    {
+      "text": "行数/列数必须在0~20之间！",
+      "count": 2,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/TableGenerator.vue:82",
+        "src/views/Editor/CanvasTool/TableGenerator.vue:83"
+      ]
+    },
+    {
+      "text": "行间距：",
+      "count": 2,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue:109",
+        "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue:18"
+      ]
+    },
+    {
+      "text": "观众视图",
+      "count": 2,
+      "kinds": [
+        "literal",
+        "template"
+      ],
+      "refs": [
+        "src/views/Screen/BaseView.vue:49",
+        "src/views/Screen/PresenterView.vue:5"
+      ]
+    },
+    {
+      "text": "视频加载失败",
+      "count": 2,
+      "kinds": [
+        "literal",
+        "template"
+      ],
+      "refs": [
+        "src/views/components/element/AudioElement/AudioPlayer.vue:187",
+        "src/views/components/element/VideoElement/VideoPlayer/index.vue:14"
+      ]
+    },
+    {
+      "text": "风景",
+      "count": 2,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/ImageLibPanel.vue:116",
+        "src/views/Editor/ImageLibPanel.vue:156"
+      ]
+    },
+    {
+      "text": "1-垂直：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/SVGPathEditor.vue:176"
+      ]
+    },
+    {
+      "text": "1-水平：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/SVGPathEditor.vue:166"
+      ]
+    },
+    {
+      "text": "2-垂直：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/SVGPathEditor.vue:198"
+      ]
+    },
+    {
+      "text": "2-水平：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/SVGPathEditor.vue:188"
+      ]
+    },
+    {
+      "text": "2025科技前沿动态",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:161"
+      ]
+    },
+    {
+      "text": "5G技术如何改变我们的生活",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:166"
+      ]
+    },
+    {
+      "text": "<p>新添加文本</p>",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Mobile/MobileEditor/SlideToolbar.vue:61"
+      ]
+    },
+    {
+      "text": ">主题色：<span class=",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue:50"
+      ]
+    },
+    {
+      "text": ">从下方挑选合适的模板生成PPT，或<span class=",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:5"
+      ]
+    },
+    {
+      "text": "AIGC在教育领域的应用",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:164"
+      ]
+    },
+    {
+      "text": "AI搜图",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:77"
+      ]
+    },
+    {
+      "text": "AI生图",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:78"
+      ]
+    },
+    {
+      "text": "AI辅助",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:136"
+      ]
+    },
+    {
+      "text": "Ctrl + 鼠标滚轮",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:77"
+      ]
+    },
+    {
+      "text": "Space + 鼠标拖拽",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:76"
+      ]
+    },
+    {
+      "text": "X轴翻转进入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:74"
+      ]
+    },
+    {
+      "text": "X轴翻转退出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:165"
+      ]
+    },
+    {
+      "text": "Y轴翻转进入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:75"
+      ]
+    },
+    {
+      "text": "Y轴翻转退出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:166"
+      ]
+    },
+    {
+      "text": "{{ fullscreenState ? 'Выйти из полноэкранного режима' : '全屏' }}",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Screen/PresenterView.vue:12"
+      ]
+    },
+    {
+      "text": "{{playbackRate === 1 ? '倍速' : (playbackRate + 'x')}}",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/components/element/VideoElement/VideoPlayer/index.vue:80"
+      ]
+    },
+    {
+      "text": "七边形",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/imageClip.ts:110"
+      ]
+    },
+    {
+      "text": "三角形",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/imageClip.ts:62"
+      ]
+    },
+    {
+      "text": "上一页（未选中元素）",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:81"
+      ]
+    },
+    {
+      "text": "上下摇晃",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:195"
+      ]
+    },
+    {
+      "text": "上传.pptist格式模板文件",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:5"
+      ]
+    },
+    {
+      "text": "上传图片",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/index.vue:71"
+      ]
+    },
+    {
+      "text": "上方插入行",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue:19"
+      ]
+    },
+    {
+      "text": "上方添加",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue:121"
+      ]
+    },
+    {
+      "text": "上方添加同级大纲（章）",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/OutlineEditor.vue:207"
+      ]
+    },
+    {
+      "text": "上方添加同级大纲（节）",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/OutlineEditor.vue:223"
+      ]
+    },
+    {
+      "text": "上方添加同级大纲（项）",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/OutlineEditor.vue:238"
+      ]
+    },
+    {
+      "text": "上标",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:103"
+      ]
+    },
+    {
+      "text": "上角标",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:133"
+      ]
+    },
+    {
+      "text": "下一页（未选中元素）",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:82"
+      ]
+    },
+    {
+      "text": "下方插入行",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue:20"
+      ]
+    },
+    {
+      "text": "下方添加",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue:122"
+      ]
+    },
+    {
+      "text": "下方添加同级大纲（项）",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/OutlineEditor.vue:242"
+      ]
+    },
+    {
+      "text": "下标",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:109"
+      ]
+    },
+    {
+      "text": "下角标",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:134"
+      ]
+    },
+    {
+      "text": "不透明度：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/ElementOpacity.vue:4"
+      ]
+    },
+    {
+      "text": "主题",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/OutlineEditor.vue:338"
+      ]
+    },
+    {
+      "text": "主题色：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue:50"
+      ]
+    },
+    {
+      "text": "主题配色{{ index + 1 }}：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/ThemeColorsSetting.vue:7"
+      ]
+    },
+    {
+      "text": "主题颜色：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue:182"
+      ]
+    },
+    {
+      "text": "五边形",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/imageClip.ts:94"
+      ]
+    },
+    {
+      "text": "人字形",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/imageClip.ts:126"
+      ]
+    },
+    {
+      "text": "从下方挑选合适的模板生成PPT，或",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:5"
+      ]
+    },
+    {
+      "text": "从全部幻灯片提取",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue:92"
+      ]
+    },
+    {
+      "text": "从右上浮入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:33"
+      ]
+    },
+    {
+      "text": "从右上浮出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:124"
+      ]
+    },
+    {
+      "text": "从右下浮入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:35"
+      ]
+    },
+    {
+      "text": "从右下浮出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:126"
+      ]
+    },
+    {
+      "text": "从右放大滑入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:84"
+      ]
+    },
+    {
+      "text": "从右放大进入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:56"
+      ]
+    },
+    {
+      "text": "从右滑入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:65"
+      ]
+    },
+    {
+      "text": "从右滑出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:157"
+      ]
+    },
+    {
+      "text": "从右缩小滑出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:175"
+      ]
+    },
+    {
+      "text": "从右缩小退出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:147"
+      ]
+    },
+    {
+      "text": "从右飞入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:92"
+      ]
+    },
+    {
+      "text": "从右飞出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:183"
+      ]
+    },
+    {
+      "text": "从头开始",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/EditorHeader/index.vue:83"
+      ]
+    },
+    {
+      "text": "从头开始放映幻灯片",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:64"
+      ]
+    },
+    {
+      "text": "从左上浮入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:32"
+      ]
+    },
+    {
+      "text": "从左上浮出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:123"
+      ]
+    },
+    {
+      "text": "从左下浮入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:34"
+      ]
+    },
+    {
+      "text": "从左下浮出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:125"
+      ]
+    },
+    {
+      "text": "从左放大滑入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:83"
+      ]
+    },
+    {
+      "text": "从左放大进入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:55"
+      ]
+    },
+    {
+      "text": "从左滑入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:66"
+      ]
+    },
+    {
+      "text": "从左滑出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:156"
+      ]
+    },
+    {
+      "text": "从左缩小滑出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:174"
+      ]
+    },
+    {
+      "text": "从左缩小退出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:146"
+      ]
+    },
+    {
+      "text": "从左飞入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:93"
+      ]
+    },
+    {
+      "text": "从左飞出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:184"
+      ]
+    },
+    {
+      "text": "从当前开始放映幻灯片",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:65"
+      ]
+    },
+    {
+      "text": "从当前页中提取",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue:91"
+      ]
+    },
+    {
+      "text": "从当前页开始",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/EditorHeader/index.vue:84"
+      ]
+    },
+    {
+      "text": "使用本地模板生成",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:5"
+      ]
+    },
+    {
+      "text": "使画布适应当前屏幕",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:80"
+      ]
+    },
+    {
+      "text": "倍速",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/components/element/VideoElement/VideoPlayer/index.vue:80"
+      ]
+    },
+    {
+      "text": "倒三角形",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/imageClip.ts:78"
+      ]
+    },
+    {
+      "text": "倒梯形",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/imageClip.ts:174"
+      ]
+    },
+    {
+      "text": "元素操作",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:93"
+      ]
+    },
+    {
+      "text": "全屏",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Screen/PresenterView.vue:12"
+      ]
+    },
+    {
+      "text": "八边形",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/imageClip.ts:118"
+      ]
+    },
+    {
+      "text": "公司年会策划方案",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:170"
+      ]
+    },
+    {
+      "text": "六边形",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/imageClip.ts:102"
+      ]
+    },
+    {
+      "text": "关",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/components/element/VideoElement/VideoPlayer/index.vue:94"
+      ]
+    },
+    {
+      "text": "关闭弹窗",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:58"
+      ]
+    },
+    {
+      "text": "其他",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:205"
+      ]
+    },
+    {
+      "text": "其他快捷操作",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:139"
+      ]
+    },
+    {
+      "text": "内容",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Thumbnails/Templates.vue:70"
+      ]
+    },
+    {
+      "text": "减小段落缩进",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:238"
+      ]
+    },
+    {
+      "text": "减小首行缩进",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:241"
+      ]
+    },
+    {
+      "text": "切换上一页",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:66"
+      ]
+    },
+    {
+      "text": "切换焦点元素",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:104"
+      ]
+    },
+    {
+      "text": "列数：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/TableGenerator.vue:38"
+      ]
+    },
+    {
+      "text": "创建水平 / 垂直线条",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:103"
+      ]
+    },
+    {
+      "text": "删除当前点",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/SVGPathEditor.vue:562"
+      ]
+    },
+    {
+      "text": "删除此章",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/OutlineEditor.vue:215"
+      ]
+    },
+    {
+      "text": "删除此节",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/OutlineEditor.vue:231"
+      ]
+    },
+    {
+      "text": "删除此项",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/OutlineEditor.vue:246"
+      ]
+    },
+    {
+      "text": "到上方",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/components/element/TableElement/EditableTable.vue:745"
+      ]
+    },
+    {
+      "text": "到下方",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/components/element/TableElement/EditableTable.vue:746"
+      ]
+    },
+    {
+      "text": "到右侧",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/components/element/TableElement/EditableTable.vue:739"
+      ]
+    },
+    {
+      "text": "到左侧",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/components/element/TableElement/EditableTable.vue:738"
+      ]
+    },
+    {
+      "text": "剪贴板为空或者不包含文本",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/utils/clipboard.ts:35"
+      ]
+    },
+    {
+      "text": "区块链技术及其应用",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:168"
+      ]
+    },
+    {
+      "text": "单元格填充",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue:53"
+      ]
+    },
+    {
+      "text": "双击空白处 / T",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:85"
+      ]
+    },
+    {
+      "text": "反平行四边形",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/imageClip.ts:158"
+      ]
+    },
+    {
+      "text": "取消合并单元格",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/components/element/TableElement/EditableTable.vue:766"
+      ]
+    },
+    {
+      "text": "取色吸管初始化失败",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/ColorPicker/index.vue:305"
+      ]
+    },
+    {
+      "text": "右侧插入列",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue:22"
+      ]
+    },
+    {
+      "text": "右侧添加",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue:136"
+      ]
+    },
+    {
+      "text": "合并单元格",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/components/element/TableElement/EditableTable.vue:761"
+      ]
+    },
+    {
+      "text": "向上弹入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:15"
+      ]
+    },
+    {
+      "text": "向上弹出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:106"
+      ]
+    },
+    {
+      "text": "向上放大滑入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:85"
+      ]
+    },
+    {
+      "text": "向上放大进入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:57"
+      ]
+    },
+    {
+      "text": "向上浮入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:30"
+      ]
+    },
+    {
+      "text": "向上浮出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:121"
+      ]
+    },
+    {
+      "text": "向上滑入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:67"
+      ]
+    },
+    {
+      "text": "向上滑出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:158"
+      ]
+    },
+    {
+      "text": "向上缩小滑出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:176"
+      ]
+    },
+    {
+      "text": "向上缩小退出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:148"
+      ]
+    },
+    {
+      "text": "向上长距浮入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:31"
+      ]
+    },
+    {
+      "text": "向上长距浮出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:122"
+      ]
+    },
+    {
+      "text": "向下弹入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:16"
+      ]
+    },
+    {
+      "text": "向下弹出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:107"
+      ]
+    },
+    {
+      "text": "向下放大滑入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:82"
+      ]
+    },
+    {
+      "text": "向下放大进入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:54"
+      ]
+    },
+    {
+      "text": "向下浮入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:24"
+      ]
+    },
+    {
+      "text": "向下浮出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:115"
+      ]
+    },
+    {
+      "text": "向下滑入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:64"
+      ]
+    },
+    {
+      "text": "向下滑出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:155"
+      ]
+    },
+    {
+      "text": "向下缩小滑出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:173"
+      ]
+    },
+    {
+      "text": "向下缩小退出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:145"
+      ]
+    },
+    {
+      "text": "向下长距浮入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:25"
+      ]
+    },
+    {
+      "text": "向下长距浮出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:116"
+      ]
+    },
+    {
+      "text": "向右弹入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:13"
+      ]
+    },
+    {
+      "text": "向右弹出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:105"
+      ]
+    },
+    {
+      "text": "向右浮入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:26"
+      ]
+    },
+    {
+      "text": "向右浮出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:119"
+      ]
+    },
+    {
+      "text": "向右长距浮入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:27"
+      ]
+    },
+    {
+      "text": "向右长距浮出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:120"
+      ]
+    },
+    {
+      "text": "向左弹入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:14"
+      ]
+    },
+    {
+      "text": "向左弹出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:104"
+      ]
+    },
+    {
+      "text": "向左浮入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:28"
+      ]
+    },
+    {
+      "text": "向左浮出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:117"
+      ]
+    },
+    {
+      "text": "向左长距浮入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:29"
+      ]
+    },
+    {
+      "text": "向左长距浮出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:118"
+      ]
+    },
+    {
+      "text": "启用",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Canvas/index.vue:282"
+      ]
+    },
+    {
+      "text": "启用滤镜：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/ElementFilter.vue:4"
+      ]
+    },
+    {
+      "text": "启用边框：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/ElementOutline.vue:4"
+      ]
+    },
+    {
+      "text": "启用阴影：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/ElementShadow.vue:4"
+      ]
+    },
+    {
+      "text": "图标颜色：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/AudioStylePanel.vue:4"
+      ]
+    },
+    {
+      "text": "图片库（来自 pexels.com）",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/ImageLibPanel.vue:13"
+      ]
+    },
+    {
+      "text": "图表数据编辑",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:121"
+      ]
+    },
+    {
+      "text": "圆弧：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/SVGPathEditor.vue:207"
+      ]
+    },
+    {
+      "text": "圆角矩形",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/imageClip.ts:51"
+      ]
+    },
+    {
+      "text": "在上方插入一行",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:114"
+      ]
+    },
+    {
+      "text": "在下方插入一行",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:115"
+      ]
+    },
+    {
+      "text": "在下方输入您的PPT主题，并适当补充信息，如行业、岗位、学科、用途等",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:7"
+      ]
+    },
+    {
+      "text": "在右侧插入一列",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:117"
+      ]
+    },
+    {
+      "text": "在左侧插入一列",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:116"
+      ]
+    },
+    {
+      "text": "在线图库",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/index.vue:73"
+      ]
+    },
+    {
+      "text": "坐标${index + 1}",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/hooks/useImport.ts:1225"
+      ]
+    },
+    {
+      "text": "坐标1",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/chart.ts:51"
+      ]
+    },
+    {
+      "text": "坐标2",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/chart.ts:51"
+      ]
+    },
+    {
+      "text": "坐标3",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/chart.ts:51"
+      ]
+    },
+    {
+      "text": "坐标4",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/chart.ts:51"
+      ]
+    },
+    {
+      "text": "坐标5",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/chart.ts:51"
+      ]
+    },
+    {
+      "text": "垂直",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue:165"
+      ]
+    },
+    {
+      "text": "垂直半径：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/SVGPathEditor.vue:227"
+      ]
+    },
+    {
+      "text": "垂直均匀分布",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/MultiPositionPanel.vue:15"
+      ]
+    },
+    {
+      "text": "垂直阴影：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/ElementShadow.vue:22"
+      ]
+    },
+    {
+      "text": "填充颜色：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/MultiStylePanel.vue:4"
+      ]
+    },
+    {
+      "text": "增大段落缩进",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:248"
+      ]
+    },
+    {
+      "text": "增大首行缩进",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:251"
+      ]
+    },
+    {
+      "text": "多选",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:55"
+      ]
+    },
+    {
+      "text": "大学生职业生涯规划",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:169"
+      ]
+    },
+    {
+      "text": "大数据如何改变世界",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:162"
+      ]
+    },
+    {
+      "text": "大标题",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue:173"
+      ]
+    },
+    {
+      "text": "字体需要等待加载下载后生效，请稍等",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/components/element/ProsemirrorEditor.vue:133"
+      ]
+    },
+    {
+      "text": "字体：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue:11"
+      ]
+    },
+    {
+      "text": "字母",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/symbol.ts:4"
+      ]
+    },
+    {
+      "text": "学术风",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:48"
+      ]
+    },
+    {
+      "text": "完成自定义形状绘制",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:106"
+      ]
+    },
+    {
+      "text": "宽高范围：500 ~ 2000",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/SlideDesignPanel/ViewportSizeSetting.vue:24"
+      ]
+    },
+    {
+      "text": "导出时默认忽略在线字体，若您在幻灯片中使用了在线字体，且希望导出后保留相关样式，可选择关闭「忽略在线字体」选项，但要注意这将会增加导出用时。",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/ExportDialog/ExportImage.vue:62"
+      ]
+    },
+    {
+      "text": "导出时默认忽略音视频，若您的幻灯片中存在音视频元素，且希望将其导出到PPTX文件中，可选择关闭「忽略音视频」选项，但要注意这将会大幅增加导出用时。",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/ExportDialog/ExportPPTX.vue:52"
+      ]
+    },
+    {
+      "text": "导出模式：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/ExportDialog/ExportPPTX.vue:27"
+      ]
+    },
+    {
+      "text": "封面",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Thumbnails/Templates.vue:67"
+      ]
+    },
+    {
+      "text": "小标题",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue:186"
+      ]
+    },
+    {
+      "text": "山河映红",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/store/slides.ts:56"
+      ]
+    },
+    {
+      "text": "左侧插入列",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue:21"
+      ]
+    },
+    {
+      "text": "左侧添加",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue:135"
+      ]
+    },
+    {
+      "text": "左右摇晃",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:194"
+      ]
+    },
+    {
+      "text": "已经是最后一页了",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Screen/hooks/useExecPlay.ts:210"
+      ]
+    },
+    {
+      "text": "已经是第一页了",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Screen/hooks/useExecPlay.ts:193"
+      ]
+    },
+    {
+      "text": "平行四边形",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/imageClip.ts:150"
+      ]
+    },
+    {
+      "text": "年度工作总结与展望",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:167"
+      ]
+    },
+    {
+      "text": "幻灯片 ${index + 1}",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Canvas/LinkDialog.vue:70"
+      ]
+    },
+    {
+      "text": "幻灯片 {{slideIndex + 1}} / {{slides.length}}",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Screen/BaseView.vue:44"
+      ]
+    },
+    {
+      "text": "幻灯片${slideIndex + 1}的批注",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/NotesPanel.vue:6"
+      ]
+    },
+    {
+      "text": "幻灯片主题色{{ index + 1 }}：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/SlideDesignPanel/ThemeColorsSetting.vue:17"
+      ]
+    },
+    {
+      "text": "幻灯片主题：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/index.vue:80"
+      ]
+    },
+    {
+      "text": "幻灯片编辑",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:73"
+      ]
+    },
+    {
+      "text": "幻灯片页面",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Canvas/LinkDialog.vue:86"
+      ]
+    },
+    {
+      "text": "幻灯片页面 {{elementInfo.link.target}}",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Canvas/ElementFloatLayer/LinkHandler.vue:4"
+      ]
+    },
+    {
+      "text": "序号",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/symbol.ts:16"
+      ]
+    },
+    {
+      "text": "开",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/components/element/VideoElement/VideoPlayer/index.vue:94"
+      ]
+    },
+    {
+      "text": "开始自动放映",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Screen/hooks/useExecPlay.ts:221"
+      ]
+    },
+    {
+      "text": "引用",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:121"
+      ]
+    },
+    {
+      "text": "弹入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:12"
+      ]
+    },
+    {
+      "text": "弹出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:103"
+      ]
+    },
+    {
+      "text": "当前色块：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue:64"
+      ]
+    },
+    {
+      "text": "当前页幻灯片",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/NotesPanel.vue:65"
+      ]
+    },
+    {
+      "text": "得意黑",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/font.ts:12"
+      ]
+    },
+    {
+      "text": "循环{{loop ? '开' : '关'}}",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/components/element/VideoElement/VideoPlayer/index.vue:94"
+      ]
+    },
+    {
+      "text": "心跳（快）",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:211"
+      ]
+    },
+    {
+      "text": "快捷操作",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/EditorHeader/index.vue:106"
+      ]
+    },
+    {
+      "text": "快速创建圆形",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:87"
+      ]
+    },
+    {
+      "text": "快速创建文本",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:85"
+      ]
+    },
+    {
+      "text": "快速创建矩形",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:86"
+      ]
+    },
+    {
+      "text": "快速创建线条",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:88"
+      ]
+    },
+    {
+      "text": "快速复制",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:102"
+      ]
+    },
+    {
+      "text": "快速复制粘贴",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:50"
+      ]
+    },
+    {
+      "text": "思源宋体",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/font.ts:4"
+      ]
+    },
+    {
+      "text": "思源黑体",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/font.ts:3"
+      ]
+    },
+    {
+      "text": "恢复",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:53"
+      ]
+    },
+    {
+      "text": "惊恐",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:199"
+      ]
+    },
+    {
+      "text": "打印",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:57"
+      ]
+    },
+    {
+      "text": "打开搜索替换",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:56"
+      ]
+    },
+    {
+      "text": "扩写",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:130"
+      ]
+    },
+    {
+      "text": "扩写丰富",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:130"
+      ]
+    },
+    {
+      "text": "持续时长：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementAnimationPanel.vue:80"
+      ]
+    },
+    {
+      "text": "按 ESC 键关闭取色吸管",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/ColorPicker/index.vue:220"
+      ]
+    },
+    {
+      "text": "按{{typeItem.label}}：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue:28"
+      ]
+    },
+    {
+      "text": "按住 Ctrl + 拖拽",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:102"
+      ]
+    },
+    {
+      "text": "按形状：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue:15"
+      ]
+    },
+    {
+      "text": "插入",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/ImageLibPanel.vue:51"
+      ]
+    },
+    {
+      "text": "插入全部",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Thumbnails/Templates.vue:21"
+      ]
+    },
+    {
+      "text": "插入列",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/components/element/TableElement/EditableTable.vue:736"
+      ]
+    },
+    {
+      "text": "插入行",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/components/element/TableElement/EditableTable.vue:743"
+      ]
+    },
+    {
+      "text": "搜索",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/Select.vue:76"
+      ]
+    },
+    {
+      "text": "搜索图片",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/ImageLibPanel.vue:18"
+      ]
+    },
+    {
+      "text": "摆动",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:197"
+      ]
+    },
+    {
+      "text": "摇头",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:196"
+      ]
+    },
+    {
+      "text": "放大滑入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:80"
+      ]
+    },
+    {
+      "text": "放大画布",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:78"
+      ]
+    },
+    {
+      "text": "放大进入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:53"
+      ]
+    },
+    {
+      "text": "教育风",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:50"
+      ]
+    },
+    {
+      "text": "文字颜色：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue:24"
+      ]
+    },
+    {
+      "text": "文本编辑",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:127"
+      ]
+    },
+    {
+      "text": "文本编辑 - 支持 markdown 语法创建列表和引用",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:147"
+      ]
+    },
+    {
+      "text": "文鼎PL宋体",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/font.ts:6"
+      ]
+    },
+    {
+      "text": "文鼎PL楷体",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/font.ts:5"
+      ]
+    },
+    {
+      "text": "新建幻灯片",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:75"
+      ]
+    },
+    {
+      "text": "旋转进入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:42"
+      ]
+    },
+    {
+      "text": "旋转退出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:133"
+      ]
+    },
+    {
+      "text": "旋转：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/SVGPathEditor.vue:239"
+      ]
+    },
+    {
+      "text": "日文",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:36"
+      ]
+    },
+    {
+      "text": "日本語",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:36"
+      ]
+    },
+    {
+      "text": "智感几何",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/store/slides.ts:58"
+      ]
+    },
+    {
+      "text": "暖色复古",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/store/slides.ts:61"
+      ]
+    },
+    {
+      "text": "更换",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Canvas/ElementFloatLayer/LinkHandler.vue:6"
+      ]
+    },
+    {
+      "text": "更换动画",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementAnimationPanel.vue:104"
+      ]
+    },
+    {
+      "text": "最后一列",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue:179"
+      ]
+    },
+    {
+      "text": "最近使用：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/components/ColorPicker/index.vue:65"
+      ]
+    },
+    {
+      "text": "服务器返回了非流响应",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/services/fetch.ts:22"
+      ]
+    },
+    {
+      "text": "朱雀仿宋",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/font.ts:7"
+      ]
+    },
+    {
+      "text": "果冻",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:200"
+      ]
+    },
+    {
+      "text": "柔光莫兰迪",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/store/slides.ts:59"
+      ]
+    },
+    {
+      "text": "查找替换",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/index.vue:16"
+      ]
+    },
+    {
+      "text": "标准版",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/ExportDialog/ExportPPTX.vue:32"
+      ]
+    },
+    {
+      "text": "标题行",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue:162"
+      ]
+    },
+    {
+      "text": "格式刷（双击连续使用）",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:147"
+      ]
+    },
+    {
+      "text": "梯形",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/imageClip.ts:166"
+      ]
+    },
+    {
+      "text": "模拟测试",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:76"
+      ]
+    },
+    {
+      "text": "模糊距离：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/ElementShadow.vue:33"
+      ]
+    },
+    {
+      "text": "横向文本框",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/index.vue:40"
+      ]
+    },
+    {
+      "text": "橡皮大小：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Screen/WritingBoardTool.vue:74"
+      ]
+    },
+    {
+      "text": "橡皮筋",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:210"
+      ]
+    },
+    {
+      "text": "正文[小]",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue:209"
+      ]
+    },
+    {
+      "text": "气泡菜单",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Canvas/index.vue:355"
+      ]
+    },
+    {
+      "text": "水平",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue:164"
+      ]
+    },
+    {
+      "text": "水平半径：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/SVGPathEditor.vue:217"
+      ]
+    },
+    {
+      "text": "水平均匀分布",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/MultiPositionPanel.vue:14"
+      ]
+    },
+    {
+      "text": "水平阴影：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/ElementShadow.vue:11"
+      ]
+    },
+    {
+      "text": "汇总行",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue:167"
+      ]
+    },
+    {
+      "text": "没有可以执行的文本内容",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:346"
+      ]
+    },
+    {
+      "text": "注释 1",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue:219"
+      ]
+    },
+    {
+      "text": "注释 2",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue:231"
+      ]
+    },
+    {
+      "text": "浅蓝小清新",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/store/slides.ts:63"
+      ]
+    },
+    {
+      "text": "浏览器不支持或禁止访问剪贴板，请使用快捷键 Ctrl + V",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/utils/clipboard.ts:39"
+      ]
+    },
+    {
+      "text": "浮入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:23"
+      ]
+    },
+    {
+      "text": "浮出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:114"
+      ]
+    },
+    {
+      "text": "深邃沉稳",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/store/slides.ts:62"
+      ]
+    },
+    {
+      "text": "添加图片 - 在画布中粘贴SVG代码",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:143"
+      ]
+    },
+    {
+      "text": "添加图片 - 将本地图片拖拽到画布中",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:142"
+      ]
+    },
+    {
+      "text": "添加图片 - 粘贴来自 pexels 的图片链接",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:144"
+      ]
+    },
+    {
+      "text": "添加图片 - 粘贴来自系统剪贴板的图片",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:141"
+      ]
+    },
+    {
+      "text": "添加子级大纲（章）",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/OutlineEditor.vue:199"
+      ]
+    },
+    {
+      "text": "添加子级大纲（节）",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/OutlineEditor.vue:211"
+      ]
+    },
+    {
+      "text": "添加子级大纲（项）",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/OutlineEditor.vue:227"
+      ]
+    },
+    {
+      "text": "添加幻灯片",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Thumbnails/index.vue:8"
+      ]
+    },
+    {
+      "text": "添加文本 - 将外部选中文字拖拽到画布中",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:146"
+      ]
+    },
+    {
+      "text": "添加文本 - 粘贴来自系统剪贴板的文字",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:145"
+      ]
+    },
+    {
+      "text": "清除格式",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:141"
+      ]
+    },
+    {
+      "text": "滑入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:62"
+      ]
+    },
+    {
+      "text": "滑出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:153"
+      ]
+    },
+    {
+      "text": "演示文稿生成中，请稍等 ...",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:231"
+      ]
+    },
+    {
+      "text": "点",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/imageClip.ts:134"
+      ]
+    },
+    {
+      "text": "点击替换线条类型",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue:4"
+      ]
+    },
+    {
+      "text": "画布宽高需在 ${VIEWPORT_SIZE_MIN} ~ ${VIEWPORT_SIZE_MAX} 之间",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/SlideDesignPanel/ViewportSizeSetting.vue:63"
+      ]
+    },
+    {
+      "text": "目录",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Thumbnails/Templates.vue:68"
+      ]
+    },
+    {
+      "text": "直角三角形",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/imageClip.ts:70"
+      ]
+    },
+    {
+      "text": "着色（蒙版）：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/ElementColorMask.vue:4"
+      ]
+    },
+    {
+      "text": "矩形2",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/imageClip.ts:35"
+      ]
+    },
+    {
+      "text": "矩形3",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/imageClip.ts:43"
+      ]
+    },
+    {
+      "text": "确定",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/components/LaTeXEditor/index.vue:56"
+      ]
+    },
+    {
+      "text": "确认",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:157"
+      ]
+    },
+    {
+      "text": "确认下方内容大纲（点击编辑内容，右键添加/删除大纲项），开始选择模板",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:6"
+      ]
+    },
+    {
+      "text": "确认图片裁剪",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:105"
+      ]
+    },
+    {
+      "text": "社交媒体与品牌营销",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:165"
+      ]
+    },
+    {
+      "text": "禁用",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Canvas/index.vue:282"
+      ]
+    },
+    {
+      "text": "移动",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:95"
+      ]
+    },
+    {
+      "text": "移动焦点单元格",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:113"
+      ]
+    },
+    {
+      "text": "移动画布",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:76"
+      ]
+    },
+    {
+      "text": "竖向文本框",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/index.vue:41"
+      ]
+    },
+    {
+      "text": "章",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/OutlineEditor.vue:341"
+      ]
+    },
+    {
+      "text": "第一列",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue:174"
+      ]
+    },
+    {
+      "text": "简约绿意",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/store/slides.ts:60"
+      ]
+    },
+    {
+      "text": "类别${rowIndex}",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/ChartDataEditor.vue:209"
+      ]
+    },
+    {
+      "text": "粘贴为纯文本",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:49"
+      ]
+    },
+    {
+      "text": "精简",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:131"
+      ]
+    },
+    {
+      "text": "精简提炼",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:131"
+      ]
+    },
+    {
+      "text": "系列${colIndex}",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/ChartDataEditor.vue:215"
+      ]
+    },
+    {
+      "text": "系列${i + 1}",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/hooks/useExport.ts:767"
+      ]
+    },
+    {
+      "text": "纯图版",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/ExportDialog/ExportPPTX.vue:33"
+      ]
+    },
+    {
+      "text": "纵横比（横向）",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue:110"
+      ]
+    },
+    {
+      "text": "纵横比（正方形）",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue:95"
+      ]
+    },
+    {
+      "text": "纵横比（纵向）",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue:101"
+      ]
+    },
+    {
+      "text": "线条样式：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue:52"
+      ]
+    },
+    {
+      "text": "结束",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Thumbnails/Templates.vue:71"
+      ]
+    },
+    {
+      "text": "绕右上进入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:46"
+      ]
+    },
+    {
+      "text": "绕右上退出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:137"
+      ]
+    },
+    {
+      "text": "绕右下进入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:44"
+      ]
+    },
+    {
+      "text": "绕右下退出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:135"
+      ]
+    },
+    {
+      "text": "绕左上进入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:45"
+      ]
+    },
+    {
+      "text": "绕左上退出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:136"
+      ]
+    },
+    {
+      "text": "绕左下进入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:43"
+      ]
+    },
+    {
+      "text": "绕左下退出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:134"
+      ]
+    },
+    {
+      "text": "编号",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:215"
+      ]
+    },
+    {
+      "text": "编辑数据",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/ChartToolbar.vue:5"
+      ]
+    },
+    {
+      "text": "缩小滑出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:171"
+      ]
+    },
+    {
+      "text": "缩小画布",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:79"
+      ]
+    },
+    {
+      "text": "缩小退出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:144"
+      ]
+    },
+    {
+      "text": "缩放画布",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:77"
+      ]
+    },
+    {
+      "text": "网页链接",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Canvas/LinkDialog.vue:85"
+      ]
+    },
+    {
+      "text": "置底层",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:100"
+      ]
+    },
+    {
+      "text": "置顶层",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:99"
+      ]
+    },
+    {
+      "text": "美化",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:129"
+      ]
+    },
+    {
+      "text": "美化改写",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:129"
+      ]
+    },
+    {
+      "text": "职场风",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:49"
+      ]
+    },
+    {
+      "text": "聚焦到下一个单元格",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:112"
+      ]
+    },
+    {
+      "text": "聚焦到下一行",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:123"
+      ]
+    },
+    {
+      "text": "背景颜色：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue:37"
+      ]
+    },
+    {
+      "text": "脉搏",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:209"
+      ]
+    },
+    {
+      "text": "自动",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue:163"
+      ]
+    },
+    {
+      "text": "自动播放：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/VideoStylePanel.vue:23"
+      ]
+    },
+    {
+      "text": "自定义画布尺寸",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/SlideDesignPanel/ViewportSizeSetting.vue:3"
+      ]
+    },
+    {
+      "text": "自定义配色",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/index.vue:92"
+      ]
+    },
+    {
+      "text": "自由绘制",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/index.vue:58"
+      ]
+    },
+    {
+      "text": "节",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/components/OutlineEditor.vue:344"
+      ]
+    },
+    {
+      "text": "英文",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:35"
+      ]
+    },
+    {
+      "text": "菱形",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/imageClip.ts:86"
+      ]
+    },
+    {
+      "text": "营销风",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:51"
+      ]
+    },
+    {
+      "text": "蒙版颜色：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/ElementColorMask.vue:14"
+      ]
+    },
+    {
+      "text": "行数：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/TableGenerator.vue:29"
+      ]
+    },
+    {
+      "text": "表格 {{endCell.length ? `${endCell[0]} x ${endCell[1]}` : ''}}",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/TableGenerator.vue:4"
+      ]
+    },
+    {
+      "text": "表格编辑",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:110"
+      ]
+    },
+    {
+      "text": "表格至少保留一列",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/components/element/TableElement/EditableTable.vue:695"
+      ]
+    },
+    {
+      "text": "表格至少保留一行",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/components/element/TableElement/EditableTable.vue:691"
+      ]
+    },
+    {
+      "text": "裁剪",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/ImageToolbar.vue:5"
+      ]
+    },
+    {
+      "text": "裁剪图片",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue:11"
+      ]
+    },
+    {
+      "text": "触发方式：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementAnimationPanel.vue:91"
+      ]
+    },
+    {
+      "text": "设置首帧为封面",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/VideoStylePanel.vue:14"
+      ]
+    },
+    {
+      "text": "请先选择链接目标",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/hooks/useLink.ts:18"
+      ]
+    },
+    {
+      "text": "请输入搜索关键词",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/ImageLibPanel.vue:121"
+      ]
+    },
+    {
+      "text": "请输入网页链接地址",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Canvas/LinkDialog.vue:14"
+      ]
+    },
+    {
+      "text": "请输入超链接",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:154"
+      ]
+    },
+    {
+      "text": "超链接",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:165"
+      ]
+    },
+    {
+      "text": "路径绘制",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/index.vue:57"
+      ]
+    },
+    {
+      "text": "过渡",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Thumbnails/Templates.vue:69"
+      ]
+    },
+    {
+      "text": "追加三次曲线",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/SVGPathEditor.vue:553"
+      ]
+    },
+    {
+      "text": "追加二次曲线",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/SVGPathEditor.vue:549"
+      ]
+    },
+    {
+      "text": "追加弧线",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/SVGPathEditor.vue:557"
+      ]
+    },
+    {
+      "text": "追加直线",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/SVGPathEditor.vue:545"
+      ]
+    },
+    {
+      "text": "退出放映",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:69"
+      ]
+    },
+    {
+      "text": "退出绘制状态",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:89"
+      ]
+    },
+    {
+      "text": "适应屏幕",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/index.vue:137"
+      ]
+    },
+    {
+      "text": "选中元素",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/NotesPanel.vue:65"
+      ]
+    },
+    {
+      "text": "选中全部单元格",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/components/element/TableElement/EditableTable.vue:780"
+      ]
+    },
+    {
+      "text": "选中当前列",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/components/element/TableElement/EditableTable.vue:772"
+      ]
+    },
+    {
+      "text": "选中当前行",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/components/element/TableElement/EditableTable.vue:776"
+      ]
+    },
+    {
+      "text": "选中段落",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:135"
+      ]
+    },
+    {
+      "text": "选择（${activeElementIdList.length}/${currentSlide.elements.length}）",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/SelectPanel.vue:6"
+      ]
+    },
+    {
+      "text": "都市蓝调",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/store/slides.ts:57"
+      ]
+    },
+    {
+      "text": "锁定宽高比例",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:101"
+      ]
+    },
+    {
+      "text": "闪烁",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:208"
+      ]
+    },
+    {
+      "text": "阴影颜色：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/ElementShadow.vue:44"
+      ]
+    },
+    {
+      "text": "阿里巴巴普惠体",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/font.ts:11"
+      ]
+    },
+    {
+      "text": "霞鹜文楷",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/font.ts:8"
+      ]
+    },
+    {
+      "text": "霞鹜新晰黑",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/font.ts:10"
+      ]
+    },
+    {
+      "text": "霞鹜新致宋",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/font.ts:9"
+      ]
+    },
+    {
+      "text": "项目符号",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/common/RichTextBase.vue:190"
+      ]
+    },
+    {
+      "text": "预置图表主题：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/index.vue:69"
+      ]
+    },
+    {
+      "text": "预览：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Canvas/LinkDialog.vue:26"
+      ]
+    },
+    {
+      "text": "预设形状",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/CanvasTool/index.vue:56"
+      ]
+    },
+    {
+      "text": "颜色：",
+      "count": 1,
+      "kinds": [
+        "template"
+      ],
+      "refs": [
+        "src/views/Editor/Toolbar/ElementStylePanel/LatexStylePanel.vue:10"
+      ]
+    },
+    {
+      "text": "飞入",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:90"
+      ]
+    },
+    {
+      "text": "飞出",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/animation.ts:181"
+      ]
+    },
+    {
+      "text": "餐饮市场调查与研究",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/views/Editor/AIPPTDialog.vue:163"
+      ]
+    },
+    {
+      "text": "默认字体",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/font.ts:2"
+      ]
+    },
+    {
+      "text": "鼠标上滚 / PgUp",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:83"
+      ]
+    },
+    {
+      "text": "鼠标下滚 / PgDown",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:84"
+      ]
+    },
+    {
+      "text": "鼠标右键",
+      "count": 1,
+      "kinds": [
+        "literal"
+      ],
+      "refs": [
+        "src/configs/hotkey.ts:89"
+      ]
+    }
+  ]
+}
