@@ -1,0 +1,72 @@
+name: Final Russian UI cleanup v2
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.run-final-russian-ui-cleanup-v2'
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+      - run: test -f .run-final-russian-ui-cleanup-v2
+      - name: Load trusted cleanup tool
+        shell: bash
+        run: |
+          git fetch origin main
+          git show origin/main:tools/localization/final_visible_cleanup.py > /tmp/final_visible_cleanup.py
+      - name: Fix final UI fragments and validate source
+        run: python /tmp/final_visible_cleanup.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        env:
+          HUSKY: 0
+        run: npm ci
+      - name: Production build
+        run: npm run build-only -- --base=/PPTist/
+      - name: Type check
+        run: npm run type-check
+      - name: Verify shipped bundle contains no Chinese Han text
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re, json
+          han=re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff]')
+          hits=[]
+          for path in Path('dist').rglob('*'):
+              if not path.is_file() or path.suffix.lower() not in {'.js','.css','.html','.json','.svg','.txt'}:
+                  continue
+              try: text=path.read_text(encoding='utf-8')
+              except Exception: continue
+              found=han.search(text)
+              if found:
+                  hits.append({'file':str(path),'sample':text[max(0,found.start()-100):found.start()+300]})
+          Path('.localization/final-dist-han-audit.json').write_text(json.dumps({'count':len(hits),'hits':hits},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          if hits:
+              print(json.dumps(hits[:10],ensure_ascii=False,indent=2))
+              raise SystemExit(f'Built bundle contains Han text in {len(hits)} files')
+          print('Built PPTist bundle contains zero Chinese Han text')
+          PY
+      - name: Commit final validated Russian UI
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -f .run-final-russian-ui-cleanup .run-final-russian-ui-cleanup-v2
+          git add -A
+          git diff --cached --check
+          git commit -m "feat: complete validated Russian PPTist UI"
+          git push origin HEAD:${{ github.head_ref }}
