@@ -3,6 +3,8 @@ name: Bootstrap PPTist upstream
 on:
   pull_request:
     branches: [main]
+    paths:
+      - '.bootstrap-trigger'
   workflow_dispatch:
 
 permissions:
@@ -44,7 +46,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           if ! git diff --cached --quiet; then
-            git commit -m "chore: import PPTist upstream"
+            git commit -m "chore: sync PPTist upstream"
             git push origin HEAD:"$TARGET_BRANCH"
           fi
 
