@@ -1,0 +1,174 @@
+name: Generate Russian residual map — fast batch
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.run-generate-auto-ru-map-fast'
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Install translation helper
+        run: python -m pip install --disable-pip-version-check deep-translator==1.11.4
+
+      - name: Batch translate residual dictionary
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from deep_translator import GoogleTranslator
+          import json, re, time
+
+          src = json.loads(Path('.localization/residual-unique.json').read_text(encoding='utf-8'))
+          items = [item['text'] for item in src['items']]
+          han = re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff]')
+          protect_rx = re.compile(r'(\$\{[^{}]*\}|\{\{.*?\}\}|<[^>]+>|\b(?:PPTX?|JSON|SVG|LaTeX|AIGC|AI|API|Ctrl|Shift|ESC|Space|PgUp|PgDown|pexels\.com|markdown)\b)', re.I)
+          translator = GoogleTranslator(source='zh-CN', target='ru')
+
+          def protect(text, global_index):
+              tokens = []
+              def repl(m):
+                  token = f'ZXQPH{global_index:04d}X{len(tokens):02d}QXZ'
+                  tokens.append((token, m.group(0)))
+                  return token
+              return protect_rx.sub(repl, text), tokens
+
+          def restore(text, tokens):
+              for token, original in tokens:
+                  variants = {token, token.lower(), token.upper(), token.capitalize()}
+                  for variant in variants:
+                      text = text.replace(variant, original)
+              return text
+
+          candidates = []
+          for index, text in enumerate(items):
+              if not han.search(text):
+                  continue
+              protected, tokens = protect(text, index)
+              candidates.append((index, text, protected, tokens))
+
+          result = {}
+          errors = {}
+          BATCH = 20
+
+          for start in range(0, len(candidates), BATCH):
+              batch = candidates[start:start+BATCH]
+              lines = []
+              for index, original, protected, tokens in batch:
+                  lines.append(f'ZXQID{index:04d}QXZ {protected}')
+              payload = '\n'.join(lines)
+
+              translated = None
+              last_error = None
+              for attempt in range(4):
+                  try:
+                      translated = translator.translate(payload)
+                      break
+                  except Exception as exc:
+                      last_error = repr(exc)
+                      time.sleep(2 * (attempt + 1))
+              if translated is None:
+                  for index, original, protected, tokens in batch:
+                      errors[original] = last_error or 'batch translation failed'
+                  continue
+
+              parsed = {}
+              matches = list(re.finditer(r'ZXQID(\d{4})QXZ\s*', translated, flags=re.I))
+              for pos, match in enumerate(matches):
+                  idx = int(match.group(1))
+                  value_start = match.end()
+                  value_end = matches[pos + 1].start() if pos + 1 < len(matches) else len(translated)
+                  value = translated[value_start:value_end].strip(' \n\r\t;|')
+                  parsed[idx] = value
+
+              for index, original, protected, tokens in batch:
+                  value = parsed.get(index)
+                  if not value:
+                      # Safe fallback for only the missing entry.
+                      try:
+                          value = translator.translate(protected)
+                      except Exception as exc:
+                          errors[original] = repr(exc)
+                          continue
+                  result[original] = restore(value, tokens).strip()
+
+              print(f'Translated {min(start+BATCH, len(candidates))}/{len(candidates)}')
+              time.sleep(0.2)
+
+          overrides = {
+              '搜索': 'Поиск', '加载中...': 'Загрузка...', '全屏': 'Полный экран',
+              '关': 'Выкл.', '开': 'Вкл.', '通用': 'Общие', '内容': 'Содержимое',
+              '封面': 'Обложка', '目录': 'Содержание', '过渡': 'Переход', '结束': 'Завершение',
+              '确定': 'ОК', '确认': 'Подтвердить', '移除': 'Удалить', '插入': 'Вставить',
+              '加粗': 'Полужирный', '斜体': 'Курсив', '下划线': 'Подчёркивание',
+              '删除线': 'Зачёркивание', '行内代码': 'Встроенный код',
+              '观众视图': 'Режим аудитории', '未命名演示文稿': 'Презентация без названия',
+              '测试用户': 'Тестовый пользователь', '中文': 'Китайский', '英文': 'Английский',
+              '日文': 'Японский', '日本語': 'Японский',
+              '微软雅黑': 'Microsoft YaHei', '思源黑体': 'Source Han Sans', '思源宋体': 'Source Han Serif',
+              '文鼎PL楷体': 'WenDing PL KaiTi', '文鼎PL宋体': 'WenDing PL SongTi',
+              '朱雀仿宋': 'ZhuQue FangSong', '霞鹜文楷': 'LXGW WenKai',
+              '霞鹜新致宋': 'LXGW Neo ZhiSong', '霞鹜新晰黑': 'LXGW Neo XiHei',
+              '阿里巴巴普惠体': 'Alibaba PuHuiTi', '得意黑': 'DeYiHei',
+              '默认字体': 'Шрифт по умолчанию',
+              'AI搜图': 'Поиск изображений с AI', 'AI生图': 'Генерация изображений с AI',
+              'AI辅助': 'AI-помощник', '标准版': 'Стандартный', '纯图版': 'Только изображения',
+              '类别1': 'Категория 1', '类别2': 'Категория 2', '类别3': 'Категория 3',
+              '类别4': 'Категория 4', '类别5': 'Категория 5',
+              '系列1': 'Ряд 1', '系列2': 'Ряд 2',
+              '类别${rowIndex}': 'Категория ${rowIndex}',
+              '系列${colIndex}': 'Ряд ${colIndex}', '系列${i + 1}': 'Ряд ${i + 1}',
+              '幻灯片 ${index + 1}': 'Слайд ${index + 1}',
+              '坐标${index + 1}': 'Координата ${index + 1}',
+              '幻灯片${slideIndex + 1}的批注': 'Комментарии к слайду ${slideIndex + 1}',
+              '幻灯片编辑': 'Редактирование слайдов',
+              '网页链接': 'Веб-ссылка', '幻灯片页面': 'Страница слайда',
+              '启用': 'Включить', '禁用': 'Отключить',
+              '横向': 'Альбомная', '纵向': 'Книжная', '方形': 'Квадрат',
+              '删除行': 'Удалить строку', '删除列': 'Удалить столбец',
+              '合并单元格': 'Объединить ячейки', '取消合并单元格': 'Разъединить ячейки',
+              '插入行': 'Вставить строку', '插入列': 'Вставить столбец',
+              '表格至少保留一行': 'В таблице должна остаться хотя бы одна строка',
+              '表格至少保留一列': 'В таблице должен остаться хотя бы один столбец',
+              '不是正确的网页链接地址': 'Некорректный адрес веб-ссылки',
+              '请输入网页链接地址': 'Введите адрес веб-ссылки',
+              '请先选择链接目标': 'Сначала выберите цель ссылки',
+              '视频加载失败': 'Не удалось загрузить видео',
+              '无法正确读取 / 解析该文件': 'Не удалось прочитать или разобрать файл',
+              '该模型API的并发数过高，请更换其他模型重试': 'Слишком много параллельных запросов к API этой модели. Выберите другую модель и повторите попытку.',
+          }
+          for key, value in overrides.items():
+              if key in items:
+                  result[key] = value
+
+          payload = {
+              'stats': {'source_candidates': len(items), 'translated': len(result), 'errors': len(errors)},
+              'translations': dict(sorted(result.items())),
+              'errors': errors,
+          }
+          Path('.localization/ru-residual-draft-fast.json').write_text(
+              json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8'
+          )
+          print(json.dumps(payload['stats'], ensure_ascii=False, indent=2))
+          PY
+
+      - name: Commit fast draft and remove trigger
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -f .run-generate-auto-ru-map-fast
+          git add .localization/ru-residual-draft-fast.json .run-generate-auto-ru-map-fast
+          git commit -m "chore: generate fast Russian residual translation draft"
+          git push origin HEAD:${{ github.head_ref }}
