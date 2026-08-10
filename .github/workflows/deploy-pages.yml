@@ -1,0 +1,114 @@
+name: Deploy PPTist to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request_target:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.github/pages-deploy-trigger'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pptist-pages-production
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        env:
+          HUSKY: 0
+        run: npm ci
+
+      - name: Build web app for GitHub Pages
+        run: npm run build-only -- --base=/PPTist/
+
+      - name: Verify deployable output
+        shell: bash
+        run: |
+          test -f dist/index.html
+          grep -q '/PPTist/' dist/index.html
+          test -n "$(find dist/assets -type f -print -quit)"
+          echo "PPTist deployable bundle verified"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Verify live Pages
+        shell: bash
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 12); do
+            if curl --fail --silent --show-error --location "$PAGE_URL" -o /tmp/pptist.html; then
+              break
+            fi
+            if [ "$attempt" -eq 12 ]; then
+              echo "PPTist Pages endpoint did not become reachable" >&2
+              exit 1
+            fi
+            sleep 5
+          done
+          grep -q '<div id="app"' /tmp/pptist.html
+          grep -q '/PPTist/' /tmp/pptist.html
+          echo "PPTist live HTML verified at $PAGE_URL"
+
+      - name: Record deployment receipt
+        if: always()
+        shell: bash
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+          JOB_STATUS: ${{ job.status }}
+          SOURCE_SHA: ${{ github.sha }}
+        run: |
+          NOW="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          cat > .pages-deployment.json <<EOF
+          {
+            "status": "$JOB_STATUS",
+            "page_url": "$PAGE_URL",
+            "source_sha": "$SOURCE_SHA",
+            "updated_at": "$NOW"
+          }
+          EOF
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .pages-deployment.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "chore: record Pages deployment [skip ci]"
+          git pull --rebase origin main
+          git push origin HEAD:main
