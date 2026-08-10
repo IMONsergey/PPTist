@@ -2,7 +2,7 @@
   <div class="toolbar-content">
     <button class="toolbar-btn" @click="clipImage()">
       <i-icon-park-outline:tailoring class="icon" />
-      <span>裁剪</span>
+      <span>Вырез</span>
     </button>
     <FileInput @change="files => replaceImage(files)">
       <button class="toolbar-btn">

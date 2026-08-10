@@ -142,7 +142,7 @@ const contextmenus = (): ContextmenuItem[] => {
       handler: props.openLinkDialog,
     },
     {
-      text: props.elementInfo.groupId ? '取消组合' : 'Группа',
+      text: props.elementInfo.groupId ? 'Разгруппировать' : 'Группа',
       subText: 'Ctrl + G',
       handler: props.elementInfo.groupId ? uncombineElements : combineElements,
       hide: !props.isMultiSelect,

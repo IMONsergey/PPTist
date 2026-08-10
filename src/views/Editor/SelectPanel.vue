@@ -3,7 +3,7 @@
     class="select-panel"
     :width="200"
     :height="360"
-    :title="`选择（${activeElementIdList.length}/${currentSlide.elements.length}）`"
+    :title="`(${activeElementIdList.length}/${currentSlide.elements.length})`"
     :left="-270"
     :top="90"
     @close="close()"

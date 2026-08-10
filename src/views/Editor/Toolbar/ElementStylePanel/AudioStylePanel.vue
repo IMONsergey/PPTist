@@ -1,7 +1,7 @@
 <template>
   <div class="audio-style-panel">
     <div class="row">
-      <div style="width: 40%;">图标颜色：</div>
+      <div style="width: 40%;">Цвет значка:</div>
       <Popover trigger="click" style="width: 60%;">
         <template #content>
           <ColorPicker
@@ -16,9 +16,9 @@
     <div class="row switch-row">
       <div style="width: 40%;">自动播放：</div>
       <div class="switch-wrapper" style="width: 60%;">
-        <Switch 
-          :value="handleAudioElement.autoplay" 
-          @update:value="value => updateAudio({ autoplay: value })" 
+        <Switch
+          :value="handleAudioElement.autoplay"
+          @update:value="value => updateAudio({ autoplay: value })"
         />
       </div>
     </div>
@@ -26,9 +26,9 @@
     <div class="row switch-row">
       <div style="width: 40%;">循环播放：</div>
       <div class="switch-wrapper" style="width: 60%;">
-        <Switch 
-          :value="handleAudioElement.loop" 
-          @update:value="value => updateAudio({ loop: value })" 
+        <Switch
+          :value="handleAudioElement.loop"
+          @update:value="value => updateAudio({ loop: value })"
         />
       </div>
     </div>

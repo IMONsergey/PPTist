@@ -58,7 +58,7 @@ const insertTextElement = () => {
     top: (viewportSize.value * viewportRatio.value - height) / 2,
     width,
     height,
-  }, { content: '<p>新添加文本</p>' })
+  }, { content: '<p> Новый добавленный текст </p>' })
 }
 
 const insertImageElement = (files: FileList) => {

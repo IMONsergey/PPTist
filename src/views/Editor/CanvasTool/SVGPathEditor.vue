@@ -542,24 +542,24 @@ const prepareContextmenu = (e: MouseEvent) => {
 const contextmenus = (): ContextmenuItem[] => {
   return [
     {
-      text: '追加直线',
+      text: 'Добавить прямую линию',
       handler: () => addPoint('L'),
     },
     {
-      text: '追加二次曲线',
+      text: 'Добавить квадратичную кривую',
       handler: () => addPoint('Q'),
     },
     {
-      text: '追加三次曲线',
+      text: 'Добавить кубическую кривую',
       handler: () => addPoint('C'),
     },
     {
-      text: '追加弧线',
+      text: 'дополнительная дуга',
       handler: () => addPoint('A'),
     },
     { divider: true },
     {
-      text: '删除当前点',
+      text: 'Удалить текущую точку',
       disable: activePointIndex.value === 0,
       handler: removeActivePoint,
     },
@@ -697,7 +697,7 @@ onUnmounted(() => {
 }
 .segment-type {
   width: 100%;
-  
+
   &.disabled {
     pointer-events: none;
   }

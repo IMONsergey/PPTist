@@ -13,7 +13,7 @@
           <template #content>
             <PopoverMenuItem class="popover-menu-item" center @click="toggleNotesPanel(); moreVisible = false"><i-icon-park-outline:comment class="icon" />Панель заметок</PopoverMenuItem>
             <PopoverMenuItem class="popover-menu-item" center @click="toggleSelectPanel(); moreVisible = false"><i-icon-park-outline:move-one class="icon" />Область выбора</PopoverMenuItem>
-            <PopoverMenuItem class="popover-menu-item" center @click="toggleSraechPanel(); moreVisible = false"><i-icon-park-outline:search class="icon" />查找替换</PopoverMenuItem>
+            <PopoverMenuItem class="popover-menu-item" center @click="toggleSraechPanel(); moreVisible = false"><i-icon-park-outline:search class="icon" />Найти и заменить</PopoverMenuItem>
           </template>
           <span class="handler-item">
             <i-icon-park-outline:more />

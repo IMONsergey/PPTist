@@ -1,17 +1,17 @@
 <template>
   <div class="element-color-mask">
     <div class="row">
-      <div style="width: 40%;">着色（蒙版）：</div>
+      <div style="width: 40%;">Цветовая маска:</div>
       <div class="switch-wrapper" style="width: 60%;">
-        <Switch 
-          :value="hasColorMask" 
-          @update:value="value => toggleColorMask(value)" 
+        <Switch
+          :value="hasColorMask"
+          @update:value="value => toggleColorMask(value)"
         />
       </div>
     </div>
     <template v-if="hasColorMask">
       <div class="row" style="margin-top: 15px;">
-        <div style="width: 40%;">蒙版颜色：</div>
+        <div style="width: 40%;">Цвет маски:</div>
         <Popover trigger="click" style="width: 60%;">
           <template #content>
             <ColorPicker

@@ -53,7 +53,7 @@
     </div>
     <div class="footer">
       <Button class="btn" @click="emit('close')">Отмена</Button>
-      <Button class="btn" type="primary" @click="update()">确定</Button>
+      <Button class="btn" type="primary" @click="update()">ОК</Button>
     </div>
   </div>
 </template>

@@ -41,12 +41,12 @@
       @mouseenter="rightToolsVisible = true"
     >
       <div class="content">
-        <div class="tool-btn page-number" @click="slideThumbnailModelVisible = true">幻灯片 {{slideIndex + 1}} / {{slides.length}}</div>
+        <div class="tool-btn page-number" @click="slideThumbnailModelVisible = true">Слайд-шоу {{slideIndex + 1}} / {{slides.length}}</div>
         <i-icon-park-outline:write class="tool-btn" v-tooltip="'Инструмент рисования'" @click="writingBoardToolVisible = true" />
         <i-icon-park-outline:magic class="tool-btn" v-tooltip="'Лазерная указка'" :class="{ 'active': laserPen }" @click="laserPen = !laserPen" />
         <i-icon-park-outline:stopwatch-start class="tool-btn" v-tooltip="'Таймер'" :class="{ 'active': timerlVisible }" @click="timerlVisible = !timerlVisible" />
         <i-icon-park-outline:list-view class="tool-btn" v-tooltip="'Режим докладчика'" @click="changeViewMode('presenter')" />
-        <i-icon-park-outline:peoples-two class="tool-btn" v-tooltip="'观众视图'" @click="openAudienceView()" />
+        <i-icon-park-outline:peoples-two class="tool-btn" v-tooltip="'Режим аудитории'" @click="openAudienceView()" />
         <i-icon-park-outline:off-screen-one class="tool-btn" v-tooltip="'Выйти из полноэкранного режима'" v-if="fullscreenState" @click="manualExitFullscreen()" />
         <i-icon-park-outline:full-screen-one class="tool-btn" v-tooltip="'Во весь экран'" v-else @click="enterFullscreen()" />
         <i-icon-park-outline:power class="tool-btn" v-tooltip="'Завершить показ'" @click="exitScreening()" />

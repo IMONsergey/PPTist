@@ -11,7 +11,7 @@
       </FileInput>
     </div>
     <div class="row">
-      <Button style="flex: 1;" @click="setVideoPosterFromFirstFrame()"><i-icon-park-outline:screenshot-one /> 设置首帧为封面</Button>
+      <Button style="flex: 1;" @click="setVideoPosterFromFirstFrame()"><i-icon-park-outline:screenshot-one /> Первый кадр как обложка</Button>
     </div>
     <div class="row" v-if="handleVideoElement.poster">
       <Button style="flex: 1;" @click="updateVideo({ poster: '' })"><i-icon-park-outline:undo /> Сбросить обложку</Button>
@@ -20,7 +20,7 @@
     <Divider />
 
     <div class="row switch-row">
-      <div style="width: 40%;">自动播放：</div>
+      <div style="width: 40%;">Автовоспроизведение:</div>
       <div class="switch-wrapper" style="width: 60%;">
         <Switch
           :value="handleVideoElement.autoplay"

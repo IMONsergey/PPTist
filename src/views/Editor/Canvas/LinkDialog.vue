@@ -11,7 +11,7 @@
       ref="inputRef"
       v-if="type === 'web'"
       v-model:value="address"
-      placeholder="请输入网页链接地址"
+      placeholder="Введите адрес веб-ссылки"
       @enter="save()"
     />
 
@@ -23,7 +23,7 @@
     />
 
     <div class="preview" v-if="type === 'slide' && selectedSlide">
-      <div>预览：</div>
+      <div>Предварительный просмотр:</div>
       <ThumbnailSlide class="thumbnail" :slide="selectedSlide" :size="500" />
     </div>
 
@@ -67,7 +67,7 @@ const inputRef = useTemplateRef<InstanceType<typeof Input>>('inputRef')
 
 const slideOptions = computed(() => {
   return slides.value.map((item, index) => ({
-    label: `幻灯片 ${index + 1}`,
+    label: `Слайд ${index + 1}`,
     value: item.id,
     disabled: currentSlide.value.id === item.id,
   }))
@@ -82,8 +82,8 @@ const selectedSlide = computed(() => {
 })
 
 const tabs = computed<TabItem[]>(() => [
-  { key: 'web', label: '网页链接' },
-  { key: 'slide', label: '幻灯片页面', disabled: slides.value.length <= 1 },
+  { key: 'web', label: 'Веб-ссылка' },
+  { key: 'slide', label: 'Слайд', disabled: slides.value.length <= 1 },
 ])
 
 const { setLink } = useLink()

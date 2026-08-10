@@ -15,12 +15,12 @@
     <Divider />
 
     <div class="row">
-      <div style="width: 40%;">行间距：</div>
+      <div style="width: 40%;">Межстрочный интервал:</div>
       <Select style="width: 60%;"
         :value="lineHeight || 1"
         @update:value="value => updateText({ lineHeight: value as number })"
         :options="lineHeightOptions.map(item => ({
-          label: item + '倍', value: item
+          label: item + '×', value: item
         }))"
       >
         <template #icon>
@@ -170,7 +170,7 @@ import Popover from '@/components/Popover.vue'
 // 因此在执行预置样式命令时，将加粗命令放在尽可能靠前的位置，避免字号增大后再加粗
 const presetStyles = [
   {
-    label: '大标题',
+    label: 'заголовок',
     style: {
       fontSize: '26px',
       fontWeight: 700,
@@ -183,7 +183,7 @@ const presetStyles = [
     ],
   },
   {
-    label: '小标题',
+    label: 'субтитры',
     style: {
       fontSize: '22px',
       fontWeight: 700,
@@ -206,7 +206,7 @@ const presetStyles = [
     ],
   },
   {
-    label: '正文[小]',
+    label: 'Текст [маленький]',
     style: {
       fontSize: '18px',
     },
@@ -216,7 +216,7 @@ const presetStyles = [
     ],
   },
   {
-    label: '注释 1',
+    label: 'Комментарий 1',
     style: {
       fontSize: '16px',
       fontStyle: 'italic',
@@ -228,7 +228,7 @@ const presetStyles = [
     ],
   },
   {
-    label: '注释 2',
+    label: 'Комментарий 2',
     style: {
       fontSize: '16px',
       textDecoration: 'underline',

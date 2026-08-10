@@ -2,14 +2,14 @@
   <div class="presenter-view">
     <div class="toolbar">
       <div class="tool-btn" @click="changeViewMode('base')"><i-icon-park-outline:list-view class="tool-icon" /><span>Обычный вид</span></div>
-      <div class="tool-btn" @click="openAudienceView()"><i-icon-park-outline:peoples-two class="tool-icon" /><span>观众视图</span></div>
+      <div class="tool-btn" @click="openAudienceView()"><i-icon-park-outline:peoples-two class="tool-icon" /><span>Режим аудитории</span></div>
       <div class="tool-btn" :class="{ 'active': writingBoardToolVisible }" @click="writingBoardToolVisible = !writingBoardToolVisible"><i-icon-park-outline:write class="tool-icon" /><span>Карандаш</span></div>
       <div class="tool-btn" :class="{ 'active': laserPen }" @click="laserPen = !laserPen"><i-icon-park-outline:magic class="tool-icon" /><span>Лазерная указка</span></div>
       <div class="tool-btn" :class="{ 'active': timerlVisible }" @click="timerlVisible = !timerlVisible"><i-icon-park-outline:stopwatch-start class="tool-icon" /><span>Таймер</span></div>
       <div class="tool-btn" @click="() => fullscreenState ? manualExitFullscreen() : enterFullscreen()">
         <i-icon-park-outline:off-screen-one class="tool-icon" v-if="fullscreenState" />
         <i-icon-park-outline:full-screen-one class="tool-icon" v-else />
-        <span>{{ fullscreenState ? 'Выйти из полноэкранного режима' : '全屏' }}</span>
+        <span>{{ fullscreenState ? 'Выйти из полноэкранного режима' : 'Полный экран' }}</span>
       </div>
       <Divider class="divider" />
       <div class="tool-btn" @click="exitScreening()"><i-icon-park-outline:power class="tool-icon" /><span>Завершить показ</span></div>

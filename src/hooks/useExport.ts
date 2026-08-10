@@ -553,7 +553,7 @@ export default () => {
             w: el.width / ratioPx2Inch.value,
             h: el.height / ratioPx2Inch.value,
             fontSize: defaultFontSize / ratioPx2Pt.value,
-            fontFace: '微软雅黑',
+            fontFace: 'Microsoft YaHei',
             color: '#000000',
             valign: el.vAlign || 'top',
             margin: [inset[3], inset[1], inset[2], inset[0]].map(item => item / ratioPx2Pt.value) as [number, number, number, number],
@@ -699,7 +699,7 @@ export default () => {
               w: el.width / ratioPx2Inch.value,
               h: el.height / ratioPx2Inch.value,
               fontSize: defaultFontSize / ratioPx2Pt.value,
-              fontFace: '微软雅黑',
+              fontFace: 'Microsoft YaHei',
               color: '#000000',
               paraSpaceBefore: 5 / ratioPx2Pt.value,
               margin: [inset[3], inset[1], inset[2], inset[0]].map(item => item / ratioPx2Pt.value) as [number, number, number, number],
@@ -764,7 +764,7 @@ export default () => {
           for (let i = 0; i < el.data.series.length; i++) {
             const item = el.data.series[i]
             chartData.push({
-              name: `系列${i + 1}`,
+              name: `Ряд ${i + 1}`,
               labels: el.data.labels,
               values: item,
             })
@@ -891,7 +891,7 @@ export default () => {
                 underline: { style: cell.style?.underline ? 'sng' : 'none' },
                 align: cell.style?.align || 'left',
                 valign: 'middle',
-                fontFace: cell.style?.fontname || '微软雅黑',
+                fontFace: cell.style?.fontname || 'Microsoft YaHei',
                 fontSize: (cell.style?.fontsize ? parseInt(cell.style?.fontsize) : 14) / ratioPx2Pt.value,
               }
               if (theme && themeColor) {

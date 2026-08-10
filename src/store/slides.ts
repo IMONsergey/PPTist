@@ -30,7 +30,7 @@ export interface SlidesState {
 
 export const useSlidesStore = defineStore('slides', {
   state: (): SlidesState => ({
-    title: '未命名演示文稿', // 幻灯片标题
+    title: 'Презентация без названия', // 幻灯片标题
     theme: {
       themeColors: ['#5b9bd5', '#ed7d31', '#a5a5a5', '#ffc000', '#4472c4', '#70ad47'],
       fontColor: '#333',
@@ -53,14 +53,14 @@ export const useSlidesStore = defineStore('slides', {
     viewportSize: 1000, // 可视区域宽度基数
     viewportRatio: 0.5625, // 可视区域比例，默认16:9
     templates: [
-      { name: '山河映红', id: 'template_1', cover: './imgs/template_1.webp', origin: '官方制作' },
-      { name: '都市蓝调', id: 'template_2', cover: './imgs/template_2.webp', origin: '官方制作' },
-      { name: '智感几何', id: 'template_3', cover: './imgs/template_3.webp', origin: '官方制作' },
-      { name: '柔光莫兰迪', id: 'template_4', cover: './imgs/template_4.webp', origin: '官方制作' },
-      { name: '简约绿意', id: 'template_5', cover: './imgs/template_5.webp', origin: '社区贡献+官方深度完善优化' },
-      { name: '暖色复古', id: 'template_6', cover: './imgs/template_6.webp', origin: '社区贡献+官方深度完善优化' },
-      { name: '深邃沉稳', id: 'template_7', cover: './imgs/template_7.webp', origin: '社区贡献+官方深度完善优化' },
-      { name: '浅蓝小清新', id: 'template_8', cover: './imgs/template_8.webp', origin: '社区贡献+官方深度完善优化' },
+      { name: 'Алый пейзаж', id: 'template_1', cover: './imgs/template_1.webp', origin: 'Официальные' },
+      { name: 'Городской блюз', id: 'template_2', cover: './imgs/template_2.webp', origin: 'Официальные' },
+      { name: 'Умная геометрия', id: 'template_3', cover: './imgs/template_3.webp', origin: 'Официальные' },
+      { name: 'Мягкий Моранди', id: 'template_4', cover: './imgs/template_4.webp', origin: 'Официальные' },
+      { name: 'Зелёный минимализм', id: 'template_5', cover: './imgs/template_5.webp', origin: 'Сообщество + официальная доработка' },
+      { name: 'Тёплое ретро', id: 'template_6', cover: './imgs/template_6.webp', origin: 'Сообщество + официальная доработка' },
+      { name: 'Глубокий строгий', id: 'template_7', cover: './imgs/template_7.webp', origin: 'Сообщество + официальная доработка' },
+      { name: 'Свежий голубой', id: 'template_8', cover: './imgs/template_8.webp', origin: 'Сообщество + официальная доработка' },
     ], // 模板
   }),
 
@@ -68,7 +68,7 @@ export const useSlidesStore = defineStore('slides', {
     currentSlide(state) {
       return state.slides[state.slideIndex]
     },
-  
+
     currentSlideAnimations(state) {
       const currentSlide = state.slides[state.slideIndex]
       if (!currentSlide?.animations) return []
@@ -113,31 +113,31 @@ export const useSlidesStore = defineStore('slides', {
 
   actions: {
     setTitle(title: string) {
-      if (!title) this.title = '未命名演示文稿'
+      if (!title) this.title = 'Презентация без названия'
       else this.title = title
     },
 
     setTheme(themeProps: Partial<SlideTheme>) {
       this.theme = { ...this.theme, ...themeProps }
     },
-  
+
     setViewportSize(size: number) {
       this.viewportSize = size
     },
-  
+
     setViewportRatio(viewportRatio: number) {
       this.viewportRatio = viewportRatio
     },
-  
+
     setSlides(slides: Slide[], themeProps?: Partial<SlideTheme>) {
       this.slides = slides
       if (themeProps) this.setTheme(themeProps)
     },
-  
+
     setTemplates(templates: SlideTemplate[]) {
       this.templates = templates
     },
-  
+
     addSlide(slide: Slide | Slide[]) {
       const slides = Array.isArray(slide) ? slide : [slide]
       for (const slide of slides) {
@@ -148,12 +148,12 @@ export const useSlidesStore = defineStore('slides', {
       this.slides.splice(addIndex, 0, ...slides)
       this.slideIndex = addIndex
     },
-  
+
     updateSlide(props: Partial<Slide>, slideId?: string) {
       const slideIndex = slideId ? this.slides.findIndex(item => item.id === slideId) : this.slideIndex
       this.slides[slideIndex] = { ...this.slides[slideIndex], ...props }
     },
-  
+
     removeSlideProps(data: RemovePropData) {
       const { id, propName } = data
 
@@ -162,11 +162,11 @@ export const useSlidesStore = defineStore('slides', {
       }) as Slide[]
       this.slides = slides
     },
-  
+
     deleteSlide(slideId: string | string[]) {
       const slidesId = Array.isArray(slideId) ? slideId : [slideId]
       const slides: Slide[] = JSON.parse(JSON.stringify(this.slides))
-  
+
       const deleteSlidesIndex = []
       for (const deletedId of slidesId) {
         const index = slides.findIndex(item => item.id === deletedId)
@@ -184,18 +184,18 @@ export const useSlidesStore = defineStore('slides', {
         slides.splice(index, 1)
       }
       let newIndex = Math.min(...deleteSlidesIndex)
-  
+
       const maxIndex = slides.length - 1
       if (newIndex > maxIndex) newIndex = maxIndex
-  
+
       this.slideIndex = newIndex
       this.slides = slides
     },
-  
+
     updateSlideIndex(index: number) {
       this.slideIndex = index
     },
-  
+
     addElement(element: PPTElement | PPTElement[]) {
       const elements = Array.isArray(element) ? element : [element]
       const currentSlideEls = this.slides[this.slideIndex].elements
@@ -209,7 +209,7 @@ export const useSlidesStore = defineStore('slides', {
       const newEls = currentSlideEls.filter(item => !elementIdList.includes(item.id))
       this.slides[this.slideIndex].elements = newEls
     },
-  
+
     updateElement(data: UpdateElementData) {
       const { id, props, slideId } = data
       const elIdList = typeof id === 'string' ? [id] : id
@@ -221,11 +221,11 @@ export const useSlidesStore = defineStore('slides', {
       })
       this.slides[slideIndex].elements = (elements as PPTElement[])
     },
-  
+
     removeElementProps(data: RemovePropData) {
       const { id, propName } = data
       const propsNames = typeof propName === 'string' ? [propName] : propName
-  
+
       const slideIndex = this.slideIndex
       const slide = this.slides[slideIndex]
       const elements = slide.elements.map(el => {

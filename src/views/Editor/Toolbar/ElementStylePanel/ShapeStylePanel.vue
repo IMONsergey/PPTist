@@ -111,7 +111,7 @@
           :value="lineHeight || 1"
           @update:value="value => updateTextProps({ lineHeight: value as number })"
           :options="lineHeightOptions.map(item => ({
-            label: item + '倍', value: item
+            label: item + '×', value: item
           }))"
         >
           <template #icon>

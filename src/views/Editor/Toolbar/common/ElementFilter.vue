@@ -1,7 +1,7 @@
 <template>
   <div class="element-filter">
     <div class="row">
-      <div style="flex: 2;">启用滤镜：</div>
+      <div style="flex: 2;">Фильтры:</div>
       <div class="switch-wrapper" style="flex: 3;">
         <Switch
           :value="hasFilters"

@@ -14,7 +14,7 @@
     >
       <template #item="{ element, index }">
         <div class="row">
-          <div class="label" style="width: 40%;">幻灯片主题色{{ index + 1 }}：</div>
+          <div class="label" style="width: 40%;">Цвет темы слайда {{ index + 1 }}:</div>
           <Popover trigger="click" style="width: 60%;">
             <template #content>
               <ColorPicker

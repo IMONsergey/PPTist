@@ -1,13 +1,13 @@
 <template>
   <div class="latex-style-panel">
     <div class="row">
-      <Button style="flex: 1;" @click="openLatexEditor()"><i-icon-park-outline:edit /> 编辑 LaTeX</Button>
+      <Button style="flex: 1;" @click="openLatexEditor()"><i-icon-park-outline:edit /> Редактор LaTeX</Button>
     </div>
 
     <Divider />
 
     <div class="row">
-      <div style="width: 40%;">颜色：</div>
+      <div style="width: 40%;">Цвет:</div>
       <Popover trigger="click" style="width: 60%;">
         <template #content>
           <ColorPicker
@@ -20,12 +20,12 @@
     </div>
     <div class="row">
       <div style="width: 40%;">粗细：</div>
-      <NumberInput 
+      <NumberInput
         :min="1"
         :max="3"
-        :value="handleLatexElement.strokeWidth" 
-        @update:value="value => updateLatex({ strokeWidth: value })" 
-        style="width: 60%;" 
+        :value="handleLatexElement.strokeWidth"
+        @update:value="value => updateLatex({ strokeWidth: value })"
+        style="width: 60%;"
       />
     </div>
   </div>

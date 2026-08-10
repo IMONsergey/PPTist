@@ -1,6 +1,6 @@
 <template>
   <div class="viewport-size-setting">
-    <div class="title">自定义画布尺寸</div>
+    <div class="title">Размер холста</div>
     <div class="row">
       <div class="label">Ширина:</div>
       <NumberInput
@@ -21,7 +21,7 @@
         @enter="applyCustomViewportSize()"
       />
     </div>
-    <div class="tip">宽高范围：500 ~ 2000</div>
+    <div class="tip">Ширина и высота: 500–2000</div>
     <div class="btns">
       <Button type="primary" @click="applyCustomViewportSize()">Подтвердить</Button>
       <Button style="margin-left: 10px;" @click="emit('close')">Отмена</Button>
@@ -60,7 +60,7 @@ const applyCustomViewportSize = () => {
     width > VIEWPORT_SIZE_MAX ||
     height < VIEWPORT_SIZE_MIN ||
     height > VIEWPORT_SIZE_MAX
-  ) return message.warning(`画布宽高需在 ${VIEWPORT_SIZE_MIN} ~ ${VIEWPORT_SIZE_MAX} 之间`)
+  ) return message.warning(`Ширина и высота холста должны находиться в диапазоне ${VIEWPORT_SIZE_MIN} ~ ${VIEWPORT_SIZE_MAX}.`)
 
   slidesStore.setViewportSize(width)
   slidesStore.setViewportRatio(height / width)

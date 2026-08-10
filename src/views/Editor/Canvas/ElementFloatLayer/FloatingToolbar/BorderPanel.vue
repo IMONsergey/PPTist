@@ -6,7 +6,7 @@
     <template #content>
       <div class="border-popover">
         <div class="row">
-          <div class="label">边框样式：</div>
+          <div class="label">Стиль обводки:</div>
           <SelectCustom class="control">
             <template #options>
               <div

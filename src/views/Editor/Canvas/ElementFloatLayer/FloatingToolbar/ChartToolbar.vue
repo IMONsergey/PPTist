@@ -2,7 +2,7 @@
   <div class="toolbar-content">
     <button class="toolbar-btn" @click="openDataEditor()">
       <i-icon-park-outline:edit class="icon" />
-      <span>编辑数据</span>
+      <span>Редактировать данные</span>
     </button>
     <Popover trigger="click">
       <template #content>

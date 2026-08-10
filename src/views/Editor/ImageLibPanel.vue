@@ -10,12 +10,12 @@
       display: 'flex',
       flexDirection: 'column',
     }"
-    title="图片库（来自 pexels.com）"
+    title="Библиотека изображений (pexels.com)"
     @close="close()"
   >
-    <div class="container" v-loading="{ state: loading, text: '加载中...' }">
+    <div class="container" v-loading="{ state: loading, text: 'Загрузка...' }">
       <div class="tools">
-        <Input class="input" v-model:value="searchWord" placeholder="搜索图片" @enter="search()">
+        <Input class="input" v-model:value="searchWord" placeholder="Поиск изображений" @enter="search()">
           <template #prefix>
             <Popover class="more-icon" trigger="click" v-model:value="orientationVisible">
               <template #content>
@@ -97,15 +97,15 @@ const orientationOptions: {
   label: string
 }[] = [
   { key: 'all', label: 'Все' },
-  { key: 'landscape', label: '横向' },
-  { key: 'portrait', label: '纵向' },
-  { key: 'square', label: '方形' },
+  { key: 'landscape', label: 'Альбомная' },
+  { key: 'portrait', label: 'Книжная' },
+  { key: 'square', label: 'Квадрат' },
 ]
 const orientationMap: Record<string, string> = {
   'all': 'Все',
-  'landscape': '横向',
-  'portrait': '纵向',
-  'square': '方形',
+  'landscape': 'Альбомная',
+  'portrait': 'Книжная',
+  'square': 'Квадрат',
 }
 
 const close = () => {
@@ -113,12 +113,12 @@ const close = () => {
 }
 
 onMounted(() => {
-  search('风景')
+  search('Пейзаж')
 })
 
 const search = (q?: string) => {
   const query = q || searchWord.value
-  if (!query) return message.error('请输入搜索关键词')
+  if (!query) return message.error('Введите ключевые слова для поиска')
 
   loading.value = true
   page.value = 1
@@ -153,7 +153,7 @@ const loadMore = () => {
   page.value += 1
 
   api.searchImage({
-    query: searchWord.value || '风景',
+    query: searchWord.value || 'Пейзаж',
     per_page: perPage.value,
     page: page.value,
     orientation: orientation.value,

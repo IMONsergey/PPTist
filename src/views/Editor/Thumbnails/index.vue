@@ -5,7 +5,7 @@
     v-click-outside="() => setThumbnailsFocus(false)"
   >
     <div class="add-slide">
-      <div class="btn" @click="createSlide()"><i-icon-park-outline:plus class="icon" />添加幻灯片</div>
+      <div class="btn" @click="createSlide()"><i-icon-park-outline:plus class="icon" />Добавить слайд</div>
       <Popover trigger="click" placement="bottom-start" v-model:value="presetLayoutPopoverVisible" center>
         <template #content>
           <Templates

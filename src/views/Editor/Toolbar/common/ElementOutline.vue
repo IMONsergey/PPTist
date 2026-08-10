@@ -1,17 +1,17 @@
 <template>
   <div class="element-outline">
     <div class="row" v-if="!fixed">
-      <div style="width: 40%;">启用边框：</div>
+      <div style="width: 40%;">Обводка:</div>
       <div class="switch-wrapper" style="width: 60%;">
-        <Switch 
-          :value="hasOutline" 
-          @update:value="value => toggleOutline(value)" 
+        <Switch
+          :value="hasOutline"
+          @update:value="value => toggleOutline(value)"
         />
       </div>
     </div>
     <template v-if="hasOutline && outline">
       <div class="row">
-        <div style="width: 40%;">边框样式：</div>
+        <div style="width: 40%;">Стиль обводки:</div>
         <SelectCustom style="width: 60%;">
           <template #options>
             <div class="option" v-for="item in lineStyleOptions" :key="item" @click="updateOutline({ style: item })">
@@ -37,10 +37,10 @@
       </div>
       <div class="row">
         <div style="width: 40%;">边框粗细：</div>
-        <NumberInput 
-          :value="outline.width || 0" 
-          @update:value="value => updateOutline({ width: value })" 
-          style="width: 60%;" 
+        <NumberInput
+          :value="outline.width || 0"
+          @update:value="value => updateOutline({ width: value })"
+          style="width: 60%;"
         />
       </div>
     </template>

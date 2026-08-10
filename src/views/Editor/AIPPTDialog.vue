@@ -2,9 +2,9 @@
   <div class="aippt-dialog">
     <div class="header">
       <span class="title">AIPPT</span>
-      <span class="subtite" v-if="step === 'template'">从下方挑选合适的模板生成PPT，或<span class="local" v-tooltip="'上传.pptist格式模板文件'" @click="uploadLocalTemplate()">使用本地模板生成</span></span>
-      <span class="subtite" v-else-if="step === 'outline'">确认下方内容大纲（点击编辑内容，右键添加/删除大纲项），开始选择模板</span>
-      <span class="subtite" v-else>在下方输入您的PPT主题，并适当补充信息，如行业、岗位、学科、用途等</span>
+      <span class="subtite" v-if="step === 'template'">Выберите соответствующий шаблон ниже для создания PPT или <span class="local" v-tooltip="'Загрузите шаблон в формате .pptist'" @click="uploadLocalTemplate()">используйте локальный шаблон</span></span>
+      <span class="subtite" v-else-if="step === 'outline'">Подтвердите структуру содержимого ниже (нажмите, чтобы отредактировать содержимое, щелкните правой кнопкой мыши, чтобы добавить/удалить элементы структуры) и начните выбирать шаблоны.</span>
+      <span class="subtite" v-else>Введите тему презентации и при необходимости уточните отрасль, должность, предмет, назначение и другие детали</span>
     </div>
 
     <template v-if="step === 'setup'">
@@ -31,9 +31,9 @@
             style="width: 80px;"
             v-model:value="language"
             :options="[
-              { label: '中文', value: '中文' },
-              { label: '英文', value: 'English' },
-              { label: '日文', value: '日本語' },
+              { label: 'Китайский', value: 'Китайский' },
+              { label: 'Английский', value: 'English' },
+              { label: 'Японский', value: 'Японский' },
             ]"
           />
         </div>
@@ -44,11 +44,11 @@
             style="width: 80px;"
             v-model:value="style"
             :options="[
-              { label: '通用', value: '通用' },
-              { label: '学术风', value: '学术风' },
-              { label: '职场风', value: '职场风' },
-              { label: '教育风', value: '教育风' },
-              { label: '营销风', value: '营销风' },
+              { label: 'Общие', value: 'Общие' },
+              { label: 'Академический', value: 'Академический' },
+              { label: 'Деловой', value: 'Деловой' },
+              { label: 'Образовательный', value: 'Образовательный' },
+              { label: 'Маркетинговый', value: 'Маркетинговый' },
             ]"
           />
         </div>
@@ -73,9 +73,9 @@
             v-model:value="img"
             :options="[
               { label: 'Нет', value: '' },
-              { label: '模拟测试', value: 'test' },
-              { label: 'AI搜图', value: 'ai-search', disabled: true },
-              { label: 'AI生图', value: 'ai-create', disabled: true },
+              { label: 'Тестовый режим', value: 'test' },
+              { label: 'Поиск изображений с AI', value: 'ai-search', disabled: true },
+              { label: 'Генерация изображений с AI', value: 'ai-create', disabled: true },
             ]"
           />
         </div>
@@ -143,8 +143,8 @@ const { templates } = storeToRefs(slidesStore)
 const { resetSlides, isEmptySlide } = useSlideHandler()
 const { AIPPT, presetImgPool, getMdContent } = useAIPPT()
 
-const language = ref('中文')
-const style = ref('通用')
+const language = ref('Китайский')
+const style = ref('Общие')
 const img = ref('')
 const keyword = ref('')
 const outline = ref('')
@@ -158,16 +158,16 @@ const outlineRef = useTemplateRef<HTMLElement>('outlineRef')
 const inputRef = useTemplateRef<InstanceType<typeof Input>>('inputRef')
 
 const recommends = ref([
-  '2025科技前沿动态',
-  '大数据如何改变世界',
-  '餐饮市场调查与研究',
-  'AIGC在教育领域的应用',
-  '社交媒体与品牌营销',
-  '5G技术如何改变我们的生活',
-  '年度工作总结与展望',
-  '区块链技术及其应用',
-  '大学生职业生涯规划',
-  '公司年会策划方案',
+  'Тенденции развития науки и технологий на 2025 год',
+  'Как большие данные меняют мир',
+  'Обзор и исследование рынка общественного питания',
+  'Применение AIGC в сфере образования',
+  'Социальные сети и бренд-маркетинг',
+  'Как технология 5G меняет нашу жизнь',
+  'Годовой обзор работы и перспективы',
+  'Технология блокчейн и ее приложения',
+  'Планирование карьеры студента колледжа',
+  'План планирования годового собрания компании',
 ])
 
 onMounted(() => {
@@ -194,7 +194,7 @@ const createOutline = async () => {
   })
   if (typeof stream === 'object' && stream.state === -1) {
     loading.value = false
-    return message.error('该模型API的并发数过高，请更换其他模型重试')
+    return message.error('Слишком много параллельных запросов к API этой модели. Выберите другую модель и повторите попытку.')
   }
 
   loading.value = false
@@ -228,7 +228,7 @@ const createOutline = async () => {
 const createPPT = async (template?: { slides: Slide[], theme: SlideTheme }) => {
   loading.value = true
   mainStore.setAIPPTDialogState('running')
-  message.loading('演示文稿生成中，请稍等 ...', { duration: 0 })
+  message.loading('Презентация создаётся, пожалуйста, подождите…', { duration: 0 })
 
   if (overwrite.value) resetSlides()
 
@@ -242,7 +242,7 @@ const createPPT = async (template?: { slides: Slide[], theme: SlideTheme }) => {
     loading.value = false
     message.closeAll()
     mainStore.setAIPPTDialogState(true)
-    return message.error('该模型API的并发数过高，请更换其他模型重试')
+    return message.error('Слишком много параллельных запросов к API этой модели. Выберите другую модель и повторите попытку.')
   }
 
   if (img.value === 'test') {

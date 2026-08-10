@@ -1,5 +1,5 @@
 <template>
-  <div 
+  <div
     class="audio-player"
     :style="{ transform: `scale(${1 / scale})` }"
   >
@@ -51,7 +51,7 @@
         <span class="ptime">{{ptime}}</span> / <span class="dtime">{{dtime}}</span>
       </span>
 
-      <div 
+      <div
         class="bar-wrap"
         ref="playBarWrapRef"
         @mousedown="handleMousedownPlayBar()"
@@ -145,7 +145,7 @@ const pause = () => {
 }
 
 const toggle = () => {
-  if (paused.value) play() 
+  if (paused.value) play()
   else pause()
 }
 
@@ -184,7 +184,7 @@ const handleProgress = () => {
   loaded.value = audioRef.value?.buffered.length ? audioRef.value.buffered.end(audioRef.value.buffered.length - 1) : 0
 }
 
-const handleError = () => message.error('视频加载失败')
+const handleError = () => message.error('Не удалось загрузить видео')
 
 const thumbMove = (e: MouseEvent | TouchEvent) => {
   if (!audioRef.value || !playBarWrapRef.value) return

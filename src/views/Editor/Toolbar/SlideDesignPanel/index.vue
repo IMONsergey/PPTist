@@ -30,7 +30,7 @@
         @update:value="value => updateImageBackground({ size: value as SlideBackgroundImageSize })"
         v-else-if="background.type === 'image'"
         :options="[
-          { label: 'Уместить', value: 'contain' },
+          { label: 'Масштабирование', value: 'contain' },
           { label: 'Повторять', value: 'repeat' },
           { label: 'Заполнить', value: 'cover' },
         ]"

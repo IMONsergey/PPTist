@@ -8,7 +8,7 @@
         @click="changeCatalog(item.id)"
       >{{ item.name }}</div>
     </div>
-    <div class="content" v-loading="{ state: loading, text: '加载中...' }">
+    <div class="content" v-loading="{ state: loading, text: 'Загрузка...' }">
       <div class="header">
         <div class="types">
           <div class="type"
@@ -18,7 +18,7 @@
             @click="activeType = item.value"
           >{{ item.label }}</div>
         </div>
-        <div class="insert-all" @click="insertTemplates({ slides, theme })">插入全部</div>
+        <div class="insert-all" @click="insertTemplates({ slides, theme })">Вставить все</div>
       </div>
       <div class="list" ref="listRef">
         <template v-for="slide in slides" :key="slide.id">
@@ -64,11 +64,11 @@ const types = ref<{
   value: string
 }[]>([
   { label: 'Все', value: 'all' },
-  { label: '封面', value: 'cover' },
-  { label: '目录', value: 'contents' },
-  { label: '过渡', value: 'transition' },
-  { label: '内容', value: 'content' },
-  { label: '结束', value: 'end' },
+  { label: 'Обложка', value: 'cover' },
+  { label: 'Содержание', value: 'contents' },
+  { label: 'Переход', value: 'transition' },
+  { label: 'Содержимое', value: 'content' },
+  { label: 'Завершение', value: 'end' },
 ])
 const activeType = ref('all')
 

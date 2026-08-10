@@ -24,13 +24,13 @@
         </RadioGroup>
       </div>
       <div class="row">
-        <div class="title">导出模式：</div>
+        <div class="title">Режим экспорта:</div>
         <RadioGroup
           class="config-item"
           v-model:value="exportMode"
         >
-          <RadioButton style="width: 50%;" value="standard">标准版</RadioButton>
-          <RadioButton style="width: 50%;" value="image">纯图版</RadioButton>
+          <RadioButton style="width: 50%;" value="standard">Стандартный</RadioButton>
+          <RadioButton style="width: 50%;" value="image">Только изображения</RadioButton>
         </RadioGroup>
       </div>
       <div class="row" style="margin-bottom: 32px" v-if="rangeType === 'custom'">
@@ -49,7 +49,7 @@
         <div class="row">
           <div class="title">Игнорировать аудио/видео:</div>
           <div class="config-item">
-            <Switch v-model:value="ignoreMedia" v-tooltip="'导出时默认忽略音视频，若您的幻灯片中存在音视频元素，且希望将其导出到PPTX文件中，可选择关闭「忽略音视频」选项，但要注意这将会大幅增加导出用时。'" />
+            <Switch v-model:value="ignoreMedia" v-tooltip="'Аудио и видео по умолчанию игнорируются при экспорте. Если на вашем слайде есть аудио- и видеоэлементы и вы хотите экспортировать их в файл PPTX, вы можете отключить опцию «Игнорировать аудио и видео», но имейте в виду, что это значительно увеличит время экспорта.'" />
           </div>
         </div>
         <div class="row">

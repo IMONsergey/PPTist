@@ -279,7 +279,7 @@ const toggleRuler = () => {
 // 开关浮动菜单
 const toggleBubbleMenu = () => {
   mainStore.setBubbleMenuState(!showBubbleMenu.value)
-  message.success(`元素气泡菜单已${showBubbleMenu.value ? '启用' : '禁用'}`)
+  message.success(`元素气泡菜单已${showBubbleMenu.value ? 'Включить' : 'Отключить'}`)
 }
 
 // 在鼠标绘制的范围插入元素
@@ -336,7 +336,7 @@ const contextmenus = (): ContextmenuItem[] => {
           handler: () => mainStore.setGridLineSize(25),
         },
         {
-          text: 'Средняя',
+          text: 'По центру',
           subText: gridLineSize.value === 50 ? '√' : '',
           handler: () => mainStore.setGridLineSize(50),
         },
@@ -352,7 +352,7 @@ const contextmenus = (): ContextmenuItem[] => {
       handler: deleteAllElements,
     },
     {
-      text: '气泡菜单',
+      text: 'пузырьковое меню',
       subText: showBubbleMenu.value ? '√' : '',
       handler: toggleBubbleMenu,
     },

@@ -3,7 +3,7 @@
     class="notes-panel"
     :width="300"
     :height="560"
-    :title="`幻灯片${slideIndex + 1}的批注`"
+    :title="`Комментарии к слайду ${slideIndex + 1}`"
     :left="-270"
     :top="90"
     :minWidth="300"
@@ -62,7 +62,7 @@
           ref="textAreaRef"
           v-model:value="content"
           :padding="6"
-          :placeholder="`输入批注（为${handleElementId ? '选中元素' : '当前页幻灯片' }）`"
+          :placeholder="`输入批注（为${handleElementId ? 'Выбранный элемент' : 'Текущий слайд' }）`"
           :rows="2"
           @focus="replyNoteId = ''; activeNoteId = ''"
           @enter.prevent="createNote()"
@@ -121,7 +121,7 @@ const createNote = () => {
     id: nanoid(),
     content: content.value,
     time: new Date().getTime(),
-    user: '测试用户',
+    user: 'Тестовый пользователь',
   }
   if (handleElementId.value) newNote.elId = handleElementId.value
 
@@ -153,7 +153,7 @@ const createNoteReply = () => {
       id: nanoid(),
       content: replyContent.value,
       time: new Date().getTime(),
-      user: '测试用户',
+      user: 'Тестовый пользователь',
     },
   ]
   const newNote: Note = {

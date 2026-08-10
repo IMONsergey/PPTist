@@ -11,15 +11,15 @@
       <Button style="flex: 1;" v-tooltip="'Выровнять по нижнему краю'" @click="alignElement(ElementAlignCommands.BOTTOM)"><i-icon-park-outline:align-bottom /></Button>
     </ButtonGroup>
     <ButtonGroup class="row" v-if="displayItemCount > 2">
-      <Button style="flex: 1;" @click="uniformHorizontalDisplay()">水平均匀分布</Button>
-      <Button style="flex: 1;" @click="uniformVerticalDisplay()">垂直均匀分布</Button>
+      <Button style="flex: 1;" @click="uniformHorizontalDisplay()">горизонтально равномерно распределены</Button>
+      <Button style="flex: 1;" @click="uniformVerticalDisplay()">вертикальное равномерное распределение</Button>
     </ButtonGroup>
 
     <Divider />
 
     <ButtonGroup class="row">
       <Button :disabled="!canCombine" @click="combineElements()" style="flex: 1;"><i-icon-park-outline:group style="margin-right: 3px;" />Группа</Button>
-      <Button :disabled="canCombine" @click="uncombineElements()" style="flex: 1;"><i-icon-park-outline:ungroup style="margin-right: 3px;" />取消组合</Button>
+      <Button :disabled="canCombine" @click="uncombineElements()" style="flex: 1;"><i-icon-park-outline:ungroup style="margin-right: 3px;" />Разгруппировать</Button>
     </ButtonGroup>
   </div>
 </template>

@@ -9,10 +9,10 @@
       </div>
     </div>
   </div>
-  <Popover 
+  <Popover
     class="select-wrap"
-    trigger="click" 
-    v-model:value="popoverVisible" 
+    trigger="click"
+    v-model:value="popoverVisible"
     placement="bottom"
     :contentStyle="{
       padding: 0,
@@ -26,12 +26,12 @@
         <Divider :margin="0" />
       </template>
       <div class="options" ref="optionsRef" :style="{ width: width + 2 + 'px' }">
-        <div class="option" 
+        <div class="option"
           :class="{
             'disabled': option.disabled,
             'selected': option.value === value,
           }"
-          v-for="option in showOptions" 
+          v-for="option in showOptions"
           :key="option.value"
           @click="handleSelect(option)"
         >{{ option.label }}</div>
@@ -73,7 +73,7 @@ const props = withDefaults(defineProps<{
   autofocus: false,
   defaultLabel: '',
   search: false,
-  searchLabel: '搜索',
+  searchLabel: 'Поиск',
 })
 
 const emit = defineEmits<{

@@ -73,25 +73,25 @@
       <CheckboxButton
         style="flex: 1;"
         :checked="richTextAttrs.bold"
-        v-tooltip="'加粗'"
+        v-tooltip="'Полужирный'"
         @click="emitRichTextCommand('bold')"
       ><i-icon-park-outline:text-bold /></CheckboxButton>
       <CheckboxButton
         style="flex: 1;"
         :checked="richTextAttrs.em"
-        v-tooltip="'斜体'"
+        v-tooltip="'Курсив'"
         @click="emitRichTextCommand('em')"
       ><i-icon-park-outline:text-italic /></CheckboxButton>
       <CheckboxButton
         style="flex: 1;"
         :checked="richTextAttrs.underline"
-        v-tooltip="'下划线'"
+        v-tooltip="'Подчёркивание'"
         @click="emitRichTextCommand('underline')"
       ><i-icon-park-outline:text-underline /></CheckboxButton>
       <CheckboxButton
         style="flex: 1;"
         :checked="richTextAttrs.strikethrough"
-        v-tooltip="'删除线'"
+        v-tooltip="'Зачёркивание'"
         @click="emitRichTextCommand('strikethrough')"
       ><i-icon-park-outline:strikethrough /></CheckboxButton>
     </ButtonGroup>
@@ -100,25 +100,25 @@
       <CheckboxButton
         style="flex: 1;"
         :checked="richTextAttrs.superscript"
-        v-tooltip="'上标'"
+        v-tooltip="'Надстрочный'"
         @click="emitRichTextCommand('superscript')"
       >A²</CheckboxButton>
       <CheckboxButton
         style="flex: 1;"
         :checked="richTextAttrs.subscript"
-        v-tooltip="'下标'"
+        v-tooltip="'Подстрочный'"
         @click="emitRichTextCommand('subscript')"
       >A₂</CheckboxButton>
       <CheckboxButton
         style="flex: 1;"
         :checked="richTextAttrs.code"
-        v-tooltip="'行内代码'"
+        v-tooltip="'Встроенный код'"
         @click="emitRichTextCommand('code')"
       ><i-icon-park-outline:code /></CheckboxButton>
       <CheckboxButton
         style="flex: 1;"
         :checked="richTextAttrs.blockquote"
-        v-tooltip="'引用'"
+        v-tooltip="'Цитата'"
         @click="emitRichTextCommand('blockquote')"
       ><i-icon-park-outline:quote /></CheckboxButton>
     </ButtonGroup>
@@ -126,32 +126,32 @@
     <ButtonGroup class="row" passive>
       <Popover trigger="click" v-model:value="AIPopoverVisible" style="width: 25%;">
         <template #content>
-          <PopoverMenuItem center @click="execAI('美化改写')">美化</PopoverMenuItem>
-          <PopoverMenuItem center @click="execAI('扩写丰富')">扩写</PopoverMenuItem>
-          <PopoverMenuItem center @click="execAI('精简提炼')">精简</PopoverMenuItem>
+          <PopoverMenuItem center @click="execAI('Благоустройство и переписывание')">美化</PopoverMenuItem>
+          <PopoverMenuItem center @click="execAI('богатое расширение')">扩写</PopoverMenuItem>
+          <PopoverMenuItem center @click="execAI('Оптимизация и усовершенствование')">精简</PopoverMenuItem>
         </template>
         <CheckboxButton
           first
           style="width: 100%;"
-          v-tooltip="'AI辅助'"
+          v-tooltip="'AI-помощник'"
         ><span :class="{ 'ai-loading': isAIWriting }">{{ isAIWriting ? '' : 'AI' }}</span></CheckboxButton>
       </Popover>
       <CheckboxButton
         style="flex: 1;"
-        v-tooltip="'清除格式'"
+        v-tooltip="'чистый формат'"
         @click="emitRichTextCommand('clear')"
       ><i-icon-park-outline:format /></CheckboxButton>
       <CheckboxButton
         style="flex: 1;"
         :checked="!!textFormatPainter"
-        v-tooltip="'格式刷（双击连续使用）'"
+        v-tooltip="'(дважды щелкните, чтобы использовать непрерывно)'"
         @click="toggleTextFormatPainter()"
         @dblclick="toggleTextFormatPainter(true)"
       ><i-icon-park-outline:format-brush /></CheckboxButton>
       <Popover placement="bottom-end" trigger="click" v-model:value="linkPopoverVisible" style="width: 25%;">
         <template #content>
           <div class="link-popover">
-            <Input v-model:value="link" placeholder="请输入超链接" />
+            <Input v-model:value="link" placeholder="Введите ссылку" />
             <div class="btns">
               <Button size="small" :disabled="!richTextAttrs.link" @click="removeLink()" style="margin-right: 5px;">移除</Button>
               <Button size="small" type="primary" @click="updateLink(link)">确认</Button>
@@ -162,7 +162,7 @@
           last
           style="width: 100%;"
           :checked="!!richTextAttrs.link"
-          v-tooltip="'超链接'"
+          v-tooltip="'Гиперссылка'"
           @click="openLinkPopover()"
         ><i-icon-park-outline:link-one /></CheckboxButton>
       </Popover>
@@ -187,7 +187,7 @@
           first
           :type="richTextAttrs.bulletList ? 'primary' : 'default'"
           style="flex: 1;"
-          v-tooltip="'项目符号'"
+          v-tooltip="'Пули'"
           @click="emitRichTextCommand('bulletList')"
         ><i-icon-park-outline:list /></Button>
         <Popover trigger="click" v-model:value="bulletListPanelVisible">
@@ -212,7 +212,7 @@
           first
           :type="richTextAttrs.orderedList ? 'primary' : 'default'"
           style="flex: 1;"
-          v-tooltip="'编号'"
+          v-tooltip="'номер'"
           @click="emitRichTextCommand('orderedList')"
         ><i-icon-park-outline:ordered-list /></Button>
         <Popover trigger="click" v-model:value="orderedListPanelVisible">
@@ -235,7 +235,7 @@
 
     <div class="row">
       <ButtonGroup style="flex: 1;" passive>
-        <Button first style="flex: 1;" v-tooltip="'减小段落缩进'" @click="emitRichTextCommand('indent', '-1')"><i-icon-park-outline:indent-left /></Button>
+        <Button first style="flex: 1;" v-tooltip="'Уменьшить отступ абзаца'" @click="emitRichTextCommand('indent', '-1')"><i-icon-park-outline:indent-left /></Button>
         <Popover trigger="click" v-model:value="indentLeftPanelVisible">
           <template #content>
             <PopoverMenuItem center @click="emitRichTextCommand('textIndent', '-1')">减小首行缩进</PopoverMenuItem>
@@ -245,7 +245,7 @@
       </ButtonGroup>
       <div style="width: 10px;"></div>
       <ButtonGroup style="flex: 1;" passive>
-        <Button first style="flex: 1;" v-tooltip="'增大段落缩进'" @click="emitRichTextCommand('indent', '+1')"><i-icon-park-outline:indent-right /></Button>
+        <Button first style="flex: 1;" v-tooltip="'Увеличить отступ абзаца'" @click="emitRichTextCommand('indent', '+1')"><i-icon-park-outline:indent-right /></Button>
         <Popover trigger="click" v-model:value="indentRightPanelVisible">
           <template #content>
             <PopoverMenuItem center @click="emitRichTextCommand('textIndent', '+1')">增大首行缩进</PopoverMenuItem>
@@ -319,7 +319,7 @@ const openLinkPopover = () => {
 }
 const updateLink = (link?: string) => {
   const linkRegExp = /^(https?):\/\/[\w\-]+(\.[\w\-]+)+([\w\-.,@?^=%&:\/~+#]*[\w\-@?^=%&\/~+#])?$/
-  if (!link || !linkRegExp.test(link)) return message.error('不是正确的网页链接地址')
+  if (!link || !linkRegExp.test(link)) return message.error('Некорректный адрес веб-ссылки')
 
   emitRichTextCommand('link', link)
   linkPopoverVisible.value = false
@@ -343,7 +343,7 @@ const execAI = async (command: string) => {
     content = handleElement.value.text.content
   }
 
-  if (!content) return message.error('没有可以执行的文本内容')
+  if (!content) return message.error('Нет текста для обработки')
 
   let resultText = ''
 
@@ -352,7 +352,7 @@ const execAI = async (command: string) => {
     command,
   })
   if (typeof stream === 'object' && stream.state === -1) {
-    return message.error('该模型API的并发数过高，请更换其他模型重试')
+    return message.error('Слишком много параллельных запросов к API этой модели. Выберите другую модель и повторите попытку.')
   }
 
   isAIWriting.value = true

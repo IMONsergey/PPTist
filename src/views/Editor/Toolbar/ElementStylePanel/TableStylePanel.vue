@@ -50,7 +50,7 @@
             @update:modelValue="value => updateTextAttrs({ backcolor: value })"
           />
         </template>
-        <TextColorButton last v-tooltip="'单元格填充'" :color="textAttrs.backcolor">
+        <TextColorButton last v-tooltip="'Заливка ячейки'" :color="textAttrs.backcolor">
           <i-icon-park-outline:fill />
         </TextColorButton>
       </Popover>
@@ -60,25 +60,25 @@
       <CheckboxButton
         style="flex: 1;"
         :checked="textAttrs.bold"
-        v-tooltip="'加粗'"
+        v-tooltip="'Полужирный'"
         @click="updateTextAttrs({ bold: !textAttrs.bold })"
       ><i-icon-park-outline:text-bold /></CheckboxButton>
       <CheckboxButton
         style="flex: 1;"
         :checked="textAttrs.em"
-        v-tooltip="'斜体'"
+        v-tooltip="'Курсив'"
         @click="updateTextAttrs({ em: !textAttrs.em })"
       ><i-icon-park-outline:text-italic /></CheckboxButton>
       <CheckboxButton
         style="flex: 1;"
         :checked="textAttrs.underline"
-        v-tooltip="'下划线'"
+        v-tooltip="'Подчёркивание'"
         @click="updateTextAttrs({ underline: !textAttrs.underline })"
       ><i-icon-park-outline:text-underline /></CheckboxButton>
       <CheckboxButton
         style="flex: 1;"
         :checked="textAttrs.strikethrough"
-        v-tooltip="'删除线'"
+        v-tooltip="'Зачёркивание'"
         @click="updateTextAttrs({ strikethrough: !textAttrs.strikethrough })"
       ><i-icon-park-outline:strikethrough /></CheckboxButton>
     </ButtonGroup>

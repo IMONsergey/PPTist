@@ -4,7 +4,7 @@
       <div class="handler">
         <div class="col-header">
           <div class="col-header-item"
-            v-for="colIndex in 7" 
+            v-for="colIndex in 7"
             :key="colIndex"
           >
             <div class="col-key">{{ alphabet[colIndex - 1] }}</div>
@@ -12,7 +12,7 @@
         </div>
         <div class="row-header">
           <div class="row-header-item"
-            v-for="rowIndex in 31" 
+            v-for="rowIndex in 31"
             :key="rowIndex"
           >
             <div class="row-key">{{ rowIndex }}</div>
@@ -25,21 +25,21 @@
         </div>
       </div>
       <div class="range-box">
-        <div 
-          class="temp-range" 
+        <div
+          class="temp-range"
           :style="{
             width: tempRangeSize.width + 'px',
             height: tempRangeSize.height + 'px',
           }"
         ></div>
-        <div 
-          :class="['range-line', line.type]" 
-          v-for="line in rangeLines" 
-          :key="line.type" 
+        <div
+          :class="['range-line', line.type]"
+          v-for="line in rangeLines"
+          :key="line.type"
           :style="line.style"
         ></div>
-        <div 
-          class="resizable" 
+        <div
+          class="resizable"
           :style="resizablePointStyle"
           @mousedown.stop="changeSelectRange($event)"
         ></div>
@@ -47,12 +47,12 @@
       <table>
         <tbody>
           <tr v-for="rowIndex in 31" :key="rowIndex">
-            <td 
-              v-for="colIndex in 7" 
-              :key="colIndex" 
+            <td
+              v-for="colIndex in 7"
+              :key="colIndex"
               :class="{ 'head': (colIndex === 1 && rowIndex <= selectedRange[1]) || (rowIndex === 1 && colIndex <= selectedRange[0]) }"
             >
-              <input 
+              <input
                 :class="['item', { 'selected': rowIndex <= selectedRange[1] && colIndex <= selectedRange[0] }]"
                 :id="`cell-${rowIndex - 1}-${colIndex - 1}`"
                 v-if="!(rowIndex === 1 && colIndex === 1)"
@@ -73,8 +73,8 @@
           <template #content>
             <PopoverMenuItem
               center
-              v-for="item in chartList" 
-              :key="item" 
+              v-for="item in chartList"
+              :key="item"
               @click="chartType = item; chartTypeSelectVisible = false"
             >{{CHART_TYPE_MAP[item]}}</PopoverMenuItem>
           </template>
@@ -206,13 +206,13 @@ const getTableData = () => {
 
   // 第一行为系列名，第一列为项目名，实际数据从第二行第二列开始
   for (let rowIndex = 1; rowIndex < row; rowIndex++) {
-    let labelsItem = `类别${rowIndex}`
+    let labelsItem = `Категория ${rowIndex}`
     const labelInputRef = document.querySelector(`#cell-${rowIndex}-0`) as HTMLInputElement
     if (labelInputRef && labelInputRef.value) labelsItem = labelInputRef.value
     labels.push(labelsItem)
   }
   for (let colIndex = 1; colIndex < col; colIndex++) {
-    let legendsItem = `系列${colIndex}`
+    let legendsItem = `Ряд ${colIndex}`
     const labelInputRef = document.querySelector(`#cell-0-${colIndex}`) as HTMLInputElement
     if (labelInputRef && labelInputRef.value) legendsItem = labelInputRef.value
     legends.push(legendsItem)
@@ -286,13 +286,13 @@ const handlePaste = (e: ClipboardEvent, rowIndex: number, colIndex: number) => {
       clipboardDataFirstItem.getAsString(text => {
         const clipboardData = pasteCustomClipboardString(text)
         if (typeof clipboardData === 'object') return
-   
+
         const excelData = pasteExcelClipboardString(text)
         if (excelData) {
           fillTableData(excelData, rowIndex, colIndex)
           return
         }
-  
+
         document.execCommand('insertText', false, text)
       })
     }
@@ -300,7 +300,7 @@ const handlePaste = (e: ClipboardEvent, rowIndex: number, colIndex: number) => {
       clipboardDataFirstItem.getAsString(html => {
         const htmlData = pasteHTMLTableClipboardString(html)
         if (htmlData) fillTableData(htmlData, rowIndex, colIndex)
-      }) 
+      })
     }
   }
 }
