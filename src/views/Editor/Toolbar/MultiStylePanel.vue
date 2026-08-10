@@ -29,7 +29,7 @@
       </SelectCustom>
     </div>
     <div class="row">
-      <div style="width: 40%;">边框颜色：</div>
+      <div style="width: 40%;">Цвет обводки:</div>
       <Popover trigger="click" style="width: 60%;">
         <template #content>
           <ColorPicker
@@ -41,7 +41,7 @@
       </Popover>
     </div>
     <div class="row">
-      <div style="width: 40%;">边框粗细：</div>
+      <div style="width: 40%;">Толщина обводки:</div>
       <NumberInput
         :value="outline.width || 0"
         @update:value="value => updateOutline({ width: value })"

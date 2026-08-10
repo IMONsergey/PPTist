@@ -33,7 +33,7 @@
 
     <div class="add-element-handler">
       <div class="insert-handler-item group-btn" :class="{ 'active': creatingElement?.type === 'text' }" v-tooltip="'Вставить текст'">
-        <div class="group-btn-main" @click="drawText()"><i-icon-park-outline:font-size class="icon" /> <span class="text">文本框</span></div>
+        <div class="group-btn-main" @click="drawText()"><i-icon-park-outline:font-size class="icon" /> <span class="text">текстовое поле</span></div>
 
         <Popover trigger="click" v-model:value="textTypeSelectVisible" style="height: 100%;" :offset="10">
           <template #content>
@@ -48,7 +48,7 @@
           <template #content>
             <ShapePool @select="shape => drawShape(shape)" />
           </template>
-          <div class="group-btn-main"><i-icon-park-outline:graphic-design class="icon" /> <span class="text">形状</span></div>
+          <div class="group-btn-main"><i-icon-park-outline:graphic-design class="icon" /> <span class="text">форма</span></div>
         </Popover>
 
         <Popover trigger="click" v-model:value="shapeMenuVisible" style="height: 100%;" :offset="10">
@@ -62,7 +62,7 @@
       </div>
       <div class="insert-handler-item group-btn" v-tooltip="'Вставить изображение'">
         <FileInput style="height: 100%;" @change="files => insertImageElement(files)">
-          <div class="group-btn-main"><i-icon-park-outline:picture class="icon" /> <span class="text">图片</span></div>
+          <div class="group-btn-main"><i-icon-park-outline:picture class="icon" /> <span class="text">картина</span></div>
         </FileInput>
 
         <Popover trigger="click" v-model:value="imageMenuVisible" style="height: 100%;" :offset="10">
@@ -80,7 +80,7 @@
           <LinePool @select="line => drawLine(line)" />
         </template>
         <div class="insert-handler-item" :class="{ 'active': creatingElement?.type === 'line' }" v-tooltip="'Вставить линию'">
-          <i-icon-park-outline:connection class="icon" /> <span class="text">线条</span>
+          <i-icon-park-outline:connection class="icon" /> <span class="text">линия</span>
         </div>
       </Popover>
       <Popover trigger="click" v-model:value="chartPoolVisible" :offset="10">
@@ -88,7 +88,7 @@
           <ChartPool @select="chart => { createChartElement(chart); chartPoolVisible = false }" />
         </template>
         <div class="insert-handler-item" v-tooltip="'Вставить диаграмму'">
-          <i-icon-park-outline:chart-proportion class="icon" /> <span class="text">图表</span>
+          <i-icon-park-outline:chart-proportion class="icon" /> <span class="text">диаграмма</span>
         </div>
       </Popover>
       <Popover trigger="click" v-model:value="tableGeneratorVisible" :offset="10">
@@ -99,11 +99,11 @@
           />
         </template>
         <div class="insert-handler-item" v-tooltip="'Вставить таблицу'">
-          <i-icon-park-outline:insert-table class="icon" /> <span class="text">表格</span>
+          <i-icon-park-outline:insert-table class="icon" /> <span class="text">лист</span>
         </div>
       </Popover>
       <div class="insert-handler-item" v-tooltip="'Вставить формулу'" @click="latexEditorVisible = true">
-        <i-icon-park-outline:formula class="icon" /> <span class="text">公式</span>
+        <i-icon-park-outline:formula class="icon" /> <span class="text">формула</span>
       </div>
       <Popover trigger="click" v-model:value="mediaInputVisible" :offset="10">
         <template #content>
@@ -114,11 +114,11 @@
           />
         </template>
         <div class="insert-handler-item" v-tooltip="'Вставить медиа'">
-          <i-icon-park-outline:video-two class="icon" /> <span class="text">音视频</span>
+          <i-icon-park-outline:video-two class="icon" /> <span class="text">Аудио и видео</span>
         </div>
       </Popover>
       <div class="insert-handler-item" :class="{ 'active': showSymbolPanel }" v-tooltip="'Вставить символ'" @click="toggleSymbolPanel()">
-        <i-icon-park-outline:symbol class="icon" /> <span class="text">符号</span>
+        <i-icon-park-outline:symbol class="icon" /> <span class="text">символ</span>
       </div>
     </div>
 

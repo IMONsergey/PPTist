@@ -10,7 +10,7 @@
       </template>
       <button class="toolbar-btn">
         <i-icon-park-outline:platte class="icon" />
-        <span>颜色</span>
+        <span>Цвет</span>
       </button>
     </Popover>
   </div>

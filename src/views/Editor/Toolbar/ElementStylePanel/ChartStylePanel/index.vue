@@ -25,7 +25,7 @@
     </template>
 
     <div class="row">
-      <div style="width: 40%;">背景填充：</div>
+      <div style="width: 40%;">Заливка фона:</div>
       <Popover trigger="click" style="width: 60%;">
         <template #content>
           <ColorPicker
@@ -37,7 +37,7 @@
       </Popover>
     </div>
     <div class="row">
-      <div style="width: 40%;">坐标与文字：</div>
+      <div style="width: 40%;">Координаты и текст:</div>
       <Popover trigger="click" style="width: 60%;">
         <template #content>
           <ColorPicker
@@ -49,7 +49,7 @@
       </Popover>
     </div>
     <div class="row">
-      <div style="width: 40%;">网格颜色：</div>
+      <div style="width: 40%;">Цвет сетки:</div>
       <Popover trigger="click" style="width: 60%;">
         <template #content>
           <ColorPicker
@@ -62,7 +62,7 @@
     </div>
 
     <div class="row">
-      <div style="width: 40%;">主题配色：</div>
+      <div style="width: 40%;">Цвет темы:</div>
       <Popover trigger="click" v-model:value="themesVisible" style="width: 60%;">
         <template #content>
           <div class="themes">

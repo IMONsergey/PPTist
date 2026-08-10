@@ -113,9 +113,9 @@
     <Divider />
 
     <div class="row">
-      <div style="width: 40%;">操作行：</div>
+      <div style="width: 40%;">Линия действий:</div>
       <ButtonGroup style="width: 60%;" passive>
-        <Button first style="flex: 1;" @click="emitTableCommand('insert-row', 'after')">添加行</Button>
+        <Button first style="flex: 1;" @click="emitTableCommand('insert-row', 'after')">Добавить строку</Button>
         <Popover trigger="click">
           <template #content>
             <PopoverMenuItem center @click="emitTableCommand('insert-row', 'before')">Добавить сверху</PopoverMenuItem>
@@ -127,9 +127,9 @@
       </ButtonGroup>
     </div>
     <div class="row">
-      <div style="width: 40%;">操作列：</div>
+      <div style="width: 40%;">Столбец операций:</div>
       <ButtonGroup style="width: 60%;" passive>
-        <Button first style="flex: 1;" @click="emitTableCommand('insert-col', 'after')">添加列</Button>
+        <Button first style="flex: 1;" @click="emitTableCommand('insert-col', 'after')">Добавить столбец</Button>
         <Popover trigger="click">
           <template #content>
             <PopoverMenuItem center @click="emitTableCommand('insert-col', 'before')">Добавить слева</PopoverMenuItem>
@@ -144,7 +144,7 @@
     <Divider />
 
     <div class="row theme-switch">
-      <div style="width: 40%;">启用主题表格：</div>
+      <div style="width: 40%;">Включить таблицу тем:</div>
       <div class="switch-wrapper" style="width: 60%;">
         <Switch
           :value="hasTheme"

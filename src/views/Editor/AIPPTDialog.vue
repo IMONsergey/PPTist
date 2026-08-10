@@ -25,7 +25,7 @@
       </div>
       <div class="configs">
         <div class="config-item">
-          <div class="label">语言：</div>
+          <div class="label">Язык:</div>
           <Select
             class="config-content"
             style="width: 80px;"
@@ -38,7 +38,7 @@
           />
         </div>
         <div class="config-item">
-          <div class="label">风格：</div>
+          <div class="label">Стиль:</div>
           <Select
             class="config-content"
             style="width: 80px;"
@@ -53,7 +53,7 @@
           />
         </div>
         <div class="config-item">
-          <div class="label">模型：</div>
+          <div class="label">Модель:</div>
           <Select
             class="config-content"
             style="width: 190px;"
@@ -66,7 +66,7 @@
           />
         </div>
         <div class="config-item">
-          <div class="label">配图：</div>
+          <div class="label">Изображения:</div>
           <Select
             class="config-content"
             style="width: 100px;"
@@ -82,7 +82,7 @@
       </div>
       <div class="configs" v-if="!isEmptySlide">
         <div class="config-item">
-          <Checkbox v-model:value="overwrite">覆盖已有幻灯片</Checkbox>
+          <Checkbox v-model:value="overwrite">Заменить существующие слайды</Checkbox>
         </div>
       </div>
     </template>
@@ -92,8 +92,8 @@
          <OutlineEditor v-model:value="outline" />
        </div>
       <div class="btns" v-if="!outlineCreating">
-        <Button class="btn" type="primary" @click="step = 'template'">选择模板</Button>
-        <Button class="btn" @click="outline = ''; step = 'setup'">返回重新生成</Button>
+        <Button class="btn" type="primary" @click="step = 'template'">Выбрать шаблон</Button>
+        <Button class="btn" @click="outline = ''; step = 'setup'">Назад к генерации</Button>
       </div>
     </div>
     <div class="select-template" v-if="step === 'template'">
@@ -108,8 +108,8 @@
         </div>
       </div>
       <div class="btns">
-        <Button class="btn" type="primary" @click="createPPT()">生成</Button>
-        <Button class="btn" @click="step = 'outline'">返回大纲</Button>
+        <Button class="btn" type="primary" @click="createPPT()">Создать</Button>
+        <Button class="btn" @click="step = 'outline'">Назад к структуре</Button>
       </div>
     </div>
 

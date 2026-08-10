@@ -6,7 +6,7 @@
       </template>
       <button class="toolbar-btn">
         <i-icon-park-outline:fill class="icon" />
-        <span>填充</span>
+        <span>Заливка</span>
       </button>
     </Popover>
     <BorderPanel />

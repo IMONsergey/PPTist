@@ -62,7 +62,7 @@
       </SelectCustom>
     </div>
     <div class="row">
-      <div style="width: 40%;">线条颜色：</div>
+      <div style="width: 40%;">Цвет линии:</div>
       <Popover trigger="click" style="width: 60%;">
         <template #content>
           <ColorPicker
@@ -74,7 +74,7 @@
       </Popover>
     </div>
     <div class="row">
-      <div style="width: 40%;">线条宽度：</div>
+      <div style="width: 40%;">Ширина линии:</div>
       <NumberInput
         :value="handleLineElement.width"
         @update:value="value => updateLine({ width: value })"
@@ -83,7 +83,7 @@
     </div>
 
     <div class="row">
-      <div style="width: 40%;">起点样式：</div>
+      <div style="width: 40%;">Начальный стиль:</div>
       <SelectCustom style="width: 60%;">
         <template #options>
           <div class="option" v-for="item in lineMarkerOptions" :key="item" @click="updateLine({ points: [item, handleLineElement.points[1]] })">
@@ -96,7 +96,7 @@
       </SelectCustom>
     </div>
     <div class="row">
-      <div style="width: 40%;">终点样式：</div>
+      <div style="width: 40%;">Стиль конечной точки:</div>
       <SelectCustom style="width: 60%;">
         <template #options>
           <div class="option" v-for="item in lineMarkerOptions" :key="item" @click="updateLine({ points: [handleLineElement.points[0], item] })">
@@ -110,7 +110,7 @@
     </div>
 
     <div class="row" v-if="handleLineElement.broken2">
-      <div style="width: 40%;">线条方向：</div>
+      <div style="width: 40%;">Направление линии:</div>
       <Select
         style="width: 60%;"
         :value="handleLineElement.broken2Direction || 'auto'"
@@ -122,7 +122,7 @@
     <Divider />
 
     <div class="row">
-      <Button style="flex: 1;" @click="updateLine({ start: handleLineElement.end, end: handleLineElement.start })"><i-icon-park-outline:switch /> 交换方向</Button>
+      <Button style="flex: 1;" @click="updateLine({ start: handleLineElement.end, end: handleLineElement.start })"><i-icon-park-outline:switch /> Поменять направление</Button>
     </div>
 
     <Divider />

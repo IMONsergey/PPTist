@@ -29,8 +29,8 @@
       </Input>
       <Input class="input" v-model:value="replaceWord" placeholder="Введите текст для замены" @enter="replace()" v-if="type === 'replace'"></Input>
       <div class="footer" v-if="type === 'replace'">
-        <Button :disabled="!searchWord" style="margin-left: 5px;" @click="replace()">替换</Button>
-        <Button :disabled="!searchWord" type="primary" style="margin-left: 5px;" @click="replaceAll()">全部替换</Button>
+        <Button :disabled="!searchWord" style="margin-left: 5px;" @click="replace()">заменять</Button>
+        <Button :disabled="!searchWord" type="primary" style="margin-left: 5px;" @click="replaceAll()">Заменить все</Button>
       </div>
     </div>
   </MoveablePanel>

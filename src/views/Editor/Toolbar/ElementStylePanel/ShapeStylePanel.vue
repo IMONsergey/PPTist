@@ -73,7 +73,7 @@
         </Popover>
       </div>
       <div class="row" v-if="gradient.type === 'linear'">
-        <div style="width: 40%;">渐变角度：</div>
+        <div style="width: 40%;">Угол градиента:</div>
         <Slider
           style="width: 60%;"
           :min="0"
@@ -120,7 +120,7 @@
         </Select>
       </div>
       <div class="row">
-        <div style="width: 40%;">段间距：</div>
+        <div style="width: 40%;">Расстояние между абзацами:</div>
         <Select style="width: 60%;"
           :value="paragraphSpace || 0"
           @update:value="value => updateTextProps({ paragraphSpace: value as number })"
@@ -134,7 +134,7 @@
         </Select>
       </div>
       <div class="row">
-        <div style="width: 40%;">字间距：</div>
+        <div style="width: 40%;">Расстояние между словами:</div>
         <Select style="width: 60%;"
           :value="wordSpace || 0"
           @update:value="value => updateTextProps({ wordSpace: value as number })"
@@ -223,7 +223,7 @@
         :checked="!!shapeFormatPainter"
         @click="toggleShapeFormatPainter()"
         @dblclick="toggleShapeFormatPainter(true)"
-      ><i-icon-park-outline:format-brush /> 形状格式刷</CheckboxButton>
+      ><i-icon-park-outline:format-brush /> Художник формата формы</CheckboxButton>
     </div>
   </div>
 </template>

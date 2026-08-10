@@ -65,8 +65,8 @@
       </template>
     </div>
     <div class="btns">
-      <Button class="btn export" type="primary" @click="execExport()"><i-icon-park-outline:download /> 导出 PPTX</Button>
-      <Button class="btn close" @click="emit('close')">关闭</Button>
+      <Button class="btn export" type="primary" @click="execExport()"><i-icon-park-outline:download /> Экспортировать PPTX</Button>
+      <Button class="btn close" @click="emit('close')">закрытие</Button>
     </div>
 
     <FullscreenSpin :loading="exporting" tip="Экспорт..." />

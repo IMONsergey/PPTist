@@ -24,7 +24,7 @@
     </div>
 
     <div class="row switch-row">
-      <div style="width: 40%;">循环播放：</div>
+      <div style="width: 40%;">Воспроизведение в цикле:</div>
       <div class="switch-wrapper" style="width: 60%;">
         <Switch
           :value="handleAudioElement.loop"

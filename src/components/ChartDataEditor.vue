@@ -78,12 +78,12 @@
               @click="chartType = item; chartTypeSelectVisible = false"
             >{{CHART_TYPE_MAP[item]}}</PopoverMenuItem>
           </template>
-          <span class="change">点击更换</span>
+          <span class="change">Нажмите, чтобы заменить</span>
         </Popover>
       </div>
       <div class="right">
-        <Button class="btn" @click="closeEditor()">取消</Button>
-        <Button class="btn" @click="clear()">清空数据</Button>
+        <Button class="btn" @click="closeEditor()">Отмена</Button>
+        <Button class="btn" @click="clear()">Очистить данные</Button>
         <Button type="primary" class="btn" @click="getTableData()">Подтвердить</Button>
       </div>
     </div>

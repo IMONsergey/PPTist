@@ -81,7 +81,7 @@
         </div>
       </template>
     </div>
-    <div class="empty" v-if="!elements.length">本页无内容</div>
+    <div class="empty" v-if="!elements.length">На этой странице нет контента</div>
   </MoveablePanel>
 </template>
 

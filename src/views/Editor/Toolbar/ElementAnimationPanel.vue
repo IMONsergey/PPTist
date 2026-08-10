@@ -48,7 +48,7 @@
       </Popover>
     </div>
 
-    <div class="tip" v-else><i-icon-park-outline:click style="margin-right: 5px;" /> 选中画布中的元素添加动画</div>
+    <div class="tip" v-else><i-icon-park-outline:click style="margin-right: 5px;" /> Добавить анимацию к выбранным элементам на холсте</div>
 
     <Divider />
 

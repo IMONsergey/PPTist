@@ -91,7 +91,7 @@
         </div>
         <div class="loop" @click="toggleLoop()">
           <div class="icon loop-icon" :class="{ 'active': loop }">
-            <span class="icon-content">循环{{loop ? 'Вкл.' : 'Выкл.'}}</span>
+            <span class="icon-content">Цикл{{loop ? 'Вкл.' : 'Выкл.'}}</span>
           </div>
         </div>
       </div>

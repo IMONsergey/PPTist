@@ -86,17 +86,17 @@
             :value="activeSegmentType"
             @update:value="updateSegmentType"
           >
-            <RadioButton value="L" :disabled="activePointIndex === 0">直线</RadioButton>
-            <RadioButton value="Q" :disabled="activePointIndex === 0">曲线Q</RadioButton>
-            <RadioButton value="C" :disabled="activePointIndex === 0">曲线C</RadioButton>
-            <RadioButton value="A" :disabled="activePointIndex === 0">圆弧</RadioButton>
+            <RadioButton value="L" :disabled="activePointIndex === 0">Прямая</RadioButton>
+            <RadioButton value="Q" :disabled="activePointIndex === 0">Кривая Q</RadioButton>
+            <RadioButton value="C" :disabled="activePointIndex === 0">Кривая C</RadioButton>
+            <RadioButton value="A" :disabled="activePointIndex === 0">Дуга</RadioButton>
           </RadioGroup>
         </div>
 
         <Divider :margin="20" />
 
         <div class="panel-section">
-          <div class="section-title">坐标：</div>
+          <div class="section-title">координировать:</div>
           <div class="input-row">
             <NumberInput
               class="number-input"
@@ -240,8 +240,8 @@
               </NumberInput>
             </div>
             <div class="checkbox-row">
-              <Checkbox :value="activePoint.a.laf === 1" @update:value="value => updateArcParam('laf', value ? 1 : 0)">大弧</Checkbox>
-              <Checkbox :value="activePoint.a.sf === 1" @update:value="value => updateArcParam('sf', value ? 1 : 0)">顺时针</Checkbox>
+              <Checkbox :value="activePoint.a.laf === 1" @update:value="value => updateArcParam('laf', value ? 1 : 0)">большая дуга</Checkbox>
+              <Checkbox :value="activePoint.a.sf === 1" @update:value="value => updateArcParam('sf', value ? 1 : 0)">по часовой стрелке</Checkbox>
             </div>
           </div>
         </template>
@@ -249,7 +249,7 @@
         <Divider :margin="20" />
 
         <div class="panel-section">
-          <Checkbox :value="closePath" @update:value="value => closePath = value">闭合路径</Checkbox>
+          <Checkbox :value="closePath" @update:value="value => closePath = value">закрытый путь</Checkbox>
         </div>
 
         <Divider :margin="20" />
@@ -261,9 +261,9 @@
     </div>
 
     <div class="footer">
-      <div class="tooltips">Tips: 双击追加直线，右键追加线段或删除点；拖动端点和控制点调整路径。</div>
+      <div class="tooltips">Советы: дважды щелкните, чтобы добавить прямую линию, щелкните правой кнопкой мыши, чтобы добавить сегмент линии или удалить точку; перетащите конечные точки и контрольные точки, чтобы настроить путь.</div>
       <div class="footer-actions">
-        <Button @click="emit('close')">关闭</Button>
+        <Button @click="emit('close')">закрытие</Button>
         <Button type="primary" :disabled="!canInsert" @click="insert()">Подтвердить</Button>
       </div>
     </div>

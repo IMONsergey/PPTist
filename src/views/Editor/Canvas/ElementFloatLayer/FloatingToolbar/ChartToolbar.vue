@@ -17,7 +17,7 @@
       </template>
       <button class="toolbar-btn">
         <i-icon-park-outline:chart-histogram class="icon" />
-        <span>类型</span>
+        <span>Тип</span>
       </button>
     </Popover>
   </div>

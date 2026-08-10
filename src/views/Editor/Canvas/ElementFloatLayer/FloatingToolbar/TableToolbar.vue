@@ -6,7 +6,7 @@
       </template>
       <button class="toolbar-btn">
         <i-icon-park-outline:fill class="icon" />
-        <span>填充</span>
+        <span>Заливка</span>
       </button>
     </Popover>
     <BorderPanel />
@@ -24,7 +24,7 @@
       </template>
       <button class="toolbar-btn">
         <i-icon-park-outline:add class="icon" />
-        <span>添加</span>
+        <span>Добавить</span>
       </button>
     </Popover>
     <Popover trigger="click">
@@ -36,7 +36,7 @@
       </template>
       <button class="toolbar-btn">
         <i-icon-park-outline:reduce class="icon" />
-        <span>删除</span>
+        <span>Удалить</span>
       </button>
     </Popover>
   </div>

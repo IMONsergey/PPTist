@@ -26,7 +26,7 @@
           <Button><i-icon-park-outline:upload /> 上传本地音频</Button>
         </FileInput>
         <div class="group">
-          <Button @click="emit('close')" style="margin-right: 10px;">取消</Button>
+          <Button @click="emit('close')" style="margin-right: 10px;">Отмена</Button>
           <Button type="primary" @click="insertAudio()">Подтвердить</Button>
         </div>
       </div>
