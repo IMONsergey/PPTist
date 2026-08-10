@@ -23,7 +23,7 @@ jobs:
       - name: Fetch maintained PPTist i18n donor
         run: git clone --depth 1 https://github.com/robbin2012/PPTist-i18n.git /tmp/pptist-i18n
 
-      - name: Apply safe donor Chinese-to-Russian translations
+      - name: Apply exact donor translations without substring replacement
         shell: bash
         run: |
           python - <<'PY'
@@ -32,6 +32,7 @@ jobs:
 
           donor = Path('/tmp/pptist-i18n/src/locales')
           zh = json.loads((donor / 'zh-CN.json').read_text(encoding='utf-8'))
+          en = json.loads((donor / 'en-US.json').read_text(encoding='utf-8'))
           ru = json.loads((donor / 'ru-RU.json').read_text(encoding='utf-8'))
 
           def flatten(value, prefix=''):
@@ -44,17 +45,80 @@ jobs:
                   out[prefix] = value
               return out
 
-          zhf, ruf = flatten(zh), flatten(ru)
+          zhf, enf, ruf = flatten(zh), flatten(en), flatten(ru)
           han = re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff]')
+          cyr = re.compile(r'[А-Яа-яЁё]')
 
-          # Exact Chinese UI phrases from the maintained i18n donor. Chinese source strings
-          # are safe to replace phrase-first: unlike English words such as "Edit", they do
-          # not overlap Vue component names, JS identifiers or HTML tag names.
-          pairs = {}
-          for key, source in zhf.items():
-              target = ruf.get(key)
-              if isinstance(source, str) and isinstance(target, str) and source != target and han.search(source):
-                  pairs[source] = target
+          zh_pairs = {}
+          en_pairs = {}
+          for key, target in ruf.items():
+              if not isinstance(target, str) or not target:
+                  continue
+              source_zh = zhf.get(key)
+              if isinstance(source_zh, str) and source_zh != target and han.search(source_zh):
+                  zh_pairs[source_zh] = target
+              source_en = enf.get(key)
+              if isinstance(source_en, str) and source_en != target and cyr.search(target) and len(source_en.strip()) >= 2:
+                  en_pairs[source_en] = target
+
+          quote_patterns = [
+              ('\'', re.compile(r"'([^'\\n]*)'")),
+              ('"', re.compile(r'"([^"\\n]*)"')),
+              ('`', re.compile(r'`([^`\\n]*)`')),
+          ]
+
+          def replace_exact_quoted(text, mapping):
+              hits = 0
+              for quote, rx in quote_patterns:
+                  def repl(m):
+                      nonlocal hits
+                      raw = m.group(1)
+                      lead = raw[:len(raw) - len(raw.lstrip())]
+                      trail = raw[len(raw.rstrip()):]
+                      core = raw.strip()
+                      target = mapping.get(core)
+                      if target is None:
+                          return m.group(0)
+                      # Skip the extremely rare translation that would require changing
+                      # quote syntax; it will be surfaced by the residual audit instead.
+                      if quote in target or '\\' in target:
+                          return m.group(0)
+                      hits += 1
+                      return quote + lead + target + trail + quote
+                  text = rx.sub(repl, text)
+              return text, hits
+
+          text_node_rx = re.compile(r'>([^<>\n]+)<')
+          visible_attr_rx = re.compile(
+              r'(?P<name>\b(?:title|placeholder|aria-label|alt|label|tip))(?P<sep>\s*=\s*)(?P<q>["\'])(?P<value>[^"\']*)(?P=q)',
+              re.I,
+          )
+
+          def replace_template_visible_english(template):
+              hits = 0
+              def text_repl(m):
+                  nonlocal hits
+                  raw = m.group(1)
+                  core = raw.strip()
+                  target = en_pairs.get(core)
+                  if target is None:
+                      return m.group(0)
+                  lead = raw[:len(raw) - len(raw.lstrip())]
+                  trail = raw[len(raw.rstrip()):]
+                  hits += 1
+                  return '>' + lead + target + trail + '<'
+              template = text_node_rx.sub(text_repl, template)
+
+              def attr_repl(m):
+                  nonlocal hits
+                  value = m.group('value').strip()
+                  target = en_pairs.get(value)
+                  if target is None or m.group('q') in target:
+                      return m.group(0)
+                  hits += 1
+                  return f"{m.group('name')}{m.group('sep')}{m.group('q')}{target}{m.group('q')}"
+              template = visible_attr_rx.sub(attr_repl, template)
+              return template, hits
 
           exts = {'.vue', '.ts', '.tsx', '.js', '.jsx', '.html'}
           files = [p for p in Path('src').rglob('*') if p.is_file() and p.suffix in exts]
@@ -62,36 +126,70 @@ jobs:
 
           changed = []
           zh_hits = 0
+          en_hits = 0
           for path in sorted(set(files)):
               text = path.read_text(encoding='utf-8')
               original = text
-              for source, target in sorted(pairs.items(), key=lambda kv: len(kv[0]), reverse=True):
-                  count = text.count(source)
-                  if count:
-                      text = text.replace(source, target)
-                      zh_hits += count
+
+              # Chinese: translate only complete string literal values.
+              text, hits = replace_exact_quoted(text, zh_pairs)
+              zh_hits += hits
+
+              # Vue text nodes containing nothing but one complete donor phrase.
+              if path.suffix == '.vue':
+                  def zh_text_repl(m):
+                      nonlocal_placeholder = None
+                      raw = m.group(1)
+                      core = raw.strip()
+                      target = zh_pairs.get(core)
+                      if target is None:
+                          return m.group(0)
+                      lead = raw[:len(raw) - len(raw.lstrip())]
+                      trail = raw[len(raw.rstrip()):]
+                      return '>' + lead + target + trail + '<'
+                  before = text
+                  text = text_node_rx.sub(zh_text_repl, text)
+                  # Count isn't critical for correctness; quoted hits remain exact.
+                  if text != before:
+                      zh_hits += 1
+
+                  # English donor strings are much more collision-prone. Restrict them to
+                  # plain template text nodes and explicitly user-visible attributes only.
+                  m = re.search(r'(<template\b[^>]*>)(.*?)(</template>)', text, flags=re.S)
+                  if m:
+                      translated, hits = replace_template_visible_english(m.group(2))
+                      en_hits += hits
+                      text = text[:m.start(2)] + translated + text[m.end(2):]
+
               if text != original:
                   path.write_text(text, encoding='utf-8')
                   changed.append(str(path))
 
+          # Browser-visible shell strings that are not part of Vue templates.
           index = Path('index.html')
           if index.exists():
               text = index.read_text(encoding='utf-8')
-              if '<html lang=' in text:
-                  text = re.sub(r'<html([^>]*)\blang=["\'][^"\']*["\']', r'<html\1lang="ru"', text, count=1)
-              else:
-                  text = text.replace('<html', '<html lang="ru"', 1)
+              text = re.sub(r'<html([^>]*)\blang=["\'][^"\']*["\']', r'<html\1lang="ru"', text, count=1)
+              text = re.sub(
+                  r'<meta name="description" content="[^"]*"\s*/?>',
+                  '<meta name="description" content="PPTist — браузерный редактор презентаций с импортом, редактированием, показом и экспортом PPT." />',
+                  text,
+                  count=1,
+              )
               text = re.sub(r'<title>.*?</title>', '<title>PPTist — редактор презентаций</title>', text, flags=re.S)
+              text = text.replace('正在加载中，请稍等 ...', 'Загрузка, пожалуйста, подождите ...')
               index.write_text(text, encoding='utf-8')
 
           Path('.localization').mkdir(exist_ok=True)
           report = {
               'donor': 'robbin2012/PPTist-i18n',
-              'zh_ru_dictionary_entries': len(pairs),
-              'chinese_replacements': zh_hits,
+              'strategy': 'exact string literals + exact template text + visible English attrs',
+              'zh_ru_dictionary_entries': len(zh_pairs),
+              'en_ru_dictionary_entries': len(en_pairs),
+              'exact_chinese_hits': zh_hits,
+              'exact_english_template_hits': en_hits,
               'files_changed': len(changed),
               'changed_files': changed,
-              'english_strategy': 'deferred to context-safe second pass',
           }
           Path('.localization/russianization-pass.json').write_text(
               json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8'
@@ -99,7 +197,7 @@ jobs:
           print(json.dumps(report, ensure_ascii=False, indent=2))
           PY
 
-      - name: Re-audit residual non-Russian UI strings
+      - name: Re-audit residual visible strings
         shell: bash
         run: |
           python - <<'PY'
@@ -109,16 +207,18 @@ jobs:
           exts = {'.vue', '.ts', '.tsx', '.js', '.jsx', '.html'}
           files = [p for p in Path('src').rglob('*') if p.is_file() and p.suffix in exts]
           if Path('index.html').exists(): files.append(Path('index.html'))
+
           han = re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff]')
           quoted = re.compile(r'''(?P<q>["'`])(?P<s>[^"'`\n]*[\u3400-\u4dbf\u4e00-\u9fff][^"'`\n]*)(?P=q)''')
           textnode = re.compile(r'>([^<>]*[\u3400-\u4dbf\u4e00-\u9fff][^<>]*)<')
-          english_attr = re.compile(r'''(?:placeholder|title|aria-label|label)\s*=\s*["']([^"']*[A-Za-z][^"']*)["']''', re.I)
-          english_text = re.compile(r'>(\s*[A-Za-z][A-Za-z0-9 /+&()_.:,!?#-]{2,}\s*)<')
+          visible_attr = re.compile(r'''(?:title|placeholder|aria-label|alt|label|tip)\s*=\s*["']([^"']+)["']''', re.I)
+          english_text = re.compile(r'>\s*([A-Za-z][A-Za-z0-9 /+&()_.:,!?#-]{2,})\s*<')
 
-          residual = []
-          segments = set()
-          ui_likely = []
+          residual_literals = []
+          template_han = []
           english_candidates = []
+          all_han_lines = []
+
           for path in sorted(set(files)):
               content = path.read_text(encoding='utf-8')
               in_template = False
@@ -126,31 +226,44 @@ jobs:
                   if '<template' in line: in_template = True
                   if han.search(line):
                       stripped = line.strip()
-                      comment = stripped.startswith('//') or stripped.startswith('/*') or stripped.startswith('*') or stripped.startswith('<!--')
-                      item = {'file': str(path), 'line': lineno, 'comment': comment, 'template': in_template, 'text': stripped}
-                      residual.append(item)
-                      if in_template and not comment: ui_likely.append(item)
-                      for m in quoted.finditer(line): segments.add(m.group('s').strip())
-                      for m in textnode.finditer(line): segments.add(re.sub(r'\s+', ' ', m.group(1)).strip())
+                      is_comment = stripped.startswith('//') or stripped.startswith('/*') or stripped.startswith('*') or stripped.startswith('<!--')
+                      all_han_lines.append({'file': str(path), 'line': lineno, 'comment': is_comment, 'text': stripped})
+                      for m in quoted.finditer(line):
+                          residual_literals.append({'file': str(path), 'line': lineno, 'text': m.group('s').strip()})
+                      if in_template and not is_comment:
+                          for m in textnode.finditer(line):
+                              template_han.append({'file': str(path), 'line': lineno, 'text': re.sub(r'\s+', ' ', m.group(1)).strip()})
                   if in_template:
-                      for rx in (english_attr, english_text):
-                          for m in rx.finditer(line):
-                              value = re.sub(r'\s+', ' ', m.group(1)).strip()
-                              if value:
-                                  english_candidates.append({'file': str(path), 'line': lineno, 'text': value})
+                      for m in visible_attr.finditer(line):
+                          value = m.group(1).strip()
+                          if re.search(r'[A-Za-z]', value):
+                              english_candidates.append({'file': str(path), 'line': lineno, 'kind': 'attr', 'text': value})
+                      for m in english_text.finditer(line):
+                          english_candidates.append({'file': str(path), 'line': lineno, 'kind': 'text', 'text': m.group(1).strip()})
                   if '</template>' in line: in_template = False
 
+          def dedupe(items):
+              seen = set(); out = []
+              for item in items:
+                  key = (item['file'], item['line'], item['text'])
+                  if key not in seen and item['text']:
+                      seen.add(key); out.append(item)
+              return out
+
+          residual_literals = dedupe(residual_literals)
+          template_han = dedupe(template_han)
+          english_candidates = dedupe(english_candidates)
           payload = {
               'stats': {
-                  'residual_han_lines': len(residual),
-                  'residual_unique_segments': len([s for s in segments if s]),
-                  'template_noncomment_han_lines': len(ui_likely),
-                  'english_template_candidates': len(english_candidates),
+                  'han_lines_including_comments': len(all_han_lines),
+                  'residual_chinese_string_literals': len(residual_literals),
+                  'residual_chinese_template_text_nodes': len(template_han),
+                  'english_visible_candidates': len(english_candidates),
               },
-              'template_ui_likely': ui_likely,
-              'segments': sorted((s for s in segments if s), key=lambda s: (len(s), s)),
-              'english_template_candidates': english_candidates,
-              'all_residual_lines': residual,
+              'chinese_string_literals': residual_literals,
+              'chinese_template_text_nodes': template_han,
+              'english_visible_candidates': english_candidates,
+              'all_han_lines': all_han_lines,
           }
           Path('.localization/residual-after-donor.json').write_text(
               json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8'
@@ -172,7 +285,7 @@ jobs:
       - name: Production build
         run: npm run build-only -- --base=/PPTist/
 
-      - name: Commit Russianization pass
+      - name: Commit exact Russianization pass
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
@@ -182,5 +295,5 @@ jobs:
             echo 'No localization changes generated'
             exit 0
           fi
-          git commit -m "feat: Russianize PPTist interface from maintained i18n donor"
+          git commit -m "feat: Russianize PPTist UI with exact-string translations"
           git push origin HEAD:${{ github.head_ref }}
