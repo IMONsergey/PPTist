@@ -62,7 +62,7 @@
       ></div>
     </div>
 
-    <div class="recent-colors-title" v-if="recentColors.length">最近使用：</div>
+    <div class="recent-colors-title" v-if="recentColors.length">Недавно использовалось:</div>
     <div class="picker-presets">
       <div
         class="picker-presets-color alpha"
@@ -217,7 +217,7 @@ const openEyeDropper = () => {
 
 // 原生取色吸管
 const browserEyeDropper = () => {
-  message.success('按 ESC 键关闭取色吸管', { duration: 0 })
+  message.success('Нажмите ESC, чтобы закрыть пипетку', { duration: 0 })
 
   // eslint-disable-next-line
   const eyeDropper = new (window as any).EyeDropper()
@@ -292,7 +292,7 @@ const customEyeDropper = () => {
         updateRecentColorsCache()
       }
       document.body.removeChild(maskRef)
-      
+
       canvasRef.removeEventListener('mousemove', handleMousemove)
       canvasRef.removeEventListener('mouseleave', handleMouseleave)
       window.removeEventListener('mousedown', handleMousedown)
@@ -302,7 +302,7 @@ const customEyeDropper = () => {
     canvasRef.addEventListener('mouseleave', handleMouseleave)
     window.addEventListener('mousedown', handleMousedown)
   }).catch(() => {
-    message.error('取色吸管初始化失败')
+    message.error('Не удалось запустить пипетку')
     document.body.removeChild(maskRef)
   })
 }

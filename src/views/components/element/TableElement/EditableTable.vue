@@ -1,18 +1,18 @@
 <template>
-  <div 
+  <div
     class="editable-table"
     :style="{ width: totalWidth + 'px' }"
   >
     <div class="handler" v-if="editable">
-      <div 
-        class="drag-line" 
-        v-for="(pos, index) in dragLinePosition" 
+      <div
+        class="drag-line"
+        v-for="(pos, index) in dragLinePosition"
         :key="index"
         :style="{ left: pos + 'px' }"
         @mousedown="$event => handleMousedownColHandler($event, index)"
       ></div>
     </div>
-    <table 
+    <table
       :class="{
         'theme': theme,
         'row-header': theme?.rowHeader,
@@ -27,7 +27,7 @@
       </colgroup>
       <tbody>
         <tr v-for="(rowCells, rowIndex) in tableCells" :key="rowIndex" :style="{ height: cellMinHeight + 'px' }">
-          <td 
+          <td
             class="cell"
             :class="{
               'selected': selectedCells.includes(`${rowIndex}_${colIndex}`) && selectedCells.length > 1,
@@ -44,9 +44,9 @@
             @mouseenter="handleCellMouseenter(rowIndex, colIndex)"
             v-contextmenu="(el: HTMLElement) => contextmenus(el)"
           >
-            <CustomTextarea 
+            <CustomTextarea
               v-if="activedCell === `${rowIndex}_${colIndex}`"
-              class="cell-text" 
+              class="cell-text"
               :class="{ 'active': activedCell === `${rowIndex}_${colIndex}` }"
               :style="getTextStyle(cellMinHeight, cell.style)"
               :value="cell.text"
@@ -98,7 +98,7 @@ const emit = defineEmits<{
 }>()
 
 const { canvasScale } = storeToRefs(useMainStore())
-    
+
 const isStartSelect = ref(false)
 const startCell = ref<number[]>([])
 const endCell = ref<number[]>([])
@@ -245,7 +245,7 @@ const deleteRow = (rowIndex: number) => {
   for (let i = 0; i < targetCells.length; i++) {
     if (isHideCell(rowIndex, i)) hideCellsPos.push(i)
   }
-  
+
   for (const pos of hideCellsPos) {
     for (let i = rowIndex; i >= 0; i--) {
       if (!isHideCell(i, pos)) {
@@ -323,7 +323,7 @@ const insertCol = (colIndex: number) => {
 const fillTable = (rowCount: number, colCount: number) => {
   let _tableCells: TableCell[][] = JSON.parse(JSON.stringify(tableCells.value))
   const defaultCell = { colspan: 1, rowspan: 1, text: '' }
-  
+
   if (rowCount) {
     const newRows = []
     for (let i = 0; i < rowCount; i++) {
@@ -368,7 +368,7 @@ const mergeCells = () => {
   const maxY = Math.max(startY, endY)
 
   const _tableCells: TableCell[][] = JSON.parse(JSON.stringify(tableCells.value))
-  
+
   _tableCells[minX][minY].rowspan = maxX - minX + 1
   _tableCells[minX][minY].colspan = maxY - minY + 1
 
@@ -398,7 +398,7 @@ const handleMousedownColHandler = (e: MouseEvent, colIndex: number) => {
 
   document.onmousemove = e => {
     if (!isMouseDown) return
-    
+
     const moveX = (e.pageX - startPageX) / canvasScale.value
     const width = originWidth + moveX < minWidth ? minWidth : Math.round(originWidth + moveX)
 
@@ -688,11 +688,11 @@ const execTableCommand = (payload: TableCommand) => {
   const { canDeleteRow, canDeleteCol } = checkCanDeleteRowOrCol()
 
   if (payload.command === 'delete-row') {
-    if (!canDeleteRow) return message.warning('表格至少保留一行')
+    if (!canDeleteRow) return message.warning('В таблице должна остаться хотя бы одна строка')
     return deleteRow(targetCell ? targetCell.rowIndex : tableCells.value.length - 1)
   }
   if (payload.command === 'delete-col') {
-    if (!canDeleteCol) return message.warning('表格至少保留一列')
+    if (!canDeleteCol) return message.warning('В таблице должен остаться хотя бы один столбец')
     const colCount = tableCells.value[0]?.length || 1
     return deleteCol(targetCell ? targetCell.colIndex : colCount - 1)
   }
@@ -733,51 +733,51 @@ const contextmenus = (el: HTMLElement): ContextmenuItem[] => {
 
   return [
     {
-      text: '插入列',
+      text: 'Вставить столбец',
       children: [
-        { text: '到左侧', handler: () => insertCol(colIndex) },
-        { text: '到右侧', handler: () => insertCol(colIndex + 1) },
+        { text: 'слева', handler: () => insertCol(colIndex) },
+        { text: 'вправо', handler: () => insertCol(colIndex + 1) },
       ],
     },
     {
-      text: '插入行',
+      text: 'Вставить строку',
       children: [
-        { text: '到上方', handler: () => insertRow(rowIndex) },
-        { text: '到下方', handler: () => insertRow(rowIndex + 1) },
+        { text: 'наверх', handler: () => insertRow(rowIndex) },
+        { text: 'Перейти в низ', handler: () => insertRow(rowIndex + 1) },
       ],
     },
     {
-      text: '删除列',
+      text: 'Удалить столбец',
       disable: !canDeleteCol,
       handler: () => deleteCol(colIndex),
     },
     {
-      text: '删除行',
+      text: 'Удалить строку',
       disable: !canDeleteRow,
       handler: () => deleteRow(rowIndex),
     },
     { divider: true },
     {
-      text: '合并单元格',
+      text: 'Объединить ячейки',
       disable: !canMerge,
       handler: mergeCells,
     },
     {
-      text: '取消合并单元格',
+      text: 'Разъединить ячейки',
       disable: !canSplit,
       handler: () => splitCells(rowIndex, colIndex),
     },
     { divider: true },
     {
-      text: '选中当前列',
+      text: 'Выбрать текущий столбец',
       handler: () => selectCol(colIndex),
     },
     {
-      text: '选中当前行',
+      text: 'Выбрать текущую строку',
       handler: () => selectRow(rowIndex),
     },
     {
-      text: '选中全部单元格',
+      text: 'Выбрать все ячейки',
       handler: selectAll,
     },
   ]

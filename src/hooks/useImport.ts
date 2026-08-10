@@ -355,7 +355,7 @@ export default () => {
         else addSlidesFromData(slides)
       }
       catch {
-        message.error('无法正确读取 / 解析该文件')
+        message.error('Не удалось прочитать или разобрать файл')
       }
     })
     reader.readAsText(file)
@@ -388,7 +388,7 @@ export default () => {
         else addSlidesFromData(slides)
       }
       catch {
-        message.error('无法正确读取 / 解析该文件')
+        message.error('Не удалось прочитать или разобрать файл')
       }
     })
     reader.readAsText(file)
@@ -396,46 +396,46 @@ export default () => {
 
   const rotateLine = (line: PPTLineElement, angleDeg: number) => {
     const { start, end } = line
-      
+
     const angleRad = angleDeg * Math.PI / 180
-    
+
     const midX = (start[0] + end[0]) / 2
     const midY = (start[1] + end[1]) / 2
-    
+
     const startTransX = start[0] - midX
     const startTransY = start[1] - midY
     const endTransX = end[0] - midX
     const endTransY = end[1] - midY
-    
+
     const cosA = Math.cos(angleRad)
     const sinA = Math.sin(angleRad)
-    
+
     const startRotX = startTransX * cosA - startTransY * sinA
     const startRotY = startTransX * sinA + startTransY * cosA
-    
+
     const endRotX = endTransX * cosA - endTransY * sinA
     const endRotY = endTransX * sinA + endTransY * cosA
-    
+
     const startNewX = startRotX + midX
     const startNewY = startRotY + midY
     const endNewX = endRotX + midX
     const endNewY = endRotY + midY
-    
+
     const beforeMinX = Math.min(start[0], end[0])
     const beforeMinY = Math.min(start[1], end[1])
-    
+
     const afterMinX = Math.min(startNewX, endNewX)
     const afterMinY = Math.min(startNewY, endNewY)
-    
+
     const startAdjustedX = startNewX - afterMinX
     const startAdjustedY = startNewY - afterMinY
     const endAdjustedX = endNewX - afterMinX
     const endAdjustedY = endNewY - afterMinY
-    
+
     const startAdjusted: [number, number] = [startAdjustedX, startAdjustedY]
     const endAdjusted: [number, number] = [endAdjustedX, endAdjustedY]
     const offset = [afterMinX - beforeMinX, afterMinY - beforeMinY]
-    
+
     return {
       start: startAdjusted,
       end: endAdjusted,
@@ -591,7 +591,7 @@ export default () => {
 
       if (axis === 'y') newElement.left = 2 * centerX - element.left - element.width
       if (axis === 'x') newElement.top = 2 * centerY - element.top - element.height
-  
+
       return newElement
     })
   }
@@ -648,7 +648,7 @@ export default () => {
   const importPPTXFile = (files: FileList | File[], options?: { cover?: boolean; fixedViewport?: boolean }) => {
     const defaultOptions = {
       cover: false,
-      fixedViewport: false, 
+      fixedViewport: false,
     }
     const { cover, fixedViewport } = { ...defaultOptions, ...options }
 
@@ -661,7 +661,7 @@ export default () => {
     for (const item of SHAPE_LIST) {
       shapeList.push(...item.children)
     }
-    
+
     const reader = new FileReader()
     reader.onload = async e => {
       let json = null
@@ -674,7 +674,7 @@ export default () => {
       }
       catch {
         exporting.value = false
-        message.error('无法正确读取 / 解析该文件')
+        message.error('Не удалось прочитать или разобрать файл')
         return
       }
 
@@ -685,7 +685,7 @@ export default () => {
       const height = json.size.height
 
       const aspectRatio = getAspectRatio(width, height)
-      
+
       if (fixedViewport) ratio = 1000 / width
       else slidesStore.setViewportSize(width * ratio)
 
@@ -758,7 +758,7 @@ export default () => {
             el.height = originHeight * ratio
             el.left = originLeft * ratio
             el.top = originTop * ratio
-  
+
             if (el.type === 'text') {
               const autoFitType = el.autoFit?.type
               const isSelfAdaptive = autoFitType === 'shape'
@@ -936,7 +936,7 @@ export default () => {
                 const fill = (!el.strokeOnly && el.fill?.type === 'color') ? el.fill.value : ''
 
                 const metrics = getParagraphMetrics(el.content, ratio)
-                
+
                 const element: PPTShapeElement = {
                   type: 'shape',
                   id: nanoid(10),
@@ -978,15 +978,15 @@ export default () => {
                     color: el.shadow.color,
                   }
                 }
-    
+
                 if (shape) {
                   element.path = shape.path
                   element.viewBox = shape.viewBox
-    
+
                   if (shape.pathFormula) {
                     element.pathFormula = shape.pathFormula
                     element.viewBox = [el.width, el.height]
-    
+
                     const pathFormula = SHAPE_PATH_FORMULAS[shape.pathFormula]
                     if ('editable' in pathFormula && pathFormula.editable) {
                       let keypointValues = pathFormula.defaultValue
@@ -1110,14 +1110,14 @@ export default () => {
                     element.viewBox = [maxY * originWidth / originHeight, maxY]
                   }
                 }
-    
+
                 if (element.path && element.viewBox[0] && element.viewBox[1]) slide.elements.push(element)
               }
             }
             else if (el.type === 'table') {
               const row = el.data.length
               const col = el.data[0].length
-  
+
               const style: TableCellStyle = {
                 fontname: theme.value.fontName,
                 color: theme.value.fontColor,
@@ -1167,7 +1167,7 @@ export default () => {
                 }
                 data.push(rowCells)
               }
-  
+
               const allWidth = el.colWidths.reduce((a, b) => a + b, 0)
               const colWidths: number[] = el.colWidths.map(item => item / allWidth)
 
@@ -1197,7 +1197,7 @@ export default () => {
               const borderWidth = border?.borderWidth || 0
               const borderStyle = border?.borderType || 'solid'
               const borderColor = border?.borderColor || '#eeece1'
-  
+
               slide.elements.push({
                 type: 'table',
                 id: nanoid(10),
@@ -1220,9 +1220,9 @@ export default () => {
               let labels: string[]
               let legends: string[]
               let series: number[][]
-  
+
               if (el.chartType === 'scatterChart' || el.chartType === 'bubbleChart') {
-                labels = el.data[0].map((item, index) => `坐标${index + 1}`)
+                labels = el.data[0].map((item, index) => `Координата ${index + 1}`)
                 legends = el.data.map((item, index) => {
                   if (index === 0) return 'X'
                   if (index === 1) return 'Y'
@@ -1238,7 +1238,7 @@ export default () => {
               }
 
               const options: ChartOptions = {}
-  
+
               let chartType: ChartType = 'bar'
 
               switch (el.chartType) {
@@ -1274,7 +1274,7 @@ export default () => {
                   break
                 default:
               }
-  
+
               slide.elements.push({
                 type: 'chart',
                 id: nanoid(10),

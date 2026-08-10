@@ -1,15 +1,15 @@
 <template>
   <div class="slide-design-panel">
-    <div class="title">背景填充</div>
+    <div class="title">Заливка фона</div>
     <div class="row">
-      <Select 
-        style="flex: 1;" 
-        :value="background.type" 
+      <Select
+        style="flex: 1;"
+        :value="background.type"
         @update:value="value => updateBackgroundType(value as 'gradient' | 'image' | 'solid')"
         :options="[
-          { label: '纯色填充', value: 'solid' },
-          { label: '图片填充', value: 'image' },
-          { label: '渐变填充', value: 'gradient' },
+          { label: 'Сплошная заливка', value: 'solid' },
+          { label: 'Заливка изображением', value: 'image' },
+          { label: 'Градиентная заливка', value: 'gradient' },
         ]"
       />
       <div style="width: 10px;"></div>
@@ -24,26 +24,26 @@
         <ColorButton :color="background.color || '#fff'" />
       </Popover>
 
-      <Select 
-        style="flex: 1;" 
-        :value="background.image?.size || 'cover'" 
+      <Select
+        style="flex: 1;"
+        :value="background.image?.size || 'cover'"
         @update:value="value => updateImageBackground({ size: value as SlideBackgroundImageSize })"
         v-else-if="background.type === 'image'"
         :options="[
-          { label: '缩放', value: 'contain' },
-          { label: '拼贴', value: 'repeat' },
-          { label: '缩放铺满', value: 'cover' },
+          { label: 'Масштабирование', value: 'contain' },
+          { label: 'Повторять', value: 'repeat' },
+          { label: 'Заполнить', value: 'cover' },
         ]"
       />
 
-      <Select 
-        style="flex: 1;" 
-        :value="background.gradient?.type || ''" 
+      <Select
+        style="flex: 1;"
+        :value="background.gradient?.type || ''"
         @update:value="value => updateGradientBackground({ type: value as GradientType })"
         v-else
         :options="[
-          { label: '线性渐变', value: 'linear' },
-          { label: '径向渐变', value: 'radial' },
+          { label: 'Линейный градиент', value: 'linear' },
+          { label: 'Радиальный градиент', value: 'radial' },
         ]"
       />
     </div>
@@ -68,7 +68,7 @@
         />
       </div>
       <div class="row">
-        <div style="width: 40%;">当前色块：</div>
+        <div style="width: 40%;">Текущий цветовой патч:</div>
         <Popover trigger="click" style="width: 60%;">
           <template #content>
             <ColorPicker
@@ -80,7 +80,7 @@
         </Popover>
       </div>
       <div class="row" v-if="background.gradient?.type === 'linear'">
-        <div style="width: 40%;">渐变角度：</div>
+        <div style="width: 40%;">Угол градиента:</div>
         <Slider
           :min="0"
           :max="360"
@@ -93,56 +93,56 @@
     </div>
 
     <div class="row">
-      <Button style="flex: 1;" @click="applyBackgroundAllSlide()"><i-icon-park-outline:check /> 应用背景到全部</Button>
+      <Button style="flex: 1;" @click="applyBackgroundAllSlide()"><i-icon-park-outline:check /> Применить фон ко всем</Button>
     </div>
 
     <Divider />
 
     <div class="row">
-      <Select 
-        style="width: 100%;" 
-        defaultLabel="自定义"
-        :value="viewportRatio" 
+      <Select
+        style="width: 100%;"
+        defaultLabel="Пользовательский"
+        :value="viewportRatio"
         @update:value="value => updateViewportRatio(value)"
         :options="[
-          { label: '宽屏 16 : 9', value: 0.5625 },
-          { label: '宽屏 16 : 10', value: 0.625 },
-          { label: '标准 4 : 3', value: 0.75 },
-          { label: '纸张 A3 / A4', value: 0.70710678 },
-          { label: '竖向 A3 / A4', value: 1.41421356 },
-          { label: '自定义', value: 'custom' },
+          { label: 'Широкий 16 : 9', value: 0.5625 },
+          { label: 'Широкий 16 : 10', value: 0.625 },
+          { label: 'Стандарт 4 : 3', value: 0.75 },
+          { label: 'Бумага A3 / A4', value: 0.70710678 },
+          { label: 'Портрет A3 / A4', value: 1.41421356 },
+          { label: 'Пользовательский', value: 'custom' },
         ]"
       />
     </div>
 
     <div class="row">
-      <div class="canvas-size">画布尺寸：{{  viewportSize  }} × {{ toFixed(viewportSize * viewportRatio) }}</div>
+      <div class="canvas-size">Размер холста: {{ viewportSize }} × {{ toFixed(viewportSize * viewportRatio) }}</div>
     </div>
 
     <Divider />
 
     <div class="title">
-      <span>全局主题</span>
+      <span>глобальная тема</span>
       <span class="more" @click="moreThemeConfigsVisible = !moreThemeConfigsVisible">
-        <span class="text">更多</span>
+        <span class="text">Более</span>
         <i-icon-park-outline:down v-if="moreThemeConfigsVisible" />
         <i-icon-park-outline:right v-else />
       </span>
     </div>
     <div class="row">
-      <div style="width: 40%;">字体：</div>
+      <div style="width: 40%;">:</div>
       <Select
         style="width: 60%;"
         :value="theme.fontName"
         search
-        searchLabel="搜索字体"
+        searchLabel="Поиск шрифтов"
         autofocus
         @update:value="value => updateTheme({ fontName: value as string })"
         :options="FONTS"
       />
     </div>
     <div class="row">
-      <div style="width: 40%;">字体颜色：</div>
+      <div style="width: 40%;">Цвет шрифта:</div>
       <Popover trigger="click" style="width: 60%;">
         <template #content>
           <ColorPicker
@@ -154,7 +154,7 @@
       </Popover>
     </div>
     <div class="row">
-      <div style="width: 40%;">背景颜色：</div>
+      <div style="width: 40%;">Цвет фона:</div>
       <Popover trigger="click" style="width: 60%;">
         <template #content>
           <ColorPicker
@@ -166,13 +166,13 @@
       </Popover>
     </div>
     <div class="row">
-      <div style="width: 40%;">主题色：</div>
+      <div style="width: 40%;">Цвет темы:</div>
       <ColorListButton style="width: 60%;" :colors="theme.themeColors" @click="themeColorsSettingVisible = true" />
     </div>
-    
+
     <template v-if="moreThemeConfigsVisible">
       <div class="row">
-        <div style="width: 40%;">边框样式：</div>
+        <div style="width: 40%;">Стиль обводки:</div>
         <SelectCustom style="width: 60%;">
           <template #options>
             <div class="option" v-for="item in lineStyleOptions" :key="item" @click="updateTheme({ outline: { ...theme.outline, style: item } })">
@@ -185,7 +185,7 @@
         </SelectCustom>
       </div>
       <div class="row">
-        <div style="width: 40%;">边框颜色：</div>
+        <div style="width: 40%;">Цвет обводки:</div>
         <Popover trigger="click" style="width: 60%;">
           <template #content>
             <ColorPicker
@@ -197,26 +197,26 @@
         </Popover>
       </div>
       <div class="row">
-        <div style="width: 40%;">边框粗细：</div>
-        <NumberInput 
-          :value="theme.outline.width || 0" 
-          @update:value="value => updateTheme({ outline: { ...theme.outline, width: value } })" 
-          style="width: 60%;" 
+        <div style="width: 40%;">Толщина обводки:</div>
+        <NumberInput
+          :value="theme.outline.width || 0"
+          @update:value="value => updateTheme({ outline: { ...theme.outline, width: value } })"
+          style="width: 60%;"
         />
       </div>
       <div class="row" style="height: 30px;">
-        <div style="width: 40%;">水平阴影：</div>
-        <Slider 
+        <div style="width: 40%;">Смещение тени по X:</div>
+        <Slider
           style="width: 60%;"
-          :min="-20" 
-          :max="20" 
-          :step="1" 
-          :value="theme.shadow.h" 
+          :min="-20"
+          :max="20"
+          :step="1"
+          :value="theme.shadow.h"
           @update:value="value => updateTheme({ shadow: { ...theme.shadow, h: value as number } })"
         />
       </div>
       <div class="row" style="height: 30px;">
-        <div style="width: 40%;">垂直阴影：</div>
+        <div style="width: 40%;">Смещение тени по Y:</div>
         <Slider
           style="width: 60%;"
           :min="-20"
@@ -227,7 +227,7 @@
         />
       </div>
       <div class="row" style="height: 30px;">
-        <div style="width: 40%;">模糊距离：</div>
+        <div style="width: 40%;">Размытие:</div>
         <Slider
           style="width: 60%;"
           :min="1"
@@ -238,7 +238,7 @@
         />
       </div>
       <div class="row">
-        <div style="width: 40%;">阴影颜色：</div>
+        <div style="width: 40%;">Цвет тени:</div>
         <Popover trigger="click" style="width: 60%;">
           <template #content>
             <ColorPicker
@@ -252,24 +252,24 @@
     </template>
 
     <div class="row">
-      <Button style="flex: 1;" @click="applyThemeToAllSlides(moreThemeConfigsVisible)"><i-icon-park-outline:check /> 应用主题到全部</Button>
+      <Button style="flex: 1;" @click="applyThemeToAllSlides(moreThemeConfigsVisible)"><i-icon-park-outline:check /> Применить тему ко всем</Button>
     </div>
 
     <div class="row">
-      <Button style="flex: 1;" @click="applyFontToAllSlides(theme.fontName)"><i-icon-park-outline:check /> 全局统一字体</Button>
+      <Button style="flex: 1;" @click="applyFontToAllSlides(theme.fontName)"><i-icon-park-outline:check /> Глобальный унифицированный шрифт</Button>
     </div>
 
     <div class="row">
-      <Button style="flex: 1;" @click="themeStylesExtractVisible = true"><i-icon-park-outline:platte /> 从幻灯片提取主题</Button>
+      <Button style="flex: 1;" @click="themeStylesExtractVisible = true"><i-icon-park-outline:platte /> Извлечение тем из слайдов</Button>
     </div>
 
     <Divider />
 
-    <div class="title">预置主题</div>
+    <div class="title">Предустановленные темы</div>
     <div class="theme-list">
-      <div 
-        class="theme-item" 
-        v-for="(item, index) in PRESET_THEMES" 
+      <div
+        class="theme-item"
+        v-for="(item, index) in PRESET_THEMES"
         :key="index"
         :style="{
           backgroundColor: item.background,
@@ -277,14 +277,14 @@
         }"
       >
         <div class="theme-item-content">
-          <div class="text" :style="{ color: item.fontColor }">文字 Aa</div>
+          <div class="text" :style="{ color: item.fontColor }">Текст Аа</div>
           <div class="colors">
             <div class="color-block" v-for="(color, index) in item.colors" :key="index" :style="{ backgroundColor: color}"></div>
           </div>
 
           <div class="btns">
-            <Button type="primary" size="small" @click="applyPresetTheme(item)">设置</Button>
-            <Button type="primary" size="small" style="margin-top: 3px;" @click="applyPresetTheme(item, true)">设置并应用</Button>
+            <Button type="primary" size="small" @click="applyPresetTheme(item)">настраивать</Button>
+            <Button type="primary" size="small" style="margin-top: 3px;" @click="applyPresetTheme(item, true)">Настроить и применить</Button>
           </div>
         </div>
       </div>
@@ -292,7 +292,7 @@
   </div>
 
   <Modal
-    v-model:visible="themeStylesExtractVisible" 
+    v-model:visible="themeStylesExtractVisible"
     :width="320"
     @closed="themeStylesExtractVisible = false"
   >
@@ -300,7 +300,7 @@
   </Modal>
 
   <Modal
-    v-model:visible="themeColorsSettingVisible" 
+    v-model:visible="themeColorsSettingVisible"
     :width="310"
     @closed="themeColorsSettingVisible = false"
   >
@@ -308,7 +308,7 @@
   </Modal>
 
   <Modal
-    v-model:visible="customViewportSizeVisible" 
+    v-model:visible="customViewportSizeVisible"
     :width="300"
     @closed="customViewportSizeVisible = false"
   >
@@ -320,7 +320,7 @@
 import { computed, ref, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useSlidesStore } from '@/store'
-import type { 
+import type {
   Gradient,
   GradientType,
   SlideBackground,

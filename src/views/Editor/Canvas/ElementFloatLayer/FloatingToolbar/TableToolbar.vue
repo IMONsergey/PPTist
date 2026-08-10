@@ -6,7 +6,7 @@
       </template>
       <button class="toolbar-btn">
         <i-icon-park-outline:fill class="icon" />
-        <span>填充</span>
+        <span>Заливка</span>
       </button>
     </Popover>
     <BorderPanel />
@@ -16,27 +16,27 @@
     <Popover trigger="click">
       <template #content>
         <div class="table-command-menu">
-          <PopoverMenuItem center @click="emitTableCommand('insert-row', 'before')">上方插入行</PopoverMenuItem>
-          <PopoverMenuItem center @click="emitTableCommand('insert-row', 'after')">下方插入行</PopoverMenuItem>
-          <PopoverMenuItem center @click="emitTableCommand('insert-col', 'before')">左侧插入列</PopoverMenuItem>
-          <PopoverMenuItem center @click="emitTableCommand('insert-col', 'after')">右侧插入列</PopoverMenuItem>
+          <PopoverMenuItem center @click="emitTableCommand('insert-row', 'before')">Вставить строку выше</PopoverMenuItem>
+          <PopoverMenuItem center @click="emitTableCommand('insert-row', 'after')">Вставить строку ниже</PopoverMenuItem>
+          <PopoverMenuItem center @click="emitTableCommand('insert-col', 'before')">Вставить столбец слева</PopoverMenuItem>
+          <PopoverMenuItem center @click="emitTableCommand('insert-col', 'after')">Вставить столбец справа</PopoverMenuItem>
         </div>
       </template>
       <button class="toolbar-btn">
         <i-icon-park-outline:add class="icon" />
-        <span>添加</span>
+        <span>Добавить</span>
       </button>
     </Popover>
     <Popover trigger="click">
       <template #content>
         <div class="table-command-menu">
-          <PopoverMenuItem center @click="emitTableCommand('delete-row')">删除行</PopoverMenuItem>
-          <PopoverMenuItem center @click="emitTableCommand('delete-col')">删除列</PopoverMenuItem>
+          <PopoverMenuItem center @click="emitTableCommand('delete-row')">Удалить строку</PopoverMenuItem>
+          <PopoverMenuItem center @click="emitTableCommand('delete-col')">Удалить столбец</PopoverMenuItem>
         </div>
       </template>
       <button class="toolbar-btn">
         <i-icon-park-outline:reduce class="icon" />
-        <span>删除</span>
+        <span>Удалить</span>
       </button>
     </Popover>
   </div>

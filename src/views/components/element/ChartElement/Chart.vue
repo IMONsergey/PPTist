@@ -7,6 +7,7 @@ import { onMounted, useTemplateRef, computed, watch } from 'vue'
 import tinycolor from 'tinycolor2'
 import type { ChartData, ChartOptions, ChartType } from '@/types/slides'
 import { getChartOption } from './chartOption'
+import { ECHARTS_RU_LOCALE } from './echartsLocaleRU'
 
 import * as echarts from 'echarts/core'
 import { BarChart, LineChart, PieChart, ScatterChart, RadarChart } from 'echarts/charts'
@@ -63,7 +64,10 @@ const updateOption = () => {
 }
 
 onMounted(() => {
-  chart = echarts.init(chartRef.value, null, { renderer: 'svg' })
+  chart = echarts.init(chartRef.value, null, {
+    renderer: 'svg',
+    locale: ECHARTS_RU_LOCALE,
+  })
   updateOption()
 
   const resizeListener = () => chart!.resize()

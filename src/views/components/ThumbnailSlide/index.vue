@@ -5,7 +5,7 @@
       height: size * viewportRatio + 'px',
     }"
   >
-    <div 
+    <div
       class="elements"
       :style="{
         width: viewportSize + 'px',
@@ -22,7 +22,7 @@
         :elementIndex="index + 1"
       />
     </div>
-    <div class="placeholder" v-else>加载中 ...</div>
+    <div class="placeholder" v-else>Загрузка ...</div>
   </div>
 </template>
 

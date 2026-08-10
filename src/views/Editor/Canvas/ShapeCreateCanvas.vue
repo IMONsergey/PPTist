@@ -1,5 +1,5 @@
 <template>
-  <div 
+  <div
     class="shape-create-canvas"
     ref="shapeCanvasRef"
     @mousedown.stop="$event => addPoint($event)"
@@ -8,10 +8,10 @@
   >
     <svg overflow="visible">
 			<path
-        :d="path" 
-        stroke="#d14424" 
-        :fill="closed ? 'rgba(226, 83, 77, 0.15)' : 'none'" 
-        stroke-width="2" 
+        :d="path"
+        stroke="#d14424"
+        :fill="closed ? 'rgba(226, 83, 77, 0.15)' : 'none'"
+        stroke-width="2"
       ></path>
 		</svg>
   </div>
@@ -165,7 +165,7 @@ const keydownListener = (e: KeyboardEvent) => {
   if (key === KEYS.ENTER) create()
 }
 onMounted(() => {
-  message.success('点击绘制任意形状，首尾闭合完成绘制，按 ESC 键或鼠标右键取消，按 ENTER 键提前完成', {
+  message.success('Щёлкните, чтобы нарисовать произвольную фигуру; замкните начальную и конечную точки, чтобы завершить. Нажмите ESC или правую кнопку мыши, чтобы отменить, нажмите ENTER, чтобы завершить досрочно', {
     duration: 0,
   })
   document.addEventListener('keydown', keydownListener)

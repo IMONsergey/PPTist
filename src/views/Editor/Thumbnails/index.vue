@@ -1,14 +1,14 @@
 <template>
-  <div 
+  <div
     class="thumbnails"
     @mousedown="() => setThumbnailsFocus(true)"
     v-click-outside="() => setThumbnailsFocus(false)"
   >
     <div class="add-slide">
-      <div class="btn" @click="createSlide()"><i-icon-park-outline:plus class="icon" />添加幻灯片</div>
+      <div class="btn" @click="createSlide()"><i-icon-park-outline:plus class="icon" />Добавить слайд</div>
       <Popover trigger="click" placement="bottom-start" v-model:value="presetLayoutPopoverVisible" center>
         <template #content>
-          <Templates 
+          <Templates
             @select="slide => { createSlideByTemplate(slide); presetLayoutPopoverVisible = false }"
             @selectAll="({ slides, theme }) => { insertAllTemplates({ slides, theme }); presetLayoutPopoverVisible = false }"
           />
@@ -17,7 +17,7 @@
       </Popover>
     </div>
 
-    <Draggable 
+    <Draggable
       class="thumbnail-list"
       ref="thumbnailsRef"
       :modelValue="slides"
@@ -33,21 +33,21 @@
         <div class="thumbnail-container">
           <div class="section-title"
             :data-section-id="element?.sectionTag?.id || ''"
-            v-if="element.sectionTag || (hasSection && index === 0)" 
+            v-if="element.sectionTag || (hasSection && index === 0)"
             v-contextmenu="contextmenusSection"
             @dblclick="() => editSection(element?.sectionTag?.id || '')"
           >
-            <input 
-              :id="`section-title-input-${element?.sectionTag?.id || 'default'}`" 
+            <input
+              :id="`section-title-input-${element?.sectionTag?.id || 'default'}`"
               type="text"
               :value="element?.sectionTag?.title || ''"
-              placeholder="输入节名称"
+              placeholder="Введите название раздела"
               @blur="$event => saveSection($event)"
               @keydown.enter.stop="$event => saveSection($event)"
               v-if="editingSectionId === element?.sectionTag?.id || (index === 0 && editingSectionId === 'default')"
             >
             <span class="text" v-else>
-              <div class="text-content">{{ element?.sectionTag ? (element?.sectionTag?.title || '无标题节') : '默认节' }}</div>
+              <div class="text-content">{{ element?.sectionTag ? (element?.sectionTag?.title || 'Раздел без названия') : 'Раздел по умолчанию' }}</div>
             </span>
           </div>
           <div
@@ -62,14 +62,14 @@
           >
             <div class="label" :class="{ 'offset-left': index >= 99 }">{{ fillDigit(index + 1, 2) }}</div>
             <ThumbnailSlide class="thumbnail" :slide="element" :size="120" :visible="index < slidesLoadLimit" />
-  
+
             <div class="note-flag" v-if="element.notes && element.notes.length" @click="openNotesPanel()">{{ element.notes.length }}</div>
           </div>
         </div>
       </template>
     </Draggable>
 
-    <div class="page-number">幻灯片 {{slideIndex + 1}} / {{slides.length}}</div>
+    <div class="page-number">Слайд-шоу {{slideIndex + 1}} / {{slides.length}}</div>
   </div>
 </template>
 
@@ -262,22 +262,22 @@ const contextmenusSection = (el: HTMLElement): ContextmenuItem[] => {
 
   return [
     {
-      text: '删除节',
+      text: 'Удалить раздел',
       handler: () => removeSection(sectionId),
     },
     {
-      text: '删除节和幻灯片',
+      text: 'Удалить раздел и слайды',
       handler: () => {
         mainStore.setActiveElementIdList([])
         removeSectionSlides(sectionId)
       },
     },
     {
-      text: '删除所有节',
+      text: 'Удалить все разделы',
       handler: removeAllSection,
     },
     {
-      text: '重命名节',
+      text: 'Переименовать раздел',
       handler: () => editSection(sectionId),
     },
   ]
@@ -288,22 +288,22 @@ const { enterScreening, enterScreeningFromStart } = useScreening()
 const contextmenusThumbnails = (): ContextmenuItem[] => {
   return [
     {
-      text: '粘贴',
+      text: 'Вставить',
       subText: 'Ctrl + V',
       handler: pasteSlide,
     },
     {
-      text: '全选',
+      text: 'Выбрать все',
       subText: 'Ctrl + A',
       handler: selectAllSlide,
     },
     {
-      text: '新建页面',
+      text: 'Новый слайд',
       subText: 'Enter',
       handler: createSlide,
     },
     {
-      text: '幻灯片放映',
+      text: 'Показ слайдов',
       subText: 'F5',
       handler: enterScreeningFromStart,
     },
@@ -313,49 +313,49 @@ const contextmenusThumbnails = (): ContextmenuItem[] => {
 const contextmenusThumbnailItem = (): ContextmenuItem[] => {
   return [
     {
-      text: '剪切',
+      text: 'Вырезать',
       subText: 'Ctrl + X',
       handler: cutSlide,
     },
     {
-      text: '复制',
+      text: 'Копировать',
       subText: 'Ctrl + C',
       handler: copySlide,
     },
     {
-      text: '粘贴',
+      text: 'Вставить',
       subText: 'Ctrl + V',
       handler: pasteSlide,
     },
     {
-      text: '全选',
+      text: 'Выбрать все',
       subText: 'Ctrl + A',
       handler: selectAllSlide,
     },
     { divider: true },
     {
-      text: '新建页面',
+      text: 'Новый слайд',
       subText: 'Enter',
       handler: createSlide,
     },
     {
-      text: '复制页面',
+      text: 'Дублировать слайд',
       subText: 'Ctrl + D',
       handler: copyAndPasteSlide,
     },
     {
-      text: '删除页面',
+      text: 'Удалить слайд',
       subText: 'Delete',
       handler: () => deleteSlide(),
     },
     {
-      text: '增加节',
+      text: 'Добавить раздел',
       handler: createSection,
       disable: !!currentSlide.value.sectionTag,
     },
     { divider: true },
     {
-      text: '从当前放映',
+      text: 'Показ с текущего',
       subText: 'Shift + F5',
       handler: enterScreening,
     },

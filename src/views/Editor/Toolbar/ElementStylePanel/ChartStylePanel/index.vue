@@ -1,31 +1,31 @@
 <template>
   <div class="chart-style-panel">
     <Button class="full-width-btn" @click="openDataEditor()">
-      <i-icon-park-outline:edit /> 编辑图表
+      <i-icon-park-outline:edit /> Редактировать диаграмму
     </Button>
 
     <Divider />
 
     <template v-if="['bar', 'column', 'area', 'line'].includes(handleChartElement.chartType)">
       <div class="row">
-        <Checkbox 
-          @update:value="value => updateOptions({ stack: value })" 
+        <Checkbox
+          @update:value="value => updateOptions({ stack: value })"
           :value="stack"
           style="flex: 2;"
-        >堆叠样式</Checkbox>
-        <Checkbox 
+        >Стиль стека</Checkbox>
+        <Checkbox
           v-if="handleChartElement.chartType === 'line'"
-          @update:value="value => updateOptions({ lineSmooth: value })" 
+          @update:value="value => updateOptions({ lineSmooth: value })"
           :value="lineSmooth"
           style="flex: 3;"
-        >使用平滑曲线</Checkbox>
+        >Использовать сглаженные линии</Checkbox>
       </div>
-  
+
       <Divider />
     </template>
 
     <div class="row">
-      <div style="width: 40%;">背景填充：</div>
+      <div style="width: 40%;">Заливка фона:</div>
       <Popover trigger="click" style="width: 60%;">
         <template #content>
           <ColorPicker
@@ -37,7 +37,7 @@
       </Popover>
     </div>
     <div class="row">
-      <div style="width: 40%;">坐标与文字：</div>
+      <div style="width: 40%;">Координаты и текст:</div>
       <Popover trigger="click" style="width: 60%;">
         <template #content>
           <ColorPicker
@@ -49,7 +49,7 @@
       </Popover>
     </div>
     <div class="row">
-      <div style="width: 40%;">网格颜色：</div>
+      <div style="width: 40%;">Цвет сетки:</div>
       <Popover trigger="click" style="width: 60%;">
         <template #content>
           <ColorPicker
@@ -62,34 +62,34 @@
     </div>
 
     <div class="row">
-      <div style="width: 40%;">主题配色：</div>
+      <div style="width: 40%;">Цвет темы:</div>
       <Popover trigger="click" v-model:value="themesVisible" style="width: 60%;">
         <template #content>
           <div class="themes">
-            <div class="label">预置图表主题：</div>
+            <div class="label">Готовая тема диаграммы:</div>
             <div class="preset-themes">
               <div class="preset-theme" v-for="(item, index) in CHART_PRESET_THEMES" :key="index" @click="setThemeColors(item)">
-                <div 
+                <div
                   class="preset-theme-color"
-                  v-for="color in item" 
-                  :key="color" 
-                  :style="{ backgroundColor: color }" 
+                  v-for="color in item"
+                  :key="color"
+                  :style="{ backgroundColor: color }"
                 ></div>
               </div>
             </div>
-            <div class="label">幻灯片主题：</div>
+            <div class="label">Тема слайда:</div>
             <div class="preset-themes" :style="{ marginBottom: '-10px' }">
               <div class="preset-theme" @click="setThemeColors(theme.themeColors)">
-                <div 
+                <div
                   class="preset-theme-color"
-                  v-for="color in theme.themeColors" 
-                  :key="color" 
-                  :style="{ backgroundColor: color }" 
+                  v-for="color in theme.themeColors"
+                  :key="color"
+                  :style="{ backgroundColor: color }"
                 ></div>
               </div>
             </div>
             <Divider :margin="10" />
-            <Button class="full-width-btn" @click="themesVisible = false; themeColorsSettingVisible = true">自定义配色</Button>
+            <Button class="full-width-btn" @click="themesVisible = false; themeColorsSettingVisible = true">Своя палитра</Button>
           </div>
         </template>
         <ColorListButton :colors="themeColors" />
@@ -101,7 +101,7 @@
     <ElementOutline />
 
     <Modal
-      v-model:visible="themeColorsSettingVisible" 
+      v-model:visible="themeColorsSettingVisible"
       :width="310"
       @closed="themeColorsSettingVisible = false"
     >

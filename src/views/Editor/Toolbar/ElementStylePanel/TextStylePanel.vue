@@ -1,7 +1,7 @@
 <template>
   <div class="text-style-panel">
     <div class="preset-style">
-      <div 
+      <div
         class="preset-style-item"
         v-for="item in presetStyles"
         :key="item.label"
@@ -15,12 +15,12 @@
     <Divider />
 
     <div class="row">
-      <div style="width: 40%;">行间距：</div>
+      <div style="width: 40%;">Межстрочный интервал:</div>
       <Select style="width: 60%;"
         :value="lineHeight || 1"
         @update:value="value => updateText({ lineHeight: value as number })"
         :options="lineHeightOptions.map(item => ({
-          label: item + '倍', value: item
+          label: item + '×', value: item
         }))"
       >
         <template #icon>
@@ -29,7 +29,7 @@
       </Select>
     </div>
     <div class="row">
-      <div style="width: 40%;">段间距：</div>
+      <div style="width: 40%;">Расстояние между абзацами:</div>
       <Select style="width: 60%;"
         :value="paragraphSpace || 0"
         @update:value="value => updateText({ paragraphSpace: value as number })"
@@ -43,7 +43,7 @@
       </Select>
     </div>
     <div class="row">
-      <div style="width: 40%;">字间距：</div>
+      <div style="width: 40%;">Расстояние между словами:</div>
       <Select style="width: 60%;"
         :value="wordSpace || 0"
         @update:value="value => updateText({ wordSpace: value as number })"
@@ -57,7 +57,7 @@
       </Select>
     </div>
     <div class="row">
-      <div style="width: 40%;">文本框填充：</div>
+      <div style="width: 40%;">Заполнение текстового поля:</div>
       <Popover trigger="click" style="width: 60%;">
         <template #content>
           <ColorPicker
@@ -79,7 +79,7 @@
         @update:value="value => updateInset(0, value)"
         style="width: 45%;"
       >
-        <template #prefix>上边距：</template>
+        <template #prefix>Верхний отступ:</template>
       </NumberInput>
       <div style="width: 10%;"></div>
       <NumberInput
@@ -89,7 +89,7 @@
         @update:value="value => updateInset(2, value)"
         style="width: 45%;"
       >
-        <template #prefix>下边距：</template>
+        <template #prefix>Нижний отступ:</template>
       </NumberInput>
     </div>
     <div class="row">
@@ -100,7 +100,7 @@
         @update:value="value => updateInset(3, value)"
         style="width: 45%;"
       >
-        <template #prefix>左边距：</template>
+        <template #prefix>Левый отступ:</template>
       </NumberInput>
       <div style="width: 10%;"></div>
       <NumberInput
@@ -110,13 +110,13 @@
         @update:value="value => updateInset(1, value)"
         style="width: 45%;"
       >
-        <template #prefix>右边距：</template>
+        <template #prefix>Правый отступ:</template>
       </NumberInput>
     </div>
 
     <Divider />
     <div class="row">
-      <div style="width: 40%;">固定高度：</div>
+      <div style="width: 40%;">Фиксированная высота:</div>
       <div class="switch-wrapper" style="width: 60%;">
         <Switch
           :value="fixedHeight"
@@ -131,9 +131,9 @@
       @update:value="value => updateText({ vAlign: value as TextAlignVertical })"
       v-if="fixedHeight"
     >
-      <RadioButton value="top" v-tooltip="'顶对齐'" style="flex: 1;"><i-icon-park-outline:align-text-top-one /></RadioButton>
-      <RadioButton value="middle" v-tooltip="'垂直居中'" style="flex: 1;"><i-icon-park-outline:align-text-middle-one /></RadioButton>
-      <RadioButton value="bottom" v-tooltip="'底对齐'" style="flex: 1;"><i-icon-park-outline:align-text-bottom-one /></RadioButton>
+      <RadioButton value="top" v-tooltip="'Выровнять по верху'" style="flex: 1;"><i-icon-park-outline:align-text-top-one /></RadioButton>
+      <RadioButton value="middle" v-tooltip="'Выровнять по центру (верт.)'" style="flex: 1;"><i-icon-park-outline:align-text-middle-one /></RadioButton>
+      <RadioButton value="bottom" v-tooltip="'Выровнять по низу'" style="flex: 1;"><i-icon-park-outline:align-text-bottom-one /></RadioButton>
     </RadioGroup>
     <Divider />
     <ElementOutline />
@@ -170,7 +170,7 @@ import Popover from '@/components/Popover.vue'
 // 因此在执行预置样式命令时，将加粗命令放在尽可能靠前的位置，避免字号增大后再加粗
 const presetStyles = [
   {
-    label: '大标题',
+    label: 'заголовок',
     style: {
       fontSize: '26px',
       fontWeight: 700,
@@ -183,7 +183,7 @@ const presetStyles = [
     ],
   },
   {
-    label: '小标题',
+    label: 'субтитры',
     style: {
       fontSize: '22px',
       fontWeight: 700,
@@ -196,7 +196,7 @@ const presetStyles = [
     ],
   },
   {
-    label: '正文',
+    label: 'Основной текст',
     style: {
       fontSize: '20px',
     },
@@ -206,7 +206,7 @@ const presetStyles = [
     ],
   },
   {
-    label: '正文[小]',
+    label: 'Текст [маленький]',
     style: {
       fontSize: '18px',
     },
@@ -216,7 +216,7 @@ const presetStyles = [
     ],
   },
   {
-    label: '注释 1',
+    label: 'Комментарий 1',
     style: {
       fontSize: '16px',
       fontStyle: 'italic',
@@ -228,7 +228,7 @@ const presetStyles = [
     ],
   },
   {
-    label: '注释 2',
+    label: 'Комментарий 2',
     style: {
       fontSize: '16px',
       textDecoration: 'underline',

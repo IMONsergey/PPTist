@@ -78,13 +78,13 @@ export default () => {
       }
 
       const animationName = `${ANIMATION_CLASS_PREFIX}${animation.effect}`
-      
+
       // 执行动画前先清除原有的动画状态（如果有）
       elRef.style.removeProperty('--animate-duration')
       for (const classname of elRef.classList) {
         if (classname.indexOf(ANIMATION_CLASS_PREFIX) !== -1) elRef.classList.remove(classname, `${ANIMATION_CLASS_PREFIX}animated`)
       }
-      
+
       // 执行动画
       elRef.style.setProperty('--animate-duration', `${animation.duration}ms`)
       elRef.classList.add(animationName, `${ANIMATION_CLASS_PREFIX}animated`)
@@ -140,7 +140,7 @@ export default () => {
     for (const animation of animations) {
       const elRef: HTMLElement | null = document.querySelector(`#screen-element-${animation.elId} [class^=base-element-]`)
       if (!elRef) continue
-      
+
       elRef.style.removeProperty('--animate-duration')
       for (const classname of elRef.classList) {
         if (classname.indexOf(ANIMATION_CLASS_PREFIX) !== -1) elRef.classList.remove(classname, `${ANIMATION_CLASS_PREFIX}animated`)
@@ -190,7 +190,7 @@ export default () => {
     }
     else {
       if (loopPlay.value) turnSlideToIndex(slides.value.length - 1)
-      else throttleMassage('已经是第一页了')
+      else throttleMassage('Это первый слайд')
     }
     inAnimation.value = false
   }
@@ -207,7 +207,7 @@ export default () => {
     else {
       if (loopPlay.value) turnSlideToIndex(0)
       else {
-        throttleMassage('已经是最后一页了')
+        throttleMassage('Это последний слайд')
         closeAutoPlay()
       }
       inAnimation.value = false
@@ -218,7 +218,7 @@ export default () => {
   const autoPlayInterval = ref(2500)
   const autoPlay = () => {
     closeAutoPlay()
-    message.success('开始自动放映')
+    message.success('Запустить автопоказ')
     autoPlayTimer.value = setInterval(execNext, autoPlayInterval.value)
   }
 
@@ -263,9 +263,9 @@ export default () => {
 
     if (key === KEYS.UP || key === KEYS.LEFT || key === KEYS.PAGEUP) execPrev()
     else if (
-      key === KEYS.DOWN || 
+      key === KEYS.DOWN ||
       key === KEYS.RIGHT ||
-      key === KEYS.SPACE || 
+      key === KEYS.SPACE ||
       key === KEYS.ENTER ||
       key === KEYS.PAGEDOWN
     ) execNext()

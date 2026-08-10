@@ -2,39 +2,39 @@
   <div class="export-pptx-dialog">
     <div class="thumbnails-view">
       <div class="thumbnails" ref="imageThumbnailsRef">
-        <ThumbnailSlide 
-          class="export-thumbnail" 
-          v-for="slide in renderSlides" 
-          :key="slide.id" 
-          :slide="slide" 
-          :size="1600" 
+        <ThumbnailSlide
+          class="export-thumbnail"
+          v-for="slide in renderSlides"
+          :key="slide.id"
+          :slide="slide"
+          :size="1600"
         />
       </div>
     </div>
     <div class="configs">
       <div class="row">
-        <div class="title">导出范围：</div>
+        <div class="title">Диапазон экспорта:</div>
         <RadioGroup
           class="config-item"
           v-model:value="rangeType"
         >
-          <RadioButton style="width: 33.33%;" value="all">全部</RadioButton>
-          <RadioButton style="width: 33.33%;" value="current">当前页</RadioButton>
-          <RadioButton style="width: 33.33%;" value="custom">自定义</RadioButton>
+          <RadioButton style="width: 33.33%;" value="all">Все</RadioButton>
+          <RadioButton style="width: 33.33%;" value="current">Текущий</RadioButton>
+          <RadioButton style="width: 33.33%;" value="custom">Пользовательский</RadioButton>
         </RadioGroup>
       </div>
       <div class="row">
-        <div class="title">导出模式：</div>
+        <div class="title">Режим экспорта:</div>
         <RadioGroup
           class="config-item"
           v-model:value="exportMode"
         >
-          <RadioButton style="width: 50%;" value="standard">标准版</RadioButton>
-          <RadioButton style="width: 50%;" value="image">纯图版</RadioButton>
+          <RadioButton style="width: 50%;" value="standard">Стандартный</RadioButton>
+          <RadioButton style="width: 50%;" value="image">Только изображения</RadioButton>
         </RadioGroup>
       </div>
       <div class="row" style="margin-bottom: 32px" v-if="rangeType === 'custom'">
-        <div class="title" :data-range="`（${range[0]} ~ ${range[1]}）`">自定义范围：</div>
+        <div class="title" :data-range="`（${range[0]} ~ ${range[1]}）`">Пользовательский диапазон:</div>
         <Slider
           class="config-item"
           range
@@ -44,32 +44,32 @@
           v-model:value="range"
         />
       </div>
-      
+
       <template v-if="exportMode === 'standard'">
         <div class="row">
-          <div class="title">忽略音频/视频：</div>
+          <div class="title">Игнорировать аудио/видео:</div>
           <div class="config-item">
-            <Switch v-model:value="ignoreMedia" v-tooltip="'导出时默认忽略音视频，若您的幻灯片中存在音视频元素，且希望将其导出到PPTX文件中，可选择关闭「忽略音视频」选项，但要注意这将会大幅增加导出用时。'" />
+            <Switch v-model:value="ignoreMedia" v-tooltip="'Аудио и видео по умолчанию игнорируются при экспорте. Если на вашем слайде есть аудио- и видеоэлементы и вы хотите экспортировать их в файл PPTX, вы можете отключить опцию «Игнорировать аудио и видео», но имейте в виду, что это значительно увеличит время экспорта.'" />
           </div>
         </div>
         <div class="row">
-          <div class="title">覆盖默认母版：</div>
+          <div class="title">Перезаписать мастер по умолчанию:</div>
           <div class="config-item">
             <Switch v-model:value="masterOverwrite" />
           </div>
         </div>
 
         <div class="tip" v-if="!ignoreMedia">
-          提示：1. 支持导出格式：avi、mp4、mov、wmv、mp3、wav；2. 跨域资源无法导出。
+          Примечание: 1. Поддерживаются форматы avi, mp4, mov, wmv, mp3, wav. 2. Ресурсы с других доменов экспортировать нельзя.
         </div>
       </template>
     </div>
     <div class="btns">
-      <Button class="btn export" type="primary" @click="execExport()"><i-icon-park-outline:download /> 导出 PPTX</Button>
-      <Button class="btn close" @click="emit('close')">关闭</Button>
+      <Button class="btn export" type="primary" @click="execExport()"><i-icon-park-outline:download /> Экспортировать PPTX</Button>
+      <Button class="btn close" @click="emit('close')">закрытие</Button>
     </div>
 
-    <FullscreenSpin :loading="exporting" tip="正在导出..." />
+    <FullscreenSpin :loading="exporting" tip="Экспорт..." />
   </div>
 </template>
 
@@ -119,7 +119,7 @@ const renderSlides = computed(() => {
 const execExport = () => {
   if (exportMode.value === 'standard') {
     exportPPTX(selectedSlides.value, masterOverwrite.value, ignoreMedia.value)
-  } 
+  }
   else {
     const slideRefs = imageThumbnailsRef.value!.querySelectorAll('.export-thumbnail')
     exportImagePPTX(slideRefs)

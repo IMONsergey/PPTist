@@ -1,17 +1,17 @@
 <template>
   <div class="outline-editor">
-    <div class="item" 
+    <div class="item"
       :class="[{ 'title': item.title }, `lv-${item.lv}`]"
       v-for="item in data"
       :key="item.id"
       :data-lv="item.lv"
       :data-id="item.id"
-      v-contextmenu="contextmenus" 
+      v-contextmenu="contextmenus"
     >
-      <Input 
-        class="editable-text" 
-        :value="item.content" 
-        v-if="activeItemId === item.id" 
+      <Input
+        class="editable-text"
+        :value="item.content"
+        v-if="activeItemId === item.id"
         @blur="$event => handleBlur($event, item)"
         @enter="$event => handleEnter($event, item)"
         @backspace="$event => handleBackspace($event, item)"
@@ -196,23 +196,23 @@ const contextmenus = (el: HTMLElement): ContextmenuItem[] => {
   if (lv === 1) {
     return [
       {
-        text: '添加子级大纲（章）',
-        handler: () => addItem(id, 'next', '新的一章'),
+        text: 'Добавить вложенную главу',
+        handler: () => addItem(id, 'next', 'Новая глава'),
       },
     ]
   }
   else if (lv === 2) {
     return [
       {
-        text: '上方添加同级大纲（章）',
-        handler: () => addItem(id, 'prev', '新的一章'),
+        text: 'Добавить главу выше',
+        handler: () => addItem(id, 'prev', 'Новая глава'),
       },
       {
-        text: '添加子级大纲（节）',
-        handler: () => addItem(id, 'next', '新的一节'),
+        text: 'Добавить вложенный раздел',
+        handler: () => addItem(id, 'next', 'Новый раздел'),
       },
       {
-        text: '删除此章',
+        text: 'Удалить главу',
         handler: () => deleteItem(id, true),
       },
     ]
@@ -220,30 +220,30 @@ const contextmenus = (el: HTMLElement): ContextmenuItem[] => {
   else if (lv === 3) {
     return [
       {
-        text: '上方添加同级大纲（节）',
-        handler: () => addItem(id, 'prev', '新的一节'),
+        text: 'Добавить раздел выше',
+        handler: () => addItem(id, 'prev', 'Новый раздел'),
       },
       {
-        text: '添加子级大纲（项）',
-        handler: () => addItem(id, 'next', '新的一项'),
+        text: 'Добавить вложенный пункт',
+        handler: () => addItem(id, 'next', 'Новый пункт'),
       },
       {
-        text: '删除此节',
+        text: 'Удалить раздел',
         handler: () => deleteItem(id, true),
       },
     ]
   }
   return [
     {
-      text: '上方添加同级大纲（项）',
-      handler: () => addItem(id, 'prev', '新的一项'),
+      text: 'Добавить пункт выше',
+      handler: () => addItem(id, 'prev', 'Новый пункт'),
     },
     {
-      text: '下方添加同级大纲（项）',
-      handler: () => addItem(id, 'next', '新的一项'),
+      text: 'Добавить пункт ниже',
+      handler: () => addItem(id, 'next', 'Новый пункт'),
     },
     {
-      text: '删除此项',
+      text: 'Удалить пункт',
       handler: () => deleteItem(id),
     },
   ]
@@ -335,13 +335,13 @@ const contextmenus = (el: HTMLElement): ContextmenuItem[] => {
     }
   }
   .item.lv-1 .flag::after {
-    content: '主题';
+    content: 'Тема';
   }
   .item.lv-2 .flag::after {
-    content: '章';
+    content: 'Глава';
   }
   .item.lv-3 .flag::after {
-    content: '节';
+    content: 'Раздел';
   }
   .item.lv-4 .flag::after {
     opacity: 0;

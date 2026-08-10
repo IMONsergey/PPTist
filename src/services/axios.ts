@@ -9,7 +9,7 @@ instance.interceptors.response.use(
       return Promise.resolve(response.data)
     }
 
-    message.error('未知的请求错误！')
+    message.error('Неизвестная ошибка запроса.')
     return Promise.reject(response)
   },
   error => {
@@ -20,12 +20,12 @@ instance.interceptors.response.use(
       else if (error.response.status >= 500) {
         return Promise.reject(error.message)
       }
-      
-      message.error('服务器遇到未知错误！')
+
+      message.error('Сервер столкнулся с неизвестной ошибкой.')
       return Promise.reject(error.message)
     }
 
-    message.error('连接到服务器失败 或 服务器响应超时！')
+    message.error('Не удалось подключиться или истекло время ожидания запроса.')
     return Promise.reject(error)
   }
 )

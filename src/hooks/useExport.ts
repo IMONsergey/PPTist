@@ -72,7 +72,7 @@ export default () => {
         saveAs(dataUrl, `${title.value}.${format}`)
       }).catch(() => {
         exporting.value = false
-        message.error('导出图片失败')
+        message.error('Не удалось экспортировать изображение')
       })
     }, 200)
   }
@@ -80,7 +80,7 @@ export default () => {
   // 导出图片版PPTX
   const exportImagePPTX = (domRefs: NodeListOf<Element>) => {
     exporting.value = true
-    
+
     setTimeout(() => {
       const pptx = new pptxgen()
       setPPTXLayout(pptx)
@@ -113,11 +113,11 @@ export default () => {
         pptx.writeFile({ fileName: `${title.value}.pptx` }).then(() => exporting.value = false)
       }).catch(() => {
         exporting.value = false
-        message.error('导出失败')
+        message.error('Сбой экспорта')
       })
     }, 200)
   }
-  
+
   // 导出pptist文件（特有 .pptist 后缀文件）
   const exportSpecificFile = (_slides: Slide[]) => {
     const json = {
@@ -130,7 +130,7 @@ export default () => {
     const blob = new Blob([encrypt(JSON.stringify(json))], { type: '' })
     saveAs(blob, `${title.value}.pptist`)
   }
-  
+
   // 导出JSON文件
   const exportJSON = () => {
     const json = {
@@ -446,11 +446,11 @@ export default () => {
   // 获取边框配置
   const getOutlineOption = (outline: PPTElementOutline): pptxgen.ShapeLineProps => {
     const c = formatColor(outline?.color || '#000000')
-    
+
     return {
-      color: c.color, 
+      color: c.color,
       transparency: (1 - c.alpha) * 100,
-      width: (outline.width || 1) / ratioPx2Pt.value, 
+      width: (outline.width || 1) / ratioPx2Pt.value,
       dashType: outline.style ? dashTypeMap[outline.style] as 'solid' | 'dash' | 'sysDot' : 'solid',
     }
   }
@@ -553,7 +553,7 @@ export default () => {
             w: el.width / ratioPx2Inch.value,
             h: el.height / ratioPx2Inch.value,
             fontSize: defaultFontSize / ratioPx2Pt.value,
-            fontFace: '微软雅黑',
+            fontFace: 'Microsoft YaHei',
             color: '#000000',
             valign: el.vAlign || 'top',
             margin: [inset[3], inset[1], inset[2], inset[0]].map(item => item / ratioPx2Pt.value) as [number, number, number, number],
@@ -657,7 +657,7 @@ export default () => {
               y: el.height / el.viewBox[1],
             }
             const points = formatPoints(toPoints(el.path), scale)
-  
+
             let fillColor = formatColor(el.fill)
             if (el.gradient) {
               const colors = el.gradient.colors
@@ -668,7 +668,7 @@ export default () => {
             }
             if (el.pattern) fillColor = formatColor('#00000000')
             const opacity = el.opacity === undefined ? 1 : el.opacity
-  
+
             const options: pptxgen.ShapeProps = {
               x: el.left / ratioPx2Inch.value,
               y: el.top / ratioPx2Inch.value,
@@ -699,7 +699,7 @@ export default () => {
               w: el.width / ratioPx2Inch.value,
               h: el.height / ratioPx2Inch.value,
               fontSize: defaultFontSize / ratioPx2Pt.value,
-              fontFace: '微软雅黑',
+              fontFace: 'Microsoft YaHei',
               color: '#000000',
               paraSpaceBefore: 5 / ratioPx2Pt.value,
               margin: [inset[3], inset[1], inset[2], inset[0]].map(item => item / ratioPx2Pt.value) as [number, number, number, number],
@@ -720,7 +720,7 @@ export default () => {
             }
             if (isBase64Image(el.pattern)) options.data = el.pattern
             else options.path = el.pattern
-  
+
             if (el.flipH) options.flipH = el.flipH
             if (el.flipV) options.flipV = el.flipV
             if (el.rotate) options.rotate = el.rotate
@@ -745,9 +745,9 @@ export default () => {
             w: (maxX - minX) / ratioPx2Inch.value,
             h: (maxY - minY) / ratioPx2Inch.value,
             line: {
-              color: c.color, 
+              color: c.color,
               transparency: (1 - c.alpha) * 100,
-              width: el.width / ratioPx2Pt.value, 
+              width: el.width / ratioPx2Pt.value,
               dashType: dashTypeMap[el.style] as 'solid' | 'dash' | 'sysDot',
               beginArrowType: el.points[0] ? 'arrow' : 'none',
               endArrowType: el.points[1] ? 'arrow' : 'none',
@@ -764,7 +764,7 @@ export default () => {
           for (let i = 0; i < el.data.series.length; i++) {
             const item = el.data.series[i]
             chartData.push({
-              name: `系列${i + 1}`,
+              name: `Ряд ${i + 1}`,
               labels: el.data.labels,
               values: item,
             })
@@ -778,7 +778,7 @@ export default () => {
             const supplement = tinycolor(el.themeColors[len - 1]).analogous(10 + 1 - len).map(color => color.toHexString())
             chartColors = [...el.themeColors.slice(0, len - 1), ...supplement].map(color => formatColor(color).color)
           }
-          
+
           const options: pptxgen.IChartOpts = {
             x: el.left / ratioPx2Inch.value,
             y: el.top / ratioPx2Inch.value,
@@ -794,7 +794,7 @@ export default () => {
           const fontSize = 14 / ratioPx2Pt.value
           options.catAxisLabelFontSize = fontSize
           options.valAxisLabelFontSize = fontSize
-          
+
           if (el.fill || el.outline) {
             const plotArea: pptxgen.IChartPropsFillLine = {}
             if (el.fill) {
@@ -848,7 +848,7 @@ export default () => {
             type = pptx.ChartType.doughnut
             options.holeSize = 60
           }
-          
+
           pptxSlide.addChart(type, chartData, options)
         }
 
@@ -891,7 +891,7 @@ export default () => {
                 underline: { style: cell.style?.underline ? 'sng' : 'none' },
                 align: cell.style?.align || 'left',
                 valign: 'middle',
-                fontFace: cell.style?.fontname || '微软雅黑',
+                fontFace: cell.style?.fontname || 'Microsoft YaHei',
                 fontSize: (cell.style?.fontsize ? parseInt(cell.style?.fontsize) : 14) / ratioPx2Pt.value,
               }
               if (theme && themeColor) {
@@ -940,7 +940,7 @@ export default () => {
 
           pptxSlide.addTable(tableData, options)
         }
-        
+
         else if (el.type === 'latex') {
           const container = document.createElement('div')
           const vm = createVNode(BaseLatexElement, { elementInfo: el }, null)
@@ -965,7 +965,7 @@ export default () => {
 
           pptxSlide.addImage(options)
         }
-        
+
         else if (!ignoreMedia && (el.type === 'video' || el.type === 'audio')) {
           const options: pptxgen.MediaProps = {
             x: el.left / ratioPx2Inch.value,
@@ -980,7 +980,7 @@ export default () => {
           const extMatch = el.src.match(/\.([a-zA-Z0-9]+)(?:[\?#]|$)/)
           if (extMatch && extMatch[1]) options.extn = extMatch[1]
           else if (el.ext) options.extn = el.ext
-          
+
           const videoExts = ['avi', 'mp4', 'm4v', 'mov', 'wmv']
           const audioExts = ['mp3', 'm4a', 'mp4', 'wav', 'wma']
           if (options.extn && [...videoExts, ...audioExts].includes(options.extn)) {
@@ -993,7 +993,7 @@ export default () => {
     setTimeout(() => {
       pptx.writeFile({ fileName: `${title.value}.pptx` }).then(() => exporting.value = false).catch(() => {
         exporting.value = false
-        message.error('导出失败')
+        message.error('Сбой экспорта')
       })
     }, 200)
   }

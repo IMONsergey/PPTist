@@ -1,7 +1,7 @@
 <template>
   <div class="line-style-panel">
     <div class="title">
-      <span>点击替换线条类型</span>
+      <span>Щелкните, чтобы заменить тип линии.</span>
       <i-icon-park-outline:down />
     </div>
     <div class="line-pool-wrapper">
@@ -49,7 +49,7 @@
     </div>
 
     <div class="row">
-      <div style="width: 40%;">线条样式：</div>
+      <div style="width: 40%;">Стиль линии:</div>
       <SelectCustom style="width: 60%;">
         <template #options>
           <div class="option" v-for="item in lineStyleOptions" :key="item" @click="updateLine({ style: item })">
@@ -62,7 +62,7 @@
       </SelectCustom>
     </div>
     <div class="row">
-      <div style="width: 40%;">线条颜色：</div>
+      <div style="width: 40%;">Цвет линии:</div>
       <Popover trigger="click" style="width: 60%;">
         <template #content>
           <ColorPicker
@@ -74,16 +74,16 @@
       </Popover>
     </div>
     <div class="row">
-      <div style="width: 40%;">线条宽度：</div>
-      <NumberInput 
-        :value="handleLineElement.width" 
-        @update:value="value => updateLine({ width: value })" 
-        style="width: 60%;" 
+      <div style="width: 40%;">Ширина линии:</div>
+      <NumberInput
+        :value="handleLineElement.width"
+        @update:value="value => updateLine({ width: value })"
+        style="width: 60%;"
       />
     </div>
-    
+
     <div class="row">
-      <div style="width: 40%;">起点样式：</div>
+      <div style="width: 40%;">Начальный стиль:</div>
       <SelectCustom style="width: 60%;">
         <template #options>
           <div class="option" v-for="item in lineMarkerOptions" :key="item" @click="updateLine({ points: [item, handleLineElement.points[1]] })">
@@ -96,7 +96,7 @@
       </SelectCustom>
     </div>
     <div class="row">
-      <div style="width: 40%;">终点样式：</div>
+      <div style="width: 40%;">Стиль конечной точки:</div>
       <SelectCustom style="width: 60%;">
         <template #options>
           <div class="option" v-for="item in lineMarkerOptions" :key="item" @click="updateLine({ points: [handleLineElement.points[0], item] })">
@@ -110,8 +110,8 @@
     </div>
 
     <div class="row" v-if="handleLineElement.broken2">
-      <div style="width: 40%;">线条方向：</div>
-      <Select 
+      <div style="width: 40%;">Направление линии:</div>
+      <Select
         style="width: 60%;"
         :value="handleLineElement.broken2Direction || 'auto'"
         :options="lineBroken2DirectionOptions"
@@ -122,7 +122,7 @@
     <Divider />
 
     <div class="row">
-      <Button style="flex: 1;" @click="updateLine({ start: handleLineElement.end, end: handleLineElement.start })"><i-icon-park-outline:switch /> 交换方向</Button>
+      <Button style="flex: 1;" @click="updateLine({ start: handleLineElement.end, end: handleLineElement.start })"><i-icon-park-outline:switch /> Поменять направление</Button>
     </div>
 
     <Divider />
@@ -160,9 +160,9 @@ const lineStyleOptions = ref<LineStyleType[]>(['solid', 'dashed', 'dotted'])
 const lineMarkerOptions = ref<LinePoint[]>(['', 'arrow', 'dot'])
 
 const lineBroken2DirectionOptions = ref<{ label: string; value: Broken2LineDirection | 'auto' }[]>([
-  { label: '自动', value: 'auto' },
-  { label: '水平', value: 'horizontal' },
-  { label: '垂直', value: 'vertical' },
+  { label: 'Авто', value: 'auto' },
+  { label: 'уровень', value: 'horizontal' },
+  { label: 'вертикальный', value: 'vertical' },
 ])
 interface LineTypeOption {
   key: string
@@ -179,7 +179,7 @@ const lineTypeOptions: LineTypeOption[] = [
   { key: 'broken2', path: 'M 2 2 L 12 2 L 12 22 L 22 22', isBroken2: true },
   { key: 'curve', path: 'M 2 2 Q 2 22 22 22', isCurve: true },
   { key: 'cubic', path: 'M 2 2 C 22 2 2 22 22 22', isCubic: true },
-] 
+]
 
 const changeLineType = (line: LineTypeOption) => {
   if (!handleElement.value) return

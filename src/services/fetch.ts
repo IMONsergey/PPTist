@@ -17,9 +17,9 @@ const request = async (url: string, options: RequestInit): Promise<Response> => 
     try {
       const jsonResponse = await response.json()
       return jsonResponse
-    } 
+    }
     catch (err) {
-      throw new Error('服务器返回了非流响应')
+      throw new Error('Сервер вернул ответ без потоковой передачи')
     }
   }
 

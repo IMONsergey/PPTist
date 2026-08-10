@@ -1,5 +1,5 @@
 <template>
-  <div 
+  <div
     class="editable-element"
     ref="elementRef"
     :id="`editable-element-${elementInfo.id}`"
@@ -75,90 +75,90 @@ const { selectAllElements } = useSelectElement()
 const contextmenus = (): ContextmenuItem[] => {
   if (props.elementInfo.lock) {
     return [{
-      text: '解锁', 
+      text: 'Разблокировать',
       handler: () => unlockElement(props.elementInfo),
     }]
   }
 
   return [
     {
-      text: '剪切',
+      text: 'Вырезать',
       subText: 'Ctrl + X',
       handler: cutElement,
     },
     {
-      text: '复制',
+      text: 'Копировать',
       subText: 'Ctrl + C',
       handler: copyElement,
     },
     {
-      text: '粘贴',
+      text: 'Вставить',
       subText: 'Ctrl + V',
       handler: pasteElement,
     },
     { divider: true },
     {
-      text: '水平居中',
+      text: 'Выровнять по центру (гориз.)',
       handler: () => alignElementToCanvas(ElementAlignCommands.HORIZONTAL),
       children: [
-        { text: '水平垂直居中', handler: () => alignElementToCanvas(ElementAlignCommands.CENTER), },
-        { text: '水平居中', handler: () => alignElementToCanvas(ElementAlignCommands.HORIZONTAL) },
-        { text: '左对齐', handler: () => alignElementToCanvas(ElementAlignCommands.LEFT) },
-        { text: '右对齐', handler: () => alignElementToCanvas(ElementAlignCommands.RIGHT) },
+        { text: 'Выровнять по центру (оба)', handler: () => alignElementToCanvas(ElementAlignCommands.CENTER), },
+        { text: 'Выровнять по центру (гориз.)', handler: () => alignElementToCanvas(ElementAlignCommands.HORIZONTAL) },
+        { text: 'Выровнять по левому краю', handler: () => alignElementToCanvas(ElementAlignCommands.LEFT) },
+        { text: 'Выровнять по правому краю', handler: () => alignElementToCanvas(ElementAlignCommands.RIGHT) },
       ],
     },
     {
-      text: '垂直居中',
+      text: 'Выровнять по центру (верт.)',
       handler: () => alignElementToCanvas(ElementAlignCommands.VERTICAL),
       children: [
-        { text: '水平垂直居中', handler: () => alignElementToCanvas(ElementAlignCommands.CENTER) },
-        { text: '垂直居中', handler: () => alignElementToCanvas(ElementAlignCommands.VERTICAL) },
-        { text: '顶部对齐', handler: () => alignElementToCanvas(ElementAlignCommands.TOP) },
-        { text: '底部对齐', handler: () => alignElementToCanvas(ElementAlignCommands.BOTTOM) },
+        { text: 'Выровнять по центру (оба)', handler: () => alignElementToCanvas(ElementAlignCommands.CENTER) },
+        { text: 'Выровнять по центру (верт.)', handler: () => alignElementToCanvas(ElementAlignCommands.VERTICAL) },
+        { text: 'Выровнять по верхнему краю', handler: () => alignElementToCanvas(ElementAlignCommands.TOP) },
+        { text: 'Выровнять по нижнему краю', handler: () => alignElementToCanvas(ElementAlignCommands.BOTTOM) },
       ],
     },
     { divider: true },
     {
-      text: '置于顶层',
+      text: 'На передний план',
       disable: props.isMultiSelect && !props.elementInfo.groupId,
       handler: () => orderElement(props.elementInfo, ElementOrderCommands.TOP),
       children: [
-        { text: '置于顶层', handler: () => orderElement(props.elementInfo, ElementOrderCommands.TOP) },
-        { text: '上移一层', handler: () => orderElement(props.elementInfo, ElementOrderCommands.UP) },
+        { text: 'На передний план', handler: () => orderElement(props.elementInfo, ElementOrderCommands.TOP) },
+        { text: 'На слой выше', handler: () => orderElement(props.elementInfo, ElementOrderCommands.UP) },
       ],
     },
     {
-      text: '置于底层',
+      text: 'На задний план',
       disable: props.isMultiSelect && !props.elementInfo.groupId,
       handler: () => orderElement(props.elementInfo, ElementOrderCommands.BOTTOM),
       children: [
-        { text: '置于底层', handler: () => orderElement(props.elementInfo, ElementOrderCommands.BOTTOM) },
-        { text: '下移一层', handler: () => orderElement(props.elementInfo, ElementOrderCommands.DOWN) },
+        { text: 'На задний план', handler: () => orderElement(props.elementInfo, ElementOrderCommands.BOTTOM) },
+        { text: 'На слой ниже', handler: () => orderElement(props.elementInfo, ElementOrderCommands.DOWN) },
       ],
     },
     { divider: true },
     {
-      text: '设置链接',
+      text: 'Установить ссылку',
       handler: props.openLinkDialog,
     },
     {
-      text: props.elementInfo.groupId ? '取消组合' : '组合',
+      text: props.elementInfo.groupId ? 'Разгруппировать' : 'Группа',
       subText: 'Ctrl + G',
       handler: props.elementInfo.groupId ? uncombineElements : combineElements,
       hide: !props.isMultiSelect,
     },
     {
-      text: '全选',
+      text: 'Выбрать все',
       subText: 'Ctrl + A',
       handler: selectAllElements,
     },
     {
-      text: '锁定',
+      text: 'Заблокировать',
       subText: 'Ctrl + L',
       handler: lockElement,
     },
     {
-      text: '删除',
+      text: 'Удалить',
       subText: 'Delete',
       handler: deleteElement,
     },

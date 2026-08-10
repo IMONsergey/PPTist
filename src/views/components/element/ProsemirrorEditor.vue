@@ -1,6 +1,6 @@
 <template>
-  <div 
-    class="prosemirror-editor" 
+  <div
+    class="prosemirror-editor"
     :class="{ 'format-painter': textFormatPainter }"
     ref="editorViewRef"
     @mousedown="$event => emit('mousedown', $event)"
@@ -89,7 +89,7 @@ const handleKeydown = (editorView: EditorView, e: KeyboardEvent) => {
   const { ctrlKey, shiftKey, metaKey } = e
   const ctrlActive = ctrlKey || shiftKey || metaKey
   const key = e.key.toUpperCase()
-  
+
   const isHanldeHistory = ctrlActive && (key === KEYS.Z || key === KEYS.Y)
 
   handleInput(isHanldeHistory)
@@ -130,7 +130,7 @@ const execCommand = ({ target, action }: RichTextCommand) => {
       addMark(editorView, mark)
 
       if (item.value && !document.fonts.check(`16px ${item.value}`)) {
-        message.warning('字体需要等待加载下载后生效，请稍等')
+        message.warning('Шрифт необходимо загрузить, прежде чем он вступит в силу, подождите немного.')
       }
     }
     else if (item.command === 'fontsize' && item.value) {

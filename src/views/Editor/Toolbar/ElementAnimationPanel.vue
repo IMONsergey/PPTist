@@ -1,18 +1,18 @@
 <template>
   <div class="element-animation-panel">
     <div class="element-animation" v-if="handleElement">
-      <Popover 
-        trigger="click" 
-        v-model:value="animationPoolVisible" 
+      <Popover
+        trigger="click"
+        v-model:value="animationPoolVisible"
         @update:value="visible => handlePopoverVisibleChange(visible)"
         style="width: 100%;"
       >
         <template #content>
-          <Tabs 
-            :tabs="tabs" 
-            v-model:value="activeTab" 
-            :tabsStyle="{ marginBottom: '20px' }" 
-            :tabStyle="{ width: '33.333%' }" 
+          <Tabs
+            :tabs="tabs"
+            v-model:value="activeTab"
+            :tabsStyle="{ marginBottom: '20px' }"
+            :tabStyle="{ width: '33.333%' }"
             spaceAround
           />
           <template v-for="key in animationTypes">
@@ -20,14 +20,14 @@
               <div class="pool-type" :key="effect.name" v-for="effect in animations[key]">
                 <div class="type-title">{{effect.name}}：</div>
                 <div class="pool-item-wrapper">
-                  <div 
-                    class="pool-item" 
+                  <div
+                    class="pool-item"
                     v-for="item in effect.children" :key="item.name"
                     @mouseenter="hoverPreviewAnimation = item.value"
                     @mouseleave="hoverPreviewAnimation = ''"
                     @click="addAnimation(key, item.value)"
                   >
-                    <div 
+                    <div
                       class="animation-box"
                       :class="[
                         `${ANIMATION_CLASS_PREFIX}animated`,
@@ -43,16 +43,16 @@
           </template>
         </template>
         <Button class="element-animation-btn" @click="handleAnimationId = ''">
-          <i-icon-park-outline:effects /> 添加动画
+          <i-icon-park-outline:effects /> Добавить анимацию
         </Button>
       </Popover>
     </div>
 
-    <div class="tip" v-else><i-icon-park-outline:click style="margin-right: 5px;" /> 选中画布中的元素添加动画</div>
-    
+    <div class="tip" v-else><i-icon-park-outline:click style="margin-right: 5px;" /> Добавить анимацию к выбранным элементам на холсте</div>
+
     <Divider />
 
-    <Draggable 
+    <Draggable
       class="animation-sequence"
       :modelValue="animationSequence"
       :animation="200"
@@ -68,8 +68,8 @@
             <div class="index">{{element.index}}</div>
             <div class="text">「{{element.elType}}」{{element.animationEffect}}</div>
             <div class="handler">
-              <i-icon-park-outline:play-one class="handler-btn" v-tooltip="'预览'" @click.stop="runAnimation(element.elId, element.effect, element.duration)" />
-              <i-icon-park-outline:close-small class="handler-btn" v-tooltip="'删除'" @click.stop="deleteAnimation(element.id)" />
+              <i-icon-park-outline:play-one class="handler-btn" v-tooltip="'Предпросмотр'" @click.stop="runAnimation(element.elId, element.effect, element.duration)" />
+              <i-icon-park-outline:close-small class="handler-btn" v-tooltip="'Удалить'" @click.stop="deleteAnimation(element.id)" />
             </div>
           </div>
 
@@ -77,31 +77,31 @@
             <Divider :margin="16" />
 
             <div class="config-item">
-              <div style="width: 35%;">持续时长：</div>
-              <NumberInput 
+              <div style="width: 35%;">Продолжительность:</div>
+              <NumberInput
                 :min="500"
                 :max="3000"
                 :step="500"
-                :value="element.duration" 
-                @update:value="value => updateElementAnimationDuration(element.id, value)" 
-                style="width: 65%;" 
+                :value="element.duration"
+                @update:value="value => updateElementAnimationDuration(element.id, value)"
+                style="width: 65%;"
               />
             </div>
             <div class="config-item">
-              <div style="width: 35%;">触发方式：</div>
+              <div style="width: 35%;">:</div>
               <Select
                 :value="element.trigger"
                 @update:value="value => updateElementAnimationTrigger(element.id, value as AnimationTrigger)"
                 style="width: 65%;"
                 :options="[
-                  { label: '主动触发', value: 'click' },
-                  { label: '与上一动画同时', value: 'meantime' },
-                  { label: '上一动画之后', value: 'auto' },
+                  { label: 'По щелчку', value: 'click' },
+                  { label: 'Вместе с предыдущей', value: 'meantime' },
+                  { label: 'После предыдущей', value: 'auto' },
                 ]"
               />
             </div>
             <div class="config-item">
-              <Button style="width: 100%;" @click="openAnimationPool(element.id)"><i-icon-park-outline:switch /> 更换动画</Button>
+              <Button style="width: 100%;" @click="openAnimationPool(element.id)"><i-icon-park-outline:switch /> замена анимации</Button>
             </div>
           </div>
         </div>
@@ -111,7 +111,7 @@
     <template v-if="animationSequence.length >= 2">
       <Divider />
       <Button @click="runAllAnimation()">
-        <i-icon-park-outline:pause v-if="animateIn" /><i-icon-park-outline:play-one v-else /> {{ animateIn ? '停止预览' : '预览全部'}}
+        <i-icon-park-outline:pause v-if="animateIn" /><i-icon-park-outline:play-one v-else /> {{ animateIn ? 'Остановить предпросмотр' : 'Предпросмотр всех'}}
       </Button>
     </template>
   </div>
@@ -123,7 +123,7 @@ import { nanoid } from 'nanoid'
 import { storeToRefs } from 'pinia'
 import { useMainStore, useSlidesStore } from '@/store'
 import type { AnimationTrigger, AnimationType, PPTAnimation } from '@/types/slides'
-import { 
+import {
   ENTER_ANIMATIONS,
   EXIT_ANIMATIONS,
   ATTENTION_ANIMATIONS,
@@ -173,9 +173,9 @@ const { handleElement, handleElementId } = storeToRefs(useMainStore())
 const { currentSlide, formatedAnimations, currentSlideAnimations } = storeToRefs(slidesStore)
 
 const tabs: TabItem[] = [
-  { key: 'in', label: '入场', color: '#68a490' },
-  { key: 'out', label: '退场', color: '#d86344' },
-  { key: 'attention', label: '强调', color: '#e8b76a' },
+  { key: 'in', label: 'Появление', color: '#68a490' },
+  { key: 'out', label: 'Исчезновение', color: '#d86344' },
+  { key: 'attention', label: 'Выделение', color: '#e8b76a' },
 ]
 const activeTab = ref('in')
 const animateIn = ref(false)
@@ -235,7 +235,7 @@ const handleDragEnd = (eventData: { newIndex: number; oldIndex: number }) => {
   const animation = animations[oldIndex]
   animations.splice(oldIndex, 1)
   animations.splice(newIndex, 0, animation)
-  
+
   slidesStore.updateSlide({ animations })
   addHistorySnapshot()
 }
@@ -262,7 +262,7 @@ const runAllAnimation = async () => {
   for (let i = 0; i < animationSequence.value.length; i++) {
     if (!animateIn.value) break
     const item = animationSequence.value[i]
-    if (item.index !== 1 && item.trigger !== 'meantime') await new Promise(resolve => setTimeout(resolve, item.duration + 100)) 
+    if (item.index !== 1 && item.trigger !== 'meantime') await new Promise(resolve => setTimeout(resolve, item.duration + 100))
     runAnimation(item.elId, item.effect, item.duration)
     if (i >= animationSequence.value.length - 1) animateIn.value = false
   }
