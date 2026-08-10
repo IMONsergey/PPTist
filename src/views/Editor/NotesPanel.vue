@@ -62,7 +62,7 @@
           ref="textAreaRef"
           v-model:value="content"
           :padding="6"
-          :placeholder="`输入批注（为${handleElementId ? 'Выбранный элемент' : 'Текущий слайд' }）`"
+          :placeholder="`Введите комментарий (${handleElementId ? 'выбранный элемент' : 'текущий слайд'})`"
           :rows="2"
           @focus="replyNoteId = ''; activeNoteId = ''"
           @enter.prevent="createNote()"

@@ -17,7 +17,7 @@
         <Button style="flex: 1;" @click="insertTextElement()"><i-icon-park-outline:font-size class="icon" /> Текст</Button>
         <Button style="flex: 1;">
           <FileInput @change="files => insertImageElement(files)">
-            <i-icon-park-outline:picture class="icon" /> 图片
+            <i-icon-park-outline:picture class="icon" /> Изображение
           </FileInput>
         </Button>
         <Button style="flex: 1;" @click="insertShapeElement('square')"><i-icon-park-outline:square class="icon" /> Прямоугольник</Button>

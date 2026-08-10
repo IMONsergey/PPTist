@@ -279,7 +279,7 @@ const toggleRuler = () => {
 // 开关浮动菜单
 const toggleBubbleMenu = () => {
   mainStore.setBubbleMenuState(!showBubbleMenu.value)
-  message.success(`元素气泡菜单已${showBubbleMenu.value ? 'Включить' : 'Отключить'}`)
+  message.success(`Плавающее меню элементов: ${showBubbleMenu.value ? 'включено' : 'отключено'}`)
 }
 
 // 在鼠标绘制的范围插入元素

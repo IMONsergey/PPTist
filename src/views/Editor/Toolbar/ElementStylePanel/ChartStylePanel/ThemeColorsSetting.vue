@@ -23,7 +23,7 @@
         :disabled="themeColors.length >= 10"
         @click="addThemeColor()"
       >
-        <i-icon-park-outline:plus /> 添加主题色
+        <i-icon-park-outline:plus /> Добавить цвет темы
       </Button>
     </div>
 

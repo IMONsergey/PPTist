@@ -1,7 +1,7 @@
 <template>
   <div class="chart-style-panel">
     <Button class="full-width-btn" @click="openDataEditor()">
-      <i-icon-park-outline:edit /> 编辑图表
+      <i-icon-park-outline:edit /> Редактировать диаграмму
     </Button>
 
     <Divider />

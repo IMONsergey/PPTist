@@ -35,7 +35,7 @@
         style="width: 45%;"
       >
         <template #prefix>
-          水平：
+          По горизонтали:
         </template>
       </NumberInput>
       <div style="width: 10%;"></div>
@@ -47,7 +47,7 @@
         style="width: 45%;"
       >
         <template #prefix>
-          垂直：
+          По вертикали:
         </template>
       </NumberInput>
     </div>
@@ -64,7 +64,7 @@
           style="width: 45%;"
         >
           <template #prefix>
-            宽度：
+            Ширина:
           </template>
         </NumberInput>
         <template v-if="['image', 'shape', 'audio'].includes(handleElement!.type)">
@@ -84,7 +84,7 @@
           style="width: 45%;"
         >
           <template #prefix>
-            高度：
+            Высота:
           </template>
         </NumberInput>
       </div>
@@ -103,7 +103,7 @@
           style="width: 45%;"
         >
           <template #prefix>
-            旋转：
+            Поворот:
           </template>
         </NumberInput>
         <div style="width: 7%;"></div>

@@ -43,7 +43,7 @@
           </template>
         </template>
         <Button class="element-animation-btn" @click="handleAnimationId = ''">
-          <i-icon-park-outline:effects /> 添加动画
+          <i-icon-park-outline:effects /> Добавить анимацию
         </Button>
       </Popover>
     </div>

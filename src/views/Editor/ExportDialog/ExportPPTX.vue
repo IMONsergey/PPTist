@@ -60,7 +60,7 @@
         </div>
 
         <div class="tip" v-if="!ignoreMedia">
-          提示：1. 支持导出格式：avi、mp4、mov、wmv、mp3、wav；2. 跨域资源无法导出。
+          Примечание: 1. Поддерживаются форматы avi, mp4, mov, wmv, mp3, wav. 2. Ресурсы с других доменов экспортировать нельзя.
         </div>
       </template>
     </div>

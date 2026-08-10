@@ -1,0 +1,92 @@
+[
+  {
+    "file": "src/components/ChartDataEditor.vue",
+    "from": "图表类型：{{ CHART_TYPE_MAP[chartType] }}",
+    "to": "Тип диаграммы: {{ CHART_TYPE_MAP[chartType] }}",
+    "count": 1
+  },
+  {
+    "file": "src/views/Editor/Canvas/index.vue",
+    "from": "message.success(`元素气泡菜单已${showBubbleMenu.value ? 'Включить' : 'Отключить'}`)",
+    "to": "message.success(`Плавающее меню элементов: ${showBubbleMenu.value ? 'включено' : 'отключено'}`)",
+    "count": 1
+  },
+  {
+    "file": "src/views/Editor/ExportDialog/ExportPDF.vue",
+    "from": "建议：请在弹出的打印窗口中勾选「背景图形」选项，边距选择「默认」。",
+    "to": "Совет: в окне печати включите «Фоновая графика» и выберите поля «По умолчанию».",
+    "count": 1
+  },
+  {
+    "file": "src/views/Editor/ExportDialog/ExportPPTX.vue",
+    "from": "提示：1. 支持导出格式：avi、mp4、mov、wmv、mp3、wav；2. 跨域资源无法导出。",
+    "to": "Примечание: 1. Поддерживаются форматы avi, mp4, mov, wmv, mp3, wav. 2. Ресурсы с других доменов экспортировать нельзя.",
+    "count": 1
+  },
+  {
+    "file": "src/views/Editor/ExportDialog/ExportSpecificFile.vue",
+    "from": "提示：.pptist 是本应用的特有文件后缀，支持将该类型的文件导入回应用中。",
+    "to": "Примечание: .pptist — собственный формат приложения; такой файл можно импортировать обратно.",
+    "count": 1
+  },
+  {
+    "file": "src/views/Editor/NotesPanel.vue",
+    "from": "`输入批注（为${handleElementId ? 'Выбранный элемент' : 'Текущий слайд' }）`",
+    "to": "`Введите комментарий (${handleElementId ? 'выбранный элемент' : 'текущий слайд'})`",
+    "count": 1
+  },
+  {
+    "file": "src/views/Editor/Toolbar/ElementAnimationPanel.vue",
+    "from": "<i-icon-park-outline:effects /> 添加动画",
+    "to": "<i-icon-park-outline:effects /> Добавить анимацию",
+    "count": 1
+  },
+  {
+    "file": "src/views/Editor/Toolbar/ElementPositionPanel.vue",
+    "from": "水平：",
+    "to": "По горизонтали:",
+    "count": 1
+  },
+  {
+    "file": "src/views/Editor/Toolbar/ElementPositionPanel.vue",
+    "from": "垂直：",
+    "to": "По вертикали:",
+    "count": 1
+  },
+  {
+    "file": "src/views/Editor/Toolbar/ElementPositionPanel.vue",
+    "from": "宽度：",
+    "to": "Ширина:",
+    "count": 1
+  },
+  {
+    "file": "src/views/Editor/Toolbar/ElementPositionPanel.vue",
+    "from": "高度：",
+    "to": "Высота:",
+    "count": 1
+  },
+  {
+    "file": "src/views/Editor/Toolbar/ElementPositionPanel.vue",
+    "from": "旋转：",
+    "to": "Поворот:",
+    "count": 1
+  },
+  {
+    "file": "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/ThemeColorsSetting.vue",
+    "from": "<i-icon-park-outline:plus /> 添加主题色",
+    "to": "<i-icon-park-outline:plus /> Добавить цвет темы",
+    "count": 1
+  },
+  {
+    "file": "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/index.vue",
+    "from": "<i-icon-park-outline:edit /> 编辑图表",
+    "to": "<i-icon-park-outline:edit /> Редактировать диаграмму",
+    "count": 1
+  },
+  {
+    "file": "src/views/Mobile/MobileEditor/SlideToolbar.vue",
+    "from": "<i-icon-park-outline:picture class=\"icon\" /> 图片",
+    "to": "<i-icon-park-outline:picture class=\"icon\" /> Изображение",
+    "count": 1
+  }
+]

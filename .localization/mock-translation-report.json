@@ -1,0 +1,19 @@
+{
+  "json_files_scanned": 11,
+  "unique_chinese_strings": 573,
+  "translated_strings": 573,
+  "changed_files": [
+    "public/mocks/AIPPT.json",
+    "public/mocks/imgs.json",
+    "public/mocks/slides.json",
+    "public/mocks/template_1.json",
+    "public/mocks/template_2.json",
+    "public/mocks/template_3.json",
+    "public/mocks/template_4.json",
+    "public/mocks/template_5.json",
+    "public/mocks/template_6.json",
+    "public/mocks/template_7.json",
+    "public/mocks/template_8.json"
+  ],
+  "remaining_han_files": []
+}
