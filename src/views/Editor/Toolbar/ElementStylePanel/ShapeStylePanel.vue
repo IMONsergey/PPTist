@@ -61,7 +61,7 @@
         />
       </div>
       <div class="row">
-        <div style="width: 40%;">当前色块：</div>
+        <div style="width: 40%;">Текущий цветовой патч:</div>
         <Popover trigger="click" style="width: 60%;">
           <template #content>
             <ColorPicker
@@ -106,7 +106,7 @@
       <Divider />
 
       <div class="row">
-        <div style="width: 40%;">行间距：</div>
+        <div style="width: 40%;">Межстрочный интервал:</div>
         <Select style="width: 60%;"
           :value="lineHeight || 1"
           @update:value="value => updateTextProps({ lineHeight: value as number })"
@@ -158,7 +158,7 @@
           @update:value="value => updateInset(0, value)"
           style="width: 45%;"
         >
-          <template #prefix>上边距：</template>
+          <template #prefix>Верхний отступ:</template>
         </NumberInput>
         <div style="width: 10%;"></div>
         <NumberInput
@@ -168,7 +168,7 @@
           @update:value="value => updateInset(2, value)"
           style="width: 45%;"
         >
-          <template #prefix>下边距：</template>
+          <template #prefix>Нижний отступ:</template>
         </NumberInput>
       </div>
       <div class="row">
@@ -179,7 +179,7 @@
           @update:value="value => updateInset(3, value)"
           style="width: 45%;"
         >
-          <template #prefix>左边距：</template>
+          <template #prefix>Левый отступ:</template>
         </NumberInput>
         <div style="width: 10%;"></div>
         <NumberInput
@@ -189,7 +189,7 @@
           @update:value="value => updateInset(1, value)"
           style="width: 45%;"
         >
-          <template #prefix>右边距：</template>
+          <template #prefix>Правый отступ:</template>
         </NumberInput>
       </div>
 

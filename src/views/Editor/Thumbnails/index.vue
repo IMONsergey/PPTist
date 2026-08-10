@@ -69,7 +69,7 @@
       </template>
     </Draggable>
 
-    <div class="page-number">幻灯片 {{slideIndex + 1}} / {{slides.length}}</div>
+    <div class="page-number">Слайд-шоу {{slideIndex + 1}} / {{slides.length}}</div>
   </div>
 </template>
 

@@ -60,7 +60,7 @@
         </template>
 
         <div class="row-block" v-if="textColorPropsEnable">
-          <div class="label">文字颜色：</div>
+          <div class="label">Цвет текста:</div>
           <div class="colors">
             <div class="color"
               v-for="color in colors"

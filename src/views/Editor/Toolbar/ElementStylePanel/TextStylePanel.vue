@@ -79,7 +79,7 @@
         @update:value="value => updateInset(0, value)"
         style="width: 45%;"
       >
-        <template #prefix>上边距：</template>
+        <template #prefix>Верхний отступ:</template>
       </NumberInput>
       <div style="width: 10%;"></div>
       <NumberInput
@@ -89,7 +89,7 @@
         @update:value="value => updateInset(2, value)"
         style="width: 45%;"
       >
-        <template #prefix>下边距：</template>
+        <template #prefix>Нижний отступ:</template>
       </NumberInput>
     </div>
     <div class="row">
@@ -100,7 +100,7 @@
         @update:value="value => updateInset(3, value)"
         style="width: 45%;"
       >
-        <template #prefix>左边距：</template>
+        <template #prefix>Левый отступ:</template>
       </NumberInput>
       <div style="width: 10%;"></div>
       <NumberInput
@@ -110,7 +110,7 @@
         @update:value="value => updateInset(1, value)"
         style="width: 45%;"
       >
-        <template #prefix>右边距：</template>
+        <template #prefix>Правый отступ:</template>
       </NumberInput>
     </div>
 

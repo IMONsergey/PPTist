@@ -49,7 +49,7 @@
                   <i-icon-park-outline:arrow-right class="icon" :class="{ 'active': shapeType === 'arrow' }" @click="shapeType = 'arrow'" />
                 </div>
                 <Divider type="vertical" />
-                <div class="label">墨迹粗细：</div>
+                <div class="label">Толщина чернил:</div>
                 <Slider class="size-slider" :min="2" :max="8" :step="2" v-model:value="shapeSize" />
               </div>
             </template>
@@ -60,7 +60,7 @@
           <Popover placement="top" trigger="manual" :value="sizePopoverType === 'mark'" @hide="sizePopoverType = ''">
             <template #content>
               <div class="setting">
-                <div class="label">墨迹粗细：</div>
+                <div class="label">Толщина чернил:</div>
                 <Slider class="size-slider" :min="16" :max="40" :step="4" v-model:value="markSize" />
               </div>
             </template>
@@ -71,7 +71,7 @@
           <Popover placement="top" trigger="manual" :value="sizePopoverType === 'eraser'" @hide="sizePopoverType = ''">
             <template #content>
               <div class="setting">
-                <div class="label">橡皮大小：</div>
+                <div class="label">:</div>
                 <Slider class="size-slider" :min="20" :max="200" :step="20" v-model:value="rubberSize" />
               </div>
             </template>

@@ -27,7 +27,7 @@
       </Button>
     </div>
 
-    <Button class="btn" type="primary" @click="setThemeColors()">确认</Button>
+    <Button class="btn" type="primary" @click="setThemeColors()">Подтвердить</Button>
   </div>
 </template>
 

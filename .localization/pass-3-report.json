@@ -1,0 +1,30 @@
+{
+  "map_entries": 488,
+  "literal_hits": 0,
+  "template_hits": 87,
+  "visible_attr_hits": 0,
+  "files_changed": 21,
+  "changed_files": [
+    "src/components/ChartDataEditor.vue",
+    "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue",
+    "src/views/Editor/CanvasTool/MediaInput.vue",
+    "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+    "src/views/Editor/CanvasTool/index.vue",
+    "src/views/Editor/EditorHeader/index.vue",
+    "src/views/Editor/ImageLibPanel.vue",
+    "src/views/Editor/Thumbnails/index.vue",
+    "src/views/Editor/Toolbar/ElementAnimationPanel.vue",
+    "src/views/Editor/Toolbar/ElementStylePanel/AudioStylePanel.vue",
+    "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/ThemeColorsSetting.vue",
+    "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/index.vue",
+    "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue",
+    "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+    "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+    "src/views/Editor/Toolbar/MultiStylePanel.vue",
+    "src/views/Editor/Toolbar/SlideDesignPanel/ThemeColorsSetting.vue",
+    "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+    "src/views/Editor/Toolbar/common/RichTextBase.vue",
+    "src/views/Mobile/MobileEditor/ElementToolbar.vue",
+    "src/views/Screen/WritingBoardTool.vue"
+  ]
+}

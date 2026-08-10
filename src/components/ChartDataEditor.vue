@@ -84,7 +84,7 @@
       <div class="right">
         <Button class="btn" @click="closeEditor()">取消</Button>
         <Button class="btn" @click="clear()">清空数据</Button>
-        <Button type="primary" class="btn" @click="getTableData()">确认</Button>
+        <Button type="primary" class="btn" @click="getTableData()">Подтвердить</Button>
       </div>
     </div>
   </div>

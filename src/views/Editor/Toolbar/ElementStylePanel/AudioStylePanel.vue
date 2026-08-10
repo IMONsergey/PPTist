@@ -14,7 +14,7 @@
     </div>
 
     <div class="row switch-row">
-      <div style="width: 40%;">自动播放：</div>
+      <div style="width: 40%;">Автовоспроизведение:</div>
       <div class="switch-wrapper" style="width: 60%;">
         <Switch
           :value="handleAudioElement.autoplay"

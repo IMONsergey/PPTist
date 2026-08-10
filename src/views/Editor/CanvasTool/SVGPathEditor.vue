@@ -106,7 +106,7 @@
               :value="activePoint.x"
               @update:value="value => updatePointPosition('x', value)"
             >
-              <template #prefix>水平：</template>
+              <template #prefix>Уровень:</template>
             </NumberInput>
             <NumberInput
               class="number-input"
@@ -116,7 +116,7 @@
               :value="activePoint.y"
               @update:value="value => updatePointPosition('y', value)"
             >
-              <template #prefix>垂直：</template>
+              <template #prefix>вертикальный:</template>
             </NumberInput>
           </div>
         </div>
@@ -124,7 +124,7 @@
         <template v-if="activePoint.q">
           <Divider :margin="20" />
           <div class="panel-section">
-            <div class="section-title">控制点：</div>
+            <div class="section-title">контрольная точка:</div>
             <div class="input-row">
               <NumberInput
                 class="number-input"
@@ -134,7 +134,7 @@
                 :value="activePoint.q.x"
                 @update:value="value => updateQuadraticPosition('x', value)"
               >
-                <template #prefix>水平：</template>
+                <template #prefix>Уровень:</template>
               </NumberInput>
               <NumberInput
                 class="number-input"
@@ -144,7 +144,7 @@
                 :value="activePoint.q.y"
                 @update:value="value => updateQuadraticPosition('y', value)"
               >
-                <template #prefix>垂直：</template>
+                <template #prefix>вертикальный:</template>
               </NumberInput>
             </div>
           </div>
@@ -153,7 +153,7 @@
         <template v-if="activePoint.c">
           <Divider :margin="20" />
           <div class="panel-section">
-            <div class="section-title">控制点：</div>
+            <div class="section-title">контрольная точка:</div>
             <div class="input-row">
               <NumberInput
                 class="number-input"
@@ -163,7 +163,7 @@
                 :value="activePoint.c[0].x"
                 @update:value="value => updateCubicPosition('x', value, 0)"
               >
-                <template #prefix>1-水平：</template>
+                <template #prefix>1-уровень:</template>
               </NumberInput>
               <NumberInput
                 class="number-input"
@@ -173,7 +173,7 @@
                 :value="activePoint.c[0].y"
                 @update:value="value => updateCubicPosition('y', value, 0)"
               >
-                <template #prefix>1-垂直：</template>
+                <template #prefix>1-вертикальный:</template>
               </NumberInput>
             </div>
             <div class="input-row">
@@ -185,7 +185,7 @@
                 :value="activePoint.c[1].x"
                 @update:value="value => updateCubicPosition('x', value, 1)"
               >
-                <template #prefix>2-水平：</template>
+                <template #prefix>2-уровневый:</template>
               </NumberInput>
               <NumberInput
                 class="number-input"
@@ -195,7 +195,7 @@
                 :value="activePoint.c[1].y"
                 @update:value="value => updateCubicPosition('y', value, 1)"
               >
-                <template #prefix>2-垂直：</template>
+                <template #prefix>2-вертикальный:</template>
               </NumberInput>
             </div>
           </div>
@@ -204,7 +204,7 @@
         <template v-if="activePoint.a">
           <Divider :margin="20" />
           <div class="panel-section">
-            <div class="section-title">圆弧：</div>
+            <div class="section-title">дуга:</div>
             <div class="input-row">
               <NumberInput
                 class="number-input"
@@ -214,7 +214,7 @@
                 :value="activePoint.a.rx"
                 @update:value="value => updateArcParam('rx', value)"
               >
-                <template #prefix>水平半径：</template>
+                <template #prefix>Горизонтальный радиус:</template>
               </NumberInput>
               <NumberInput
                 class="number-input"
@@ -224,7 +224,7 @@
                 :value="activePoint.a.ry"
                 @update:value="value => updateArcParam('ry', value)"
               >
-                <template #prefix>垂直半径：</template>
+                <template #prefix>Вертикальный радиус:</template>
               </NumberInput>
             </div>
             <div class="input-row">
@@ -236,7 +236,7 @@
                 :value="activePoint.a.rot"
                 @update:value="value => updateArcParam('rot', value)"
               >
-                <template #prefix>旋转：</template>
+                <template #prefix>Ротация:</template>
               </NumberInput>
             </div>
             <div class="checkbox-row">
@@ -264,7 +264,7 @@
       <div class="tooltips">Tips: 双击追加直线，右键追加线段或删除点；拖动端点和控制点调整路径。</div>
       <div class="footer-actions">
         <Button @click="emit('close')">关闭</Button>
-        <Button type="primary" :disabled="!canInsert" @click="insert()">确认</Button>
+        <Button type="primary" :disabled="!canInsert" @click="insert()">Подтвердить</Button>
       </div>
     </div>
   </div>

@@ -118,9 +118,9 @@
         <Button first style="flex: 1;" @click="emitTableCommand('insert-row', 'after')">添加行</Button>
         <Popover trigger="click">
           <template #content>
-            <PopoverMenuItem center @click="emitTableCommand('insert-row', 'before')">上方添加</PopoverMenuItem>
-            <PopoverMenuItem center @click="emitTableCommand('insert-row', 'after')">下方添加</PopoverMenuItem>
-            <PopoverMenuItem center @click="emitTableCommand('delete-row')">删除行</PopoverMenuItem>
+            <PopoverMenuItem center @click="emitTableCommand('insert-row', 'before')">Добавить сверху</PopoverMenuItem>
+            <PopoverMenuItem center @click="emitTableCommand('insert-row', 'after')">Добавить снизу</PopoverMenuItem>
+            <PopoverMenuItem center @click="emitTableCommand('delete-row')">Удалить строку</PopoverMenuItem>
           </template>
           <Button last class="popover-btn"><i-icon-park-outline:down /></Button>
         </Popover>
@@ -132,9 +132,9 @@
         <Button first style="flex: 1;" @click="emitTableCommand('insert-col', 'after')">添加列</Button>
         <Popover trigger="click">
           <template #content>
-            <PopoverMenuItem center @click="emitTableCommand('insert-col', 'before')">左侧添加</PopoverMenuItem>
-            <PopoverMenuItem center @click="emitTableCommand('insert-col', 'after')">右侧添加</PopoverMenuItem>
-            <PopoverMenuItem center @click="emitTableCommand('delete-col')">删除列</PopoverMenuItem>
+            <PopoverMenuItem center @click="emitTableCommand('insert-col', 'before')">Добавить слева</PopoverMenuItem>
+            <PopoverMenuItem center @click="emitTableCommand('insert-col', 'after')">Добавить справа</PopoverMenuItem>
+            <PopoverMenuItem center @click="emitTableCommand('delete-col')">Удалить столбец</PopoverMenuItem>
           </template>
           <Button last class="popover-btn"><i-icon-park-outline:down /></Button>
         </Popover>
@@ -159,27 +159,27 @@
           @update:value="value => updateTheme({ rowHeader: value })"
           :value="theme.rowHeader"
           style="flex: 1;"
-        >标题行</Checkbox>
+        >Строка заголовка</Checkbox>
         <Checkbox
           @update:value="value => updateTheme({ rowFooter: value })"
           :value="theme.rowFooter"
           style="flex: 1;"
-        >汇总行</Checkbox>
+        >Итоговая строка</Checkbox>
       </div>
       <div class="row">
         <Checkbox
           @update:value="value => updateTheme({ colHeader: value })"
           :value="theme.colHeader"
           style="flex: 1;"
-        >第一列</Checkbox>
+        >Первый столбец</Checkbox>
         <Checkbox
           @update:value="value => updateTheme({ colFooter: value })"
           :value="theme.colFooter"
           style="flex: 1;"
-        >最后一列</Checkbox>
+        >Последний столбец</Checkbox>
       </div>
       <div class="row">
-        <div style="width: 40%;">主题颜色：</div>
+        <div style="width: 40%;">Цвет темы:</div>
         <Popover trigger="click" style="width: 60%;">
           <template #content>
             <ColorPicker

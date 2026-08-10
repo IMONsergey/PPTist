@@ -27,7 +27,7 @@
         </FileInput>
         <div class="group">
           <Button @click="emit('close')" style="margin-right: 10px;">取消</Button>
-          <Button type="primary" @click="insertAudio()">确认</Button>
+          <Button type="primary" @click="insertAudio()">Подтвердить</Button>
         </div>
       </div>
     </template>

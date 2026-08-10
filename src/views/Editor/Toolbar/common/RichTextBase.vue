@@ -126,9 +126,9 @@
     <ButtonGroup class="row" passive>
       <Popover trigger="click" v-model:value="AIPopoverVisible" style="width: 25%;">
         <template #content>
-          <PopoverMenuItem center @click="execAI('Благоустройство и переписывание')">美化</PopoverMenuItem>
-          <PopoverMenuItem center @click="execAI('богатое расширение')">扩写</PopoverMenuItem>
-          <PopoverMenuItem center @click="execAI('Оптимизация и усовершенствование')">精简</PopoverMenuItem>
+          <PopoverMenuItem center @click="execAI('Благоустройство и переписывание')">Благоустройство</PopoverMenuItem>
+          <PopoverMenuItem center @click="execAI('богатое расширение')">Расширять</PopoverMenuItem>
+          <PopoverMenuItem center @click="execAI('Оптимизация и усовершенствование')">упрощенный</PopoverMenuItem>
         </template>
         <CheckboxButton
           first
@@ -153,8 +153,8 @@
           <div class="link-popover">
             <Input v-model:value="link" placeholder="Введите ссылку" />
             <div class="btns">
-              <Button size="small" :disabled="!richTextAttrs.link" @click="removeLink()" style="margin-right: 5px;">移除</Button>
-              <Button size="small" type="primary" @click="updateLink(link)">确认</Button>
+              <Button size="small" :disabled="!richTextAttrs.link" @click="removeLink()" style="margin-right: 5px;">Удалить</Button>
+              <Button size="small" type="primary" @click="updateLink(link)">Подтвердить</Button>
             </div>
           </div>
         </template>
@@ -238,7 +238,7 @@
         <Button first style="flex: 1;" v-tooltip="'Уменьшить отступ абзаца'" @click="emitRichTextCommand('indent', '-1')"><i-icon-park-outline:indent-left /></Button>
         <Popover trigger="click" v-model:value="indentLeftPanelVisible">
           <template #content>
-            <PopoverMenuItem center @click="emitRichTextCommand('textIndent', '-1')">减小首行缩进</PopoverMenuItem>
+            <PopoverMenuItem center @click="emitRichTextCommand('textIndent', '-1')">Уменьшите отступ первой строки.</PopoverMenuItem>
           </template>
           <Button last class="popover-btn"><i-icon-park-outline:down /></Button>
         </Popover>
@@ -248,7 +248,7 @@
         <Button first style="flex: 1;" v-tooltip="'Увеличить отступ абзаца'" @click="emitRichTextCommand('indent', '+1')"><i-icon-park-outline:indent-right /></Button>
         <Popover trigger="click" v-model:value="indentRightPanelVisible">
           <template #content>
-            <PopoverMenuItem center @click="emitRichTextCommand('textIndent', '+1')">增大首行缩进</PopoverMenuItem>
+            <PopoverMenuItem center @click="emitRichTextCommand('textIndent', '+1')">Увеличьте отступ первой строки.</PopoverMenuItem>
           </template>
           <Button last class="popover-btn"><i-icon-park-outline:down /></Button>
         </Popover>
