@@ -1,0 +1,48 @@
+name: Extract final Han audit
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.run-final-han-audit'
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+      - name: Extract residual lines
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          data=json.loads(Path('.localization/residual-after-pass-3.json').read_text(encoding='utf-8'))
+          lines=data['chinese_noncomment_lines']
+          out=['file\tline\ttext']
+          for item in lines:
+              out.append(f"{item['file']}\t{item['line']}\t{item['text'].replace(chr(9),' ')}")
+          Path('.localization/final-han-lines.tsv').write_text('\n'.join(out)+'\n',encoding='utf-8')
+          eng=data['english_visible_candidates']
+          out2=['file\tline\tkind\ttext']
+          for item in eng:
+              out2.append(f"{item['file']}\t{item['line']}\t{item['kind']}\t{item['text'].replace(chr(9),' ')}")
+          Path('.localization/final-english-visible.tsv').write_text('\n'.join(out2)+'\n',encoding='utf-8')
+          print(f"Han residual lines: {len(lines)}; English candidates: {len(eng)}")
+          PY
+      - name: Commit audit and remove trigger
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -f .run-final-han-audit
+          git add .localization/final-han-lines.tsv .localization/final-english-visible.tsv .run-final-han-audit
+          git commit -m "chore: extract final localization audit"
+          git push origin HEAD:${{ github.head_ref }}
