@@ -1,0 +1,73 @@
+name: Compact PPTist localization residual
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.run-compact-localization-residual'
+
+permissions:
+  contents: write
+
+jobs:
+  compact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Compact residual report
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          from collections import defaultdict
+
+          src = json.loads(Path('.localization/residual-ui.json').read_text(encoding='utf-8'))
+          occurrences = defaultdict(list)
+          kinds = defaultdict(set)
+          for key, kind in (
+              ('chinese_string_literals', 'literal'),
+              ('chinese_template_text_nodes', 'template'),
+          ):
+              for item in src.get(key, []):
+                  text = item['text'].strip()
+                  if not text:
+                      continue
+                  occurrences[text].append(f"{item['file']}:{item['line']}")
+                  kinds[text].add(kind)
+
+          rows = []
+          for text, refs in occurrences.items():
+              rows.append({
+                  'text': text,
+                  'count': len(refs),
+                  'kinds': sorted(kinds[text]),
+                  'refs': refs,
+              })
+          rows.sort(key=lambda x: (-x['count'], x['text']))
+
+          payload = {'stats': {'unique_chinese_ui_candidates': len(rows)}, 'items': rows}
+          Path('.localization/residual-unique.json').write_text(
+              json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8'
+          )
+          with Path('.localization/residual-unique.tsv').open('w', encoding='utf-8') as f:
+              f.write('text\tcount\tkinds\trefs\n')
+              for row in rows:
+                  f.write(row['text'].replace('\t',' ') + '\t' + str(row['count']) + '\t' + ','.join(row['kinds']) + '\t' + ','.join(row['refs']) + '\n')
+          print(f"Unique Chinese UI candidates: {len(rows)}")
+          PY
+
+      - name: Commit compact residual and remove trigger
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -f .run-compact-localization-residual
+          git add .localization/residual-unique.json .localization/residual-unique.tsv .run-compact-localization-residual
+          git commit -m "chore: compact remaining localization strings"
+          git push origin HEAD:${{ github.head_ref }}
