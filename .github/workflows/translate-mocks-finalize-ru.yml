@@ -41,8 +41,25 @@ jobs:
       - name: Install mock translation helper
         run: python -m pip install --disable-pip-version-check deep-translator==1.11.4
 
-      - name: Translate shipped demo and mock content
+      - name: Translate shipped demo and mock JSON content
         run: python /tmp/pptist-localization/translate_mock_json.py
+
+      - name: Verify shipped Markdown demos are Russian
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          han = re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff]')
+          hits = []
+          for path in Path('public/mocks').rglob('*.md'):
+              text = path.read_text(encoding='utf-8')
+              if han.search(text):
+                  hits.append(str(path))
+          if hits:
+              raise SystemExit('Chinese text remains in shipped Markdown demos: ' + ', '.join(hits))
+          print('Shipped Markdown demos contain zero Chinese Han text')
+          PY
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -61,7 +78,7 @@ jobs:
       - name: Type check
         run: npm run type-check
 
-      - name: Verify shipped bundle contains zero Chinese Han text
+      - name: Verify shipped bundle contains zero user-facing Chinese Han text
         shell: bash
         run: |
           python - <<'PY'
@@ -69,7 +86,9 @@ jobs:
           import json, re
 
           han = re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff]')
+          wide_char_probe = re.compile(r'''measureText\(\s*["']国["']\s*,?''')
           hits = []
+          technical_whitelist = []
           textual = {'.js', '.css', '.html', '.json', '.svg', '.txt', '.xml', '.md'}
 
           for path in Path('dist').rglob('*'):
@@ -80,22 +99,37 @@ jobs:
               except Exception:
                   continue
               for match in han.finditer(text):
+                  context = text[max(0, match.start() - 80):min(len(text), match.end() + 100)]
+                  # zrender/ECharts uses 国 only as a representative wide glyph in
+                  # measureText() to estimate CJK character width. It is an internal
+                  # numerical probe, never rendered as user-facing text.
+                  if match.group(0) == '国' and path.suffix.lower() == '.js' and wide_char_probe.search(context):
+                      technical_whitelist.append({
+                          'file': str(path),
+                          'character': '国',
+                          'reason': 'ECharts/zrender internal wide-character measureText probe',
+                      })
+                      continue
                   hits.append({
                       'file': str(path),
                       'sample': text[max(0, match.start() - 120):min(len(text), match.start() + 360)],
                   })
                   break
 
-          payload = {'count': len(hits), 'hits': hits}
+          payload = {
+              'user_facing_han_files': len(hits),
+              'hits': hits,
+              'technical_whitelist': technical_whitelist,
+          }
           Path('.localization/final-dist-han-audit.json').write_text(
               json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8'
           )
 
           if hits:
               print(json.dumps(hits[:20], ensure_ascii=False, indent=2))
-              raise SystemExit(f'Built bundle still contains Chinese Han text in {len(hits)} textual files')
+              raise SystemExit(f'Built bundle still contains Chinese Han text in {len(hits)} user-facing textual files')
 
-          print('Built PPTist bundle contains zero Chinese Han text')
+          print(f'Built PPTist bundle contains zero user-facing Chinese Han text; technical dependency probes: {len(technical_whitelist)}')
           PY
 
       - name: Record final localization status
@@ -104,11 +138,13 @@ jobs:
           cat > .localization/FINAL-RU-STATUS.md <<'EOF'
           # PPTist Russian localization status
 
-          - User-facing source UI: Russian; Chinese Han allowed only in developer comments.
-          - Shipped `public/mocks` demo/template/AI JSON content: translated to Russian.
+          - User-facing source UI: Russian; Chinese Han remains only in developer comments.
+          - Shipped `public/mocks` JSON demo/template/AI content: translated to Russian.
+          - Shipped Markdown demo outline: translated to Russian.
           - Production Vite build: passed.
           - Vue/TypeScript type-check: passed.
-          - Built textual `dist` assets Han scan: zero Chinese Han text.
+          - Built textual `dist`: zero user-facing Chinese Han text.
+          - Allowed technical exception: the ECharts/zrender `measureText("国")` wide-character width probe; it is internal and is never rendered to the user.
           EOF
 
       - name: Commit final validated Russian build
