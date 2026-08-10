@@ -1,0 +1,51 @@
+name: Apply Russian UI map across nested Vue templates
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.run-apply-ru-residual-v3'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+      - run: test -f .run-apply-ru-residual-v3
+      - name: Load trusted v3 applier
+        shell: bash
+        run: |
+          git fetch origin main
+          git show origin/main:tools/localization/apply_ru_residual_v3.py > /tmp/apply_ru_residual_v3.py
+      - name: Translate nested Vue template UI and audit
+        run: python /tmp/apply_ru_residual_v3.py --root . --map .localization/ru-residual-reviewed.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        env:
+          HUSKY: 0
+        run: npm ci
+      - name: Production build
+        run: npm run build-only -- --base=/PPTist/
+      - name: Type check
+        run: npm run type-check
+      - name: Commit pass 3
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -f .run-apply-ru-residual-v3
+          git add -A
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "feat: Russianize nested Vue template UI"
+          git push origin HEAD:${{ github.head_ref }}
