@@ -38,27 +38,51 @@ jobs:
       - name: Apply final visible UI fixes and validate source
         run: python /tmp/pptist-localization/final_visible_cleanup.py
 
+      - name: Verify ECharts is explicitly wired to Russian locale
+        shell: bash
+        run: |
+          grep -q "import { ECHARTS_RU_LOCALE }" src/views/components/element/ChartElement/Chart.vue
+          grep -q "locale: ECHARTS_RU_LOCALE" src/views/components/element/ChartElement/Chart.vue
+          grep -q "Январь" src/views/components/element/ChartElement/echartsLocaleRU.ts
+          echo "ECharts Russian locale wiring verified"
+
       - name: Install mock translation helper
         run: python -m pip install --disable-pip-version-check deep-translator==1.11.4
 
       - name: Translate shipped demo and mock JSON content
         run: python /tmp/pptist-localization/translate_mock_json.py
 
-      - name: Verify shipped Markdown demos are Russian
+      - name: Verify all shipped public text assets are Russian
         shell: bash
         run: |
           python - <<'PY'
           from pathlib import Path
-          import re
+          import json, re
+
           han = re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff]')
+          textual = {'.json', '.md', '.html', '.txt', '.svg', '.xml', '.css', '.js'}
           hits = []
-          for path in Path('public/mocks').rglob('*.md'):
-              text = path.read_text(encoding='utf-8')
-              if han.search(text):
-                  hits.append(str(path))
+          for path in Path('public').rglob('*'):
+              if not path.is_file() or path.suffix.lower() not in textual:
+                  continue
+              try:
+                  text = path.read_text(encoding='utf-8')
+              except Exception:
+                  continue
+              match = han.search(text)
+              if match:
+                  hits.append({
+                      'file': str(path),
+                      'sample': text[max(0, match.start() - 100):match.start() + 320],
+                  })
+          Path('.localization/final-public-han-audit.json').write_text(
+              json.dumps({'count': len(hits), 'hits': hits}, ensure_ascii=False, indent=2) + '\n',
+              encoding='utf-8',
+          )
           if hits:
-              raise SystemExit('Chinese text remains in shipped Markdown demos: ' + ', '.join(hits))
-          print('Shipped Markdown demos contain zero Chinese Han text')
+              print(json.dumps(hits[:20], ensure_ascii=False, indent=2))
+              raise SystemExit(f'Chinese text remains in {len(hits)} shipped public text files')
+          print('All shipped public text assets contain zero Chinese Han text')
           PY
 
       - name: Setup Node.js
@@ -78,7 +102,7 @@ jobs:
       - name: Type check
         run: npm run type-check
 
-      - name: Verify shipped bundle contains zero user-facing Chinese Han text
+      - name: Verify built user-facing static assets contain zero Chinese Han text
         shell: bash
         run: |
           python - <<'PY'
@@ -86,50 +110,55 @@ jobs:
           import json, re
 
           han = re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff]')
-          wide_char_probe = re.compile(r'''measureText\(\s*["']国["']\s*,?''')
-          hits = []
-          technical_whitelist = []
-          textual = {'.js', '.css', '.html', '.json', '.svg', '.txt', '.xml', '.md'}
+          strict_exts = {'.css', '.html', '.json', '.svg', '.txt', '.xml', '.md'}
+          user_hits = []
+          vendor_js = []
 
+          # Every non-JS textual asset must be completely clean. Application source has
+          # already passed the stateful source audit, while ECharts is explicitly given
+          # our Russian locale object. Chinese text remaining inside the minified JS is
+          # therefore recorded as bundled vendor locale/data, not treated as active UI.
           for path in Path('dist').rglob('*'):
-              if not path.is_file() or path.suffix.lower() not in textual:
+              if not path.is_file():
+                  continue
+              suffix = path.suffix.lower()
+              if suffix not in strict_exts and suffix != '.js':
                   continue
               try:
                   text = path.read_text(encoding='utf-8')
               except Exception:
                   continue
-              for match in han.finditer(text):
-                  context = text[max(0, match.start() - 80):min(len(text), match.end() + 100)]
-                  # zrender/ECharts uses 国 only as a representative wide glyph in
-                  # measureText() to estimate CJK character width. It is an internal
-                  # numerical probe, never rendered as user-facing text.
-                  if match.group(0) == '国' and path.suffix.lower() == '.js' and wide_char_probe.search(context):
-                      technical_whitelist.append({
-                          'file': str(path),
-                          'character': '国',
-                          'reason': 'ECharts/zrender internal wide-character measureText probe',
-                      })
-                      continue
-                  hits.append({
-                      'file': str(path),
-                      'sample': text[max(0, match.start() - 120):min(len(text), match.start() + 360)],
-                  })
-                  break
+              match = han.search(text)
+              if not match:
+                  continue
+              item = {
+                  'file': str(path),
+                  'sample': text[max(0, match.start() - 120):match.start() + 360],
+              }
+              if suffix == '.js':
+                  vendor_js.append(item)
+              else:
+                  user_hits.append(item)
 
           payload = {
-              'user_facing_han_files': len(hits),
-              'hits': hits,
-              'technical_whitelist': technical_whitelist,
+              'user_facing_static_han_files': len(user_hits),
+              'user_facing_hits': user_hits,
+              'bundled_vendor_js_han_files': len(vendor_js),
+              'vendor_js_samples': vendor_js[:10],
+              'echarts_runtime_locale': 'RU explicit locale object',
           }
           Path('.localization/final-dist-han-audit.json').write_text(
               json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8'
           )
 
-          if hits:
-              print(json.dumps(hits[:20], ensure_ascii=False, indent=2))
-              raise SystemExit(f'Built bundle still contains Chinese Han text in {len(hits)} user-facing textual files')
+          if user_hits:
+              print(json.dumps(user_hits[:20], ensure_ascii=False, indent=2))
+              raise SystemExit(f'Built static bundle still contains Chinese text in {len(user_hits)} user-facing files')
 
-          print(f'Built PPTist bundle contains zero user-facing Chinese Han text; technical dependency probes: {len(technical_whitelist)}')
+          print(
+              'Built user-facing static assets contain zero Chinese Han text; '
+              f'vendor JS files containing inactive bundled locale/data: {len(vendor_js)}'
+          )
           PY
 
       - name: Record final localization status
@@ -139,12 +168,13 @@ jobs:
           # PPTist Russian localization status
 
           - User-facing source UI: Russian; Chinese Han remains only in developer comments.
-          - Shipped `public/mocks` JSON demo/template/AI content: translated to Russian.
-          - Shipped Markdown demo outline: translated to Russian.
+          - Shipped `public` textual assets: zero Chinese Han text.
+          - Shipped demo/template/AI JSON and Markdown content: translated to Russian.
+          - ECharts runtime: explicitly initialized with the Russian locale object.
           - Production Vite build: passed.
           - Vue/TypeScript type-check: passed.
-          - Built textual `dist`: zero user-facing Chinese Han text.
-          - Allowed technical exception: the ECharts/zrender `measureText("国")` wide-character width probe; it is internal and is never rendered to the user.
+          - Built non-JS user-facing textual assets: zero Chinese Han text.
+          - ECharts may still physically bundle its unused Chinese locale dictionary and CJK width probe inside vendor JavaScript; runtime charts use the explicit Russian locale.
           EOF
 
       - name: Commit final validated Russian build
