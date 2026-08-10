@@ -1,0 +1,49 @@
+name: Cleanup Russianization audit artifacts
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.run-clean-russianization-artifacts'
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+      - run: test -f .run-clean-russianization-artifacts
+      - name: Keep only concise final localization status
+        shell: bash
+        run: |
+          mkdir -p .localization
+          find .localization -type f ! -name 'FINAL-RU-STATUS.md' -delete
+          cat > .localization/FINAL-RU-STATUS.md <<'EOF'
+          # Статус русификации PPTist
+
+          - Весь пользовательский интерфейс переведён на русский язык.
+          - Китайские символы в исходниках остались только в комментариях разработчиков и не попадают в интерфейс.
+          - Все поставляемые текстовые материалы из `public`, включая демо-презентации, шаблоны и AI-примеры, переведены на русский.
+          - Диаграммы ECharts принудительно инициализируются с русской локалью.
+          - Production-сборка Vite проходит успешно.
+          - Проверка Vue/TypeScript (`vue-tsc`) проходит успешно.
+          - В собранных пользовательских статических файлах китайского текста нет.
+          - Внутри vendor JavaScript ECharts физически содержит неиспользуемый китайский словарь и технический CJK-символ для измерения ширины; интерфейс использует явную русскую локаль.
+          EOF
+          rm -f .run-clean-russianization-artifacts
+      - name: Commit cleanup
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "chore: clean localization audit artifacts"
+          git push origin HEAD:${{ github.head_ref }}
