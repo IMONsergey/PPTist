@@ -1,0 +1,178 @@
+name: Final Russian UI cleanup and zero-Han build check
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.run-final-russian-ui-cleanup'
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+      - run: test -f .run-final-russian-ui-cleanup
+
+      - name: Fix final non-standard visible Chinese fragments
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json, re
+
+          replacements = {
+            'src/components/ChartDataEditor.vue': [
+              ('图表类型：{{ CHART_TYPE_MAP[chartType] }}', 'Тип диаграммы: {{ CHART_TYPE_MAP[chartType] }}'),
+            ],
+            'src/views/Editor/Canvas/index.vue': [
+              ("message.success(`元素气泡菜单已${showBubbleMenu.value ? 'Включить' : 'Отключить'}`)",
+               "message.success(`Плавающее меню элементов: ${showBubbleMenu.value ? 'включено' : 'отключено'}`)"),
+            ],
+            'src/views/Editor/ExportDialog/ExportPDF.vue': [
+              ('建议：请在弹出的打印窗口中勾选「背景图形」选项，边距选择「默认」。',
+               'Совет: в окне печати включите «Фоновая графика» и выберите поля «По умолчанию».'),
+            ],
+            'src/views/Editor/ExportDialog/ExportPPTX.vue': [
+              ('提示：1. 支持导出格式：avi、mp4、mov、wmv、mp3、wav；2. 跨域资源无法导出。',
+               'Примечание: 1. Поддерживаются форматы avi, mp4, mov, wmv, mp3, wav. 2. Ресурсы с других доменов экспортировать нельзя.'),
+            ],
+            'src/views/Editor/ExportDialog/ExportSpecificFile.vue': [
+              ('提示：.pptist 是本应用的特有文件后缀，支持将该类型的文件导入回应用中。',
+               'Примечание: .pptist — собственный формат приложения; такой файл можно импортировать обратно.'),
+            ],
+            'src/views/Editor/NotesPanel.vue': [
+              ("`输入批注（为${handleElementId ? 'Выбранный элемент' : 'Текущий слайд' }）`",
+               "`Введите комментарий (${handleElementId ? 'выбранный элемент' : 'текущий слайд'})`"),
+            ],
+            'src/views/Editor/Toolbar/ElementAnimationPanel.vue': [
+              ('<i-icon-park-outline:effects /> 添加动画', '<i-icon-park-outline:effects /> Добавить анимацию'),
+            ],
+            'src/views/Editor/Toolbar/ElementPositionPanel.vue': [
+              ('水平：', 'По горизонтали:'), ('垂直：', 'По вертикали:'),
+              ('宽度：', 'Ширина:'), ('高度：', 'Высота:'), ('旋转：', 'Поворот:'),
+            ],
+            'src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/ThemeColorsSetting.vue': [
+              ('<i-icon-park-outline:plus /> 添加主题色', '<i-icon-park-outline:plus /> Добавить цвет темы'),
+            ],
+            'src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/index.vue': [
+              ('<i-icon-park-outline:edit /> 编辑图表', '<i-icon-park-outline:edit /> Редактировать диаграмму'),
+            ],
+            'src/views/Mobile/MobileEditor/SlideToolbar.vue': [
+              ('<i-icon-park-outline:picture class="icon" /> 图片', '<i-icon-park-outline:picture class="icon" /> Изображение'),
+            ],
+          }
+
+          report=[]
+          for path_str, pairs in replacements.items():
+              path=Path(path_str); text=path.read_text(encoding='utf-8'); original=text
+              for old,new in pairs:
+                  count=text.count(old)
+                  if count == 0:
+                      raise SystemExit(f'Expected visible Chinese fragment not found: {path_str}: {old}')
+                  text=text.replace(old,new)
+                  report.append({'file':path_str,'from':old,'to':new,'count':count})
+              if text != original:
+                  final=text.endswith('\n')
+                  text='\n'.join(line.rstrip(' \t') for line in text.splitlines()) + ('\n' if final else '')
+                  path.write_text(text,encoding='utf-8')
+          Path('.localization/final-visible-fixes.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print(f'Applied {sum(x["count"] for x in report)} final exact visible fixes')
+          PY
+
+      - name: Verify remaining Han is comments only
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re, json
+          han=re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff]')
+          exts={'.vue','.ts','.tsx','.js','.jsx','.html'}
+          files=[p for p in Path('src').rglob('*') if p.is_file() and p.suffix in exts]
+          violations=[]; comment_only=[]
+
+          for path in files:
+              block=False; html=False
+              for lineno,line in enumerate(path.read_text(encoding='utf-8').splitlines(),1):
+                  if not han.search(line):
+                      continue
+                  first_han=han.search(line).start()
+                  # Treat existing multiline comment regions as non-shipped source commentary.
+                  block_open=line.find('/*'); block_close=line.find('*/')
+                  html_open=line.find('<!--'); html_close=line.find('-->')
+                  if block or html:
+                      comment_only.append({'file':str(path),'line':lineno,'text':line.strip()})
+                  else:
+                      slash=line.find('//')
+                      comment_before = slash != -1 and slash < first_han
+                      block_before = block_open != -1 and block_open < first_han
+                      html_before = html_open != -1 and html_open < first_han
+                      if comment_before or block_before or html_before:
+                          comment_only.append({'file':str(path),'line':lineno,'text':line.strip()})
+                      else:
+                          violations.append({'file':str(path),'line':lineno,'text':line.strip()})
+                  if block_open != -1 and (block_close == -1 or block_close < block_open): block=True
+                  if block_close != -1: block=False
+                  if html_open != -1 and (html_close == -1 or html_close < html_open): html=True
+                  if html_close != -1: html=False
+
+          payload={'noncomment_han_violations':violations,'han_comment_lines':comment_only,
+                   'stats':{'noncomment_han_violations':len(violations),'han_comment_lines':len(comment_only)}}
+          Path('.localization/final-source-han-audit.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print(json.dumps(payload['stats'],ensure_ascii=False))
+          if violations:
+              print(json.dumps(violations[:30],ensure_ascii=False,indent=2))
+              raise SystemExit('Chinese text remains outside source comments')
+          PY
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        env:
+          HUSKY: 0
+        run: npm ci
+      - name: Production build
+        run: npm run build-only -- --base=/PPTist/
+      - name: Type check
+        run: npm run type-check
+      - name: Verify shipped bundle contains no Chinese Han text
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re, json
+          han=re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff]')
+          hits=[]
+          for path in Path('dist').rglob('*'):
+              if not path.is_file() or path.suffix.lower() not in {'.js','.css','.html','.json','.svg','.txt'}:
+                  continue
+              try: text=path.read_text(encoding='utf-8')
+              except Exception: continue
+              found=han.search(text)
+              if found:
+                  start=max(0,found.start()-100); end=min(len(text),found.start()+300)
+                  hits.append({'file':str(path),'sample':text[start:end]})
+          Path('.localization/final-dist-han-audit.json').write_text(json.dumps({'hits':hits,'count':len(hits)},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          if hits:
+              print(json.dumps(hits[:10],ensure_ascii=False,indent=2))
+              raise SystemExit(f'Built web bundle still contains Han text in {len(hits)} files')
+          print('Built PPTist bundle contains zero Chinese Han text')
+          PY
+      - name: Commit final UI cleanup
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -f .run-final-russian-ui-cleanup
+          git add -A
+          git diff --cached --check
+          git commit -m "feat: complete zero-Chinese Russian PPTist UI"
+          git push origin HEAD:${{ github.head_ref }}
