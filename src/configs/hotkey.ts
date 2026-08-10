@@ -36,22 +36,22 @@ interface HotkeyItem {
   children: {
     label: string
     value?: string
-  }[] 
+  }[]
 }
 
 export const HOTKEY_DOC: HotkeyItem[] = [
   {
     type: '通用',
     children: [
-      { label: '剪切', value: 'Ctrl + X' },
-      { label: '复制', value: 'Ctrl + C' },
-      { label: '粘贴', value: 'Ctrl + V' },
+      { label: 'Вырезать', value: 'Ctrl + X' },
+      { label: 'Копировать', value: 'Ctrl + C' },
+      { label: 'Вставить', value: 'Ctrl + V' },
       { label: '粘贴为纯文本', value: 'Ctrl + Shift + V' },
       { label: '快速复制粘贴', value: 'Ctrl + D' },
-      { label: '全选', value: 'Ctrl + A' },
-      { label: '撤销', value: 'Ctrl + Z' },
+      { label: 'Выбрать все', value: 'Ctrl + A' },
+      { label: 'Отменить', value: 'Ctrl + Z' },
       { label: '恢复', value: 'Ctrl + Y' },
-      { label: '删除', value: 'Delete / Backspace' },
+      { label: 'Удалить', value: 'Delete / Backspace' },
       { label: '多选', value: '按住 Ctrl 或 Shift' },
       { label: '打开搜索替换', value: 'Ctrl + F' },
       { label: '打印', value: 'Ctrl + P' },
@@ -59,7 +59,7 @@ export const HOTKEY_DOC: HotkeyItem[] = [
     ],
   },
   {
-    type: '幻灯片放映',
+    type: 'Показ слайдов',
     children: [
       { label: '从头开始放映幻灯片', value: 'F5' },
       { label: '从当前开始放映幻灯片', value: 'Shift + F5' },
@@ -80,8 +80,8 @@ export const HOTKEY_DOC: HotkeyItem[] = [
       { label: '使画布适应当前屏幕', value: 'Ctrl + 0' },
       { label: '上一页（未选中元素）', value: '↑' },
       { label: '下一页（未选中元素）', value: '↓' },
-      { label: '上一页', value: '鼠标上滚 / PgUp' },
-      { label: '下一页', value: '鼠标下滚 / PgDown' },
+      { label: 'Предыдущая страница', value: '鼠标上滚 / PgUp' },
+      { label: 'Следующая страница', value: '鼠标下滚 / PgDown' },
       { label: '快速创建文本', value: '双击空白处 / T' },
       { label: '快速创建矩形', value: 'R' },
       { label: '快速创建圆形', value: 'O' },
@@ -93,8 +93,8 @@ export const HOTKEY_DOC: HotkeyItem[] = [
     type: '元素操作',
     children: [
       { label: '移动', value: '↑ / ← / ↓ / →' },
-      { label: '锁定', value: 'Ctrl + L' },
-      { label: '组合', value: 'Ctrl + G' },
+      { label: 'Заблокировать', value: 'Ctrl + L' },
+      { label: 'Группа', value: 'Ctrl + G' },
       { label: '取消组合', value: 'Ctrl + Shift + G' },
       { label: '置顶层', value: 'Alt + F' },
       { label: '置底层', value: 'Alt + B' },

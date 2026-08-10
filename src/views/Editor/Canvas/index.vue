@@ -1,6 +1,6 @@
 <template>
-  <div 
-    class="canvas" 
+  <div
+    class="canvas"
     ref="canvasRef"
     @wheel="$event => handleMousewheelCanvas($event)"
     @mousedown="$event => handleClickBlankArea($event)"
@@ -16,7 +16,7 @@
       v-if="creatingCustomShape"
       @created="data => insertCustomShape(data)"
     />
-    <div 
+    <div
       class="viewport-wrapper"
       :style="{
         width: viewportStyles.width * canvasScale + 'px',
@@ -26,22 +26,22 @@
       }"
     >
       <div class="operates">
-        <AlignmentLine 
-          v-for="(line, index) in alignmentLines" 
-          :key="index" 
-          :type="line.type" 
-          :axis="line.axis" 
+        <AlignmentLine
+          v-for="(line, index) in alignmentLines"
+          :key="index"
+          :type="line.type"
+          :axis="line.axis"
           :length="line.length"
           :canvasScale="canvasScale"
         />
-        <MultiSelectOperate 
+        <MultiSelectOperate
           v-if="activeElementIdList.length > 1"
           :elementList="elementList"
           :scaleMultiElement="scaleMultiElement"
           :rotateGroupElement="rotateGroupElement"
         />
         <Operate
-          v-for="element in elementList" 
+          v-for="element in elementList"
           :key="element.id"
           :elementInfo="element"
           :isSelected="activeElementIdList.includes(element.id)"
@@ -63,21 +63,21 @@
         <ViewportBackground />
       </div>
 
-      <div 
-        class="viewport" 
+      <div
+        class="viewport"
         ref="viewportRef"
         :style="{ transform: `scale(${canvasScale})` }"
       >
-        <MouseSelection 
+        <MouseSelection
           v-if="mouseSelectionVisible"
-          :top="mouseSelection.top" 
-          :left="mouseSelection.left" 
-          :width="mouseSelection.width" 
-          :height="mouseSelection.height" 
+          :top="mouseSelection.top"
+          :left="mouseSelection.left"
+          :width="mouseSelection.width"
+          :height="mouseSelection.height"
           :quadrant="mouseSelectionQuadrant"
-        />      
-        <EditableElement 
-          v-for="(element, index) in elementList" 
+        />
+        <EditableElement
+          v-for="(element, index) in elementList"
           :key="element.id"
           :elementInfo="element"
           :elementIndex="index + 1"
@@ -94,7 +94,7 @@
     <Ruler :viewportStyles="viewportStyles" :elementList="elementList" v-if="showRuler" />
 
     <Modal
-      v-model:visible="linkDialogVisible" 
+      v-model:visible="linkDialogVisible"
       :width="540"
     >
       <LinkDialog @close="linkDialogVisible = false" />
@@ -307,48 +307,48 @@ const insertCustomShape = (data: CreateCustomShapeData) => {
 const contextmenus = (): ContextmenuItem[] => {
   return [
     {
-      text: '粘贴',
+      text: 'Вставить',
       subText: 'Ctrl + V',
       handler: pasteElement,
     },
     {
-      text: '全选',
+      text: 'Выбрать все',
       subText: 'Ctrl + A',
       handler: selectAllElements,
     },
     {
-      text: '标尺',
+      text: 'Линейка',
       subText: showRuler.value ? '√' : '',
       handler: toggleRuler,
     },
     {
-      text: '网格线',
+      text: 'Сетка',
       handler: () => mainStore.setGridLineSize(gridLineSize.value ? 0 : 50),
       children: [
         {
-          text: '无',
+          text: 'Нет',
           subText: gridLineSize.value === 0 ? '√' : '',
           handler: () => mainStore.setGridLineSize(0),
         },
         {
-          text: '小',
+          text: 'Мелкая',
           subText: gridLineSize.value === 25 ? '√' : '',
           handler: () => mainStore.setGridLineSize(25),
         },
         {
-          text: '中',
+          text: 'Средняя',
           subText: gridLineSize.value === 50 ? '√' : '',
           handler: () => mainStore.setGridLineSize(50),
         },
         {
-          text: '大',
+          text: 'Крупная',
           subText: gridLineSize.value === 100 ? '√' : '',
           handler: () => mainStore.setGridLineSize(100),
         },
       ],
     },
     {
-      text: '重置当前页',
+      text: 'Сбросить текущий слайд',
       handler: deleteAllElements,
     },
     {
@@ -358,7 +358,7 @@ const contextmenus = (): ContextmenuItem[] => {
     },
     { divider: true },
     {
-      text: '幻灯片放映',
+      text: 'Показ слайдов',
       subText: 'F5',
       handler: enterScreeningFromStart,
     },

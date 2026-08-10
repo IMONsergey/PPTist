@@ -1,21 +1,21 @@
 <template>
   <div class="link-dialog">
-    <Tabs 
-      :tabs="tabs" 
+    <Tabs
+      :tabs="tabs"
       v-model:value="type"
-      :tabsStyle="{ marginBottom: '20px' }" 
+      :tabsStyle="{ marginBottom: '20px' }"
     />
 
-    <Input 
+    <Input
       class="input"
       ref="inputRef"
-      v-if="type === 'web'" 
-      v-model:value="address" 
+      v-if="type === 'web'"
+      v-model:value="address"
       placeholder="请输入网页链接地址"
       @enter="save()"
     />
 
-    <Select 
+    <Select
       class="input"
       v-if="type === 'slide'"
       v-model:value="slideId"
@@ -28,8 +28,8 @@
     </div>
 
     <div class="btns">
-      <Button @click="emit('close')" style="margin-right: 10px;">取消</Button>
-      <Button type="primary" @click="save()">确认</Button>
+      <Button @click="emit('close')" style="margin-right: 10px;">Отмена</Button>
+      <Button type="primary" @click="save()">Подтвердить</Button>
     </div>
   </div>
 </template>

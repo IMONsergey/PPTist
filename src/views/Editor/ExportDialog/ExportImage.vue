@@ -2,18 +2,18 @@
   <div class="export-img-dialog">
     <div class="thumbnails-view">
       <div class="thumbnails" ref="imageThumbnailsRef">
-        <ThumbnailSlide 
-          class="thumbnail" 
-          v-for="slide in renderSlides" 
-          :key="slide.id" 
-          :slide="slide" 
-          :size="1600" 
+        <ThumbnailSlide
+          class="thumbnail"
+          v-for="slide in renderSlides"
+          :key="slide.id"
+          :slide="slide"
+          :size="1600"
         />
       </div>
     </div>
     <div class="configs">
       <div class="row">
-        <div class="title">导出格式：</div>
+        <div class="title">Формат:</div>
         <RadioGroup
           class="config-item"
           v-model:value="format"
@@ -23,18 +23,18 @@
         </RadioGroup>
       </div>
       <div class="row">
-        <div class="title">导出范围：</div>
+        <div class="title">Диапазон экспорта:</div>
         <RadioGroup
           class="config-item"
           v-model:value="rangeType"
         >
-          <RadioButton style="width: 33.33%;" value="all">全部</RadioButton>
-          <RadioButton style="width: 33.33%;" value="current">当前页</RadioButton>
-          <RadioButton style="width: 33.33%;" value="custom">自定义</RadioButton>
+          <RadioButton style="width: 33.33%;" value="all">Все</RadioButton>
+          <RadioButton style="width: 33.33%;" value="current">Текущий</RadioButton>
+          <RadioButton style="width: 33.33%;" value="custom">Пользовательский</RadioButton>
         </RadioGroup>
       </div>
       <div class="row" style="margin-bottom: 32px" v-if="rangeType === 'custom'">
-        <div class="title" :data-range="`（${range[0]} ~ ${range[1]}）`">自定义范围：</div>
+        <div class="title" :data-range="`（${range[0]} ~ ${range[1]}）`">Пользовательский диапазон:</div>
         <Slider
           class="config-item"
           range
@@ -46,7 +46,7 @@
       </div>
 
       <div class="row">
-        <div class="title">图片质量：</div>
+        <div class="title">Качество изображения:</div>
         <Slider
           class="config-item"
           :min="0"
@@ -57,7 +57,7 @@
       </div>
 
       <div class="row">
-        <div class="title">忽略在线字体：</div>
+        <div class="title">Игнорировать веб‑шрифты:</div>
         <div class="config-item">
           <Switch v-model:value="ignoreWebfont" v-tooltip="'导出时默认忽略在线字体，若您在幻灯片中使用了在线字体，且希望导出后保留相关样式，可选择关闭「忽略在线字体」选项，但要注意这将会增加导出用时。'" />
         </div>
@@ -65,11 +65,11 @@
     </div>
 
     <div class="btns">
-      <Button class="btn export" type="primary" @click="expImage()"><i-icon-park-outline:download /> 导出图片</Button>
-      <Button class="btn close" @click="emit('close')">关闭</Button>
+      <Button class="btn export" type="primary" @click="expImage()"><i-icon-park-outline:download /> Экспорт изображения</Button>
+      <Button class="btn close" @click="emit('close')">Закрыть</Button>
     </div>
 
-    <FullscreenSpin :loading="exporting" tip="正在导出..." />
+    <FullscreenSpin :loading="exporting" tip="Экспорт..." />
   </div>
 </template>
 

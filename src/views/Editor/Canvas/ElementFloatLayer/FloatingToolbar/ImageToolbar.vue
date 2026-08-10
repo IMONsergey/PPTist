@@ -7,7 +7,7 @@
     <FileInput @change="files => replaceImage(files)">
       <button class="toolbar-btn">
         <i-icon-park-outline:transform class="icon" />
-        <span>替换</span>
+        <span>Заменить</span>
       </button>
     </FileInput>
   </div>

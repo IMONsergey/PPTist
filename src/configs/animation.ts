@@ -37,7 +37,7 @@ export const ENTER_ANIMATIONS = [
   },
   {
     type: 'rotate',
-    name: '旋转',
+    name: 'Поворот',
     children: [
       { name: '旋转进入', value: 'rotateIn' },
       { name: '绕左下进入', value: 'rotateInDownLeft' },
@@ -48,7 +48,7 @@ export const ENTER_ANIMATIONS = [
   },
   {
     type: 'zoom',
-    name: '缩放',
+    name: 'Уместить',
     children: [
       { name: '放大进入', value: 'zoomIn' },
       { name: '向下放大进入', value: 'zoomInDown' },
@@ -128,7 +128,7 @@ export const EXIT_ANIMATIONS = [
   },
   {
     type: 'rotate',
-    name: '旋转',
+    name: 'Поворот',
     children: [
       { name: '旋转退出', value: 'rotateOut' },
       { name: '绕左下退出', value: 'rotateOutDownLeft' },
@@ -139,7 +139,7 @@ export const EXIT_ANIMATIONS = [
   },
   {
     type: 'zoom',
-    name: '缩放',
+    name: 'Уместить',
     children: [
       { name: '缩小退出', value: 'zoomOut' },
       { name: '向下缩小退出', value: 'zoomOutDown' },
@@ -219,16 +219,16 @@ interface SlideAnimation {
 }
 
 export const SLIDE_ANIMATIONS: SlideAnimation[] = [
-  { label: '无', value: 'no' },
-  { label: '随机', value: 'random' },
-  { label: '左右推移', value: 'slideX' },
-  { label: '上下推移', value: 'slideY' },
-  { label: '左右推移（3D）', value: 'slideX3D' },
-  { label: '上下推移（3D）', value: 'slideY3D' },
-  { label: '淡入淡出', value: 'fade' },
-  { label: '旋转', value: 'rotate' },
-  { label: '上下展开', value: 'scaleY' },
-  { label: '左右展开', value: 'scaleX' },
-  { label: '放大', value: 'scale' },
-  { label: '缩小', value: 'scaleReverse' },
+  { label: 'Нет', value: 'no' },
+  { label: 'Случайно', value: 'random' },
+  { label: 'Сдвиг (влево/вправо)', value: 'slideX' },
+  { label: 'Сдвиг (вверх/вниз)', value: 'slideY' },
+  { label: '3D-сдвиг влево-вправо', value: 'slideX3D' },
+  { label: '3D-сдвиг вверх-вниз', value: 'slideY3D' },
+  { label: 'Затухание', value: 'fade' },
+  { label: 'Поворот', value: 'rotate' },
+  { label: 'Расширение вверх-вниз', value: 'scaleY' },
+  { label: 'Расширение влево-вправо', value: 'scaleX' },
+  { label: 'Увеличение', value: 'scale' },
+  { label: 'Уменьшение', value: 'scaleReverse' },
 ]

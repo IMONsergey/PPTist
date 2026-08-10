@@ -1,10 +1,10 @@
 <template>
   <div class="theme-styles-extract">
-    <Tabs 
-      :tabs="tabs" 
-      v-model:value="activeTab" 
-      :tabsStyle="{ marginBottom: '12px' }" 
-      :tabStyle="{ padding: '8px 12px' }" 
+    <Tabs
+      :tabs="tabs"
+      v-model:value="activeTab"
+      :tabsStyle="{ marginBottom: '12px' }"
+      :tabStyle="{ padding: '8px 12px' }"
     />
     <div class="content">
       <div class="config-item" v-if="themeStyles.fontNames.length">
@@ -14,7 +14,7 @@
             <div class="value" :style="{ fontFamily: item }">{{ fontMap[item] || item }}</div>
             <div class="handler">
               <div class="state" :class="{ 'active': selectedIndex.fontName === index }"><i-icon-park-outline:check /></div>
-              <div class="config-btn" @click="selectedIndex.fontName = index">选择</div>
+              <div class="config-btn" @click="selectedIndex.fontName = index">Выбрать</div>
               <div class="config-btn" @click="updateTheme({ fontName: item }); selectedIndex.fontName = index">应用到主题</div>
             </div>
           </div>
@@ -27,7 +27,7 @@
             <div class="value" :style="{ backgroundColor: item, color: getMostReadableColor(item) }">{{ getHexColor(item) }}</div>
             <div class="handler">
               <div class="state" :class="{ 'active': selectedIndex.fontColor === index }"><i-icon-park-outline:check /></div>
-              <div class="config-btn" @click="selectedIndex.fontColor = index">选择</div>
+              <div class="config-btn" @click="selectedIndex.fontColor = index">Выбрать</div>
               <div class="config-btn" @click="updateTheme({ fontColor: item }); selectedIndex.fontColor = index">应用到主题</div>
             </div>
           </div>
@@ -40,14 +40,14 @@
             <div class="value" :style="{ backgroundColor: item, color: getMostReadableColor(item) }">{{ getHexColor(item) }}</div>
             <div class="handler">
               <div class="state" :class="{ 'active': selectedIndex.backgroundColor === index }"><i-icon-park-outline:check /></div>
-              <div class="config-btn" @click="selectedIndex.backgroundColor = index">选择</div>
+              <div class="config-btn" @click="selectedIndex.backgroundColor = index">Выбрать</div>
               <div class="config-btn" @click="updateTheme({ backgroundColor: item }); selectedIndex.backgroundColor = index">应用到主题</div>
             </div>
           </div>
         </div>
       </div>
       <div class="config-item" v-if="themeStyles.themeColors.length">
-        <div class="label">主题色：<span class="tip">（点击色块排除不要的颜色）</span></div>
+        <div class="label">主题色：<span class="tip">(Нажмите на цвета, чтобы исключить)</span></div>
         <div class="values inline">
           <div class="value-wrap" v-for="(item, index) in themeStyles.themeColors" :key="item" @click="removeThemeColor(index)">
             <div class="value" :class="{ 'disabled': !selectedIndex.themeColors.includes(index) }" :style="{ backgroundColor: item }"></div>
@@ -57,7 +57,7 @@
     </div>
 
     <div class="btns">
-      <Button class="btn" type="primary" @click="updateAllThemes()"><i-icon-park-outline:check /> 将选中配置保存为主题</Button>
+      <Button class="btn" type="primary" @click="updateAllThemes()"><i-icon-park-outline:check /> Сохранить выбранное как тему</Button>
     </div>
   </div>
 </template>
@@ -127,7 +127,7 @@ watch(activeTab, () => {
   selectedIndex.value = {
     backgroundColor: 0,
     fontColor: 0,
-    fontName: 0, 
+    fontName: 0,
     themeColors,
   }
 }, { immediate: true })
@@ -140,7 +140,7 @@ const updateAllThemes = () => {
   let themeColors = themeStyles.value.themeColors.filter((item, index) => selectedIndex.value.themeColors.includes(index))
   if (themeColors.length > 6) {
     themeColors = themeColors.slice(0, 6)
-    message.warning('主题色超出数量限制，已自动选取前6个')
+    message.warning('Превышен лимит цветов темы. Оставлены первые 6.')
   }
 
   const backgroundColor = themeStyles.value.backgroundColors[selectedIndex.value.backgroundColor]
@@ -159,7 +159,7 @@ const updateAllThemes = () => {
 
 const removeThemeColor = (index: number) => {
   if (selectedIndex.value.themeColors.includes(index)) {
-    selectedIndex.value.themeColors = selectedIndex.value.themeColors.filter(i => i !== index) 
+    selectedIndex.value.themeColors = selectedIndex.value.themeColors.filter(i => i !== index)
   }
   else selectedIndex.value.themeColors.push(index)
 }

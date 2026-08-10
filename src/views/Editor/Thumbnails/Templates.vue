@@ -1,9 +1,9 @@
 <template>
   <div class="templates">
     <div class="catalogs">
-      <div class="catalog" 
-        :class="{ 'active': activeCatalog === item.id }" 
-        v-for="item in templates" 
+      <div class="catalog"
+        :class="{ 'active': activeCatalog === item.id }"
+        v-for="item in templates"
         :key="item.id"
         @click="changeCatalog(item.id)"
       >{{ item.name }}</div>
@@ -11,7 +11,7 @@
     <div class="content" v-loading="{ state: loading, text: '加载中...' }">
       <div class="header">
         <div class="types">
-          <div class="type" 
+          <div class="type"
             :class="{ 'active': activeType === item.value }"
             v-for="item in types"
             :key="item.value"
@@ -22,14 +22,14 @@
       </div>
       <div class="list" ref="listRef">
         <template v-for="slide in slides" :key="slide.id">
-          <div 
+          <div
             class="slide-item"
             v-if="slide.type === activeType || activeType === 'all'"
           >
             <ThumbnailSlide class="thumbnail" :slide="slide" :size="180" />
-    
+
             <div class="btns">
-              <Button class="btn" type="primary" size="small" @click="insertTemplate(slide)">插入模板</Button>
+              <Button class="btn" type="primary" size="small" @click="insertTemplate(slide)">Вставить шаблон</Button>
             </div>
           </div>
         </template>
@@ -63,7 +63,7 @@ const types = ref<{
   label: string
   value: string
 }[]>([
-  { label: '全部', value: 'all' },
+  { label: 'Все', value: 'all' },
   { label: '封面', value: 'cover' },
   { label: '目录', value: 'contents' },
   { label: '过渡', value: 'transition' },
@@ -92,7 +92,7 @@ const changeCatalog = (id: string) => {
 
     loading.value = false
 
-    if (listRef.value) listRef.value.scrollTo(0, 0) 
+    if (listRef.value) listRef.value.scrollTo(0, 0)
   }).catch(() => {
     loading.value = false
   })
@@ -134,7 +134,7 @@ onMounted(() => {
     }
 
     & + .catalog {
-      margin-top: 3px; 
+      margin-top: 3px;
     }
   }
 }

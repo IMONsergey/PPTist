@@ -1,16 +1,16 @@
 <template>
-  <MoveablePanel 
-    class="image-lib-panel" 
-    :width="360" 
-    :height="580" 
-    :left="-270" 
+  <MoveablePanel
+    class="image-lib-panel"
+    :width="360"
+    :height="580"
+    :left="-270"
     :top="90"
     :contentStyle="{
       overflow: 'hidden',
       display: 'flex',
       flexDirection: 'column',
     }"
-    title="图片库（来自 pexels.com）" 
+    title="图片库（来自 pexels.com）"
     @close="close()"
   >
     <div class="container" v-loading="{ state: loading, text: '加载中...' }">
@@ -37,7 +37,7 @@
         </Input>
       </div>
 
-      <ImageWaterfallViewer 
+      <ImageWaterfallViewer
         class="imgs-wrap"
         :list="imgs"
         :columnSpacing="5"
@@ -96,13 +96,13 @@ const orientationOptions: {
   key: Orientation
   label: string
 }[] = [
-  { key: 'all', label: '全部' },
+  { key: 'all', label: 'Все' },
   { key: 'landscape', label: '横向' },
   { key: 'portrait', label: '纵向' },
   { key: 'square', label: '方形' },
 ]
 const orientationMap: Record<string, string> = {
-  'all': '全部',
+  'all': 'Все',
   'landscape': '横向',
   'portrait': '纵向',
   'square': '方形',
@@ -116,7 +116,7 @@ onMounted(() => {
   search('风景')
 })
 
-const search = (q?: string) => {  
+const search = (q?: string) => {
   const query = q || searchWord.value
   if (!query) return message.error('请输入搜索关键词')
 
@@ -145,10 +145,10 @@ const setOrientation = (value: Orientation) => {
 
 const loadMore = () => {
   if (loading.value) return
-  
+
   const count = page.value * perPage.value
   if (count >= Math.min(max.value, total.value)) return
-  
+
   loading.value = true
   page.value += 1
 

@@ -279,7 +279,7 @@ export const SHAPE_PATH_FORMULAS: Record<string, ShapePathFormula> = {
 
 export const SHAPE_LIST: ShapeListItem[] = [
   {
-    type: '矩形',
+    type: 'Прямоугольник',
     children: [
       {
         viewBox: [200, 200],
@@ -338,7 +338,7 @@ export const SHAPE_LIST: ShapeListItem[] = [
   },
 
   {
-    type: '常用形状',
+    type: 'Обычные фигуры',
     children: [
       {
         viewBox: [200, 200],
@@ -636,9 +636,9 @@ export const SHAPE_LIST: ShapeListItem[] = [
       },
     ],
   },
-  
+
   {
-    type: '箭头',
+    type: 'Стрелки',
     children: [
       {
         viewBox: [200, 200],
@@ -740,7 +740,7 @@ export const SHAPE_LIST: ShapeListItem[] = [
   },
 
   {
-    type: '其他形状',
+    type: 'Другое',
     children: [
       {
         viewBox: [1024, 1024],
@@ -890,7 +890,7 @@ export const SHAPE_LIST: ShapeListItem[] = [
   },
 
   {
-    type: '线性',
+    type: 'Линейные',
     children: [
       {
         viewBox: [1024, 1024],

@@ -1,10 +1,10 @@
 <template>
   <div class="slide-animation-panel">
     <div class="animation-pool">
-      <div 
-        class="animation-item" 
-        :class="{ 'active': currentTurningMode === item.value }" 
-        v-for="item in animations" 
+      <div
+        class="animation-item"
+        :class="{ 'active': currentTurningMode === item.value }"
+        v-for="item in animations"
         :key="item.label"
         @click="updateTurningMode(item.value)"
       >
@@ -12,7 +12,7 @@
         <div class="animation-text">{{item.label}}</div>
       </div>
     </div>
-    <Button style="width: 100%;" @click="applyAllSlide()"><i-icon-park-outline:check /> 应用到全部</Button>
+    <Button style="width: 100%;" @click="applyAllSlide()"><i-icon-park-outline:check /> Применить ко всем</Button>
   </div>
 </template>
 
@@ -51,7 +51,7 @@ const applyAllSlide = () => {
     }
   })
   slidesStore.setSlides(newSlides)
-  message.success('已应用到全部')
+  message.success('Применено ко всем')
   addHistorySnapshot()
 }
 </script>

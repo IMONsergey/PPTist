@@ -1,6 +1,6 @@
 <template>
   <div class="theme-colors-setting">
-    <div class="title">图表主题配色</div>
+    <div class="title">Цвета темы диаграммы</div>
 
     <div class="list">
       <div class="row" v-for="(item, index) in themeColors" :key="index">
@@ -14,7 +14,7 @@
           </template>
           <div class="color-btn-wrap" style="width: 100%;">
             <ColorButton :color="item" />
-            <div class="delete-color-btn" v-tooltip="'删除'" @click.stop="deleteThemeColor(index)" v-if="index !== 0"><i-icon-park-outline:close-small /></div>
+            <div class="delete-color-btn" v-tooltip="'Удалить'" @click.stop="deleteThemeColor(index)" v-if="index !== 0"><i-icon-park-outline:close-small /></div>
           </div>
         </Popover>
       </div>

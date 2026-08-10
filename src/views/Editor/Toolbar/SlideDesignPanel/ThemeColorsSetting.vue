@@ -1,8 +1,8 @@
 <template>
   <div class="theme-colors-setting">
-    <div class="title">编辑主题色</div>
+    <div class="title">Редактировать цвета темы</div>
 
-    <Draggable 
+    <Draggable
       class="list"
       :modelValue="themeColors"
       :animation="200"
@@ -43,7 +43,7 @@ import Button from '@/components/Button.vue'
 import Draggable from 'vuedraggable'
 
 const emit = defineEmits<{
-  (event: 'close'): void 
+  (event: 'close'): void
 }>()
 
 const slidesStore = useSlidesStore()
@@ -57,7 +57,7 @@ onMounted(() => {
   while (colors.length < 6) {
     colors.push('#00000000')
   }
-  
+
   themeColors.value = [...colors]
 })
 
@@ -72,7 +72,7 @@ const setThemeColors = () => {
 const handleDragEnd = (eventData: { newIndex: number; oldIndex: number }) => {
   const { newIndex, oldIndex } = eventData
   if (newIndex === undefined || oldIndex === undefined || newIndex === oldIndex) return
-  
+
   const item = themeColors.value[oldIndex]
   themeColors.value.splice(oldIndex, 1)
   themeColors.value.splice(newIndex, 0, item)

@@ -1,13 +1,13 @@
 <template>
   <div class="shape-style-panel">
     <div class="title">
-      <span>点击替换形状</span>
+      <span>Нажмите, чтобы заменить фигуру</span>
       <i-icon-park-outline:down />
     </div>
     <div class="shape-pool">
       <div class="category" v-for="item in SHAPE_LIST" :key="item.type">
         <div class="shape-list">
-          <ShapeItemThumbnail 
+          <ShapeItemThumbnail
             class="shape-item"
             v-for="(shape, index) in item.children"
             :key="index"
@@ -19,14 +19,14 @@
     </div>
 
     <div class="row">
-      <Select 
-        style="flex: 1;" 
-        :value="fillType" 
+      <Select
+        style="flex: 1;"
+        :value="fillType"
         @update:value="value => updateFillType(value as 'fill' | 'gradient' | 'pattern')"
         :options="[
-          { label: '纯色填充', value: 'fill' },
-          { label: '渐变填充', value: 'gradient' },
-          { label: '图片填充', value: 'pattern' },
+          { label: 'Сплошная заливка', value: 'fill' },
+          { label: 'Градиентная заливка', value: 'gradient' },
+          { label: 'Заливка изображением', value: 'pattern' },
         ]"
       />
       <div style="width: 10px;" v-if="fillType !== 'pattern'"></div>
@@ -39,18 +39,18 @@
         </template>
         <ColorButton :color="fill" />
       </Popover>
-      <Select 
-        style="flex: 1;" 
-        :value="gradient.type" 
+      <Select
+        style="flex: 1;"
+        :value="gradient.type"
         @update:value="value => updateGradient({ type: value as GradientType })"
         v-else-if="fillType === 'gradient'"
         :options="[
-          { label: '线性渐变', value: 'linear' },
-          { label: '径向渐变', value: 'radial' },
+          { label: 'Линейный градиент', value: 'linear' },
+          { label: 'Радиальный градиент', value: 'radial' },
         ]"
       />
     </div>
-    
+
     <template v-if="fillType === 'gradient'">
       <div class="row">
         <GradientBar
@@ -80,11 +80,11 @@
           :max="360"
           :step="15"
           :value="gradient.rotate"
-          @update:value="value => updateGradient({ rotate: value as number })" 
+          @update:value="value => updateGradient({ rotate: value as number })"
         />
       </div>
     </template>
-    
+
     <template v-if="fillType === 'pattern'">
       <div class="pattern-image-wrapper">
         <FileInput @change="files => uploadPattern(files)">
@@ -195,15 +195,15 @@
 
       <Divider />
 
-      <RadioGroup 
-        class="row" 
-        button-style="solid" 
+      <RadioGroup
+        class="row"
+        button-style="solid"
         :value="textAlign"
         @update:value="value => updateTextProps({ align: value as 'top' | 'middle' | 'bottom' })"
       >
-        <RadioButton value="top" v-tooltip="'顶对齐'" style="flex: 1;"><i-icon-park-outline:align-text-top-one /></RadioButton>
-        <RadioButton value="middle" v-tooltip="'垂直居中'" style="flex: 1;"><i-icon-park-outline:align-text-middle-one /></RadioButton>
-        <RadioButton value="bottom" v-tooltip="'底对齐'" style="flex: 1;"><i-icon-park-outline:align-text-bottom-one /></RadioButton>
+        <RadioButton value="top" v-tooltip="'Выровнять по верху'" style="flex: 1;"><i-icon-park-outline:align-text-top-one /></RadioButton>
+        <RadioButton value="middle" v-tooltip="'Выровнять по центру (верт.)'" style="flex: 1;"><i-icon-park-outline:align-text-middle-one /></RadioButton>
+        <RadioButton value="bottom" v-tooltip="'Выровнять по низу'" style="flex: 1;"><i-icon-park-outline:align-text-bottom-one /></RadioButton>
       </RadioGroup>
 
       <Divider />
@@ -218,7 +218,7 @@
 
     <div class="row">
       <CheckboxButton
-        v-tooltip="'双击连续使用'"
+        v-tooltip="'Двойной щелчок для непрерывного использования'"
         style="flex: 1;"
         :checked="!!shapeFormatPainter"
         @click="toggleShapeFormatPainter()"
@@ -267,7 +267,7 @@ const handleShapeElement = handleElement as Ref<PPTShapeElement>
 const fill = ref<string>('#000')
 const pattern = ref<string>('')
 const gradient = ref<Gradient>({
-  type: 'linear', 
+  type: 'linear',
   rotate: 0,
   colors: [
     { pos: 0, color: '#fff' },

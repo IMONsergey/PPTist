@@ -6,18 +6,18 @@
       <span class="subtite" v-else-if="step === 'outline'">确认下方内容大纲（点击编辑内容，右键添加/删除大纲项），开始选择模板</span>
       <span class="subtite" v-else>在下方输入您的PPT主题，并适当补充信息，如行业、岗位、学科、用途等</span>
     </div>
-    
+
     <template v-if="step === 'setup'">
-      <Input class="input" 
+      <Input class="input"
         ref="inputRef"
-        v-model:value="keyword" 
-        :maxlength="50" 
-        placeholder="请输入PPT主题，如：大学生职业生涯规划" 
+        v-model:value="keyword"
+        :maxlength="50"
+        placeholder="Введите тему PPT, например: Планирование карьеры студентов"
         @enter="createOutline()"
       >
         <template #suffix>
           <span class="count">{{ keyword.length }} / 50</span>
-          <div class="submit" type="primary" @click="createOutline()"><i-icon-park-outline:send class="icon" /> AI 生成</div>
+          <div class="submit" type="primary" @click="createOutline()"><i-icon-park-outline:send class="icon" /> Генерировать с ИИ</div>
         </template>
       </Input>
       <div class="recommends">
@@ -26,7 +26,7 @@
       <div class="configs">
         <div class="config-item">
           <div class="label">语言：</div>
-          <Select 
+          <Select
             class="config-content"
             style="width: 80px;"
             v-model:value="language"
@@ -39,7 +39,7 @@
         </div>
         <div class="config-item">
           <div class="label">风格：</div>
-          <Select 
+          <Select
             class="config-content"
             style="width: 80px;"
             v-model:value="style"
@@ -54,7 +54,7 @@
         </div>
         <div class="config-item">
           <div class="label">模型：</div>
-          <Select 
+          <Select
             class="config-content"
             style="width: 190px;"
             v-model:value="model"
@@ -67,12 +67,12 @@
         </div>
         <div class="config-item">
           <div class="label">配图：</div>
-          <Select 
+          <Select
             class="config-content"
             style="width: 100px;"
             v-model:value="img"
             :options="[
-              { label: '无', value: '' },
+              { label: 'Нет', value: '' },
               { label: '模拟测试', value: 'test' },
               { label: 'AI搜图', value: 'ai-search', disabled: true },
               { label: 'AI生图', value: 'ai-create', disabled: true },
@@ -98,10 +98,10 @@
     </div>
     <div class="select-template" v-if="step === 'template'">
       <div class="templates">
-        <div class="template" 
-          :class="{ 'selected': selectedTemplate === template.id }" 
-          v-for="template in templates" 
-          :key="template.id" 
+        <div class="template"
+          :class="{ 'selected': selectedTemplate === template.id }"
+          v-for="template in templates"
+          :key="template.id"
           @click="selectedTemplate = template.id"
         >
           <img :src="template.cover" :alt="template.name">
@@ -113,7 +113,7 @@
       </div>
     </div>
 
-    <FullscreenSpin :loading="loading" tip="AI生成中，请耐心等待 ..." />
+    <FullscreenSpin :loading="loading" tip="Генерация с помощью ИИ, пожалуйста, подождите ..." />
   </div>
 </template>
 
@@ -168,7 +168,7 @@ const recommends = ref([
   '区块链技术及其应用',
   '大学生职业生涯规划',
   '公司年会策划方案',
-]) 
+])
 
 onMounted(() => {
   setTimeout(() => {
@@ -182,11 +182,11 @@ const setKeyword = (value: string) => {
 }
 
 const createOutline = async () => {
-  if (!keyword.value) return message.error('请先输入PPT主题')
+  if (!keyword.value) return message.error('Сначала введите тему презентации')
 
   loading.value = true
   outlineCreating.value = true
-  
+
   const stream = await api.AIPPT_Outline({
     content: keyword.value,
     language: language.value,
@@ -202,7 +202,7 @@ const createOutline = async () => {
 
   const reader: ReadableStreamDefaultReader = stream.body.getReader()
   const decoder = new TextDecoder('utf-8')
-  
+
   const readStream = () => {
     reader.read().then(({ done, value }) => {
       if (done) {
@@ -211,7 +211,7 @@ const createOutline = async () => {
         outlineCreating.value = false
         return
       }
-  
+
       const chunk = decoder.decode(value, { stream: true })
       outline.value += chunk
 
@@ -257,7 +257,7 @@ const createPPT = async (template?: { slides: Slide[], theme: SlideTheme }) => {
 
   const reader: ReadableStreamDefaultReader = stream.body.getReader()
   const decoder = new TextDecoder('utf-8')
-  
+
   const readStream = () => {
     reader.read().then(({ done, value }) => {
       if (done) {
@@ -267,7 +267,7 @@ const createPPT = async (template?: { slides: Slide[], theme: SlideTheme }) => {
         slidesStore.setTheme(templateTheme)
         return
       }
-  
+
       const chunk = decoder.decode(value, { stream: true })
       const lines = chunk.split(/\n+/)
 
@@ -310,7 +310,7 @@ const uploadLocalTemplate = () => {
           createPPT({ slides, theme })
         }
         catch {
-          message.error('上传的模板文件数据异常，请重新上传或使用预置模板')
+          message.error('Некорректные данные файла шаблона. Загрузите снова или используйте предустановленный шаблон.')
         }
       })
       reader.readAsText(file)
@@ -382,7 +382,7 @@ const uploadLocalTemplate = () => {
     margin-bottom: 10px;
     padding-right: 5px;
     @include flex-grid-layout();
-  
+
     .template {
       border: 2px solid $borderColor;
       border-radius: $borderRadius;
@@ -391,7 +391,7 @@ const uploadLocalTemplate = () => {
       &.selected {
         border-color: $themeColor;
       }
-  
+
       img {
         width: 100%;
         min-height: 175px;
@@ -486,7 +486,7 @@ const uploadLocalTemplate = () => {
   .select-template {
     .templates {
       padding-right: 0;
-  
+
       .template {
         img {
           min-height: 60px;

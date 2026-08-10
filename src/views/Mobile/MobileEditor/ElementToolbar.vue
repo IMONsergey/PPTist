@@ -1,35 +1,35 @@
 <template>
   <div class="element-toolbar">
-    <Tabs 
-      :tabs="tabs" 
-      v-model:value="activeTab" 
-      :tabsStyle="{ marginBottom: '8px' }" 
+    <Tabs
+      :tabs="tabs"
+      v-model:value="activeTab"
+      :tabsStyle="{ marginBottom: '8px' }"
       :tabStyle="{
         width: '30%',
         margin: '0 10%',
-      }" 
+      }"
     />
 
     <div class="content">
       <div class="style" v-if="activeTab === 'style'">
         <template v-if="textPropsEnable">
           <ButtonGroup class="row">
-            <CheckboxButton 
+            <CheckboxButton
               style="flex: 1;"
               :checked="richTextAttrs.bold"
               @click="emitRichTextCommand('bold')"
             ><i-icon-park-outline:text-bold /></CheckboxButton>
-            <CheckboxButton 
+            <CheckboxButton
               style="flex: 1;"
               :checked="richTextAttrs.em"
               @click="emitRichTextCommand('em')"
             ><i-icon-park-outline:text-italic /></CheckboxButton>
-            <CheckboxButton 
+            <CheckboxButton
               style="flex: 1;"
               :checked="richTextAttrs.underline"
               @click="emitRichTextCommand('underline')"
             ><i-icon-park-outline:text-underline /></CheckboxButton>
-            <CheckboxButton 
+            <CheckboxButton
               style="flex: 1;"
               :checked="richTextAttrs.strikethrough"
               @click="emitRichTextCommand('strikethrough')"
@@ -37,19 +37,19 @@
           </ButtonGroup>
 
           <ButtonGroup class="row">
-            <Button 
+            <Button
               style="flex: 1;"
               @click="emitRichTextCommand('fontsize-add')"
             ><i-icon-park-outline:font-size />+</Button>
-            <Button 
+            <Button
               style="flex: 1;"
               @click="emitRichTextCommand('fontsize-reduce')"
             ><i-icon-park-outline:font-size />-</Button>
           </ButtonGroup>
 
-          <RadioGroup 
-            class="row" 
-            button-style="solid" 
+          <RadioGroup
+            class="row"
+            button-style="solid"
             :value="richTextAttrs.align"
             @update:value="value => emitRichTextCommand('align', value)"
           >
@@ -62,8 +62,8 @@
         <div class="row-block" v-if="textColorPropsEnable">
           <div class="label">文字颜色：</div>
           <div class="colors">
-            <div class="color" 
-              v-for="color in colors" 
+            <div class="color"
+              v-for="color in colors"
               :key="color"
               @click="updateFontColor(color)"
             >
@@ -82,8 +82,8 @@
         <div class="row-block" v-if="fillPropsEnable">
           <div class="label">填充色：</div>
           <div class="colors">
-            <div class="color" 
-              v-for="color in colors" 
+            <div class="color"
+              v-for="color in colors"
               :key="color"
               @click="updateFill(color)"
             >
@@ -108,7 +108,7 @@
           <Button style="flex: 1;" @click="copyElement()"><i-icon-park-outline:copy class="icon" /> 复制</Button>
           <Button style="flex: 1;" @click="deleteElement()"><i-icon-park-outline:delete class="icon" /> 删除</Button>
         </ButtonGroup>
-        
+
         <Divider :margin="20" />
 
         <ButtonGroup class="row">
@@ -117,7 +117,7 @@
           <Button style="flex: 1;" @click="orderElement(handleElement!, ElementOrderCommands.UP)"><i-icon-park-outline:bring-to-front class="icon" /> 上移</Button>
           <Button style="flex: 1;" @click="orderElement(handleElement!, ElementOrderCommands.DOWN)"><i-icon-park-outline:sent-to-back class="icon" /> 下移</Button>
         </ButtonGroup>
-        
+
         <Divider :margin="20" />
 
         <ButtonGroup class="row">
@@ -177,8 +177,8 @@ const updateElement = (id: string, props: Partial<PPTElement>) => {
 }
 
 const tabs: TabItem[] = [
-  { key: 'style', label: '样式' },
-  { key: 'common', label: '布局' },
+  { key: 'style', label: 'Стиль' },
+  { key: 'common', label: 'Макет' },
 ]
 const activeTab = ref('common')
 

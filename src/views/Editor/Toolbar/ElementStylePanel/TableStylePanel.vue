@@ -5,7 +5,7 @@
         style="width: 50%;"
         :value="textAttrs.fontname"
         search
-        searchLabel="搜索字体"
+        searchLabel="Поиск шрифтов"
         autofocus
         @update:value="value => updateTextAttrs({ fontname: value as string })"
         :options="FONTS"
@@ -18,7 +18,7 @@
         style="width: 50%;"
         :value="textAttrs.fontsize"
         search
-        searchLabel="搜索字号"
+        searchLabel="Поиск размеров"
         autofocus
         @update:value="value => updateTextAttrs({ fontsize: value as string })"
         :options="fontSizeOptions.map(item => ({
@@ -39,7 +39,7 @@
             @update:modelValue="value => updateTextAttrs({ color: value })"
           />
         </template>
-        <TextColorButton first v-tooltip="'文字颜色'" :color="textAttrs.color">
+        <TextColorButton first v-tooltip="'Цвет шрифта'" :color="textAttrs.color">
           <i-icon-park-outline:text />
         </TextColorButton>
       </Popover>
@@ -57,25 +57,25 @@
     </ButtonGroup>
 
     <ButtonGroup class="row">
-      <CheckboxButton 
+      <CheckboxButton
         style="flex: 1;"
         :checked="textAttrs.bold"
         v-tooltip="'加粗'"
         @click="updateTextAttrs({ bold: !textAttrs.bold })"
       ><i-icon-park-outline:text-bold /></CheckboxButton>
-      <CheckboxButton 
+      <CheckboxButton
         style="flex: 1;"
         :checked="textAttrs.em"
         v-tooltip="'斜体'"
         @click="updateTextAttrs({ em: !textAttrs.em })"
       ><i-icon-park-outline:text-italic /></CheckboxButton>
-      <CheckboxButton 
+      <CheckboxButton
         style="flex: 1;"
         :checked="textAttrs.underline"
         v-tooltip="'下划线'"
         @click="updateTextAttrs({ underline: !textAttrs.underline })"
       ><i-icon-park-outline:text-underline /></CheckboxButton>
-      <CheckboxButton 
+      <CheckboxButton
         style="flex: 1;"
         :checked="textAttrs.strikethrough"
         v-tooltip="'删除线'"
@@ -83,27 +83,27 @@
       ><i-icon-park-outline:strikethrough /></CheckboxButton>
     </ButtonGroup>
 
-    <RadioGroup 
-      class="row" 
-      button-style="solid" 
+    <RadioGroup
+      class="row"
+      button-style="solid"
       :value="textAttrs.align"
       @update:value="value => updateTextAttrs({ align: value as TextAlign })"
     >
-      <RadioButton value="left" v-tooltip="'左对齐'" style="flex: 1;"><i-icon-park-outline:align-text-left /></RadioButton>
-      <RadioButton value="center" v-tooltip="'居中'" style="flex: 1;"><i-icon-park-outline:align-text-center /></RadioButton>
-      <RadioButton value="right" v-tooltip="'右对齐'" style="flex: 1;"><i-icon-park-outline:align-text-right /></RadioButton>
-      <RadioButton value="justify" v-tooltip="'两端对齐'" style="flex: 1;"><i-icon-park-outline:align-text-both /></RadioButton>
+      <RadioButton value="left" v-tooltip="'Выровнять по левому краю'" style="flex: 1;"><i-icon-park-outline:align-text-left /></RadioButton>
+      <RadioButton value="center" v-tooltip="'Выровнять по центру'" style="flex: 1;"><i-icon-park-outline:align-text-center /></RadioButton>
+      <RadioButton value="right" v-tooltip="'Выровнять по правому краю'" style="flex: 1;"><i-icon-park-outline:align-text-right /></RadioButton>
+      <RadioButton value="justify" v-tooltip="'По ширине'" style="flex: 1;"><i-icon-park-outline:align-text-both /></RadioButton>
     </RadioGroup>
 
-    <RadioGroup 
-      class="row" 
-      button-style="solid" 
+    <RadioGroup
+      class="row"
+      button-style="solid"
       :value="textAttrs.vAlign"
       @update:value="value => updateTextAttrs({ vAlign: value as TextAlignVertical })"
     >
-      <RadioButton value="top" v-tooltip="'顶对齐'" style="flex: 1;"><i-icon-park-outline:align-text-top-one /></RadioButton>
-      <RadioButton value="middle" v-tooltip="'垂直居中'" style="flex: 1;"><i-icon-park-outline:align-text-middle-one /></RadioButton>
-      <RadioButton value="bottom" v-tooltip="'底对齐'" style="flex: 1;"><i-icon-park-outline:align-text-bottom-one /></RadioButton>
+      <RadioButton value="top" v-tooltip="'Выровнять по верху'" style="flex: 1;"><i-icon-park-outline:align-text-top-one /></RadioButton>
+      <RadioButton value="middle" v-tooltip="'Выровнять по центру (верт.)'" style="flex: 1;"><i-icon-park-outline:align-text-middle-one /></RadioButton>
+      <RadioButton value="bottom" v-tooltip="'Выровнять по низу'" style="flex: 1;"><i-icon-park-outline:align-text-bottom-one /></RadioButton>
     </RadioGroup>
 
     <Divider />
@@ -146,35 +146,35 @@
     <div class="row theme-switch">
       <div style="width: 40%;">启用主题表格：</div>
       <div class="switch-wrapper" style="width: 60%;">
-        <Switch 
-          :value="hasTheme" 
-          @update:value="value => toggleTheme(value)" 
+        <Switch
+          :value="hasTheme"
+          @update:value="value => toggleTheme(value)"
         />
       </div>
     </div>
 
     <template v-if="theme">
       <div class="row">
-        <Checkbox 
-          @update:value="value => updateTheme({ rowHeader: value })" 
-          :value="theme.rowHeader" 
+        <Checkbox
+          @update:value="value => updateTheme({ rowHeader: value })"
+          :value="theme.rowHeader"
           style="flex: 1;"
         >标题行</Checkbox>
-        <Checkbox 
-          @update:value="value => updateTheme({ rowFooter: value })" 
-          :value="theme.rowFooter" 
+        <Checkbox
+          @update:value="value => updateTheme({ rowFooter: value })"
+          :value="theme.rowFooter"
           style="flex: 1;"
         >汇总行</Checkbox>
       </div>
       <div class="row">
-        <Checkbox 
-          @update:value="value => updateTheme({ colHeader: value })" 
-          :value="theme.colHeader" 
+        <Checkbox
+          @update:value="value => updateTheme({ colHeader: value })"
+          :value="theme.colHeader"
           style="flex: 1;"
         >第一列</Checkbox>
-        <Checkbox 
-          @update:value="value => updateTheme({ colFooter: value })" 
-          :value="theme.colFooter" 
+        <Checkbox
+          @update:value="value => updateTheme({ colFooter: value })"
+          :value="theme.colFooter"
           style="flex: 1;"
         >最后一列</Checkbox>
       </div>
@@ -246,7 +246,7 @@ const hasTheme = ref(false)
 
 watch(handleElement, () => {
   if (!handleElement.value || handleElement.value.type !== 'table') return
-  
+
   theme.value = handleElement.value.theme
   hasTheme.value = !!theme.value
 }, { deep: true, immediate: true })

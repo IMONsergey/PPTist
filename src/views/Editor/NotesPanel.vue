@@ -1,10 +1,10 @@
 <template>
-  <MoveablePanel 
-    class="notes-panel" 
-    :width="300" 
-    :height="560" 
-    :title="`幻灯片${slideIndex + 1}的批注`" 
-    :left="-270" 
+  <MoveablePanel
+    class="notes-panel"
+    :width="300"
+    :height="560"
+    :title="`幻灯片${slideIndex + 1}的批注`"
+    :left="-270"
     :top="90"
     :minWidth="300"
     :minHeight="400"
@@ -25,8 +25,8 @@
               </div>
             </div>
             <div class="btns">
-              <div class="btn reply" @click="replyNoteId = note.id">回复</div>
-              <div class="btn delete" @click.stop="deleteNote(note.id)">删除</div>
+              <div class="btn reply" @click="replyNoteId = note.id">Ответить</div>
+              <div class="btn delete" @click.stop="deleteNote(note.id)">Удалить</div>
             </div>
           </div>
           <div class="content">{{ note.content }}</div>
@@ -41,24 +41,24 @@
                   </div>
                 </div>
                 <div class="btns">
-                  <div class="btn delete" @click.stop="deleteReply(note.id, reply.id)">删除</div>
+                  <div class="btn delete" @click.stop="deleteReply(note.id, reply.id)">Удалить</div>
                 </div>
               </div>
               <div class="content">{{ reply.content }}</div>
             </div>
           </div>
           <div class="note-reply" v-if="replyNoteId === note.id">
-            <TextArea :padding="6" v-model:value="replyContent" placeholder="输入回复内容" :rows="1" @enter.prevent="createNoteReply()" />
+            <TextArea :padding="6" v-model:value="replyContent" placeholder="Введите ответ" :rows="1" @enter.prevent="createNoteReply()" />
             <div class="reply-btns">
-              <Button class="btn" size="small" @click="replyNoteId = ''">取消</Button>
-              <Button class="btn" size="small" type="primary" @click="createNoteReply()">回复</Button>
+              <Button class="btn" size="small" @click="replyNoteId = ''">Отмена</Button>
+              <Button class="btn" size="small" type="primary" @click="createNoteReply()">Ответить</Button>
             </div>
           </div>
         </div>
-        <div class="empty" v-if="!notes.length">本页暂无批注</div>
+        <div class="empty" v-if="!notes.length">Нет заметок на этом слайде</div>
       </div>
       <div class="send">
-        <TextArea 
+        <TextArea
           ref="textAreaRef"
           v-model:value="content"
           :padding="6"
@@ -68,8 +68,8 @@
           @enter.prevent="createNote()"
         />
         <div class="footer">
-          <i-icon-park-outline:delete class="btn icon" v-tooltip="'清空本页批注'" style="flex: 1" @click="clear()" />
-          <Button type="primary" class="btn" style="flex: 12" @click="createNote()"><i-icon-park-outline:plus /> 添加批注</Button>
+          <i-icon-park-outline:delete class="btn icon" v-tooltip="'Очистить заметки этого слайда'" style="flex: 1" @click="clear()" />
+          <Button type="primary" class="btn" style="flex: 12" @click="createNote()"><i-icon-park-outline:plus /> Добавить заметку</Button>
         </div>
       </div>
     </div>
@@ -143,7 +143,7 @@ const deleteNote = (id: string) => {
 
 const createNoteReply = () => {
   if (!replyContent.value) return
-  
+
   const currentNote = notes.value.find(note => note.id === replyNoteId.value)
   if (!currentNote) return
 
@@ -172,7 +172,7 @@ const createNoteReply = () => {
 const deleteReply = (noteId: string, replyId: string) => {
   const currentNote = notes.value.find(note => note.id === noteId)
   if (!currentNote || !currentNote.replies) return
-  
+
   const newReplies = currentNote.replies.filter(reply => reply.id !== replyId)
   const newNote: Note = {
     ...currentNote,
@@ -326,7 +326,7 @@ const close = () => {
   flex-direction: column;
   justify-content: flex-end;
 
-  
+
   .footer {
     margin-top: 10px;
     display: flex;

@@ -2,25 +2,25 @@
   <div class="export-pptx-dialog">
     <div class="thumbnails-view">
       <div class="thumbnails" ref="imageThumbnailsRef">
-        <ThumbnailSlide 
-          class="export-thumbnail" 
-          v-for="slide in renderSlides" 
-          :key="slide.id" 
-          :slide="slide" 
-          :size="1600" 
+        <ThumbnailSlide
+          class="export-thumbnail"
+          v-for="slide in renderSlides"
+          :key="slide.id"
+          :slide="slide"
+          :size="1600"
         />
       </div>
     </div>
     <div class="configs">
       <div class="row">
-        <div class="title">导出范围：</div>
+        <div class="title">Диапазон экспорта:</div>
         <RadioGroup
           class="config-item"
           v-model:value="rangeType"
         >
-          <RadioButton style="width: 33.33%;" value="all">全部</RadioButton>
-          <RadioButton style="width: 33.33%;" value="current">当前页</RadioButton>
-          <RadioButton style="width: 33.33%;" value="custom">自定义</RadioButton>
+          <RadioButton style="width: 33.33%;" value="all">Все</RadioButton>
+          <RadioButton style="width: 33.33%;" value="current">Текущий</RadioButton>
+          <RadioButton style="width: 33.33%;" value="custom">Пользовательский</RadioButton>
         </RadioGroup>
       </div>
       <div class="row">
@@ -34,7 +34,7 @@
         </RadioGroup>
       </div>
       <div class="row" style="margin-bottom: 32px" v-if="rangeType === 'custom'">
-        <div class="title" :data-range="`（${range[0]} ~ ${range[1]}）`">自定义范围：</div>
+        <div class="title" :data-range="`（${range[0]} ~ ${range[1]}）`">Пользовательский диапазон:</div>
         <Slider
           class="config-item"
           range
@@ -44,16 +44,16 @@
           v-model:value="range"
         />
       </div>
-      
+
       <template v-if="exportMode === 'standard'">
         <div class="row">
-          <div class="title">忽略音频/视频：</div>
+          <div class="title">Игнорировать аудио/видео:</div>
           <div class="config-item">
             <Switch v-model:value="ignoreMedia" v-tooltip="'导出时默认忽略音视频，若您的幻灯片中存在音视频元素，且希望将其导出到PPTX文件中，可选择关闭「忽略音视频」选项，但要注意这将会大幅增加导出用时。'" />
           </div>
         </div>
         <div class="row">
-          <div class="title">覆盖默认母版：</div>
+          <div class="title">Перезаписать мастер по умолчанию:</div>
           <div class="config-item">
             <Switch v-model:value="masterOverwrite" />
           </div>
@@ -69,7 +69,7 @@
       <Button class="btn close" @click="emit('close')">关闭</Button>
     </div>
 
-    <FullscreenSpin :loading="exporting" tip="正在导出..." />
+    <FullscreenSpin :loading="exporting" tip="Экспорт..." />
   </div>
 </template>
 
@@ -119,7 +119,7 @@ const renderSlides = computed(() => {
 const execExport = () => {
   if (exportMode.value === 'standard') {
     exportPPTX(selectedSlides.value, masterOverwrite.value, ignoreMedia.value)
-  } 
+  }
   else {
     const slideRefs = imageThumbnailsRef.value!.querySelectorAll('.export-thumbnail')
     exportImagePPTX(slideRefs)

@@ -42,10 +42,10 @@
     </div>
     <div class="row">
       <div style="width: 40%;">边框粗细：</div>
-      <NumberInput 
+      <NumberInput
         :value="outline.width || 0"
-        @update:value="value => updateOutline({ width: value })" 
-        style="width: 60%;" 
+        @update:value="value => updateOutline({ width: value })"
+        style="width: 60%;"
       />
     </div>
 
@@ -56,7 +56,7 @@
         style="width: 60%;;"
         :value="richTextAttrs.fontname"
         search
-        searchLabel="搜索字体"
+        searchLabel="Поиск шрифтов"
         autofocus
         @update:value="value => updateFontStyle('fontname', value as string)"
         :options="FONTS"
@@ -69,7 +69,7 @@
         style="width: 40%;"
         :value="richTextAttrs.fontsize"
         search
-        searchLabel="搜索字号"
+        searchLabel="Поиск размеров"
         autofocus
         @update:value="value => updateFontStyle('fontsize', value as string)"
         :options="fontSizeOptions.map(item => ({
@@ -89,7 +89,7 @@
             @update:modelValue="value => updateFontStyle('color', value)"
           />
         </template>
-        <TextColorButton first :color="richTextAttrs.color" v-tooltip="'文字颜色'">
+        <TextColorButton first :color="richTextAttrs.color" v-tooltip="'Цвет шрифта'">
           <i-icon-park-outline:text />
         </TextColorButton>
       </Popover>
@@ -100,34 +100,34 @@
             @update:modelValue="value => updateFontStyle('backcolor', value)"
           />
         </template>
-        <TextColorButton :color="richTextAttrs.backcolor" v-tooltip="'文字高亮'">
+        <TextColorButton :color="richTextAttrs.backcolor" v-tooltip="'Выделение'">
           <i-icon-park-outline:high-light />
         </TextColorButton>
       </Popover>
-      <Button 
+      <Button
         class="font-size-btn"
         style="width: 20%;"
-        v-tooltip="'增大字号'"
+        v-tooltip="'Увеличить размер шрифта'"
         @click="updateFontStyle('fontsize-add', '2')"
       ><i-icon-park-outline:font-size />+</Button>
       <Button
         last
         class="font-size-btn"
         style="width: 20%;"
-        v-tooltip="'减小字号'"
+        v-tooltip="'Уменьшить размер шрифта'"
         @click="updateFontStyle('fontsize-reduce', '2')"
       ><i-icon-park-outline:font-size />-</Button>
     </ButtonGroup>
-    <RadioGroup 
-      class="row" 
-      button-style="solid" 
+    <RadioGroup
+      class="row"
+      button-style="solid"
       :value="richTextAttrs.align"
       @update:value="value => updateFontStyle('align', value)"
     >
-      <RadioButton value="left" style="flex: 1;" v-tooltip="'左对齐'"><i-icon-park-outline:align-text-left /></RadioButton>
-      <RadioButton value="center" style="flex: 1;" v-tooltip="'居中'"><i-icon-park-outline:align-text-center /></RadioButton>
-      <RadioButton value="right" style="flex: 1;" v-tooltip="'右对齐'"><i-icon-park-outline:align-text-right /></RadioButton>
-      <RadioButton value="justify" style="flex: 1;" v-tooltip="'两端对齐'"><i-icon-park-outline:align-text-both /></RadioButton>
+      <RadioButton value="left" style="flex: 1;" v-tooltip="'Выровнять по левому краю'"><i-icon-park-outline:align-text-left /></RadioButton>
+      <RadioButton value="center" style="flex: 1;" v-tooltip="'Выровнять по центру'"><i-icon-park-outline:align-text-center /></RadioButton>
+      <RadioButton value="right" style="flex: 1;" v-tooltip="'Выровнять по правому краю'"><i-icon-park-outline:align-text-right /></RadioButton>
+      <RadioButton value="justify" style="flex: 1;" v-tooltip="'По ширине'"><i-icon-park-outline:align-text-both /></RadioButton>
     </RadioGroup>
   </div>
 </template>

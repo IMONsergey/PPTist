@@ -32,12 +32,12 @@ export default () => {
   const searchIndex = ref(-1)
 
   const modifiers = ref<Modifiers>('g')
-  
+
   const search = () => {
     const textList: SearchResult[] = []
     const matchRegex = new RegExp(searchWord.value, modifiers.value)
     const textRegex = /(<([^>]+)>)/g
-  
+
     for (const slide of slides.value) {
       for (const el of slide.elements) {
         if (el.type === 'text') {
@@ -83,11 +83,11 @@ export default () => {
       highlightCurrentSlide()
     }
     else {
-      message.warning('未查找到匹配项')
+      message.warning('Совпадений не найдено')
       clearMarks()
     }
   }
-  
+
   const getTextNodeList = (dom: Node): Text[] => {
     const nodeList = [...dom.childNodes]
     const textNodes = []
@@ -95,14 +95,14 @@ export default () => {
       const node = nodeList.shift()!
       if (node.nodeType === node.TEXT_NODE) {
         (node as Text).wholeText && textNodes.push(node as Text)
-      } 
+      }
       else {
         nodeList.unshift(...node.childNodes)
       }
     }
     return textNodes
   }
-  
+
   const getTextInfoList = (textNodes: Text[]) => {
     let length = 0
     const textList = textNodes.map(node => {
@@ -116,9 +116,9 @@ export default () => {
     })
     return textList
   }
-  
+
   type TextInfoList = ReturnType<typeof getTextInfoList>
-  
+
   const getMatchList = (content: string, keyword: string) => {
     const reg = new RegExp(keyword, modifiers.value)
     const matchList = []
@@ -129,25 +129,25 @@ export default () => {
     }
     return matchList
   }
-  
+
   const highlight = (textNodes: Text[], textList: TextInfoList, matchList: RegExpExecArray[], index: number) => {
     for (let i = matchList.length - 1; i >= 0; i--) {
       const match = matchList[i]
       const matchStart = match.index
       const matchEnd = matchStart + match[0].length
-  
+
       for (let textIdx = 0; textIdx < textList.length; textIdx++) {
         const { text, startIdx, endIdx } = textList[textIdx]
         if (endIdx < matchStart) continue
         if (startIdx >= matchEnd) break
-  
+
         let textNode = textNodes[textIdx]
         const nodeMatchStartIdx = Math.max(0, matchStart - startIdx)
         const nodeMatchLength = Math.min(endIdx, matchEnd) - startIdx - nodeMatchStartIdx
-  
+
         if (nodeMatchStartIdx > 0) textNode = textNode.splitText(nodeMatchStartIdx)
         if (nodeMatchLength < textNode.wholeText.length) textNode.splitText(nodeMatchLength)
-  
+
         const mark = document.createElement('mark')
         mark.dataset.index = index + i + ''
         mark.innerText = text.substring(nodeMatchStartIdx, nodeMatchStartIdx + nodeMatchLength)
@@ -155,7 +155,7 @@ export default () => {
       }
     }
   }
-  
+
   const highlightTableText = (nodes: NodeListOf<Element>, index: number) => {
     for (const node of nodes) {
       node.innerHTML = node.innerHTML.replace(new RegExp(searchWord.value, modifiers.value), () => {
@@ -163,7 +163,7 @@ export default () => {
       })
     }
   }
-  
+
   const clearMarks = () => {
     const markNodes = document.querySelectorAll('.editable-element mark')
     for (const mark of markNodes) {
@@ -174,17 +174,17 @@ export default () => {
       }, 0)
     }
   }
-  
+
   const highlightCurrentSlide = () => {
     clearMarks()
-    
+
     setTimeout(() => {
       for (let i = 0; i < searchResults.value.length; i++) {
         const lastTarget = searchResults.value[i - 1]
         const target = searchResults.value[i]
         if (target.slideId !== currentSlide.value.id) continue
         if (lastTarget && lastTarget.elId === target.elId) continue
-  
+
         const node = document.querySelector(`#editable-element-${target.elId}`)
         if (node) {
           if (target.elType === 'table') {
@@ -202,7 +202,7 @@ export default () => {
       }
     }, 0)
   }
-  
+
   const setActiveMark = () => {
     const markNodes = document.querySelectorAll('mark[data-index]')
     for (const node of markNodes) {
@@ -215,44 +215,44 @@ export default () => {
       }, 0)
     }
   }
-  
+
   const turnTarget = () => {
     if (searchIndex.value === -1) return
-    
+
     const target = searchResults.value[searchIndex.value]
-  
+
     if (target.slideId === currentSlide.value.id) setTimeout(setActiveMark, 0)
     else {
       const index = slides.value.findIndex(slide => slide.id === target.slideId)
       if (index !== -1) slidesStore.updateSlideIndex(index)
     }
   }
-  
+
   const searchNext = () => {
-    if (!searchWord.value) return message.warning('请先输入查找内容')
+    if (!searchWord.value) return message.warning('Сначала введите текст для поиска')
     mainStore.setActiveElementIdList([])
     if (searchIndex.value === -1) search()
     else if (searchIndex.value < searchResults.value.length - 1) searchIndex.value += 1
     else searchIndex.value = 0
     turnTarget()
   }
-  
+
   const searchPrev = () => {
-    if (!searchWord.value) return message.warning('请先输入查找内容')
+    if (!searchWord.value) return message.warning('Сначала введите текст для поиска')
     mainStore.setActiveElementIdList([])
     if (searchIndex.value === -1) search()
     else if (searchIndex.value > 0) searchIndex.value -= 1
     else searchIndex.value = searchResults.value.length - 1
     turnTarget()
   }
-  
+
   const replace = () => {
     if (!searchWord.value) return
     if (searchIndex.value === -1) {
       searchNext()
       return
     }
-  
+
     const target = searchResults.value[searchIndex.value]
     let targetElement = null
     if (target.elType === 'table') {
@@ -261,10 +261,10 @@ export default () => {
     }
     else targetElement = document.querySelector(`#editable-element-${target.elId} .ProseMirror`)
     if (!targetElement) return
-  
+
     const fakeElement = document.createElement('div')
     fakeElement.innerHTML = targetElement.innerHTML
-  
+
     let replaced = false
     const marks = fakeElement.querySelectorAll('mark[data-index]')
     for (const mark of marks) {
@@ -281,7 +281,7 @@ export default () => {
         parentNode.replaceChild(document.createTextNode(text), mark)
       }
     }
-  
+
     if (target.elType === 'text') {
       const props = { content: fakeElement.innerHTML }
       slidesStore.updateElement({ id: target.elId, props })
@@ -314,7 +314,7 @@ export default () => {
         slidesStore.updateElement({ id: target.elId, props })
       }
     }
-  
+
     searchResults.value.splice(searchIndex.value, 1)
     if (searchResults.value.length) {
       if (searchIndex.value > searchResults.value.length - 1) {
@@ -327,28 +327,28 @@ export default () => {
     }
     else searchIndex.value = -1
   }
-  
+
   const replaceAll = () => {
     if (!searchWord.value) return
     if (searchIndex.value === -1) {
       searchNext()
       return
     }
-  
+
     for (let i = 0; i < searchResults.value.length; i++) {
       const lastTarget = searchResults.value[i - 1]
       const target = searchResults.value[i]
       if (lastTarget && lastTarget.elId === target.elId) continue
-  
+
       const targetSlide = slides.value.find(item => item.id === target.slideId)
       if (!targetSlide) continue
       const targetElement = targetSlide.elements.find(item => item.id === target.elId)
       if (!targetElement) continue
-  
+
       const fakeElement = document.createElement('div')
       if (targetElement.type === 'text') fakeElement.innerHTML = targetElement.content
       else if (targetElement.type === 'shape') fakeElement.innerHTML = targetElement.text?.content || ''
-  
+
       if (target.elType === 'table') {
         const data = (targetElement as PPTTableElement).data.map(row => {
           return row.map(cell => {
@@ -368,7 +368,7 @@ export default () => {
         const content = textList.map(({ text }) => text).join('')
         const matchList = getMatchList(content, searchWord.value)
         highlight(textNodes, textList, matchList, i)
-  
+
         const marks = fakeElement.querySelectorAll('mark[data-index]')
         let lastMarkIndex = -1
         for (const mark of marks) {
@@ -380,7 +380,7 @@ export default () => {
             lastMarkIndex = markIndex
           }
         }
-  
+
         if (target.elType === 'text') {
           const props = { content: fakeElement.innerHTML }
           slidesStore.updateElement({ id: target.elId, slideId: target.slideId, props })
@@ -401,19 +401,19 @@ export default () => {
   const reset = () => {
     searchIndex.value = -1
     searchResults.value = []
-  
+
     if (!searchWord.value) clearMarks()
   }
-  
+
   watch(searchWord, reset)
-  
+
   watch(slideIndex, () => {
     nextTick(() => {
       highlightCurrentSlide()
       setTimeout(setActiveMark, 0)
     })
   })
-  
+
   watch(handleElement, () => {
     if (handleElement.value) {
       searchIndex.value = -1
@@ -421,9 +421,9 @@ export default () => {
       clearMarks()
     }
   })
-  
+
   onBeforeUnmount(clearMarks)
-  
+
   const toggleModifiers = () => {
     modifiers.value = modifiers.value === 'g' ? 'gi' : 'g'
     reset()

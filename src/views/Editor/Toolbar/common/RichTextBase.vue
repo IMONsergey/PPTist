@@ -5,7 +5,7 @@
         style="width: 60%;"
         :value="richTextAttrs.fontname"
         search
-        searchLabel="搜索字体"
+        searchLabel="Поиск шрифтов"
         autofocus
         @update:value="value => emitRichTextCommand('fontname', value as string)"
         :options="FONTS"
@@ -18,7 +18,7 @@
         style="width: 40%;"
         :value="richTextAttrs.fontsize"
         search
-        searchLabel="搜索字号"
+        searchLabel="Поиск размеров"
         autofocus
         @update:value="value => emitRichTextCommand('fontsize', value as string)"
         :options="fontSizeOptions.map(item => ({
@@ -39,7 +39,7 @@
             @update:modelValue="value => emitRichTextCommand('color', value)"
           />
         </template>
-        <TextColorButton first v-tooltip="'文字颜色'" :color="richTextAttrs.color">
+        <TextColorButton first v-tooltip="'Цвет шрифта'" :color="richTextAttrs.color">
           <i-icon-park-outline:text />
         </TextColorButton>
       </Popover>
@@ -50,45 +50,45 @@
             @update:modelValue="value => emitRichTextCommand('backcolor', value)"
           />
         </template>
-        <TextColorButton v-tooltip="'文字高亮'" :color="richTextAttrs.backcolor">
+        <TextColorButton v-tooltip="'Выделение'" :color="richTextAttrs.backcolor">
           <i-icon-park-outline:high-light />
         </TextColorButton>
       </Popover>
-      <Button 
+      <Button
         class="font-size-btn"
         style="width: 20%;"
-        v-tooltip="'增大字号'"
+        v-tooltip="'Увеличить размер шрифта'"
         @click="emitRichTextCommand('fontsize-add')"
       ><i-icon-park-outline:font-size />+</Button>
       <Button
         last
         class="font-size-btn"
         style="width: 20%;"
-        v-tooltip="'减小字号'"
+        v-tooltip="'Уменьшить размер шрифта'"
         @click="emitRichTextCommand('fontsize-reduce')"
       ><i-icon-park-outline:font-size />-</Button>
     </ButtonGroup>
 
     <ButtonGroup class="row">
-      <CheckboxButton 
+      <CheckboxButton
         style="flex: 1;"
         :checked="richTextAttrs.bold"
         v-tooltip="'加粗'"
         @click="emitRichTextCommand('bold')"
       ><i-icon-park-outline:text-bold /></CheckboxButton>
-      <CheckboxButton 
+      <CheckboxButton
         style="flex: 1;"
         :checked="richTextAttrs.em"
         v-tooltip="'斜体'"
         @click="emitRichTextCommand('em')"
       ><i-icon-park-outline:text-italic /></CheckboxButton>
-      <CheckboxButton 
+      <CheckboxButton
         style="flex: 1;"
         :checked="richTextAttrs.underline"
         v-tooltip="'下划线'"
         @click="emitRichTextCommand('underline')"
       ><i-icon-park-outline:text-underline /></CheckboxButton>
-      <CheckboxButton 
+      <CheckboxButton
         style="flex: 1;"
         :checked="richTextAttrs.strikethrough"
         v-tooltip="'删除线'"
@@ -169,16 +169,16 @@
     </ButtonGroup>
     <Divider />
 
-    <RadioGroup 
-      class="row" 
-      button-style="solid" 
+    <RadioGroup
+      class="row"
+      button-style="solid"
       :value="richTextAttrs.align"
       @update:value="value => emitRichTextCommand('align', value)"
     >
-      <RadioButton value="left" v-tooltip="'左对齐'" style="flex: 1;"><i-icon-park-outline:align-text-left /></RadioButton>
-      <RadioButton value="center" v-tooltip="'居中'" style="flex: 1;"><i-icon-park-outline:align-text-center /></RadioButton>
-      <RadioButton value="right" v-tooltip="'右对齐'" style="flex: 1;"><i-icon-park-outline:align-text-right /></RadioButton>
-      <RadioButton value="justify" v-tooltip="'两端对齐'" style="flex: 1;"><i-icon-park-outline:align-text-both /></RadioButton>
+      <RadioButton value="left" v-tooltip="'Выровнять по левому краю'" style="flex: 1;"><i-icon-park-outline:align-text-left /></RadioButton>
+      <RadioButton value="center" v-tooltip="'Выровнять по центру'" style="flex: 1;"><i-icon-park-outline:align-text-center /></RadioButton>
+      <RadioButton value="right" v-tooltip="'Выровнять по правому краю'" style="flex: 1;"><i-icon-park-outline:align-text-right /></RadioButton>
+      <RadioButton value="justify" v-tooltip="'По ширине'" style="flex: 1;"><i-icon-park-outline:align-text-both /></RadioButton>
     </RadioGroup>
 
     <div class="row" passive>
@@ -193,9 +193,9 @@
         <Popover trigger="click" v-model:value="bulletListPanelVisible">
           <template #content>
             <div class="list-wrap">
-              <ul class="list" 
-                v-for="item in bulletListStyleTypeOption" 
-                :key="item" 
+              <ul class="list"
+                v-for="item in bulletListStyleTypeOption"
+                :key="item"
                 :style="{ listStyleType: item }"
                 @click="emitRichTextCommand('bulletList', item)"
               >
@@ -218,9 +218,9 @@
         <Popover trigger="click" v-model:value="orderedListPanelVisible">
           <template #content>
             <div class="list-wrap">
-              <ul class="list" 
-                v-for="item in orderedListStyleTypeOption" 
-                :key="item" 
+              <ul class="list"
+                v-for="item in orderedListStyleTypeOption"
+                :key="item"
                 :style="{ listStyleType: item }"
                 @click="emitRichTextCommand('orderedList', item)"
               >
@@ -359,7 +359,7 @@ const execAI = async (command: string) => {
 
   const reader: ReadableStreamDefaultReader = stream.body.getReader()
   const decoder = new TextDecoder('utf-8')
-  
+
   const readStream = () => {
     reader.read().then(({ done, value }) => {
       if (!isAIWriting.value) return

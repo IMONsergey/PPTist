@@ -1,23 +1,23 @@
 <template>
-  <MoveablePanel 
-    class="countdown-timer" 
+  <MoveablePanel
+    class="countdown-timer"
     :width="180"
     :height="110"
-    :left="left" 
+    :left="left"
     :top="top"
   >
     <div class="header">
-      <span class="text-btn" @click="toggle()">{{ inTiming ? '暂停' : '开始'}}</span>
-      <span class="text-btn" @click="reset()">重置</span>
-      <span class="text-btn" @click="toggleCountdown()" :class="{ 'active': isCountdown }">倒计时</span>
+      <span class="text-btn" @click="toggle()">{{ inTiming ? 'Пауза' : 'Старт'}}</span>
+      <span class="text-btn" @click="reset()">Сброс</span>
+      <span class="text-btn" @click="toggleCountdown()" :class="{ 'active': isCountdown }">Обратный отсчет</span>
     </div>
     <div class="content">
       <div class="timer">
-        <input 
+        <input
           type="text"
           :value="fillDigit(minute, 2)"
           :maxlength="3" :disabled="inputEditable"
-          @mousedown.stop 
+          @mousedown.stop
           @blur="$event => changeTime($event, 'minute')"
           @keydown.stop
           @keydown.enter.stop="$event => changeTime($event, 'minute')"
@@ -25,11 +25,11 @@
       </div>
       <div class="colon">:</div>
       <div class="timer">
-        <input 
+        <input
           type="text"
           :value="fillDigit(second, 2)"
           :maxlength="3" :disabled="inputEditable"
-          @mousedown.stop 
+          @mousedown.stop
           @blur="$event => changeTime($event, 'second')"
           @keydown.stop
           @keydown.enter.stop="$event => changeTime($event, 'second')"
@@ -84,7 +84,7 @@ const pause = () => {
 const reset = () => {
   clearTimer()
   inTiming.value = false
-  
+
   if (isCountdown.value) time.value = 600
   else time.value = 0
 }

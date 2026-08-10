@@ -2,18 +2,18 @@
   <div class="export-pptist-dialog">
     <div class="configs">
       <div class="row">
-        <div class="title">导出范围：</div>
+        <div class="title">Диапазон экспорта:</div>
         <RadioGroup
           class="config-item"
           v-model:value="rangeType"
         >
-          <RadioButton style="width: 33.33%;" value="all">全部</RadioButton>
-          <RadioButton style="width: 33.33%;" value="current">当前页</RadioButton>
-          <RadioButton style="width: 33.33%;" value="custom">自定义</RadioButton>
+          <RadioButton style="width: 33.33%;" value="all">Все</RadioButton>
+          <RadioButton style="width: 33.33%;" value="current">Текущий</RadioButton>
+          <RadioButton style="width: 33.33%;" value="custom">Пользовательский</RadioButton>
         </RadioGroup>
       </div>
       <div class="row" v-if="rangeType === 'custom'">
-        <div class="title" :data-range="`（${range[0]} ~ ${range[1]}）`">自定义范围：</div>
+        <div class="title" :data-range="`（${range[0]} ~ ${range[1]}）`">Пользовательский диапазон:</div>
         <Slider
           class="config-item"
           range
@@ -28,8 +28,8 @@
       </div>
     </div>
     <div class="btns">
-      <Button class="btn export" type="primary" @click="exportSpecificFile(selectedSlides)"><i-icon-park-outline:download /> 导出 PPTIST 文件</Button>
-      <Button class="btn close" @click="emit('close')">关闭</Button>
+      <Button class="btn export" type="primary" @click="exportSpecificFile(selectedSlides)"><i-icon-park-outline:download /> Экспорт PPTIST</Button>
+      <Button class="btn close" @click="emit('close')">Закрыть</Button>
     </div>
   </div>
 </template>

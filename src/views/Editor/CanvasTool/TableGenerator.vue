@@ -2,21 +2,21 @@
   <div class="table-generator">
     <div class="title">
       <div class="lef">表格 {{endCell.length ? `${endCell[0]} x ${endCell[1]}` : ''}}</div>
-      <div class="right" @click="isCustom = !isCustom">{{ isCustom ? '返回' : '自定义'}}</div>
+      <div class="right" @click="isCustom = !isCustom">{{ isCustom ? 'Назад' : 'Пользовательский'}}</div>
     </div>
-    <table 
-      @mouseleave="endCell = []" 
-      @click="handleClickTable()" 
+    <table
+      @mouseleave="endCell = []"
+      @click="handleClickTable()"
       v-if="!isCustom"
     >
       <tbody>
         <tr v-for="row in 10" :key="row">
-          <td 
+          <td
             @mouseenter="endCell = [row, col]"
             v-for="col in 10" :key="col"
           >
-            <div 
-              class="cell" 
+            <div
+              class="cell"
               :class="{ 'active': endCell.length && row <= endCell[0] && col <= endCell[1] }"
             ></div>
           </td>
@@ -44,8 +44,8 @@
         />
       </div>
       <div class="btns">
-        <Button class="btn" @click="close()">取消</Button>
-        <Button class="btn" type="primary" @click="insertCustomTable()">确认</Button>
+        <Button class="btn" @click="close()">Отмена</Button>
+        <Button class="btn" type="primary" @click="insertCustomTable()">Подтвердить</Button>
       </div>
     </div>
   </div>

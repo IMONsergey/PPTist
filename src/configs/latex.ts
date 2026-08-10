@@ -1,74 +1,74 @@
 export const FORMULA_LIST = [
   {
-    label: '高斯公式',
+    label: 'Теорема Гаусса',
     latex: `\\int\\int\\int _ { \\Omega } \\left( \\frac { \\partial {P} } { \\partial {x} } + \\frac { \\partial {Q} } { \\partial {y} } + \\frac { \\partial {R} }{ \\partial {z} } \\right) \\mathrm { d } V = \\oint _ { \\partial \\Omega } ( P \\cos \\alpha + Q \\cos \\beta + R \\cos \\gamma ) \\mathrm{ d} S`
   },
   {
-    label: '傅里叶级数',
+    label: 'Ряд Фурье',
     latex: `f(x) = \\frac {a_0} 2 + \\sum_{n = 1}^\\infty {({a_n}\\cos {nx} + {b_n}\\sin {nx})}`,
   },
   {
-    label: '泰勒展开式',
+    label: 'Разложение Тейлора',
     latex: `e ^ { x } = 1 + \\frac { x } { 1 ! } + \\frac { x ^ { 2 } } { 2 ! } + \\frac { x ^ { 3 } } { 3 ! } + ... , \\quad - \\infty < x < \\infty`,
   },
   {
-    label: '定积分',
+    label: 'Определённый интеграл',
     latex: `\\lim_ { n \\rightarrow + \\infty } \\sum _ { i = 1 } ^ { n } f \\left[ a + \\frac { i } { n } ( b - a ) \\right] \\frac { b - a } { n } = \\int _ { a } ^ { b } f ( x ) dx`,
   },
   {
-    label: '三角恒等式1',
+    label: 'Тригонометрическое тождество I',
     latex: `\\sin \\alpha \\pm \\sin \\beta = 2 \\sin \\frac { 1 } { 2 } ( \\alpha \\pm \\beta ) \\cos \\frac { 1 } { 2 } ( \\alpha \\mp \\beta )`,
   },
   {
-    label: '三角恒等式2',
+    label: 'Тригонометрическое тождество II',
     latex: `\\cos \\alpha + \\cos \\beta = 2 \\cos \\frac { 1 } { 2 } ( \\alpha + \\beta ) \\cos \\frac { 1 } { 2 } ( \\alpha - \\beta )`,
   },
   {
-    label: '和的展开式',
+    label: 'Биномиальное разложение',
     latex: `( 1 + x ) ^ { n } = 1 + \\frac { n x } { 1 ! } + \\frac { n ( n - 1 ) x ^ { 2 } } { 2 ! } + ...`,
   },
   {
-    label: '欧拉公式',
+    label: 'Формула Эйлера',
     latex: ` e^{ix} = \\cos {x} + i\\sin {x}`,
   },
   {
-    label: '贝努利方程',
+    label: 'Уравнение Бернулли',
     latex: `\\frac {dy} {dx} + P(x)y = Q(x) y^n ({n} \\not= {0,1})`,
   },
   {
-    label: '全微分方程',
+    label: 'Точное дифференциальное уравнение',
     latex: `du(x,y) = P(x,y)dx + Q(x,y)dy = 0`,
   },
   {
-    label: '非齐次方程',
+    label: 'Нехомогенное уравнение',
     latex: `y = (\\int Q(x) e^{\\int {P(x)dx}}dx + C)e^{-\\int {P(x)dx}}`,
   },
   {
-    label: '柯西中值定理',
+    label: 'Теорема о среднем значении Коши',
     latex: `\\frac{{f(b) - f(a)}}{{F(b) - F(a)}} = \\frac{{f'(\\xi )}}{{F'(\\xi )}}`,
   },
   {
-    label: '拉格朗日中值定理',
+    label: 'Теорема Лагранжа о среднем значении',
     latex: `f(b) - f(a) = f'(\\xi )(b - a)`,
   },
   {
-    label: '导数公式',
+    label: 'Формула производной',
     latex: `(\\arcsin x)' = \\frac{1}{{\\sqrt {1 - x^2} }}`,
   },
   {
-    label: '三角函数积分',
+    label: 'Тригонометрический интеграл',
     latex: `\\int {tgxdx = - \\ln \\left| {\\cos x} \\right| + C}`,
   },
   {
-    label: '二次曲面',
+    label: 'Квадрика',
     latex: `\\frac{{{x^2}}}{{{a^2}}} + \\frac{{{y^2}}}{{{b^2}}} - \\frac{{{z^2}}}{{{c^2}}} = 1`,
   },
   {
-    label: '二阶微分',
+    label: 'Дифференциальное уравнение второго порядка',
     latex: `\\frac {{d^2}y} {dx^2} + P(x) \\frac {dy} {dx} + Q(x)y = f(x)`,
   },
   {
-    label: '方向导数',
+    label: 'Направленная производная',
     latex: `\\frac{{\\partial f}}{{\\partial l}} = \\frac{{\\partial f}}{{\\partial x}}\\cos \\phi + \\frac{{\\partial f}}{{\\partial y}}\\sin \\phi`,
   },
 ]
@@ -76,7 +76,7 @@ export const FORMULA_LIST = [
 export const SYMBOL_LIST = [
   {
     type: 'operators',
-    label: '数学',
+    label: 'Мат.',
     children: [
       { latex: '\\cdot' },
       { latex: '\\pm' },
@@ -152,7 +152,7 @@ export const SYMBOL_LIST = [
   },
   {
     type: 'group',
-    label: '组合',
+    label: 'Группа',
     children: [
       { latex: '\\frac{a}{b}' },
       { latex: '\\frac{dx}{dx}' },
@@ -186,7 +186,7 @@ export const SYMBOL_LIST = [
   },
   {
     type: 'verbatim',
-    label: '函数',
+    label: 'Функ.',
     children: [
       { latex: '\\log' },
       { latex: '\\ln' },
@@ -215,7 +215,7 @@ export const SYMBOL_LIST = [
   },
   {
     type: 'greek',
-    label: '希腊字母',
+    label: 'Бук.',
     children: [
       { latex: '\\alpha' },
       { latex: '\\beta' },

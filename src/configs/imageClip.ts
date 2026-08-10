@@ -26,7 +26,7 @@ interface ClipPath {
 
 export const CLIPPATHS: ClipPath = {
   rect: {
-    name: '矩形',
+    name: 'Прямоугольник',
     type: ClipPathTypes.RECT,
     radius: '0',
     style: '',
@@ -54,7 +54,7 @@ export const CLIPPATHS: ClipPath = {
     style: 'inset(0 round 10px)',
   },
   ellipse: {
-    name: '圆形',
+    name: 'Круг',
     type: ClipPathTypes.ELLIPSE,
     style: 'ellipse(50% 50% at 50% 50%)',
   },
@@ -139,7 +139,7 @@ export const CLIPPATHS: ClipPath = {
     },
   },
   rightArrow: {
-    name: '箭头',
+    name: 'Стрелки',
     type: ClipPathTypes.POLYGON,
     style: 'polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%)',
     createPath: (width: number, height: number) => {

@@ -1,0 +1,6790 @@
+{
+  "stats": {
+    "chinese_noncomment_lines": 736,
+    "chinese_string_literals": 459,
+    "chinese_template_text_nodes": 137,
+    "english_visible_candidates": 19
+  },
+  "chinese_string_literals": [
+    {
+      "file": "src/components/ChartDataEditor.vue",
+      "line": 209,
+      "text": "类别${rowIndex}"
+    },
+    {
+      "file": "src/components/ChartDataEditor.vue",
+      "line": 215,
+      "text": "系列${colIndex}"
+    },
+    {
+      "file": "src/components/ColorPicker/index.vue",
+      "line": 220,
+      "text": "按 ESC 键关闭取色吸管"
+    },
+    {
+      "file": "src/components/ColorPicker/index.vue",
+      "line": 305,
+      "text": "取色吸管初始化失败"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 199,
+      "text": "添加子级大纲（章）"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 200,
+      "text": "新的一章"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 207,
+      "text": "上方添加同级大纲（章）"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 208,
+      "text": "新的一章"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 211,
+      "text": "添加子级大纲（节）"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 212,
+      "text": "新的一节"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 215,
+      "text": "删除此章"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 223,
+      "text": "上方添加同级大纲（节）"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 224,
+      "text": "新的一节"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 227,
+      "text": "添加子级大纲（项）"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 228,
+      "text": "新的一项"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 231,
+      "text": "删除此节"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 238,
+      "text": "上方添加同级大纲（项）"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 239,
+      "text": "新的一项"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 242,
+      "text": "下方添加同级大纲（项）"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 243,
+      "text": "新的一项"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 246,
+      "text": "删除此项"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 338,
+      "text": "主题"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 341,
+      "text": "章"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 344,
+      "text": "节"
+    },
+    {
+      "file": "src/components/Select.vue",
+      "line": 76,
+      "text": "搜索"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 10,
+      "text": "弹跳"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 12,
+      "text": "弹入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 13,
+      "text": "向右弹入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 14,
+      "text": "向左弹入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 15,
+      "text": "向上弹入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 16,
+      "text": "向下弹入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 21,
+      "text": "浮现"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 23,
+      "text": "浮入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 24,
+      "text": "向下浮入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 25,
+      "text": "向下长距浮入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 26,
+      "text": "向右浮入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 27,
+      "text": "向右长距浮入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 28,
+      "text": "向左浮入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 29,
+      "text": "向左长距浮入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 30,
+      "text": "向上浮入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 31,
+      "text": "向上长距浮入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 32,
+      "text": "从左上浮入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 33,
+      "text": "从右上浮入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 34,
+      "text": "从左下浮入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 35,
+      "text": "从右下浮入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 42,
+      "text": "旋转进入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 43,
+      "text": "绕左下进入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 44,
+      "text": "绕右下进入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 45,
+      "text": "绕左上进入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 46,
+      "text": "绕右上进入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 53,
+      "text": "放大进入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 54,
+      "text": "向下放大进入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 55,
+      "text": "从左放大进入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 56,
+      "text": "从右放大进入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 57,
+      "text": "向上放大进入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 62,
+      "text": "滑入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 64,
+      "text": "向下滑入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 65,
+      "text": "从右滑入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 66,
+      "text": "从左滑入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 67,
+      "text": "向上滑入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 72,
+      "text": "翻转"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 74,
+      "text": "X轴翻转进入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 75,
+      "text": "Y轴翻转进入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 80,
+      "text": "放大滑入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 82,
+      "text": "向下放大滑入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 83,
+      "text": "从左放大滑入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 84,
+      "text": "从右放大滑入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 85,
+      "text": "向上放大滑入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 90,
+      "text": "飞入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 92,
+      "text": "从右飞入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 93,
+      "text": "从左飞入"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 101,
+      "text": "弹跳"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 103,
+      "text": "弹出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 104,
+      "text": "向左弹出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 105,
+      "text": "向右弹出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 106,
+      "text": "向上弹出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 107,
+      "text": "向下弹出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 112,
+      "text": "浮现"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 114,
+      "text": "浮出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 115,
+      "text": "向下浮出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 116,
+      "text": "向下长距浮出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 117,
+      "text": "向左浮出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 118,
+      "text": "向左长距浮出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 119,
+      "text": "向右浮出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 120,
+      "text": "向右长距浮出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 121,
+      "text": "向上浮出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 122,
+      "text": "向上长距浮出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 123,
+      "text": "从左上浮出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 124,
+      "text": "从右上浮出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 125,
+      "text": "从左下浮出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 126,
+      "text": "从右下浮出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 133,
+      "text": "旋转退出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 134,
+      "text": "绕左下退出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 135,
+      "text": "绕右下退出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 136,
+      "text": "绕左上退出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 137,
+      "text": "绕右上退出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 144,
+      "text": "缩小退出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 145,
+      "text": "向下缩小退出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 146,
+      "text": "从左缩小退出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 147,
+      "text": "从右缩小退出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 148,
+      "text": "向上缩小退出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 153,
+      "text": "滑出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 155,
+      "text": "向下滑出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 156,
+      "text": "从左滑出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 157,
+      "text": "从右滑出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 158,
+      "text": "向上滑出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 163,
+      "text": "翻转"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 165,
+      "text": "X轴翻转退出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 166,
+      "text": "Y轴翻转退出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 171,
+      "text": "缩小滑出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 173,
+      "text": "向下缩小滑出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 174,
+      "text": "从左缩小滑出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 175,
+      "text": "从右缩小滑出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 176,
+      "text": "向上缩小滑出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 181,
+      "text": "飞出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 183,
+      "text": "从右飞出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 184,
+      "text": "从左飞出"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 192,
+      "text": "晃动"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 194,
+      "text": "左右摇晃"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 195,
+      "text": "上下摇晃"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 196,
+      "text": "摇头"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 197,
+      "text": "摆动"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 198,
+      "text": "晃动"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 199,
+      "text": "惊恐"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 200,
+      "text": "果冻"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 205,
+      "text": "其他"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 207,
+      "text": "弹跳"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 208,
+      "text": "闪烁"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 209,
+      "text": "脉搏"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 210,
+      "text": "橡皮筋"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 211,
+      "text": "心跳（快）"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 16,
+      "text": "类别1"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 16,
+      "text": "类别2"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 16,
+      "text": "类别3"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 16,
+      "text": "类别4"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 16,
+      "text": "类别5"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 17,
+      "text": "系列1"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 17,
+      "text": "系列2"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 21,
+      "text": "类别1"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 21,
+      "text": "类别2"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 21,
+      "text": "类别3"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 21,
+      "text": "类别4"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 21,
+      "text": "类别5"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 22,
+      "text": "系列1"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 22,
+      "text": "系列2"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 26,
+      "text": "类别1"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 26,
+      "text": "类别2"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 26,
+      "text": "类别3"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 26,
+      "text": "类别4"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 26,
+      "text": "类别5"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 27,
+      "text": "系列1"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 27,
+      "text": "系列2"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 31,
+      "text": "类别1"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 31,
+      "text": "类别2"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 31,
+      "text": "类别3"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 31,
+      "text": "类别4"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 31,
+      "text": "类别5"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 32,
+      "text": "值"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 36,
+      "text": "类别1"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 36,
+      "text": "类别2"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 36,
+      "text": "类别3"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 36,
+      "text": "类别4"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 36,
+      "text": "类别5"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 37,
+      "text": "值"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 41,
+      "text": "类别1"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 41,
+      "text": "类别2"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 41,
+      "text": "类别3"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 41,
+      "text": "类别4"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 41,
+      "text": "类别5"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 42,
+      "text": "系列1"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 42,
+      "text": "系列2"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 46,
+      "text": "类别1"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 46,
+      "text": "类别2"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 46,
+      "text": "类别3"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 46,
+      "text": "类别4"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 46,
+      "text": "类别5"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 47,
+      "text": "系列1"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 47,
+      "text": "系列2"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 51,
+      "text": "坐标1"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 51,
+      "text": "坐标2"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 51,
+      "text": "坐标3"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 51,
+      "text": "坐标4"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 51,
+      "text": "坐标5"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 2,
+      "text": "默认字体"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 3,
+      "text": "思源黑体"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 4,
+      "text": "思源宋体"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 5,
+      "text": "文鼎PL楷体"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 6,
+      "text": "文鼎PL宋体"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 7,
+      "text": "朱雀仿宋"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 8,
+      "text": "霞鹜文楷"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 9,
+      "text": "霞鹜新致宋"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 10,
+      "text": "霞鹜新晰黑"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 11,
+      "text": "阿里巴巴普惠体"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 12,
+      "text": "得意黑"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 44,
+      "text": "通用"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 49,
+      "text": "粘贴为纯文本"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 50,
+      "text": "快速复制粘贴"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 53,
+      "text": "恢复"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 55,
+      "text": "多选"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 55,
+      "text": "按住 Ctrl 或 Shift"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 56,
+      "text": "打开搜索替换"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 57,
+      "text": "打印"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 58,
+      "text": "关闭弹窗"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 64,
+      "text": "从头开始放映幻灯片"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 65,
+      "text": "从当前开始放映幻灯片"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 66,
+      "text": "切换上一页"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 67,
+      "text": "切换下一页"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 68,
+      "text": "切换下一页"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 69,
+      "text": "退出放映"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 73,
+      "text": "幻灯片编辑"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 75,
+      "text": "新建幻灯片"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 76,
+      "text": "移动画布"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 76,
+      "text": "Space + 鼠标拖拽"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 77,
+      "text": "缩放画布"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 77,
+      "text": "Ctrl + 鼠标滚轮"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 78,
+      "text": "放大画布"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 79,
+      "text": "缩小画布"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 80,
+      "text": "使画布适应当前屏幕"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 81,
+      "text": "上一页（未选中元素）"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 82,
+      "text": "下一页（未选中元素）"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 83,
+      "text": "鼠标上滚 / PgUp"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 84,
+      "text": "鼠标下滚 / PgDown"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 85,
+      "text": "快速创建文本"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 85,
+      "text": "双击空白处 / T"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 86,
+      "text": "快速创建矩形"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 87,
+      "text": "快速创建圆形"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 88,
+      "text": "快速创建线条"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 89,
+      "text": "退出绘制状态"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 89,
+      "text": "鼠标右键"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 93,
+      "text": "元素操作"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 95,
+      "text": "移动"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 98,
+      "text": "取消组合"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 99,
+      "text": "置顶层"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 100,
+      "text": "置底层"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 101,
+      "text": "锁定宽高比例"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 101,
+      "text": "按住 Ctrl 或 Shift"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 102,
+      "text": "快速复制"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 102,
+      "text": "按住 Ctrl + 拖拽"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 103,
+      "text": "创建水平 / 垂直线条"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 103,
+      "text": "按住 Ctrl 或 Shift"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 104,
+      "text": "切换焦点元素"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 105,
+      "text": "确认图片裁剪"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 106,
+      "text": "完成自定义形状绘制"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 110,
+      "text": "表格编辑"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 112,
+      "text": "聚焦到下一个单元格"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 113,
+      "text": "移动焦点单元格"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 114,
+      "text": "在上方插入一行"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 115,
+      "text": "在下方插入一行"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 116,
+      "text": "在左侧插入一列"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 117,
+      "text": "在右侧插入一列"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 121,
+      "text": "图表数据编辑"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 123,
+      "text": "聚焦到下一行"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 127,
+      "text": "文本编辑"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 129,
+      "text": "加粗"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 130,
+      "text": "斜体"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 131,
+      "text": "下划线"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 132,
+      "text": "行内代码"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 133,
+      "text": "上角标"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 134,
+      "text": "下角标"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 135,
+      "text": "选中段落"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 139,
+      "text": "其他快捷操作"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 141,
+      "text": "添加图片 - 粘贴来自系统剪贴板的图片"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 142,
+      "text": "添加图片 - 将本地图片拖拽到画布中"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 143,
+      "text": "添加图片 - 在画布中粘贴SVG代码"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 144,
+      "text": "添加图片 - 粘贴来自 pexels 的图片链接"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 145,
+      "text": "添加文本 - 粘贴来自系统剪贴板的文字"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 146,
+      "text": "添加文本 - 将外部选中文字拖拽到画布中"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 147,
+      "text": "文本编辑 - 支持 markdown 语法创建列表和引用"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 35,
+      "text": "矩形2"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 43,
+      "text": "矩形3"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 51,
+      "text": "圆角矩形"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 62,
+      "text": "三角形"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 70,
+      "text": "直角三角形"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 78,
+      "text": "倒三角形"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 86,
+      "text": "菱形"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 94,
+      "text": "五边形"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 102,
+      "text": "六边形"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 110,
+      "text": "七边形"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 118,
+      "text": "八边形"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 126,
+      "text": "人字形"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 134,
+      "text": "点"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 150,
+      "text": "平行四边形"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 158,
+      "text": "反平行四边形"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 166,
+      "text": "梯形"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 174,
+      "text": "倒梯形"
+    },
+    {
+      "file": "src/configs/symbol.ts",
+      "line": 4,
+      "text": "字母"
+    },
+    {
+      "file": "src/configs/symbol.ts",
+      "line": 16,
+      "text": "序号"
+    },
+    {
+      "file": "src/hooks/useExport.ts",
+      "line": 556,
+      "text": "微软雅黑"
+    },
+    {
+      "file": "src/hooks/useExport.ts",
+      "line": 702,
+      "text": "微软雅黑"
+    },
+    {
+      "file": "src/hooks/useExport.ts",
+      "line": 767,
+      "text": "系列${i + 1}"
+    },
+    {
+      "file": "src/hooks/useExport.ts",
+      "line": 894,
+      "text": "微软雅黑"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 358,
+      "text": "无法正确读取 / 解析该文件"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 391,
+      "text": "无法正确读取 / 解析该文件"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 677,
+      "text": "无法正确读取 / 解析该文件"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 1225,
+      "text": "坐标${index + 1}"
+    },
+    {
+      "file": "src/hooks/useLink.ts",
+      "line": 14,
+      "text": "不是正确的网页链接地址"
+    },
+    {
+      "file": "src/hooks/useLink.ts",
+      "line": 18,
+      "text": "请先选择链接目标"
+    },
+    {
+      "file": "src/services/fetch.ts",
+      "line": 22,
+      "text": "服务器返回了非流响应"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 33,
+      "text": "未命名演示文稿"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 56,
+      "text": "山河映红"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 56,
+      "text": "官方制作"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 57,
+      "text": "都市蓝调"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 57,
+      "text": "官方制作"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 58,
+      "text": "智感几何"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 58,
+      "text": "官方制作"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 59,
+      "text": "柔光莫兰迪"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 59,
+      "text": "官方制作"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 60,
+      "text": "简约绿意"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 60,
+      "text": "社区贡献+官方深度完善优化"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 61,
+      "text": "暖色复古"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 61,
+      "text": "社区贡献+官方深度完善优化"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 62,
+      "text": "深邃沉稳"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 62,
+      "text": "社区贡献+官方深度完善优化"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 63,
+      "text": "浅蓝小清新"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 63,
+      "text": "社区贡献+官方深度完善优化"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 116,
+      "text": "未命名演示文稿"
+    },
+    {
+      "file": "src/utils/clipboard.ts",
+      "line": 35,
+      "text": "剪贴板为空或者不包含文本"
+    },
+    {
+      "file": "src/utils/clipboard.ts",
+      "line": 39,
+      "text": "浏览器不支持或禁止访问剪贴板，请使用快捷键 Ctrl + V"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 5,
+      "text": ">从下方挑选合适的模板生成PPT，或<span class="
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 5,
+      "text": "上传.pptist格式模板文件"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 34,
+      "text": "中文"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 35,
+      "text": "英文"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 36,
+      "text": "日文"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 36,
+      "text": "日本語"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 47,
+      "text": "通用"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 48,
+      "text": "学术风"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 49,
+      "text": "职场风"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 50,
+      "text": "教育风"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 51,
+      "text": "营销风"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 76,
+      "text": "模拟测试"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 77,
+      "text": "AI搜图"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 78,
+      "text": "AI生图"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 146,
+      "text": "中文"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 147,
+      "text": "通用"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 161,
+      "text": "2025科技前沿动态"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 162,
+      "text": "大数据如何改变世界"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 163,
+      "text": "餐饮市场调查与研究"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 164,
+      "text": "AIGC在教育领域的应用"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 165,
+      "text": "社交媒体与品牌营销"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 166,
+      "text": "5G技术如何改变我们的生活"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 167,
+      "text": "年度工作总结与展望"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 168,
+      "text": "区块链技术及其应用"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 169,
+      "text": "大学生职业生涯规划"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 170,
+      "text": "公司年会策划方案"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 197,
+      "text": "该模型API的并发数过高，请更换其他模型重试"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 231,
+      "text": "演示文稿生成中，请稍等 ..."
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 245,
+      "text": "该模型API的并发数过高，请更换其他模型重试"
+    },
+    {
+      "file": "src/views/Editor/Canvas/EditableElement.vue",
+      "line": 145,
+      "text": "取消组合"
+    },
+    {
+      "file": "src/views/Editor/Canvas/LinkDialog.vue",
+      "line": 14,
+      "text": "请输入网页链接地址"
+    },
+    {
+      "file": "src/views/Editor/Canvas/LinkDialog.vue",
+      "line": 70,
+      "text": "幻灯片 ${index + 1}"
+    },
+    {
+      "file": "src/views/Editor/Canvas/LinkDialog.vue",
+      "line": 85,
+      "text": "网页链接"
+    },
+    {
+      "file": "src/views/Editor/Canvas/LinkDialog.vue",
+      "line": 86,
+      "text": "幻灯片页面"
+    },
+    {
+      "file": "src/views/Editor/Canvas/index.vue",
+      "line": 282,
+      "text": "启用"
+    },
+    {
+      "file": "src/views/Editor/Canvas/index.vue",
+      "line": 282,
+      "text": "禁用"
+    },
+    {
+      "file": "src/views/Editor/Canvas/index.vue",
+      "line": 355,
+      "text": "气泡菜单"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 545,
+      "text": "追加直线"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 549,
+      "text": "追加二次曲线"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 553,
+      "text": "追加三次曲线"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 557,
+      "text": "追加弧线"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 562,
+      "text": "删除当前点"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/TableGenerator.vue",
+      "line": 82,
+      "text": "行数/列数必须在0~20之间！"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/TableGenerator.vue",
+      "line": 83,
+      "text": "行数/列数必须在0~20之间！"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportImage.vue",
+      "line": 62,
+      "text": "导出时默认忽略在线字体，若您在幻灯片中使用了在线字体，且希望导出后保留相关样式，可选择关闭「忽略在线字体」选项，但要注意这将会增加导出用时。"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportPPTX.vue",
+      "line": 52,
+      "text": "导出时默认忽略音视频，若您的幻灯片中存在音视频元素，且希望将其导出到PPTX文件中，可选择关闭「忽略音视频」选项，但要注意这将会大幅增加导出用时。"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 13,
+      "text": "图片库（来自 pexels.com）"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 16,
+      "text": "加载中..."
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 18,
+      "text": "搜索图片"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 100,
+      "text": "横向"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 101,
+      "text": "纵向"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 102,
+      "text": "方形"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 106,
+      "text": "横向"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 107,
+      "text": "纵向"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 108,
+      "text": "方形"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 116,
+      "text": "风景"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 121,
+      "text": "请输入搜索关键词"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 156,
+      "text": "风景"
+    },
+    {
+      "file": "src/views/Editor/NotesPanel.vue",
+      "line": 6,
+      "text": "幻灯片${slideIndex + 1}的批注"
+    },
+    {
+      "file": "src/views/Editor/NotesPanel.vue",
+      "line": 65,
+      "text": "选中元素"
+    },
+    {
+      "file": "src/views/Editor/NotesPanel.vue",
+      "line": 65,
+      "text": "当前页幻灯片"
+    },
+    {
+      "file": "src/views/Editor/NotesPanel.vue",
+      "line": 124,
+      "text": "测试用户"
+    },
+    {
+      "file": "src/views/Editor/NotesPanel.vue",
+      "line": 156,
+      "text": "测试用户"
+    },
+    {
+      "file": "src/views/Editor/SelectPanel.vue",
+      "line": 6,
+      "text": "选择（${activeElementIdList.length}/${currentSlide.elements.length}）"
+    },
+    {
+      "file": "src/views/Editor/Thumbnails/Templates.vue",
+      "line": 11,
+      "text": "加载中..."
+    },
+    {
+      "file": "src/views/Editor/Thumbnails/Templates.vue",
+      "line": 67,
+      "text": "封面"
+    },
+    {
+      "file": "src/views/Editor/Thumbnails/Templates.vue",
+      "line": 68,
+      "text": "目录"
+    },
+    {
+      "file": "src/views/Editor/Thumbnails/Templates.vue",
+      "line": 69,
+      "text": "过渡"
+    },
+    {
+      "file": "src/views/Editor/Thumbnails/Templates.vue",
+      "line": 70,
+      "text": "内容"
+    },
+    {
+      "file": "src/views/Editor/Thumbnails/Templates.vue",
+      "line": 71,
+      "text": "结束"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue",
+      "line": 95,
+      "text": "纵横比（正方形）"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue",
+      "line": 101,
+      "text": "纵横比（纵向）"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue",
+      "line": 110,
+      "text": "纵横比（横向）"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue",
+      "line": 163,
+      "text": "自动"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue",
+      "line": 164,
+      "text": "水平"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue",
+      "line": 165,
+      "text": "垂直"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue",
+      "line": 114,
+      "text": "倍"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 53,
+      "text": "单元格填充"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 63,
+      "text": "加粗"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 69,
+      "text": "斜体"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 75,
+      "text": "下划线"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 81,
+      "text": "删除线"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 23,
+      "text": "倍"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 173,
+      "text": "大标题"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 186,
+      "text": "小标题"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 209,
+      "text": "正文[小]"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 219,
+      "text": "注释 1"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 231,
+      "text": "注释 2"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue",
+      "line": 50,
+      "text": ">主题色：<span class="
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue",
+      "line": 91,
+      "text": "从当前页中提取"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue",
+      "line": 92,
+      "text": "从全部幻灯片提取"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ViewportSizeSetting.vue",
+      "line": 63,
+      "text": "画布宽高需在 ${VIEWPORT_SIZE_MIN} ~ ${VIEWPORT_SIZE_MAX} 之间"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 76,
+      "text": "加粗"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 82,
+      "text": "斜体"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 88,
+      "text": "下划线"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 94,
+      "text": "删除线"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 103,
+      "text": "上标"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 109,
+      "text": "下标"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 115,
+      "text": "行内代码"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 121,
+      "text": "引用"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 129,
+      "text": "美化改写"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 130,
+      "text": "扩写丰富"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 131,
+      "text": "精简提炼"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 136,
+      "text": "AI辅助"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 141,
+      "text": "清除格式"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 147,
+      "text": "格式刷（双击连续使用）"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 154,
+      "text": "请输入超链接"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 165,
+      "text": "超链接"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 190,
+      "text": "项目符号"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 215,
+      "text": "编号"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 238,
+      "text": "减小段落缩进"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 248,
+      "text": "增大段落缩进"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 322,
+      "text": "不是正确的网页链接地址"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 346,
+      "text": "没有可以执行的文本内容"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 355,
+      "text": "该模型API的并发数过高，请更换其他模型重试"
+    },
+    {
+      "file": "src/views/Mobile/MobileEditor/SlideToolbar.vue",
+      "line": 61,
+      "text": "<p>新添加文本</p>"
+    },
+    {
+      "file": "src/views/Screen/BaseView.vue",
+      "line": 49,
+      "text": "观众视图"
+    },
+    {
+      "file": "src/views/Screen/PresenterView.vue",
+      "line": 12,
+      "text": "全屏"
+    },
+    {
+      "file": "src/views/Screen/hooks/useExecPlay.ts",
+      "line": 193,
+      "text": "已经是第一页了"
+    },
+    {
+      "file": "src/views/Screen/hooks/useExecPlay.ts",
+      "line": 210,
+      "text": "已经是最后一页了"
+    },
+    {
+      "file": "src/views/Screen/hooks/useExecPlay.ts",
+      "line": 221,
+      "text": "开始自动放映"
+    },
+    {
+      "file": "src/views/components/element/AudioElement/AudioPlayer.vue",
+      "line": 187,
+      "text": "视频加载失败"
+    },
+    {
+      "file": "src/views/components/element/ProsemirrorEditor.vue",
+      "line": 133,
+      "text": "字体需要等待加载下载后生效，请稍等"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 691,
+      "text": "表格至少保留一行"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 695,
+      "text": "表格至少保留一列"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 736,
+      "text": "插入列"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 738,
+      "text": "到左侧"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 739,
+      "text": "到右侧"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 743,
+      "text": "插入行"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 745,
+      "text": "到上方"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 746,
+      "text": "到下方"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 750,
+      "text": "删除列"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 755,
+      "text": "删除行"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 761,
+      "text": "合并单元格"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 766,
+      "text": "取消合并单元格"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 772,
+      "text": "选中当前列"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 776,
+      "text": "选中当前行"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 780,
+      "text": "选中全部单元格"
+    },
+    {
+      "file": "src/views/components/element/VideoElement/VideoPlayer/index.vue",
+      "line": 80,
+      "text": "倍速"
+    },
+    {
+      "file": "src/views/components/element/VideoElement/VideoPlayer/index.vue",
+      "line": 94,
+      "text": "开"
+    },
+    {
+      "file": "src/views/components/element/VideoElement/VideoPlayer/index.vue",
+      "line": 94,
+      "text": "关"
+    }
+  ],
+  "chinese_template_text_nodes": [
+    {
+      "file": "src/components/ColorPicker/index.vue",
+      "line": 65,
+      "text": "最近使用："
+    },
+    {
+      "file": "src/components/LaTeXEditor/index.vue",
+      "line": 56,
+      "text": "确定"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 5,
+      "text": "从下方挑选合适的模板生成PPT，或"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 5,
+      "text": "使用本地模板生成"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 6,
+      "text": "确认下方内容大纲（点击编辑内容，右键添加/删除大纲项），开始选择模板"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 7,
+      "text": "在下方输入您的PPT主题，并适当补充信息，如行业、岗位、学科、用途等"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/BorderPanel.vue",
+      "line": 9,
+      "text": "边框样式："
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/ChartToolbar.vue",
+      "line": 5,
+      "text": "编辑数据"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/ImageToolbar.vue",
+      "line": 5,
+      "text": "裁剪"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/LatexToolbar.vue",
+      "line": 5,
+      "text": "编辑 LaTeX"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue",
+      "line": 19,
+      "text": "上方插入行"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue",
+      "line": 20,
+      "text": "下方插入行"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue",
+      "line": 21,
+      "text": "左侧插入列"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue",
+      "line": 22,
+      "text": "右侧插入列"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue",
+      "line": 33,
+      "text": "删除行"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue",
+      "line": 34,
+      "text": "删除列"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/LinkHandler.vue",
+      "line": 4,
+      "text": "幻灯片页面 {{elementInfo.link.target}}"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/LinkHandler.vue",
+      "line": 6,
+      "text": "更换"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/LinkHandler.vue",
+      "line": 8,
+      "text": "移除"
+    },
+    {
+      "file": "src/views/Editor/Canvas/LinkDialog.vue",
+      "line": 26,
+      "text": "预览："
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 109,
+      "text": "水平："
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 119,
+      "text": "垂直："
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 127,
+      "text": "控制点："
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 137,
+      "text": "水平："
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 147,
+      "text": "垂直："
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 156,
+      "text": "控制点："
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 166,
+      "text": "1-水平："
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 176,
+      "text": "1-垂直："
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 188,
+      "text": "2-水平："
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 198,
+      "text": "2-垂直："
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 207,
+      "text": "圆弧："
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 217,
+      "text": "水平半径："
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 227,
+      "text": "垂直半径："
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 239,
+      "text": "旋转："
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/TableGenerator.vue",
+      "line": 4,
+      "text": "表格 {{endCell.length ? `${endCell[0]} x ${endCell[1]}` : ''}}"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/TableGenerator.vue",
+      "line": 29,
+      "text": "行数："
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/TableGenerator.vue",
+      "line": 38,
+      "text": "列数："
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 16,
+      "text": "查找替换"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 40,
+      "text": "横向文本框"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 41,
+      "text": "竖向文本框"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 56,
+      "text": "预设形状"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 57,
+      "text": "路径绘制"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 58,
+      "text": "自由绘制"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 71,
+      "text": "上传图片"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 73,
+      "text": "在线图库"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 137,
+      "text": "适应屏幕"
+    },
+    {
+      "file": "src/views/Editor/EditorHeader/index.vue",
+      "line": 83,
+      "text": "从头开始"
+    },
+    {
+      "file": "src/views/Editor/EditorHeader/index.vue",
+      "line": 84,
+      "text": "从当前页开始"
+    },
+    {
+      "file": "src/views/Editor/EditorHeader/index.vue",
+      "line": 106,
+      "text": "快捷操作"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportPPTX.vue",
+      "line": 27,
+      "text": "导出模式："
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportPPTX.vue",
+      "line": 32,
+      "text": "标准版"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportPPTX.vue",
+      "line": 33,
+      "text": "纯图版"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 51,
+      "text": "插入"
+    },
+    {
+      "file": "src/views/Editor/Thumbnails/Templates.vue",
+      "line": 21,
+      "text": "插入全部"
+    },
+    {
+      "file": "src/views/Editor/Thumbnails/index.vue",
+      "line": 8,
+      "text": "添加幻灯片"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementAnimationPanel.vue",
+      "line": 80,
+      "text": "持续时长："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementAnimationPanel.vue",
+      "line": 91,
+      "text": "触发方式："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementAnimationPanel.vue",
+      "line": 104,
+      "text": "更换动画"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/AudioStylePanel.vue",
+      "line": 4,
+      "text": "图标颜色："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/ThemeColorsSetting.vue",
+      "line": 7,
+      "text": "主题配色{{ index + 1 }}："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/index.vue",
+      "line": 69,
+      "text": "预置图表主题："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/index.vue",
+      "line": 80,
+      "text": "幻灯片主题："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/index.vue",
+      "line": 92,
+      "text": "自定义配色"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue",
+      "line": 11,
+      "text": "裁剪图片"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue",
+      "line": 15,
+      "text": "按形状："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue",
+      "line": 28,
+      "text": "按{{typeItem.label}}："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LatexStylePanel.vue",
+      "line": 4,
+      "text": "编辑 LaTeX"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LatexStylePanel.vue",
+      "line": 10,
+      "text": "颜色："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue",
+      "line": 4,
+      "text": "点击替换线条类型"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue",
+      "line": 52,
+      "text": "线条样式："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue",
+      "line": 64,
+      "text": "当前色块："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue",
+      "line": 109,
+      "text": "行间距："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue",
+      "line": 161,
+      "text": "上边距："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue",
+      "line": 171,
+      "text": "下边距："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue",
+      "line": 182,
+      "text": "左边距："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue",
+      "line": 192,
+      "text": "右边距："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 121,
+      "text": "上方添加"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 122,
+      "text": "下方添加"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 123,
+      "text": "删除行"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 135,
+      "text": "左侧添加"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 136,
+      "text": "右侧添加"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 137,
+      "text": "删除列"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 162,
+      "text": "标题行"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 167,
+      "text": "汇总行"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 174,
+      "text": "第一列"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 179,
+      "text": "最后一列"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 182,
+      "text": "主题颜色："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 18,
+      "text": "行间距："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 82,
+      "text": "上边距："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 92,
+      "text": "下边距："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 103,
+      "text": "左边距："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 113,
+      "text": "右边距："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/VideoStylePanel.vue",
+      "line": 14,
+      "text": "设置首帧为封面"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/VideoStylePanel.vue",
+      "line": 23,
+      "text": "自动播放："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/MultiPositionPanel.vue",
+      "line": 14,
+      "text": "水平均匀分布"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/MultiPositionPanel.vue",
+      "line": 15,
+      "text": "垂直均匀分布"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/MultiPositionPanel.vue",
+      "line": 22,
+      "text": "取消组合"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/MultiStylePanel.vue",
+      "line": 4,
+      "text": "填充颜色："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeColorsSetting.vue",
+      "line": 17,
+      "text": "幻灯片主题色{{ index + 1 }}："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue",
+      "line": 11,
+      "text": "字体："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue",
+      "line": 18,
+      "text": "应用到主题"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue",
+      "line": 24,
+      "text": "文字颜色："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue",
+      "line": 31,
+      "text": "应用到主题"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue",
+      "line": 37,
+      "text": "背景颜色："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue",
+      "line": 44,
+      "text": "应用到主题"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue",
+      "line": 50,
+      "text": "主题色："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ViewportSizeSetting.vue",
+      "line": 3,
+      "text": "自定义画布尺寸"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ViewportSizeSetting.vue",
+      "line": 24,
+      "text": "宽高范围：500 ~ 2000"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 175,
+      "text": "边框样式："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementColorMask.vue",
+      "line": 4,
+      "text": "着色（蒙版）："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementColorMask.vue",
+      "line": 14,
+      "text": "蒙版颜色："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementFilter.vue",
+      "line": 4,
+      "text": "启用滤镜："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementOpacity.vue",
+      "line": 4,
+      "text": "不透明度："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementOutline.vue",
+      "line": 4,
+      "text": "启用边框："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementOutline.vue",
+      "line": 14,
+      "text": "边框样式："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementShadow.vue",
+      "line": 4,
+      "text": "启用阴影："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementShadow.vue",
+      "line": 11,
+      "text": "水平阴影："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementShadow.vue",
+      "line": 22,
+      "text": "垂直阴影："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementShadow.vue",
+      "line": 33,
+      "text": "模糊距离："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementShadow.vue",
+      "line": 44,
+      "text": "阴影颜色："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 129,
+      "text": "美化"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 130,
+      "text": "扩写"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 131,
+      "text": "精简"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 156,
+      "text": "移除"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 157,
+      "text": "确认"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 241,
+      "text": "减小首行缩进"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 251,
+      "text": "增大首行缩进"
+    },
+    {
+      "file": "src/views/Screen/BaseView.vue",
+      "line": 44,
+      "text": "幻灯片 {{slideIndex + 1}} / {{slides.length}}"
+    },
+    {
+      "file": "src/views/Screen/PresenterView.vue",
+      "line": 5,
+      "text": "观众视图"
+    },
+    {
+      "file": "src/views/Screen/PresenterView.vue",
+      "line": 12,
+      "text": "{{ fullscreenState ? 'Выйти из полноэкранного режима' : '全屏' }}"
+    },
+    {
+      "file": "src/views/Screen/WritingBoardTool.vue",
+      "line": 35,
+      "text": "墨迹粗细："
+    },
+    {
+      "file": "src/views/Screen/WritingBoardTool.vue",
+      "line": 52,
+      "text": "墨迹粗细："
+    },
+    {
+      "file": "src/views/Screen/WritingBoardTool.vue",
+      "line": 63,
+      "text": "墨迹粗细："
+    },
+    {
+      "file": "src/views/Screen/WritingBoardTool.vue",
+      "line": 74,
+      "text": "橡皮大小："
+    },
+    {
+      "file": "src/views/components/element/VideoElement/VideoPlayer/index.vue",
+      "line": 14,
+      "text": "视频加载失败"
+    },
+    {
+      "file": "src/views/components/element/VideoElement/VideoPlayer/index.vue",
+      "line": 80,
+      "text": "{{playbackRate === 1 ? '倍速' : (playbackRate + 'x')}}"
+    },
+    {
+      "file": "src/views/components/element/VideoElement/VideoPlayer/index.vue",
+      "line": 94,
+      "text": "循环{{loop ? '开' : '关'}}"
+    }
+  ],
+  "english_visible_candidates": [
+    {
+      "file": "src/components/Input.vue",
+      "line": 18,
+      "kind": "attr",
+      "text": "placeholder"
+    },
+    {
+      "file": "src/components/LaTeXEditor/index.vue",
+      "line": 6,
+      "kind": "attr",
+      "text": "Введите формулу LaTeX"
+    },
+    {
+      "file": "src/components/NumberInput.vue",
+      "line": 17,
+      "kind": "attr",
+      "text": "placeholder"
+    },
+    {
+      "file": "src/components/Select.vue",
+      "line": 25,
+      "kind": "attr",
+      "text": "searchLabel"
+    },
+    {
+      "file": "src/components/TextArea.vue",
+      "line": 12,
+      "kind": "attr",
+      "text": "placeholder"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 4,
+      "kind": "text",
+      "text": "AIPPT"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 15,
+      "kind": "attr",
+      "text": "Введите тему PPT, например: Планирование карьеры студентов"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/MediaInput.vue",
+      "line": 10,
+      "kind": "attr",
+      "text": "Введите URL видео, напр. https://xxx.mp4"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/MediaInput.vue",
+      "line": 23,
+      "kind": "attr",
+      "text": "Введите URL аудио, напр. https://xxx.mp3"
+    },
+    {
+      "file": "src/views/Editor/EditorHeader/index.vue",
+      "line": 10,
+      "kind": "text",
+      "text": "AIPPT"
+    },
+    {
+      "file": "src/views/Editor/EditorHeader/index.vue",
+      "line": 24,
+      "kind": "text",
+      "text": "PPTX"
+    },
+    {
+      "file": "src/views/Editor/EditorHeader/index.vue",
+      "line": 32,
+      "kind": "text",
+      "text": "JSON"
+    },
+    {
+      "file": "src/views/Editor/EditorHeader/index.vue",
+      "line": 40,
+      "kind": "text",
+      "text": "PPTIST"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportImage.vue",
+      "line": 21,
+      "kind": "text",
+      "text": "JPEG"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportImage.vue",
+      "line": 22,
+      "kind": "text",
+      "text": "PNG"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 13,
+      "kind": "attr",
+      "text": "图片库（来自 pexels.com）"
+    },
+    {
+      "file": "src/views/Editor/NotesPanel.vue",
+      "line": 6,
+      "kind": "attr",
+      "text": "`幻灯片${slideIndex + 1}的批注`"
+    },
+    {
+      "file": "src/views/Editor/SelectPanel.vue",
+      "line": 6,
+      "kind": "attr",
+      "text": "`选择（${activeElementIdList.length}/${currentSlide.elements.length}）`"
+    },
+    {
+      "file": "src/views/Mobile/MobilePreview.vue",
+      "line": 17,
+      "kind": "text",
+      "text": "AIPPT"
+    }
+  ],
+  "chinese_noncomment_lines": [
+    {
+      "file": "src/components/ChartDataEditor.vue",
+      "line": 71,
+      "text": "图表类型：{{ CHART_TYPE_MAP[chartType] }}"
+    },
+    {
+      "file": "src/components/ChartDataEditor.vue",
+      "line": 81,
+      "text": "<span class=\"change\">点击更换</span>"
+    },
+    {
+      "file": "src/components/ChartDataEditor.vue",
+      "line": 85,
+      "text": "<Button class=\"btn\" @click=\"closeEditor()\">取消</Button>"
+    },
+    {
+      "file": "src/components/ChartDataEditor.vue",
+      "line": 86,
+      "text": "<Button class=\"btn\" @click=\"clear()\">清空数据</Button>"
+    },
+    {
+      "file": "src/components/ChartDataEditor.vue",
+      "line": 87,
+      "text": "<Button type=\"primary\" class=\"btn\" @click=\"getTableData()\">确认</Button>"
+    },
+    {
+      "file": "src/components/ChartDataEditor.vue",
+      "line": 209,
+      "text": "let labelsItem = `类别${rowIndex}`"
+    },
+    {
+      "file": "src/components/ChartDataEditor.vue",
+      "line": 215,
+      "text": "let legendsItem = `系列${colIndex}`"
+    },
+    {
+      "file": "src/components/ColorPicker/index.vue",
+      "line": 65,
+      "text": "<div class=\"recent-colors-title\" v-if=\"recentColors.length\">最近使用：</div>"
+    },
+    {
+      "file": "src/components/ColorPicker/index.vue",
+      "line": 220,
+      "text": "message.success('按 ESC 键关闭取色吸管', { duration: 0 })"
+    },
+    {
+      "file": "src/components/ColorPicker/index.vue",
+      "line": 305,
+      "text": "message.error('取色吸管初始化失败')"
+    },
+    {
+      "file": "src/components/LaTeXEditor/index.vue",
+      "line": 56,
+      "text": "<Button class=\"btn\" type=\"primary\" @click=\"update()\">确定</Button>"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 199,
+      "text": "text: '添加子级大纲（章）',"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 200,
+      "text": "handler: () => addItem(id, 'next', '新的一章'),"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 207,
+      "text": "text: '上方添加同级大纲（章）',"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 208,
+      "text": "handler: () => addItem(id, 'prev', '新的一章'),"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 211,
+      "text": "text: '添加子级大纲（节）',"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 212,
+      "text": "handler: () => addItem(id, 'next', '新的一节'),"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 215,
+      "text": "text: '删除此章',"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 223,
+      "text": "text: '上方添加同级大纲（节）',"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 224,
+      "text": "handler: () => addItem(id, 'prev', '新的一节'),"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 227,
+      "text": "text: '添加子级大纲（项）',"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 228,
+      "text": "handler: () => addItem(id, 'next', '新的一项'),"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 231,
+      "text": "text: '删除此节',"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 238,
+      "text": "text: '上方添加同级大纲（项）',"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 239,
+      "text": "handler: () => addItem(id, 'prev', '新的一项'),"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 242,
+      "text": "text: '下方添加同级大纲（项）',"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 243,
+      "text": "handler: () => addItem(id, 'next', '新的一项'),"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 246,
+      "text": "text: '删除此项',"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 338,
+      "text": "content: '主题';"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 341,
+      "text": "content: '章';"
+    },
+    {
+      "file": "src/components/OutlineEditor.vue",
+      "line": 344,
+      "text": "content: '节';"
+    },
+    {
+      "file": "src/components/Select.vue",
+      "line": 76,
+      "text": "searchLabel: '搜索',"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 10,
+      "text": "name: '弹跳',"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 12,
+      "text": "{ name: '弹入', value: 'bounceIn' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 13,
+      "text": "{ name: '向右弹入', value: 'bounceInLeft' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 14,
+      "text": "{ name: '向左弹入', value: 'bounceInRight' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 15,
+      "text": "{ name: '向上弹入', value: 'bounceInUp' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 16,
+      "text": "{ name: '向下弹入', value: 'bounceInDown' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 21,
+      "text": "name: '浮现',"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 23,
+      "text": "{ name: '浮入', value: 'fadeIn' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 24,
+      "text": "{ name: '向下浮入', value: 'fadeInDown' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 25,
+      "text": "{ name: '向下长距浮入', value: 'fadeInDownBig' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 26,
+      "text": "{ name: '向右浮入', value: 'fadeInLeft' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 27,
+      "text": "{ name: '向右长距浮入', value: 'fadeInLeftBig' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 28,
+      "text": "{ name: '向左浮入', value: 'fadeInRight' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 29,
+      "text": "{ name: '向左长距浮入', value: 'fadeInRightBig' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 30,
+      "text": "{ name: '向上浮入', value: 'fadeInUp' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 31,
+      "text": "{ name: '向上长距浮入', value: 'fadeInUpBig' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 32,
+      "text": "{ name: '从左上浮入', value: 'fadeInTopLeft' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 33,
+      "text": "{ name: '从右上浮入', value: 'fadeInTopRight' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 34,
+      "text": "{ name: '从左下浮入', value: 'fadeInBottomLeft' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 35,
+      "text": "{ name: '从右下浮入', value: 'fadeInBottomRight' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 42,
+      "text": "{ name: '旋转进入', value: 'rotateIn' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 43,
+      "text": "{ name: '绕左下进入', value: 'rotateInDownLeft' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 44,
+      "text": "{ name: '绕右下进入', value: 'rotateInDownRight' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 45,
+      "text": "{ name: '绕左上进入', value: 'rotateInUpLeft' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 46,
+      "text": "{ name: '绕右上进入', value: 'rotateInUpRight' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 53,
+      "text": "{ name: '放大进入', value: 'zoomIn' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 54,
+      "text": "{ name: '向下放大进入', value: 'zoomInDown' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 55,
+      "text": "{ name: '从左放大进入', value: 'zoomInLeft' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 56,
+      "text": "{ name: '从右放大进入', value: 'zoomInRight' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 57,
+      "text": "{ name: '向上放大进入', value: 'zoomInUp' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 62,
+      "text": "name: '滑入',"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 64,
+      "text": "{ name: '向下滑入', value: 'slideInDown' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 65,
+      "text": "{ name: '从右滑入', value: 'slideInLeft' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 66,
+      "text": "{ name: '从左滑入', value: 'slideInRight' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 67,
+      "text": "{ name: '向上滑入', value: 'slideInUp' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 72,
+      "text": "name: '翻转',"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 74,
+      "text": "{ name: 'X轴翻转进入', value: 'flipInX' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 75,
+      "text": "{ name: 'Y轴翻转进入', value: 'flipInY' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 80,
+      "text": "name: '放大滑入',"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 82,
+      "text": "{ name: '向下放大滑入', value: 'backInDown' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 83,
+      "text": "{ name: '从左放大滑入', value: 'backInLeft' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 84,
+      "text": "{ name: '从右放大滑入', value: 'backInRight' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 85,
+      "text": "{ name: '向上放大滑入', value: 'backInUp' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 90,
+      "text": "name: '飞入',"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 92,
+      "text": "{ name: '从右飞入', value: 'lightSpeedInRight' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 93,
+      "text": "{ name: '从左飞入', value: 'lightSpeedInLeft' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 101,
+      "text": "name: '弹跳',"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 103,
+      "text": "{ name: '弹出', value: 'bounceOut' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 104,
+      "text": "{ name: '向左弹出', value: 'bounceOutLeft' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 105,
+      "text": "{ name: '向右弹出', value: 'bounceOutRight' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 106,
+      "text": "{ name: '向上弹出', value: 'bounceOutUp' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 107,
+      "text": "{ name: '向下弹出', value: 'bounceOutDown' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 112,
+      "text": "name: '浮现',"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 114,
+      "text": "{ name: '浮出', value: 'fadeOut' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 115,
+      "text": "{ name: '向下浮出', value: 'fadeOutDown' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 116,
+      "text": "{ name: '向下长距浮出', value: 'fadeOutDownBig' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 117,
+      "text": "{ name: '向左浮出', value: 'fadeOutLeft' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 118,
+      "text": "{ name: '向左长距浮出', value: 'fadeOutLeftBig' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 119,
+      "text": "{ name: '向右浮出', value: 'fadeOutRight' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 120,
+      "text": "{ name: '向右长距浮出', value: 'fadeOutRightBig' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 121,
+      "text": "{ name: '向上浮出', value: 'fadeOutUp' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 122,
+      "text": "{ name: '向上长距浮出', value: 'fadeOutUpBig' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 123,
+      "text": "{ name: '从左上浮出', value: 'fadeOutTopLeft' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 124,
+      "text": "{ name: '从右上浮出', value: 'fadeOutTopRight' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 125,
+      "text": "{ name: '从左下浮出', value: 'fadeOutBottomLeft' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 126,
+      "text": "{ name: '从右下浮出', value: 'fadeOutBottomRight' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 133,
+      "text": "{ name: '旋转退出', value: 'rotateOut' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 134,
+      "text": "{ name: '绕左下退出', value: 'rotateOutDownLeft' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 135,
+      "text": "{ name: '绕右下退出', value: 'rotateOutDownRight' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 136,
+      "text": "{ name: '绕左上退出', value: 'rotateOutUpLeft' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 137,
+      "text": "{ name: '绕右上退出', value: 'rotateOutUpRight' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 144,
+      "text": "{ name: '缩小退出', value: 'zoomOut' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 145,
+      "text": "{ name: '向下缩小退出', value: 'zoomOutDown' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 146,
+      "text": "{ name: '从左缩小退出', value: 'zoomOutLeft' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 147,
+      "text": "{ name: '从右缩小退出', value: 'zoomOutRight' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 148,
+      "text": "{ name: '向上缩小退出', value: 'zoomOutUp' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 153,
+      "text": "name: '滑出',"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 155,
+      "text": "{ name: '向下滑出', value: 'slideOutDown' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 156,
+      "text": "{ name: '从左滑出', value: 'slideOutLeft' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 157,
+      "text": "{ name: '从右滑出', value: 'slideOutRight' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 158,
+      "text": "{ name: '向上滑出', value: 'slideOutUp' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 163,
+      "text": "name: '翻转',"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 165,
+      "text": "{ name: 'X轴翻转退出', value: 'flipOutX' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 166,
+      "text": "{ name: 'Y轴翻转退出', value: 'flipOutY' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 171,
+      "text": "name: '缩小滑出',"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 173,
+      "text": "{ name: '向下缩小滑出', value: 'backOutDown' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 174,
+      "text": "{ name: '从左缩小滑出', value: 'backOutLeft' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 175,
+      "text": "{ name: '从右缩小滑出', value: 'backOutRight' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 176,
+      "text": "{ name: '向上缩小滑出', value: 'backOutUp' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 181,
+      "text": "name: '飞出',"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 183,
+      "text": "{ name: '从右飞出', value: 'lightSpeedOutRight' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 184,
+      "text": "{ name: '从左飞出', value: 'lightSpeedOutLeft' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 192,
+      "text": "name: '晃动',"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 194,
+      "text": "{ name: '左右摇晃', value: 'shakeX' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 195,
+      "text": "{ name: '上下摇晃', value: 'shakeY' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 196,
+      "text": "{ name: '摇头', value: 'headShake' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 197,
+      "text": "{ name: '摆动', value: 'swing' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 198,
+      "text": "{ name: '晃动', value: 'wobble' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 199,
+      "text": "{ name: '惊恐', value: 'tada' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 200,
+      "text": "{ name: '果冻', value: 'jello' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 205,
+      "text": "name: '其他',"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 207,
+      "text": "{ name: '弹跳', value: 'bounce' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 208,
+      "text": "{ name: '闪烁', value: 'flash' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 209,
+      "text": "{ name: '脉搏', value: 'pulse' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 210,
+      "text": "{ name: '橡皮筋', value: 'rubberBand' },"
+    },
+    {
+      "file": "src/configs/animation.ts",
+      "line": 211,
+      "text": "{ name: '心跳（快）', value: 'heartBeat' },"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 16,
+      "text": "labels: ['类别1', '类别2', '类别3', '类别4', '类别5'],"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 17,
+      "text": "legends: ['系列1', '系列2'],"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 21,
+      "text": "labels: ['类别1', '类别2', '类别3', '类别4', '类别5'],"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 22,
+      "text": "legends: ['系列1', '系列2'],"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 26,
+      "text": "labels: ['类别1', '类别2', '类别3', '类别4', '类别5'],"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 27,
+      "text": "legends: ['系列1', '系列2'],"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 31,
+      "text": "labels: ['类别1', '类别2', '类别3', '类别4', '类别5'],"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 32,
+      "text": "legends: ['值'],"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 36,
+      "text": "labels: ['类别1', '类别2', '类别3', '类别4', '类别5'],"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 37,
+      "text": "legends: ['值'],"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 41,
+      "text": "labels: ['类别1', '类别2', '类别3', '类别4', '类别5'],"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 42,
+      "text": "legends: ['系列1', '系列2'],"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 46,
+      "text": "labels: ['类别1', '类别2', '类别3', '类别4', '类别5'],"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 47,
+      "text": "legends: ['系列1', '系列2'],"
+    },
+    {
+      "file": "src/configs/chart.ts",
+      "line": 51,
+      "text": "labels: ['坐标1', '坐标2', '坐标3', '坐标4', '坐标5'],"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 2,
+      "text": "{ label: '默认字体', value: '' },"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 3,
+      "text": "{ label: '思源黑体', value: 'SourceHanSans' },"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 4,
+      "text": "{ label: '思源宋体', value: 'SourceHanSerif' },"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 5,
+      "text": "{ label: '文鼎PL楷体', value: 'WenDingPLKaiTi' },"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 6,
+      "text": "{ label: '文鼎PL宋体', value: 'WenDingPLSongTi' },"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 7,
+      "text": "{ label: '朱雀仿宋', value: 'ZhuQueFangSong' },"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 8,
+      "text": "{ label: '霞鹜文楷', value: 'LXGWWenKai' },"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 9,
+      "text": "{ label: '霞鹜新致宋', value: 'LXGWNeoZhiSong' },"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 10,
+      "text": "{ label: '霞鹜新晰黑', value: 'LXGWNeoXiHei' },"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 11,
+      "text": "{ label: '阿里巴巴普惠体', value: 'AlibabaPuHuiTi' },"
+    },
+    {
+      "file": "src/configs/font.ts",
+      "line": 12,
+      "text": "{ label: '得意黑', value: 'DeYiHei' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 44,
+      "text": "type: '通用',"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 49,
+      "text": "{ label: '粘贴为纯文本', value: 'Ctrl + Shift + V' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 50,
+      "text": "{ label: '快速复制粘贴', value: 'Ctrl + D' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 53,
+      "text": "{ label: '恢复', value: 'Ctrl + Y' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 55,
+      "text": "{ label: '多选', value: '按住 Ctrl 或 Shift' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 56,
+      "text": "{ label: '打开搜索替换', value: 'Ctrl + F' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 57,
+      "text": "{ label: '打印', value: 'Ctrl + P' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 58,
+      "text": "{ label: '关闭弹窗', value: 'ESC' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 64,
+      "text": "{ label: '从头开始放映幻灯片', value: 'F5' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 65,
+      "text": "{ label: '从当前开始放映幻灯片', value: 'Shift + F5' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 66,
+      "text": "{ label: '切换上一页', value: '↑ / ← / PgUp' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 67,
+      "text": "{ label: '切换下一页', value: '↓ / → / PgDown' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 68,
+      "text": "{ label: '切换下一页', value: 'Enter / Space' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 69,
+      "text": "{ label: '退出放映', value: 'ESC' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 73,
+      "text": "type: '幻灯片编辑',"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 75,
+      "text": "{ label: '新建幻灯片', value: 'Enter' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 76,
+      "text": "{ label: '移动画布', value: 'Space + 鼠标拖拽' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 77,
+      "text": "{ label: '缩放画布', value: 'Ctrl + 鼠标滚轮' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 78,
+      "text": "{ label: '放大画布', value: 'Ctrl + =' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 79,
+      "text": "{ label: '缩小画布', value: 'Ctrl + -' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 80,
+      "text": "{ label: '使画布适应当前屏幕', value: 'Ctrl + 0' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 81,
+      "text": "{ label: '上一页（未选中元素）', value: '↑' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 82,
+      "text": "{ label: '下一页（未选中元素）', value: '↓' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 83,
+      "text": "{ label: 'Предыдущая страница', value: '鼠标上滚 / PgUp' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 84,
+      "text": "{ label: 'Следующая страница', value: '鼠标下滚 / PgDown' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 85,
+      "text": "{ label: '快速创建文本', value: '双击空白处 / T' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 86,
+      "text": "{ label: '快速创建矩形', value: 'R' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 87,
+      "text": "{ label: '快速创建圆形', value: 'O' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 88,
+      "text": "{ label: '快速创建线条', value: 'L' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 89,
+      "text": "{ label: '退出绘制状态', value: '鼠标右键' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 93,
+      "text": "type: '元素操作',"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 95,
+      "text": "{ label: '移动', value: '↑ / ← / ↓ / →' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 98,
+      "text": "{ label: '取消组合', value: 'Ctrl + Shift + G' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 99,
+      "text": "{ label: '置顶层', value: 'Alt + F' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 100,
+      "text": "{ label: '置底层', value: 'Alt + B' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 101,
+      "text": "{ label: '锁定宽高比例', value: '按住 Ctrl 或 Shift' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 102,
+      "text": "{ label: '快速复制', value: '按住 Ctrl + 拖拽' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 103,
+      "text": "{ label: '创建水平 / 垂直线条', value: '按住 Ctrl 或 Shift' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 104,
+      "text": "{ label: '切换焦点元素', value: 'Tab' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 105,
+      "text": "{ label: '确认图片裁剪', value: 'Enter' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 106,
+      "text": "{ label: '完成自定义形状绘制', value: 'Enter' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 110,
+      "text": "type: '表格编辑',"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 112,
+      "text": "{ label: '聚焦到下一个单元格', value: 'Tab' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 113,
+      "text": "{ label: '移动焦点单元格', value: '↑ / ← / ↓ / →' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 114,
+      "text": "{ label: '在上方插入一行', value: 'Ctrl + ↑' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 115,
+      "text": "{ label: '在下方插入一行', value: 'Ctrl + ↓' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 116,
+      "text": "{ label: '在左侧插入一列', value: 'Ctrl + ←' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 117,
+      "text": "{ label: '在右侧插入一列', value: 'Ctrl + →' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 121,
+      "text": "type: '图表数据编辑',"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 123,
+      "text": "{ label: '聚焦到下一行', value: 'Enter' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 127,
+      "text": "type: '文本编辑',"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 129,
+      "text": "{ label: '加粗', value: 'Ctrl + B' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 130,
+      "text": "{ label: '斜体', value: 'Ctrl + I' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 131,
+      "text": "{ label: '下划线', value: 'Ctrl + U' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 132,
+      "text": "{ label: '行内代码', value: 'Ctrl + E' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 133,
+      "text": "{ label: '上角标', value: 'Ctrl + ;' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 134,
+      "text": "{ label: '下角标', value: `Ctrl + '` },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 135,
+      "text": "{ label: '选中段落', value: `ESC` },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 139,
+      "text": "type: '其他快捷操作',"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 141,
+      "text": "{ label: '添加图片 - 粘贴来自系统剪贴板的图片' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 142,
+      "text": "{ label: '添加图片 - 将本地图片拖拽到画布中' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 143,
+      "text": "{ label: '添加图片 - 在画布中粘贴SVG代码' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 144,
+      "text": "{ label: '添加图片 - 粘贴来自 pexels 的图片链接' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 145,
+      "text": "{ label: '添加文本 - 粘贴来自系统剪贴板的文字' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 146,
+      "text": "{ label: '添加文本 - 将外部选中文字拖拽到画布中' },"
+    },
+    {
+      "file": "src/configs/hotkey.ts",
+      "line": 147,
+      "text": "{ label: '文本编辑 - 支持 markdown 语法创建列表和引用' },"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 35,
+      "text": "name: '矩形2',"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 43,
+      "text": "name: '矩形3',"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 51,
+      "text": "name: '圆角矩形',"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 62,
+      "text": "name: '三角形',"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 70,
+      "text": "name: '直角三角形',"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 78,
+      "text": "name: '倒三角形',"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 86,
+      "text": "name: '菱形',"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 94,
+      "text": "name: '五边形',"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 102,
+      "text": "name: '六边形',"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 110,
+      "text": "name: '七边形',"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 118,
+      "text": "name: '八边形',"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 126,
+      "text": "name: '人字形',"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 134,
+      "text": "name: '点',"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 150,
+      "text": "name: '平行四边形',"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 158,
+      "text": "name: '反平行四边形',"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 166,
+      "text": "name: '梯形',"
+    },
+    {
+      "file": "src/configs/imageClip.ts",
+      "line": 174,
+      "text": "name: '倒梯形',"
+    },
+    {
+      "file": "src/configs/symbol.ts",
+      "line": 4,
+      "text": "label: '字母',"
+    },
+    {
+      "file": "src/configs/symbol.ts",
+      "line": 16,
+      "text": "label: '序号',"
+    },
+    {
+      "file": "src/hooks/useExport.ts",
+      "line": 556,
+      "text": "fontFace: '微软雅黑',"
+    },
+    {
+      "file": "src/hooks/useExport.ts",
+      "line": 702,
+      "text": "fontFace: '微软雅黑',"
+    },
+    {
+      "file": "src/hooks/useExport.ts",
+      "line": 767,
+      "text": "name: `系列${i + 1}`,"
+    },
+    {
+      "file": "src/hooks/useExport.ts",
+      "line": 894,
+      "text": "fontFace: cell.style?.fontname || '微软雅黑',"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 358,
+      "text": "message.error('无法正确读取 / 解析该文件')"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 391,
+      "text": "message.error('无法正确读取 / 解析该文件')"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 457,
+      "text": "if (!el.isFlipV && !el.isFlipH) { // 右下"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 461,
+      "text": "else if (el.isFlipV && el.isFlipH) { // 左上"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 465,
+      "text": "else if (el.isFlipV && !el.isFlipH) { // 右上"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 469,
+      "text": "else { // 左下"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 600,
+      "text": "ax: number, // A 的 x"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 601,
+      "text": "ay: number, // A 的 y"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 602,
+      "text": "aw: number, // A 的宽"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 603,
+      "text": "ah: number, // A 的高"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 604,
+      "text": "bx: number, // B 相对 A 的 x (ox)"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 605,
+      "text": "by: number, // B 相对 A 的 y (oy)"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 606,
+      "text": "bw: number, // B 的宽"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 607,
+      "text": "bh: number, // B 的高"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 608,
+      "text": "ak: number, // A 的旋转角度（度，正顺时针）"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 609,
+      "text": "bk: number, // B 的旋转角度（度，正顺时针）"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 677,
+      "text": "message.error('无法正确读取 / 解析该文件')"
+    },
+    {
+      "file": "src/hooks/useImport.ts",
+      "line": 1225,
+      "text": "labels = el.data[0].map((item, index) => `坐标${index + 1}`)"
+    },
+    {
+      "file": "src/hooks/useLink.ts",
+      "line": 14,
+      "text": "message.error('不是正确的网页链接地址')"
+    },
+    {
+      "file": "src/hooks/useLink.ts",
+      "line": 18,
+      "text": "message.error('请先选择链接目标')"
+    },
+    {
+      "file": "src/services/fetch.ts",
+      "line": 22,
+      "text": "throw new Error('服务器返回了非流响应')"
+    },
+    {
+      "file": "src/store/keyboard.ts",
+      "line": 11,
+      "text": "ctrlKeyState: false, // ctrl键按下状态"
+    },
+    {
+      "file": "src/store/keyboard.ts",
+      "line": 12,
+      "text": "shiftKeyState: false, // shift键按下状态"
+    },
+    {
+      "file": "src/store/keyboard.ts",
+      "line": 13,
+      "text": "spaceKeyState: false, // space键按下状态"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 50,
+      "text": "activeElementIdList: [], // 被选中的元素ID集合，包含 handleElementId"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 51,
+      "text": "handleElementId: '', // 正在操作的元素ID"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 52,
+      "text": "activeGroupElementId: '', // 组合元素成员中，被选中可独立操作的元素ID"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 53,
+      "text": "hiddenElementIdList: [], // 被隐藏的元素ID集合"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 54,
+      "text": "canvasPercentage: 90, // 画布可视区域百分比"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 55,
+      "text": "canvasScale: 1, // 画布缩放比例（基于宽度{{slidesStore.viewportSize}}像素）"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 56,
+      "text": "canvasDragged: false, // 画布被拖拽移动"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 57,
+      "text": "thumbnailsFocus: false, // 左侧导航缩略图区域聚焦"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 58,
+      "text": "editorAreaFocus: false, //  编辑区域聚焦"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 59,
+      "text": "disableHotkeys: false, // 禁用快捷键"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 60,
+      "text": "gridLineSize: 0, // 网格线尺寸（0表示不显示网格线）"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 61,
+      "text": "showRuler: false, // 显示标尺"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 62,
+      "text": "showBubbleMenu: false, // 显示浮动菜单"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 63,
+      "text": "creatingElement: null, // 正在插入的元素信息，需要通过绘制插入的元素（文字、形状、线条）"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 64,
+      "text": "creatingCustomShape: false, // 正在绘制任意多边形"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 65,
+      "text": "toolbarState: ToolbarStates.SLIDE_DESIGN, // 右侧工具栏状态"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 66,
+      "text": "clipingImageElementId: '', // 当前正在裁剪的图片ID"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 67,
+      "text": "richTextAttrs: defaultRichTextAttrs, // 富文本状态"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 68,
+      "text": "selectedTableCells: [], // 选中的表格单元格"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 69,
+      "text": "isScaling: false, // 正在进行元素缩放"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 70,
+      "text": "selectedSlidesIndex: [], // 当前被选中的页面索引集合"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 71,
+      "text": "dialogForExport: '', // 导出面板"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 72,
+      "text": "databaseId, // 标识当前应用的indexedDB数据库ID"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 73,
+      "text": "textFormatPainter: null, // 文字格式刷"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 74,
+      "text": "shapeFormatPainter: null, // 形状格式刷"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 75,
+      "text": "showSelectPanel: false, // 打开选择面板"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 76,
+      "text": "showSearchPanel: false, // 打开查找替换面板"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 77,
+      "text": "showNotesPanel: false, // 打开批注面板"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 78,
+      "text": "showSymbolPanel: false, // 打开符号面板"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 79,
+      "text": "showMarkupPanel: false, // 打开类型标注面板"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 80,
+      "text": "showImageLibPanel: false, // 打开图片库面板"
+    },
+    {
+      "file": "src/store/main.ts",
+      "line": 81,
+      "text": "showAIPPTDialog: false, // 打开AIPPT创建窗口"
+    },
+    {
+      "file": "src/store/screen.ts",
+      "line": 9,
+      "text": "screening: false, // 是否进入放映状态"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 33,
+      "text": "title: '未命名演示文稿', // 幻灯片标题"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 50,
+      "text": "}, // 主题样式"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 51,
+      "text": "slides: [], // 幻灯片页面数据"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 52,
+      "text": "slideIndex: 0, // 当前页面索引"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 53,
+      "text": "viewportSize: 1000, // 可视区域宽度基数"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 54,
+      "text": "viewportRatio: 0.5625, // 可视区域比例，默认16:9"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 56,
+      "text": "{ name: '山河映红', id: 'template_1', cover: './imgs/template_1.webp', origin: '官方制作' },"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 57,
+      "text": "{ name: '都市蓝调', id: 'template_2', cover: './imgs/template_2.webp', origin: '官方制作' },"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 58,
+      "text": "{ name: '智感几何', id: 'template_3', cover: './imgs/template_3.webp', origin: '官方制作' },"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 59,
+      "text": "{ name: '柔光莫兰迪', id: 'template_4', cover: './imgs/template_4.webp', origin: '官方制作' },"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 60,
+      "text": "{ name: '简约绿意', id: 'template_5', cover: './imgs/template_5.webp', origin: '社区贡献+官方深度完善优化' },"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 61,
+      "text": "{ name: '暖色复古', id: 'template_6', cover: './imgs/template_6.webp', origin: '社区贡献+官方深度完善优化' },"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 62,
+      "text": "{ name: '深邃沉稳', id: 'template_7', cover: './imgs/template_7.webp', origin: '社区贡献+官方深度完善优化' },"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 63,
+      "text": "{ name: '浅蓝小清新', id: 'template_8', cover: './imgs/template_8.webp', origin: '社区贡献+官方深度完善优化' },"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 64,
+      "text": "], // 模板"
+    },
+    {
+      "file": "src/store/slides.ts",
+      "line": 116,
+      "text": "if (!title) this.title = '未命名演示文稿'"
+    },
+    {
+      "file": "src/store/snapshot.ts",
+      "line": 15,
+      "text": "snapshotCursor: -1, // 历史快照指针"
+    },
+    {
+      "file": "src/store/snapshot.ts",
+      "line": 16,
+      "text": "snapshotLength: 0, // 历史快照长度"
+    },
+    {
+      "file": "src/utils/clipboard.ts",
+      "line": 35,
+      "text": "if (!text) reject('剪贴板为空或者不包含文本')"
+    },
+    {
+      "file": "src/utils/clipboard.ts",
+      "line": 39,
+      "text": "else reject('浏览器不支持或禁止访问剪贴板，请使用快捷键 Ctrl + V')"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 5,
+      "text": "<span class=\"subtite\" v-if=\"step === 'template'\">从下方挑选合适的模板生成PPT，或<span class=\"local\" v-tooltip=\"'上传.pptist格式模板文件'\" @click=\"uploadLocalTemplate()\">使用本地模板生成</span></span>"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 6,
+      "text": "<span class=\"subtite\" v-else-if=\"step === 'outline'\">确认下方内容大纲（点击编辑内容，右键添加/删除大纲项），开始选择模板</span>"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 7,
+      "text": "<span class=\"subtite\" v-else>在下方输入您的PPT主题，并适当补充信息，如行业、岗位、学科、用途等</span>"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 28,
+      "text": "<div class=\"label\">语言：</div>"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 34,
+      "text": "{ label: '中文', value: '中文' },"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 35,
+      "text": "{ label: '英文', value: 'English' },"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 36,
+      "text": "{ label: '日文', value: '日本語' },"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 41,
+      "text": "<div class=\"label\">风格：</div>"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 47,
+      "text": "{ label: '通用', value: '通用' },"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 48,
+      "text": "{ label: '学术风', value: '学术风' },"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 49,
+      "text": "{ label: '职场风', value: '职场风' },"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 50,
+      "text": "{ label: '教育风', value: '教育风' },"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 51,
+      "text": "{ label: '营销风', value: '营销风' },"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 56,
+      "text": "<div class=\"label\">模型：</div>"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 69,
+      "text": "<div class=\"label\">配图：</div>"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 76,
+      "text": "{ label: '模拟测试', value: 'test' },"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 77,
+      "text": "{ label: 'AI搜图', value: 'ai-search', disabled: true },"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 78,
+      "text": "{ label: 'AI生图', value: 'ai-create', disabled: true },"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 85,
+      "text": "<Checkbox v-model:value=\"overwrite\">覆盖已有幻灯片</Checkbox>"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 95,
+      "text": "<Button class=\"btn\" type=\"primary\" @click=\"step = 'template'\">选择模板</Button>"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 96,
+      "text": "<Button class=\"btn\" @click=\"outline = ''; step = 'setup'\">返回重新生成</Button>"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 111,
+      "text": "<Button class=\"btn\" type=\"primary\" @click=\"createPPT()\">生成</Button>"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 112,
+      "text": "<Button class=\"btn\" @click=\"step = 'outline'\">返回大纲</Button>"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 146,
+      "text": "const language = ref('中文')"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 147,
+      "text": "const style = ref('通用')"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 161,
+      "text": "'2025科技前沿动态',"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 162,
+      "text": "'大数据如何改变世界',"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 163,
+      "text": "'餐饮市场调查与研究',"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 164,
+      "text": "'AIGC在教育领域的应用',"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 165,
+      "text": "'社交媒体与品牌营销',"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 166,
+      "text": "'5G技术如何改变我们的生活',"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 167,
+      "text": "'年度工作总结与展望',"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 168,
+      "text": "'区块链技术及其应用',"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 169,
+      "text": "'大学生职业生涯规划',"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 170,
+      "text": "'公司年会策划方案',"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 197,
+      "text": "return message.error('该模型API的并发数过高，请更换其他模型重试')"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 231,
+      "text": "message.loading('演示文稿生成中，请稍等 ...', { duration: 0 })"
+    },
+    {
+      "file": "src/views/Editor/AIPPTDialog.vue",
+      "line": 245,
+      "text": "return message.error('该模型API的并发数过高，请更换其他模型重试')"
+    },
+    {
+      "file": "src/views/Editor/Canvas/EditableElement.vue",
+      "line": 145,
+      "text": "text: props.elementInfo.groupId ? '取消组合' : 'Группа',"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/BorderPanel.vue",
+      "line": 9,
+      "text": "<div class=\"label\">边框样式：</div>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/BorderPanel.vue",
+      "line": 27,
+      "text": "<div class=\"label\">边框颜色：</div>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/BorderPanel.vue",
+      "line": 36,
+      "text": "<div class=\"label\">边框粗细：</div>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/BorderPanel.vue",
+      "line": 47,
+      "text": "<span>边框</span>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/ChartToolbar.vue",
+      "line": 5,
+      "text": "<span>编辑数据</span>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/ChartToolbar.vue",
+      "line": 20,
+      "text": "<span>类型</span>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/ImageToolbar.vue",
+      "line": 5,
+      "text": "<span>裁剪</span>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/LatexToolbar.vue",
+      "line": 5,
+      "text": "<span>编辑 LaTeX</span>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/LatexToolbar.vue",
+      "line": 13,
+      "text": "<span>颜色</span>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/LineToolbar.vue",
+      "line": 22,
+      "text": "<span>样式</span>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/LineToolbar.vue",
+      "line": 31,
+      "text": "<span>颜色</span>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/ShapeToolbar.vue",
+      "line": 9,
+      "text": "<span>填充</span>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue",
+      "line": 9,
+      "text": "<span>填充</span>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue",
+      "line": 19,
+      "text": "<PopoverMenuItem center @click=\"emitTableCommand('insert-row', 'before')\">上方插入行</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue",
+      "line": 20,
+      "text": "<PopoverMenuItem center @click=\"emitTableCommand('insert-row', 'after')\">下方插入行</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue",
+      "line": 21,
+      "text": "<PopoverMenuItem center @click=\"emitTableCommand('insert-col', 'before')\">左侧插入列</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue",
+      "line": 22,
+      "text": "<PopoverMenuItem center @click=\"emitTableCommand('insert-col', 'after')\">右侧插入列</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue",
+      "line": 27,
+      "text": "<span>添加</span>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue",
+      "line": 33,
+      "text": "<PopoverMenuItem center @click=\"emitTableCommand('delete-row')\">删除行</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue",
+      "line": 34,
+      "text": "<PopoverMenuItem center @click=\"emitTableCommand('delete-col')\">删除列</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/FloatingToolbar/TableToolbar.vue",
+      "line": 39,
+      "text": "<span>删除</span>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/LinkHandler.vue",
+      "line": 4,
+      "text": "<a class=\"link\" v-else-if=\"elementInfo.link\" @click=\"turnTarget(elementInfo.link.target)\">幻灯片页面 {{elementInfo.link.target}}</a>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/LinkHandler.vue",
+      "line": 6,
+      "text": "<div class=\"btn\" @click=\"openLinkDialog()\">更换</div>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/ElementFloatLayer/LinkHandler.vue",
+      "line": 8,
+      "text": "<div class=\"btn\" @click=\"removeLink(elementInfo)\">移除</div>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/LinkDialog.vue",
+      "line": 14,
+      "text": "placeholder=\"请输入网页链接地址\""
+    },
+    {
+      "file": "src/views/Editor/Canvas/LinkDialog.vue",
+      "line": 26,
+      "text": "<div>预览：</div>"
+    },
+    {
+      "file": "src/views/Editor/Canvas/LinkDialog.vue",
+      "line": 70,
+      "text": "label: `幻灯片 ${index + 1}`,"
+    },
+    {
+      "file": "src/views/Editor/Canvas/LinkDialog.vue",
+      "line": 85,
+      "text": "{ key: 'web', label: '网页链接' },"
+    },
+    {
+      "file": "src/views/Editor/Canvas/LinkDialog.vue",
+      "line": 86,
+      "text": "{ key: 'slide', label: '幻灯片页面', disabled: slides.value.length <= 1 },"
+    },
+    {
+      "file": "src/views/Editor/Canvas/hooks/useDragElement.ts",
+      "line": 49,
+      "text": "let duplicateTriggered = false // 标记是否已触发 Ctrl+拖拽复制"
+    },
+    {
+      "file": "src/views/Editor/Canvas/index.vue",
+      "line": 239,
+      "text": "width: 200 / canvasScale.value, // 除以 canvasScale 是为了与点击选区创建的形式保持相同的宽度"
+    },
+    {
+      "file": "src/views/Editor/Canvas/index.vue",
+      "line": 282,
+      "text": "message.success(`元素气泡菜单已${showBubbleMenu.value ? '启用' : '禁用'}`)"
+    },
+    {
+      "file": "src/views/Editor/Canvas/index.vue",
+      "line": 355,
+      "text": "text: '气泡菜单',"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 89,
+      "text": "<RadioButton value=\"L\" :disabled=\"activePointIndex === 0\">直线</RadioButton>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 90,
+      "text": "<RadioButton value=\"Q\" :disabled=\"activePointIndex === 0\">曲线Q</RadioButton>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 91,
+      "text": "<RadioButton value=\"C\" :disabled=\"activePointIndex === 0\">曲线C</RadioButton>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 92,
+      "text": "<RadioButton value=\"A\" :disabled=\"activePointIndex === 0\">圆弧</RadioButton>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 99,
+      "text": "<div class=\"section-title\">坐标：</div>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 109,
+      "text": "<template #prefix>水平：</template>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 119,
+      "text": "<template #prefix>垂直：</template>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 127,
+      "text": "<div class=\"section-title\">控制点：</div>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 137,
+      "text": "<template #prefix>水平：</template>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 147,
+      "text": "<template #prefix>垂直：</template>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 156,
+      "text": "<div class=\"section-title\">控制点：</div>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 166,
+      "text": "<template #prefix>1-水平：</template>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 176,
+      "text": "<template #prefix>1-垂直：</template>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 188,
+      "text": "<template #prefix>2-水平：</template>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 198,
+      "text": "<template #prefix>2-垂直：</template>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 207,
+      "text": "<div class=\"section-title\">圆弧：</div>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 217,
+      "text": "<template #prefix>水平半径：</template>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 227,
+      "text": "<template #prefix>垂直半径：</template>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 239,
+      "text": "<template #prefix>旋转：</template>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 243,
+      "text": "<Checkbox :value=\"activePoint.a.laf === 1\" @update:value=\"value => updateArcParam('laf', value ? 1 : 0)\">大弧</Checkbox>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 244,
+      "text": "<Checkbox :value=\"activePoint.a.sf === 1\" @update:value=\"value => updateArcParam('sf', value ? 1 : 0)\">顺时针</Checkbox>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 252,
+      "text": "<Checkbox :value=\"closePath\" @update:value=\"value => closePath = value\">闭合路径</Checkbox>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 264,
+      "text": "<div class=\"tooltips\">Tips: 双击追加直线，右键追加线段或删除点；拖动端点和控制点调整路径。</div>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 266,
+      "text": "<Button @click=\"emit('close')\">关闭</Button>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 267,
+      "text": "<Button type=\"primary\" :disabled=\"!canInsert\" @click=\"insert()\">确认</Button>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 545,
+      "text": "text: '追加直线',"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 549,
+      "text": "text: '追加二次曲线',"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 553,
+      "text": "text: '追加三次曲线',"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 557,
+      "text": "text: '追加弧线',"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/SVGPathEditor.vue",
+      "line": 562,
+      "text": "text: '删除当前点',"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/TableGenerator.vue",
+      "line": 4,
+      "text": "<div class=\"lef\">表格 {{endCell.length ? `${endCell[0]} x ${endCell[1]}` : ''}}</div>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/TableGenerator.vue",
+      "line": 29,
+      "text": "<div class=\"label\" style=\"width: 25%;\">行数：</div>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/TableGenerator.vue",
+      "line": 38,
+      "text": "<div class=\"label\" style=\"width: 25%;\">列数：</div>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/TableGenerator.vue",
+      "line": 82,
+      "text": "if (customRow.value < 1 || customRow.value > 20) return message.warning('行数/列数必须在0~20之间！')"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/TableGenerator.vue",
+      "line": 83,
+      "text": "if (customCol.value < 1 || customCol.value > 20) return message.warning('行数/列数必须在0~20之间！')"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 16,
+      "text": "<PopoverMenuItem class=\"popover-menu-item\" center @click=\"toggleSraechPanel(); moreVisible = false\"><i-icon-park-outline:search class=\"icon\" />查找替换</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 36,
+      "text": "<div class=\"group-btn-main\" @click=\"drawText()\"><i-icon-park-outline:font-size class=\"icon\" /> <span class=\"text\">文本框</span></div>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 40,
+      "text": "<PopoverMenuItem center @click=\"() => { drawText(); textTypeSelectVisible = false }\"><i-icon-park-outline:text-rotation-none class=\"icon\" /> 横向文本框</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 41,
+      "text": "<PopoverMenuItem center @click=\"() => { drawText(true); textTypeSelectVisible = false }\"><i-icon-park-outline:text-rotation-down class=\"icon\" /> 竖向文本框</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 51,
+      "text": "<div class=\"group-btn-main\"><i-icon-park-outline:graphic-design class=\"icon\" /> <span class=\"text\">形状</span></div>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 56,
+      "text": "<PopoverMenuItem center @click=\"shapeMenuVisible = false; shapePoolVisible = true\"><i-icon-park-outline:graphic-design class=\"icon\" />预设形状</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 57,
+      "text": "<PopoverMenuItem center @click=\"() => { svgPathEditorVisible = true; shapeMenuVisible = false }\"><i-icon-park-outline:connection class=\"icon\" />路径绘制</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 58,
+      "text": "<PopoverMenuItem center @click=\"() => { drawCustomShape(); shapeMenuVisible = false }\"><i-icon-park-outline:writing-fluently class=\"icon\" />自由绘制</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 65,
+      "text": "<div class=\"group-btn-main\"><i-icon-park-outline:picture class=\"icon\" /> <span class=\"text\">图片</span></div>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 71,
+      "text": "<PopoverMenuItem center><i-icon-park-outline:upload class=\"icon\" /> 上传图片</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 73,
+      "text": "<PopoverMenuItem center @click=\"openImageLibPanel(); imageMenuVisible = false\"><i-icon-park-outline:picture class=\"icon\" /> 在线图库</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 83,
+      "text": "<i-icon-park-outline:connection class=\"icon\" /> <span class=\"text\">线条</span>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 91,
+      "text": "<i-icon-park-outline:chart-proportion class=\"icon\" /> <span class=\"text\">图表</span>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 102,
+      "text": "<i-icon-park-outline:insert-table class=\"icon\" /> <span class=\"text\">表格</span>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 106,
+      "text": "<i-icon-park-outline:formula class=\"icon\" /> <span class=\"text\">公式</span>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 117,
+      "text": "<i-icon-park-outline:video-two class=\"icon\" /> <span class=\"text\">音视频</span>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 121,
+      "text": "<i-icon-park-outline:symbol class=\"icon\" /> <span class=\"text\">符号</span>"
+    },
+    {
+      "file": "src/views/Editor/CanvasTool/index.vue",
+      "line": 137,
+      "text": "<PopoverMenuItem center @click=\"resetCanvas(); canvasScaleVisible = false\">适应屏幕</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/EditorHeader/index.vue",
+      "line": 83,
+      "text": "<PopoverMenuItem class=\"popover-menu-item\" @click=\"enterScreeningFromStart()\"><i-icon-park-outline:slide-two class=\"icon\" /> 从头开始</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/EditorHeader/index.vue",
+      "line": 84,
+      "text": "<PopoverMenuItem class=\"popover-menu-item\" @click=\"enterScreening()\"><i-icon-park-outline:ppt class=\"icon\" /> 从当前页开始</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/EditorHeader/index.vue",
+      "line": 106,
+      "text": "<template v-slot:title>快捷操作</template>"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportImage.vue",
+      "line": 62,
+      "text": "<Switch v-model:value=\"ignoreWebfont\" v-tooltip=\"'导出时默认忽略在线字体，若您在幻灯片中使用了在线字体，且希望导出后保留相关样式，可选择关闭「忽略在线字体」选项，但要注意这将会增加导出用时。'\" />"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportPDF.vue",
+      "line": 25,
+      "text": "<div class=\"title\">导出范围：</div>"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportPDF.vue",
+      "line": 30,
+      "text": "<RadioButton style=\"width: 50%;\" value=\"all\">全部</RadioButton>"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportPDF.vue",
+      "line": 31,
+      "text": "<RadioButton style=\"width: 50%;\" value=\"current\">当前页</RadioButton>"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportPDF.vue",
+      "line": 35,
+      "text": "<div class=\"title\">每页数量：</div>"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportPDF.vue",
+      "line": 47,
+      "text": "<div class=\"title\">边缘留白：</div>"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportPDF.vue",
+      "line": 53,
+      "text": "建议：请在弹出的打印窗口中勾选「背景图形」选项，边距选择「默认」。"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportPDF.vue",
+      "line": 58,
+      "text": "<Button class=\"btn export\" type=\"primary\" @click=\"expPDF()\"><i-icon-park-outline:download /> 打印 / 导出 PDF</Button>"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportPDF.vue",
+      "line": 59,
+      "text": "<Button class=\"btn close\" @click=\"emit('close')\">关闭</Button>"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportPPTX.vue",
+      "line": 27,
+      "text": "<div class=\"title\">导出模式：</div>"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportPPTX.vue",
+      "line": 32,
+      "text": "<RadioButton style=\"width: 50%;\" value=\"standard\">标准版</RadioButton>"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportPPTX.vue",
+      "line": 33,
+      "text": "<RadioButton style=\"width: 50%;\" value=\"image\">纯图版</RadioButton>"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportPPTX.vue",
+      "line": 52,
+      "text": "<Switch v-model:value=\"ignoreMedia\" v-tooltip=\"'导出时默认忽略音视频，若您的幻灯片中存在音视频元素，且希望将其导出到PPTX文件中，可选择关闭「忽略音视频」选项，但要注意这将会大幅增加导出用时。'\" />"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportPPTX.vue",
+      "line": 63,
+      "text": "提示：1. 支持导出格式：avi、mp4、mov、wmv、mp3、wav；2. 跨域资源无法导出。"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportPPTX.vue",
+      "line": 68,
+      "text": "<Button class=\"btn export\" type=\"primary\" @click=\"execExport()\"><i-icon-park-outline:download /> 导出 PPTX</Button>"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportPPTX.vue",
+      "line": 69,
+      "text": "<Button class=\"btn close\" @click=\"emit('close')\">关闭</Button>"
+    },
+    {
+      "file": "src/views/Editor/ExportDialog/ExportSpecificFile.vue",
+      "line": 27,
+      "text": "提示：.pptist 是本应用的特有文件后缀，支持将该类型的文件导入回应用中。"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 13,
+      "text": "title=\"图片库（来自 pexels.com）\""
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 16,
+      "text": "<div class=\"container\" v-loading=\"{ state: loading, text: '加载中...' }\">"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 18,
+      "text": "<Input class=\"input\" v-model:value=\"searchWord\" placeholder=\"搜索图片\" @enter=\"search()\">"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 51,
+      "text": "<Button type=\"primary\" size=\"small\" @click=\"createImageElement(props.src)\">插入</Button>"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 100,
+      "text": "{ key: 'landscape', label: '横向' },"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 101,
+      "text": "{ key: 'portrait', label: '纵向' },"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 102,
+      "text": "{ key: 'square', label: '方形' },"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 106,
+      "text": "'landscape': '横向',"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 107,
+      "text": "'portrait': '纵向',"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 108,
+      "text": "'square': '方形',"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 116,
+      "text": "search('风景')"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 121,
+      "text": "if (!query) return message.error('请输入搜索关键词')"
+    },
+    {
+      "file": "src/views/Editor/ImageLibPanel.vue",
+      "line": 156,
+      "text": "query: searchWord.value || '风景',"
+    },
+    {
+      "file": "src/views/Editor/NotesPanel.vue",
+      "line": 6,
+      "text": ":title=\"`幻灯片${slideIndex + 1}的批注`\""
+    },
+    {
+      "file": "src/views/Editor/NotesPanel.vue",
+      "line": 65,
+      "text": ":placeholder=\"`输入批注（为${handleElementId ? '选中元素' : '当前页幻灯片' }）`\""
+    },
+    {
+      "file": "src/views/Editor/NotesPanel.vue",
+      "line": 124,
+      "text": "user: '测试用户',"
+    },
+    {
+      "file": "src/views/Editor/NotesPanel.vue",
+      "line": 156,
+      "text": "user: '测试用户',"
+    },
+    {
+      "file": "src/views/Editor/SearchPanel.vue",
+      "line": 32,
+      "text": "<Button :disabled=\"!searchWord\" style=\"margin-left: 5px;\" @click=\"replace()\">替换</Button>"
+    },
+    {
+      "file": "src/views/Editor/SearchPanel.vue",
+      "line": 33,
+      "text": "<Button :disabled=\"!searchWord\" type=\"primary\" style=\"margin-left: 5px;\" @click=\"replaceAll()\">全部替换</Button>"
+    },
+    {
+      "file": "src/views/Editor/SelectPanel.vue",
+      "line": 6,
+      "text": ":title=\"`选择（${activeElementIdList.length}/${currentSlide.elements.length}）`\""
+    },
+    {
+      "file": "src/views/Editor/SelectPanel.vue",
+      "line": 84,
+      "text": "<div class=\"empty\" v-if=\"!elements.length\">本页无内容</div>"
+    },
+    {
+      "file": "src/views/Editor/Thumbnails/Templates.vue",
+      "line": 11,
+      "text": "<div class=\"content\" v-loading=\"{ state: loading, text: '加载中...' }\">"
+    },
+    {
+      "file": "src/views/Editor/Thumbnails/Templates.vue",
+      "line": 21,
+      "text": "<div class=\"insert-all\" @click=\"insertTemplates({ slides, theme })\">插入全部</div>"
+    },
+    {
+      "file": "src/views/Editor/Thumbnails/Templates.vue",
+      "line": 67,
+      "text": "{ label: '封面', value: 'cover' },"
+    },
+    {
+      "file": "src/views/Editor/Thumbnails/Templates.vue",
+      "line": 68,
+      "text": "{ label: '目录', value: 'contents' },"
+    },
+    {
+      "file": "src/views/Editor/Thumbnails/Templates.vue",
+      "line": 69,
+      "text": "{ label: '过渡', value: 'transition' },"
+    },
+    {
+      "file": "src/views/Editor/Thumbnails/Templates.vue",
+      "line": 70,
+      "text": "{ label: '内容', value: 'content' },"
+    },
+    {
+      "file": "src/views/Editor/Thumbnails/Templates.vue",
+      "line": 71,
+      "text": "{ label: '结束', value: 'end' },"
+    },
+    {
+      "file": "src/views/Editor/Thumbnails/index.vue",
+      "line": 8,
+      "text": "<div class=\"btn\" @click=\"createSlide()\"><i-icon-park-outline:plus class=\"icon\" />添加幻灯片</div>"
+    },
+    {
+      "file": "src/views/Editor/Thumbnails/index.vue",
+      "line": 72,
+      "text": "<div class=\"page-number\">幻灯片 {{slideIndex + 1}} / {{slides.length}}</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementAnimationPanel.vue",
+      "line": 46,
+      "text": "<i-icon-park-outline:effects /> 添加动画"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementAnimationPanel.vue",
+      "line": 51,
+      "text": "<div class=\"tip\" v-else><i-icon-park-outline:click style=\"margin-right: 5px;\" /> 选中画布中的元素添加动画</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementAnimationPanel.vue",
+      "line": 80,
+      "text": "<div style=\"width: 35%;\">持续时长：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementAnimationPanel.vue",
+      "line": 91,
+      "text": "<div style=\"width: 35%;\">触发方式：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementAnimationPanel.vue",
+      "line": 104,
+      "text": "<Button style=\"width: 100%;\" @click=\"openAnimationPool(element.id)\"><i-icon-park-outline:switch /> 更换动画</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementPositionPanel.vue",
+      "line": 38,
+      "text": "水平："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementPositionPanel.vue",
+      "line": 50,
+      "text": "垂直："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementPositionPanel.vue",
+      "line": 67,
+      "text": "宽度："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementPositionPanel.vue",
+      "line": 87,
+      "text": "高度："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementPositionPanel.vue",
+      "line": 106,
+      "text": "旋转："
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/AudioStylePanel.vue",
+      "line": 4,
+      "text": "<div style=\"width: 40%;\">图标颜色：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/AudioStylePanel.vue",
+      "line": 17,
+      "text": "<div style=\"width: 40%;\">自动播放：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/AudioStylePanel.vue",
+      "line": 27,
+      "text": "<div style=\"width: 40%;\">循环播放：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/ThemeColorsSetting.vue",
+      "line": 7,
+      "text": "<div class=\"label\" style=\"width: 40%;\">主题配色{{ index + 1 }}：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/ThemeColorsSetting.vue",
+      "line": 26,
+      "text": "<i-icon-park-outline:plus /> 添加主题色"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/ThemeColorsSetting.vue",
+      "line": 30,
+      "text": "<Button class=\"btn\" type=\"primary\" @click=\"setThemeColors()\">确认</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/index.vue",
+      "line": 4,
+      "text": "<i-icon-park-outline:edit /> 编辑图表"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/index.vue",
+      "line": 28,
+      "text": "<div style=\"width: 40%;\">背景填充：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/index.vue",
+      "line": 40,
+      "text": "<div style=\"width: 40%;\">坐标与文字：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/index.vue",
+      "line": 52,
+      "text": "<div style=\"width: 40%;\">网格颜色：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/index.vue",
+      "line": 65,
+      "text": "<div style=\"width: 40%;\">主题配色：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/index.vue",
+      "line": 69,
+      "text": "<div class=\"label\">预置图表主题：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/index.vue",
+      "line": 80,
+      "text": "<div class=\"label\">幻灯片主题：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ChartStylePanel/index.vue",
+      "line": 92,
+      "text": "<Button class=\"full-width-btn\" @click=\"themesVisible = false; themeColorsSettingVisible = true\">自定义配色</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue",
+      "line": 11,
+      "text": "<Button first style=\"width: calc(100% - 32px);\" @click=\"clipImage()\"><i-icon-park-outline:tailoring /> 裁剪图片</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue",
+      "line": 15,
+      "text": "<div class=\"title\">按形状：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue",
+      "line": 28,
+      "text": "<div class=\"title\" v-if=\"typeItem.label\">按{{typeItem.label}}：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue",
+      "line": 45,
+      "text": "<div style=\"width: 40%;\">圆角半径：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue",
+      "line": 64,
+      "text": "<Button class=\"full-width-btn\"><i-icon-park-outline:transform /> 替换图片</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue",
+      "line": 66,
+      "text": "<Button class=\"full-width-btn\" @click=\"resetImage()\"><i-icon-park-outline:undo /> 重置样式</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue",
+      "line": 67,
+      "text": "<Button class=\"full-width-btn\" @click=\"setBackgroundImage()\"><i-icon-park-outline:theme /> 设为背景</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue",
+      "line": 95,
+      "text": "label: '纵横比（正方形）',"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue",
+      "line": 101,
+      "text": "label: '纵横比（纵向）',"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ImageStylePanel.vue",
+      "line": 110,
+      "text": "label: '纵横比（横向）',"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LatexStylePanel.vue",
+      "line": 4,
+      "text": "<Button style=\"flex: 1;\" @click=\"openLatexEditor()\"><i-icon-park-outline:edit /> 编辑 LaTeX</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LatexStylePanel.vue",
+      "line": 10,
+      "text": "<div style=\"width: 40%;\">颜色：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LatexStylePanel.vue",
+      "line": 22,
+      "text": "<div style=\"width: 40%;\">粗细：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue",
+      "line": 4,
+      "text": "<span>点击替换线条类型</span>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue",
+      "line": 52,
+      "text": "<div style=\"width: 40%;\">线条样式：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue",
+      "line": 65,
+      "text": "<div style=\"width: 40%;\">线条颜色：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue",
+      "line": 77,
+      "text": "<div style=\"width: 40%;\">线条宽度：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue",
+      "line": 86,
+      "text": "<div style=\"width: 40%;\">起点样式：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue",
+      "line": 99,
+      "text": "<div style=\"width: 40%;\">终点样式：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue",
+      "line": 113,
+      "text": "<div style=\"width: 40%;\">线条方向：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue",
+      "line": 125,
+      "text": "<Button style=\"flex: 1;\" @click=\"updateLine({ start: handleLineElement.end, end: handleLineElement.start })\"><i-icon-park-outline:switch /> 交换方向</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue",
+      "line": 163,
+      "text": "{ label: '自动', value: 'auto' },"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue",
+      "line": 164,
+      "text": "{ label: '水平', value: 'horizontal' },"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/LineStylePanel.vue",
+      "line": 165,
+      "text": "{ label: '垂直', value: 'vertical' },"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue",
+      "line": 64,
+      "text": "<div style=\"width: 40%;\">当前色块：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue",
+      "line": 76,
+      "text": "<div style=\"width: 40%;\">渐变角度：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue",
+      "line": 109,
+      "text": "<div style=\"width: 40%;\">行间距：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue",
+      "line": 114,
+      "text": "label: item + '倍', value: item"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue",
+      "line": 123,
+      "text": "<div style=\"width: 40%;\">段间距：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue",
+      "line": 137,
+      "text": "<div style=\"width: 40%;\">字间距：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue",
+      "line": 161,
+      "text": "<template #prefix>上边距：</template>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue",
+      "line": 171,
+      "text": "<template #prefix>下边距：</template>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue",
+      "line": 182,
+      "text": "<template #prefix>左边距：</template>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue",
+      "line": 192,
+      "text": "<template #prefix>右边距：</template>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/ShapeStylePanel.vue",
+      "line": 226,
+      "text": "><i-icon-park-outline:format-brush /> 形状格式刷</CheckboxButton>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 53,
+      "text": "<TextColorButton last v-tooltip=\"'单元格填充'\" :color=\"textAttrs.backcolor\">"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 63,
+      "text": "v-tooltip=\"'加粗'\""
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 69,
+      "text": "v-tooltip=\"'斜体'\""
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 75,
+      "text": "v-tooltip=\"'下划线'\""
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 81,
+      "text": "v-tooltip=\"'删除线'\""
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 116,
+      "text": "<div style=\"width: 40%;\">操作行：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 118,
+      "text": "<Button first style=\"flex: 1;\" @click=\"emitTableCommand('insert-row', 'after')\">添加行</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 121,
+      "text": "<PopoverMenuItem center @click=\"emitTableCommand('insert-row', 'before')\">上方添加</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 122,
+      "text": "<PopoverMenuItem center @click=\"emitTableCommand('insert-row', 'after')\">下方添加</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 123,
+      "text": "<PopoverMenuItem center @click=\"emitTableCommand('delete-row')\">删除行</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 130,
+      "text": "<div style=\"width: 40%;\">操作列：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 132,
+      "text": "<Button first style=\"flex: 1;\" @click=\"emitTableCommand('insert-col', 'after')\">添加列</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 135,
+      "text": "<PopoverMenuItem center @click=\"emitTableCommand('insert-col', 'before')\">左侧添加</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 136,
+      "text": "<PopoverMenuItem center @click=\"emitTableCommand('insert-col', 'after')\">右侧添加</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 137,
+      "text": "<PopoverMenuItem center @click=\"emitTableCommand('delete-col')\">删除列</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 147,
+      "text": "<div style=\"width: 40%;\">启用主题表格：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 162,
+      "text": ">标题行</Checkbox>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 167,
+      "text": ">汇总行</Checkbox>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 174,
+      "text": ">第一列</Checkbox>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 179,
+      "text": ">最后一列</Checkbox>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TableStylePanel.vue",
+      "line": 182,
+      "text": "<div style=\"width: 40%;\">主题颜色：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 18,
+      "text": "<div style=\"width: 40%;\">行间距：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 23,
+      "text": "label: item + '倍', value: item"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 32,
+      "text": "<div style=\"width: 40%;\">段间距：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 46,
+      "text": "<div style=\"width: 40%;\">字间距：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 60,
+      "text": "<div style=\"width: 40%;\">文本框填充：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 82,
+      "text": "<template #prefix>上边距：</template>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 92,
+      "text": "<template #prefix>下边距：</template>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 103,
+      "text": "<template #prefix>左边距：</template>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 113,
+      "text": "<template #prefix>右边距：</template>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 119,
+      "text": "<div style=\"width: 40%;\">固定高度：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 173,
+      "text": "label: '大标题',"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 186,
+      "text": "label: '小标题',"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 209,
+      "text": "label: '正文[小]',"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 219,
+      "text": "label: '注释 1',"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/TextStylePanel.vue",
+      "line": 231,
+      "text": "label: '注释 2',"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/VideoStylePanel.vue",
+      "line": 14,
+      "text": "<Button style=\"flex: 1;\" @click=\"setVideoPosterFromFirstFrame()\"><i-icon-park-outline:screenshot-one /> 设置首帧为封面</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/ElementStylePanel/VideoStylePanel.vue",
+      "line": 23,
+      "text": "<div style=\"width: 40%;\">自动播放：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/MultiPositionPanel.vue",
+      "line": 14,
+      "text": "<Button style=\"flex: 1;\" @click=\"uniformHorizontalDisplay()\">水平均匀分布</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/MultiPositionPanel.vue",
+      "line": 15,
+      "text": "<Button style=\"flex: 1;\" @click=\"uniformVerticalDisplay()\">垂直均匀分布</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/MultiPositionPanel.vue",
+      "line": 22,
+      "text": "<Button :disabled=\"canCombine\" @click=\"uncombineElements()\" style=\"flex: 1;\"><i-icon-park-outline:ungroup style=\"margin-right: 3px;\" />取消组合</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/MultiStylePanel.vue",
+      "line": 4,
+      "text": "<div style=\"width: 40%;\">填充颜色：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/MultiStylePanel.vue",
+      "line": 19,
+      "text": "<div style=\"width: 40%;\">边框样式：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/MultiStylePanel.vue",
+      "line": 32,
+      "text": "<div style=\"width: 40%;\">边框颜色：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/MultiStylePanel.vue",
+      "line": 44,
+      "text": "<div style=\"width: 40%;\">边框粗细：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeColorsSetting.vue",
+      "line": 17,
+      "text": "<div class=\"label\" style=\"width: 40%;\">幻灯片主题色{{ index + 1 }}：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeColorsSetting.vue",
+      "line": 31,
+      "text": "<Button class=\"btn\" type=\"primary\" @click=\"setThemeColors()\">确认</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue",
+      "line": 11,
+      "text": "<div class=\"label\">字体：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue",
+      "line": 18,
+      "text": "<div class=\"config-btn\" @click=\"updateTheme({ fontName: item }); selectedIndex.fontName = index\">应用到主题</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue",
+      "line": 24,
+      "text": "<div class=\"label\">文字颜色：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue",
+      "line": 31,
+      "text": "<div class=\"config-btn\" @click=\"updateTheme({ fontColor: item }); selectedIndex.fontColor = index\">应用到主题</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue",
+      "line": 37,
+      "text": "<div class=\"label\">背景颜色：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue",
+      "line": 44,
+      "text": "<div class=\"config-btn\" @click=\"updateTheme({ backgroundColor: item }); selectedIndex.backgroundColor = index\">应用到主题</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue",
+      "line": 50,
+      "text": "<div class=\"label\">主题色：<span class=\"tip\">(Нажмите на цвета, чтобы исключить)</span></div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue",
+      "line": 91,
+      "text": "{ key: 'single', label: '从当前页中提取' },"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ThemeStylesExtract.vue",
+      "line": 92,
+      "text": "{ key: 'all', label: '从全部幻灯片提取' },"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ViewportSizeSetting.vue",
+      "line": 3,
+      "text": "<div class=\"title\">自定义画布尺寸</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ViewportSizeSetting.vue",
+      "line": 24,
+      "text": "<div class=\"tip\">宽高范围：500 ~ 2000</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/ViewportSizeSetting.vue",
+      "line": 63,
+      "text": ") return message.warning(`画布宽高需在 ${VIEWPORT_SIZE_MIN} ~ ${VIEWPORT_SIZE_MAX} 之间`)"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 71,
+      "text": "<div style=\"width: 40%;\">当前色块：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 83,
+      "text": "<div style=\"width: 40%;\">渐变角度：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 96,
+      "text": "<Button style=\"flex: 1;\" @click=\"applyBackgroundAllSlide()\"><i-icon-park-outline:check /> 应用背景到全部</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 119,
+      "text": "<div class=\"canvas-size\">画布尺寸：{{  viewportSize  }} × {{ toFixed(viewportSize * viewportRatio) }}</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 125,
+      "text": "<span>全局主题</span>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 127,
+      "text": "<span class=\"text\">更多</span>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 133,
+      "text": "<div style=\"width: 40%;\">字体：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 145,
+      "text": "<div style=\"width: 40%;\">字体颜色：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 157,
+      "text": "<div style=\"width: 40%;\">背景颜色：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 169,
+      "text": "<div style=\"width: 40%;\">主题色：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 175,
+      "text": "<div style=\"width: 40%;\">边框样式：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 188,
+      "text": "<div style=\"width: 40%;\">边框颜色：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 200,
+      "text": "<div style=\"width: 40%;\">边框粗细：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 208,
+      "text": "<div style=\"width: 40%;\">水平阴影：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 219,
+      "text": "<div style=\"width: 40%;\">垂直阴影：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 230,
+      "text": "<div style=\"width: 40%;\">模糊距离：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 241,
+      "text": "<div style=\"width: 40%;\">阴影颜色：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 255,
+      "text": "<Button style=\"flex: 1;\" @click=\"applyThemeToAllSlides(moreThemeConfigsVisible)\"><i-icon-park-outline:check /> 应用主题到全部</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 259,
+      "text": "<Button style=\"flex: 1;\" @click=\"applyFontToAllSlides(theme.fontName)\"><i-icon-park-outline:check /> 全局统一字体</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 263,
+      "text": "<Button style=\"flex: 1;\" @click=\"themeStylesExtractVisible = true\"><i-icon-park-outline:platte /> 从幻灯片提取主题</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 268,
+      "text": "<div class=\"title\">预置主题</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 280,
+      "text": "<div class=\"text\" :style=\"{ color: item.fontColor }\">文字 Aa</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 286,
+      "text": "<Button type=\"primary\" size=\"small\" @click=\"applyPresetTheme(item)\">设置</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/SlideDesignPanel/index.vue",
+      "line": 287,
+      "text": "<Button type=\"primary\" size=\"small\" style=\"margin-top: 3px;\" @click=\"applyPresetTheme(item, true)\">设置并应用</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementColorMask.vue",
+      "line": 4,
+      "text": "<div style=\"width: 40%;\">着色（蒙版）：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementColorMask.vue",
+      "line": 14,
+      "text": "<div style=\"width: 40%;\">蒙版颜色：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementFilter.vue",
+      "line": 4,
+      "text": "<div style=\"flex: 2;\">启用滤镜：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementOpacity.vue",
+      "line": 4,
+      "text": "<div style=\"width: 40%;\">不透明度：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementOutline.vue",
+      "line": 4,
+      "text": "<div style=\"width: 40%;\">启用边框：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementOutline.vue",
+      "line": 14,
+      "text": "<div style=\"width: 40%;\">边框样式：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementOutline.vue",
+      "line": 27,
+      "text": "<div style=\"width: 40%;\">边框颜色：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementOutline.vue",
+      "line": 39,
+      "text": "<div style=\"width: 40%;\">边框粗细：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementShadow.vue",
+      "line": 4,
+      "text": "<div style=\"width: 40%;\">启用阴影：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementShadow.vue",
+      "line": 11,
+      "text": "<div style=\"width: 40%;\">水平阴影：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementShadow.vue",
+      "line": 22,
+      "text": "<div style=\"width: 40%;\">垂直阴影：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementShadow.vue",
+      "line": 33,
+      "text": "<div style=\"width: 40%;\">模糊距离：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/ElementShadow.vue",
+      "line": 44,
+      "text": "<div style=\"width: 40%;\">阴影颜色：</div>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 76,
+      "text": "v-tooltip=\"'加粗'\""
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 82,
+      "text": "v-tooltip=\"'斜体'\""
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 88,
+      "text": "v-tooltip=\"'下划线'\""
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 94,
+      "text": "v-tooltip=\"'删除线'\""
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 103,
+      "text": "v-tooltip=\"'上标'\""
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 109,
+      "text": "v-tooltip=\"'下标'\""
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 115,
+      "text": "v-tooltip=\"'行内代码'\""
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 121,
+      "text": "v-tooltip=\"'引用'\""
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 129,
+      "text": "<PopoverMenuItem center @click=\"execAI('美化改写')\">美化</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 130,
+      "text": "<PopoverMenuItem center @click=\"execAI('扩写丰富')\">扩写</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 131,
+      "text": "<PopoverMenuItem center @click=\"execAI('精简提炼')\">精简</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 136,
+      "text": "v-tooltip=\"'AI辅助'\""
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 141,
+      "text": "v-tooltip=\"'清除格式'\""
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 147,
+      "text": "v-tooltip=\"'格式刷（双击连续使用）'\""
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 154,
+      "text": "<Input v-model:value=\"link\" placeholder=\"请输入超链接\" />"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 156,
+      "text": "<Button size=\"small\" :disabled=\"!richTextAttrs.link\" @click=\"removeLink()\" style=\"margin-right: 5px;\">移除</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 157,
+      "text": "<Button size=\"small\" type=\"primary\" @click=\"updateLink(link)\">确认</Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 165,
+      "text": "v-tooltip=\"'超链接'\""
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 190,
+      "text": "v-tooltip=\"'项目符号'\""
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 215,
+      "text": "v-tooltip=\"'编号'\""
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 238,
+      "text": "<Button first style=\"flex: 1;\" v-tooltip=\"'减小段落缩进'\" @click=\"emitRichTextCommand('indent', '-1')\"><i-icon-park-outline:indent-left /></Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 241,
+      "text": "<PopoverMenuItem center @click=\"emitRichTextCommand('textIndent', '-1')\">减小首行缩进</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 248,
+      "text": "<Button first style=\"flex: 1;\" v-tooltip=\"'增大段落缩进'\" @click=\"emitRichTextCommand('indent', '+1')\"><i-icon-park-outline:indent-right /></Button>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 251,
+      "text": "<PopoverMenuItem center @click=\"emitRichTextCommand('textIndent', '+1')\">增大首行缩进</PopoverMenuItem>"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 322,
+      "text": "if (!link || !linkRegExp.test(link)) return message.error('不是正确的网页链接地址')"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 346,
+      "text": "if (!content) return message.error('没有可以执行的文本内容')"
+    },
+    {
+      "file": "src/views/Editor/Toolbar/common/RichTextBase.vue",
+      "line": 355,
+      "text": "return message.error('该模型API的并发数过高，请更换其他模型重试')"
+    },
+    {
+      "file": "src/views/Mobile/MobileEditor/ElementToolbar.vue",
+      "line": 63,
+      "text": "<div class=\"label\">文字颜色：</div>"
+    },
+    {
+      "file": "src/views/Mobile/MobileEditor/ElementToolbar.vue",
+      "line": 83,
+      "text": "<div class=\"label\">填充色：</div>"
+    },
+    {
+      "file": "src/views/Mobile/MobileEditor/ElementToolbar.vue",
+      "line": 103,
+      "text": "<div class=\"tip\" v-if=\"!textPropsEnable && !textColorPropsEnable && !fillPropsEnable\">暂无可用属性</div>"
+    },
+    {
+      "file": "src/views/Mobile/MobileEditor/ElementToolbar.vue",
+      "line": 108,
+      "text": "<Button style=\"flex: 1;\" @click=\"copyElement()\"><i-icon-park-outline:copy class=\"icon\" /> 复制</Button>"
+    },
+    {
+      "file": "src/views/Mobile/MobileEditor/ElementToolbar.vue",
+      "line": 109,
+      "text": "<Button style=\"flex: 1;\" @click=\"deleteElement()\"><i-icon-park-outline:delete class=\"icon\" /> 删除</Button>"
+    },
+    {
+      "file": "src/views/Mobile/MobileEditor/ElementToolbar.vue",
+      "line": 115,
+      "text": "<Button style=\"flex: 1;\" @click=\"orderElement(handleElement!, ElementOrderCommands.TOP)\"><i-icon-park-outline:send-to-back class=\"icon\" /> 置顶</Button>"
+    },
+    {
+      "file": "src/views/Mobile/MobileEditor/ElementToolbar.vue",
+      "line": 116,
+      "text": "<Button style=\"flex: 1;\" @click=\"orderElement(handleElement!, ElementOrderCommands.BOTTOM)\"><i-icon-park-outline:bring-to-front-one class=\"icon\" /> 置底</Button>"
+    },
+    {
+      "file": "src/views/Mobile/MobileEditor/ElementToolbar.vue",
+      "line": 117,
+      "text": "<Button style=\"flex: 1;\" @click=\"orderElement(handleElement!, ElementOrderCommands.UP)\"><i-icon-park-outline:bring-to-front class=\"icon\" /> 上移</Button>"
+    },
+    {
+      "file": "src/views/Mobile/MobileEditor/ElementToolbar.vue",
+      "line": 118,
+      "text": "<Button style=\"flex: 1;\" @click=\"orderElement(handleElement!, ElementOrderCommands.DOWN)\"><i-icon-park-outline:sent-to-back class=\"icon\" /> 下移</Button>"
+    },
+    {
+      "file": "src/views/Mobile/MobileEditor/ElementToolbar.vue",
+      "line": 124,
+      "text": "<Button style=\"flex: 1;\" @click=\"alignElementToCanvas(ElementAlignCommands.LEFT)\"><i-icon-park-outline:align-left class=\"icon\" /> 左对齐</Button>"
+    },
+    {
+      "file": "src/views/Mobile/MobileEditor/ElementToolbar.vue",
+      "line": 125,
+      "text": "<Button style=\"flex: 1;\" @click=\"alignElementToCanvas(ElementAlignCommands.HORIZONTAL)\"><i-icon-park-outline:align-vertically class=\"icon\" /> 水平居中</Button>"
+    },
+    {
+      "file": "src/views/Mobile/MobileEditor/ElementToolbar.vue",
+      "line": 126,
+      "text": "<Button style=\"flex: 1;\" @click=\"alignElementToCanvas(ElementAlignCommands.RIGHT)\"><i-icon-park-outline:align-right class=\"icon\" /> 右对齐</Button>"
+    },
+    {
+      "file": "src/views/Mobile/MobileEditor/ElementToolbar.vue",
+      "line": 129,
+      "text": "<Button style=\"flex: 1;\" @click=\"alignElementToCanvas(ElementAlignCommands.TOP)\"><i-icon-park-outline:align-top class=\"icon\" /> 上对齐</Button>"
+    },
+    {
+      "file": "src/views/Mobile/MobileEditor/ElementToolbar.vue",
+      "line": 130,
+      "text": "<Button style=\"flex: 1;\" @click=\"alignElementToCanvas(ElementAlignCommands.VERTICAL)\"><i-icon-park-outline:align-horizontally class=\"icon\" /> 垂直居中</Button>"
+    },
+    {
+      "file": "src/views/Mobile/MobileEditor/ElementToolbar.vue",
+      "line": 131,
+      "text": "<Button style=\"flex: 1;\" @click=\"alignElementToCanvas(ElementAlignCommands.BOTTOM)\"><i-icon-park-outline:align-bottom class=\"icon\" /> 下对齐</Button>"
+    },
+    {
+      "file": "src/views/Mobile/MobileEditor/SlideToolbar.vue",
+      "line": 20,
+      "text": "<i-icon-park-outline:picture class=\"icon\" /> 图片"
+    },
+    {
+      "file": "src/views/Mobile/MobileEditor/SlideToolbar.vue",
+      "line": 61,
+      "text": "}, { content: '<p>新添加文本</p>' })"
+    },
+    {
+      "file": "src/views/Screen/BaseView.vue",
+      "line": 44,
+      "text": "<div class=\"tool-btn page-number\" @click=\"slideThumbnailModelVisible = true\">幻灯片 {{slideIndex + 1}} / {{slides.length}}</div>"
+    },
+    {
+      "file": "src/views/Screen/BaseView.vue",
+      "line": 49,
+      "text": "<i-icon-park-outline:peoples-two class=\"tool-btn\" v-tooltip=\"'观众视图'\" @click=\"openAudienceView()\" />"
+    },
+    {
+      "file": "src/views/Screen/PresenterView.vue",
+      "line": 5,
+      "text": "<div class=\"tool-btn\" @click=\"openAudienceView()\"><i-icon-park-outline:peoples-two class=\"tool-icon\" /><span>观众视图</span></div>"
+    },
+    {
+      "file": "src/views/Screen/PresenterView.vue",
+      "line": 12,
+      "text": "<span>{{ fullscreenState ? 'Выйти из полноэкранного режима' : '全屏' }}</span>"
+    },
+    {
+      "file": "src/views/Screen/WritingBoardTool.vue",
+      "line": 35,
+      "text": "<div class=\"label\">墨迹粗细：</div>"
+    },
+    {
+      "file": "src/views/Screen/WritingBoardTool.vue",
+      "line": 52,
+      "text": "<div class=\"label\">墨迹粗细：</div>"
+    },
+    {
+      "file": "src/views/Screen/WritingBoardTool.vue",
+      "line": 63,
+      "text": "<div class=\"label\">墨迹粗细：</div>"
+    },
+    {
+      "file": "src/views/Screen/WritingBoardTool.vue",
+      "line": 74,
+      "text": "<div class=\"label\">橡皮大小：</div>"
+    },
+    {
+      "file": "src/views/Screen/hooks/useExecPlay.ts",
+      "line": 193,
+      "text": "else throttleMassage('已经是第一页了')"
+    },
+    {
+      "file": "src/views/Screen/hooks/useExecPlay.ts",
+      "line": 210,
+      "text": "throttleMassage('已经是最后一页了')"
+    },
+    {
+      "file": "src/views/Screen/hooks/useExecPlay.ts",
+      "line": 221,
+      "text": "message.success('开始自动放映')"
+    },
+    {
+      "file": "src/views/Screen/hooks/useFullscreen.ts",
+      "line": 21,
+      "text": "document.addEventListener('webkitfullscreenchange', handleFullscreenChange) // Safari 兼容"
+    },
+    {
+      "file": "src/views/components/element/AudioElement/AudioPlayer.vue",
+      "line": 187,
+      "text": "const handleError = () => message.error('视频加载失败')"
+    },
+    {
+      "file": "src/views/components/element/ProsemirrorEditor.vue",
+      "line": 133,
+      "text": "message.warning('字体需要等待加载下载后生效，请稍等')"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 691,
+      "text": "if (!canDeleteRow) return message.warning('表格至少保留一行')"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 695,
+      "text": "if (!canDeleteCol) return message.warning('表格至少保留一列')"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 736,
+      "text": "text: '插入列',"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 738,
+      "text": "{ text: '到左侧', handler: () => insertCol(colIndex) },"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 739,
+      "text": "{ text: '到右侧', handler: () => insertCol(colIndex + 1) },"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 743,
+      "text": "text: '插入行',"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 745,
+      "text": "{ text: '到上方', handler: () => insertRow(rowIndex) },"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 746,
+      "text": "{ text: '到下方', handler: () => insertRow(rowIndex + 1) },"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 750,
+      "text": "text: '删除列',"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 755,
+      "text": "text: '删除行',"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 761,
+      "text": "text: '合并单元格',"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 766,
+      "text": "text: '取消合并单元格',"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 772,
+      "text": "text: '选中当前列',"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 776,
+      "text": "text: '选中当前行',"
+    },
+    {
+      "file": "src/views/components/element/TableElement/EditableTable.vue",
+      "line": 780,
+      "text": "text: '选中全部单元格',"
+    },
+    {
+      "file": "src/views/components/element/VideoElement/VideoPlayer/index.vue",
+      "line": 14,
+      "text": "<div class=\"load-error\" v-if=\"loadError\">视频加载失败</div>"
+    },
+    {
+      "file": "src/views/components/element/VideoElement/VideoPlayer/index.vue",
+      "line": 80,
+      "text": "<span class=\"icon-content\" @click=\"speedMenuVisible = !speedMenuVisible\">{{playbackRate === 1 ? '倍速' : (playbackRate + 'x')}}</span>"
+    },
+    {
+      "file": "src/views/components/element/VideoElement/VideoPlayer/index.vue",
+      "line": 94,
+      "text": "<span class=\"icon-content\">循环{{loop ? '开' : '关'}}</span>"
+    }
+  ]
+}

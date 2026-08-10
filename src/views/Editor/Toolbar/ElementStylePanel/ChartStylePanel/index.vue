@@ -8,19 +8,19 @@
 
     <template v-if="['bar', 'column', 'area', 'line'].includes(handleChartElement.chartType)">
       <div class="row">
-        <Checkbox 
-          @update:value="value => updateOptions({ stack: value })" 
+        <Checkbox
+          @update:value="value => updateOptions({ stack: value })"
           :value="stack"
           style="flex: 2;"
-        >堆叠样式</Checkbox>
-        <Checkbox 
+        >Стиль стека</Checkbox>
+        <Checkbox
           v-if="handleChartElement.chartType === 'line'"
-          @update:value="value => updateOptions({ lineSmooth: value })" 
+          @update:value="value => updateOptions({ lineSmooth: value })"
           :value="lineSmooth"
           style="flex: 3;"
-        >使用平滑曲线</Checkbox>
+        >Использовать сглаженные линии</Checkbox>
       </div>
-  
+
       <Divider />
     </template>
 
@@ -69,22 +69,22 @@
             <div class="label">预置图表主题：</div>
             <div class="preset-themes">
               <div class="preset-theme" v-for="(item, index) in CHART_PRESET_THEMES" :key="index" @click="setThemeColors(item)">
-                <div 
+                <div
                   class="preset-theme-color"
-                  v-for="color in item" 
-                  :key="color" 
-                  :style="{ backgroundColor: color }" 
+                  v-for="color in item"
+                  :key="color"
+                  :style="{ backgroundColor: color }"
                 ></div>
               </div>
             </div>
             <div class="label">幻灯片主题：</div>
             <div class="preset-themes" :style="{ marginBottom: '-10px' }">
               <div class="preset-theme" @click="setThemeColors(theme.themeColors)">
-                <div 
+                <div
                   class="preset-theme-color"
-                  v-for="color in theme.themeColors" 
-                  :key="color" 
-                  :style="{ backgroundColor: color }" 
+                  v-for="color in theme.themeColors"
+                  :key="color"
+                  :style="{ backgroundColor: color }"
                 ></div>
               </div>
             </div>
@@ -101,7 +101,7 @@
     <ElementOutline />
 
     <Modal
-      v-model:visible="themeColorsSettingVisible" 
+      v-model:visible="themeColorsSettingVisible"
       :width="310"
       @closed="themeColorsSettingVisible = false"
     >

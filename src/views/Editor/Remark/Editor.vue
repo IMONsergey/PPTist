@@ -1,10 +1,10 @@
 <template>
   <div class="editor" v-click-outside="hideMenuInstance">
-    <div 
+    <div
       class="prosemirror-editor"
       ref="editorViewRef"
     ></div>
-  
+
     <div class="menu" ref="menuRef">
       <button :class="{ 'active': attr?.bold }" @click="execCommand('bold')"><i-icon-park-outline:text-bold /></button>
       <button :class="{ 'active': attr?.em }" @click="execCommand('em')"><i-icon-park-outline:text-italic /></button>
@@ -177,7 +177,7 @@ onMounted(() => {
       input: handleInput,
     },
   }, {
-    placeholder: '点击输入演讲者备注',
+    placeholder: 'Нажмите, чтобы ввести заметки докладчика',
   })
 
   menuInstance.value = tippy(editorViewRef.value!, {

@@ -3,25 +3,25 @@
     <div class="remark">
       <textarea
         :value="remark"
-        placeholder="点击输入演讲者备注"
+        placeholder="Нажмите, чтобы ввести заметки докладчика"
         @input="$event => handleInputMark($event)"
       ></textarea>
     </div>
     <div class="toolbar">
       <ButtonGroup class="row">
-        <Button style="flex: 1;" @click="createSlide()"><i-icon-park-outline:plus class="icon" /> 新幻灯片</Button>
-        <Button style="flex: 1;" @click="copyAndPasteSlide()"><i-icon-park-outline:copy class="icon" /> 复制</Button>
-        <Button style="flex: 1;" @click="deleteSlide()"><i-icon-park-outline:delete class="icon" /> 删除</Button>
+        <Button style="flex: 1;" @click="createSlide()"><i-icon-park-outline:plus class="icon" /> Новый слайд</Button>
+        <Button style="flex: 1;" @click="copyAndPasteSlide()"><i-icon-park-outline:copy class="icon" /> Копировать</Button>
+        <Button style="flex: 1;" @click="deleteSlide()"><i-icon-park-outline:delete class="icon" /> Удалить</Button>
       </ButtonGroup>
       <ButtonGroup class="row">
-        <Button style="flex: 1;" @click="insertTextElement()"><i-icon-park-outline:font-size class="icon" /> 文字</Button>
+        <Button style="flex: 1;" @click="insertTextElement()"><i-icon-park-outline:font-size class="icon" /> Текст</Button>
         <Button style="flex: 1;">
           <FileInput @change="files => insertImageElement(files)">
             <i-icon-park-outline:picture class="icon" /> 图片
           </FileInput>
         </Button>
-        <Button style="flex: 1;" @click="insertShapeElement('square')"><i-icon-park-outline:square class="icon" /> 矩形</Button>
-        <Button style="flex: 1;" @click="insertShapeElement('round')"><i-icon-park-outline:round class="icon" /> 圆形</Button>
+        <Button style="flex: 1;" @click="insertShapeElement('square')"><i-icon-park-outline:square class="icon" /> Прямоугольник</Button>
+        <Button style="flex: 1;" @click="insertShapeElement('round')"><i-icon-park-outline:round class="icon" /> Круг</Button>
       </ButtonGroup>
     </div>
 

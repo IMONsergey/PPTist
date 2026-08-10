@@ -1,7 +1,7 @@
 <template>
   <div class="text-style-panel">
     <div class="preset-style">
-      <div 
+      <div
         class="preset-style-item"
         v-for="item in presetStyles"
         :key="item.label"
@@ -131,9 +131,9 @@
       @update:value="value => updateText({ vAlign: value as TextAlignVertical })"
       v-if="fixedHeight"
     >
-      <RadioButton value="top" v-tooltip="'顶对齐'" style="flex: 1;"><i-icon-park-outline:align-text-top-one /></RadioButton>
-      <RadioButton value="middle" v-tooltip="'垂直居中'" style="flex: 1;"><i-icon-park-outline:align-text-middle-one /></RadioButton>
-      <RadioButton value="bottom" v-tooltip="'底对齐'" style="flex: 1;"><i-icon-park-outline:align-text-bottom-one /></RadioButton>
+      <RadioButton value="top" v-tooltip="'Выровнять по верху'" style="flex: 1;"><i-icon-park-outline:align-text-top-one /></RadioButton>
+      <RadioButton value="middle" v-tooltip="'Выровнять по центру (верт.)'" style="flex: 1;"><i-icon-park-outline:align-text-middle-one /></RadioButton>
+      <RadioButton value="bottom" v-tooltip="'Выровнять по низу'" style="flex: 1;"><i-icon-park-outline:align-text-bottom-one /></RadioButton>
     </RadioGroup>
     <Divider />
     <ElementOutline />
@@ -196,7 +196,7 @@ const presetStyles = [
     ],
   },
   {
-    label: '正文',
+    label: 'Основной текст',
     style: {
       fontSize: '20px',
     },

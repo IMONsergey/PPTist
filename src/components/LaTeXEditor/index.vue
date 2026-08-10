@@ -3,10 +3,10 @@
     <div class="container">
       <div class="left">
         <div class="input-area">
-          <TextArea v-model:value="latex" placeholder="输入 LaTeX 公式" ref="textAreaRef" />
+          <TextArea v-model:value="latex" placeholder="Введите формулу LaTeX" ref="textAreaRef" />
         </div>
         <div class="preview">
-          <div class="placeholder" v-if="!latex">公式预览</div>
+          <div class="placeholder" v-if="!latex">Предпросмотр</div>
           <div class="preview-content" v-else>
             <FormulaContent
               :width="518"
@@ -17,18 +17,18 @@
         </div>
       </div>
       <div class="right">
-        <Tabs 
-          :tabs="tabs" 
-          v-model:value="toolbarState" 
+        <Tabs
+          :tabs="tabs"
+          v-model:value="toolbarState"
           card
         />
         <div class="content">
           <div class="symbol" v-if="toolbarState === 'symbol'">
-            <Tabs 
-              :tabs="symbolTabs" 
-              v-model:value="selectedSymbolKey" 
-              spaceBetween 
-              :tabsStyle="{ margin: '10px 10px 0' }" 
+            <Tabs
+              :tabs="symbolTabs"
+              v-model:value="selectedSymbolKey"
+              spaceBetween
+              :tabsStyle="{ margin: '10px 10px 0' }"
             />
             <div class="symbol-pool">
               <div class="symbol-item" v-for="item in symbolPool" :key="item.latex" @click="insertSymbol(item.latex)">
@@ -52,7 +52,7 @@
       </div>
     </div>
     <div class="footer">
-      <Button class="btn" @click="emit('close')">取消</Button>
+      <Button class="btn" @click="emit('close')">Отмена</Button>
       <Button class="btn" type="primary" @click="update()">确定</Button>
     </div>
   </div>
@@ -76,8 +76,8 @@ interface TabItem {
 }
 
 const tabs: TabItem[] = [
-  { label: '常用符号', key: 'symbol' },
-  { label: '预置公式', key: 'formula' },
+  { label: 'Частые символы', key: 'symbol' },
+  { label: 'Готовые формулы', key: 'formula' },
 ]
 
 interface LatexResult {
@@ -123,12 +123,12 @@ onMounted(() => {
 })
 
 const update = () => {
-  if (!latex.value) return message.error('公式不能为空')
+  if (!latex.value) return message.error('Формула не может быть пустой')
 
   const eq = new hfmath(latex.value)
   const pathd = eq.pathd({})
   const box = eq.box({})
-  
+
   emit('update', {
     latex: latex.value,
     path: pathd,

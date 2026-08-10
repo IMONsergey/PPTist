@@ -1,10 +1,10 @@
 <template>
   <div class="export-dialog">
-    <Tabs 
-      :tabs="tabs" 
-      :value="dialogForExport" 
+    <Tabs
+      :tabs="tabs"
+      :value="dialogForExport"
       card
-      @update:value="key => setDialogForExport(key as DialogForExportTypes)" 
+      @update:value="key => setDialogForExport(key as DialogForExportTypes)"
     />
     <div class="content">
       <component :is="currentDialogComponent" @close="setDialogForExport('')"></component>
@@ -36,11 +36,11 @@ const { dialogForExport } = storeToRefs(mainStore)
 const setDialogForExport = mainStore.setDialogForExport
 
 const tabs: TabItem[] = [
-  { key: 'pptist', label: '导出 PPTIST 文件' },
-  { key: 'pptx', label: '导出 PPTX' },
-  { key: 'image', label: '导出图片' },
-  { key: 'json', label: '导出 JSON' },
-  { key: 'pdf', label: '打印 / 导出 PDF' },
+  { key: 'pptist', label: 'Экспорт PPTIST' },
+  { key: 'pptx', label: 'Экспорт PPTX' },
+  { key: 'image', label: 'Экспорт изображения' },
+  { key: 'json', label: 'Экспорт JSON' },
+  { key: 'pdf', label: 'Печать / Экспорт PDF' },
 ]
 
 const currentDialogComponent = computed<unknown>(() => {

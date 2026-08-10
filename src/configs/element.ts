@@ -1,13 +1,13 @@
 export const ELEMENT_TYPE_ZH: Record<string, string> = {
-  text: '文本',
-  image: '图片',
-  shape: '形状',
-  line: '线条',
-  chart: '图表',
-  table: '表格',
-  video: '视频',
-  audio: '音频',
-  latex: '公式',
+  text: 'Текст',
+  image: 'Изображение',
+  shape: 'Фигура',
+  line: 'Линия',
+  chart: 'Диаграмма',
+  table: 'Таблица',
+  video: 'Видео',
+  audio: 'Аудио',
+  latex: 'Формула',
 }
 
 export const MIN_SIZE: Record<string, number> = {

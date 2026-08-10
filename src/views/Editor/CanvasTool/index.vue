@@ -1,40 +1,40 @@
 <template>
   <div class="canvas-tool">
     <div class="left-handler">
-      <span class="handler-item" :class="{ 'disable': !canUndo }" v-tooltip="'撤销（Ctrl + Z）'" @click="undo()">
+      <span class="handler-item" :class="{ 'disable': !canUndo }" v-tooltip="'Отменить (Ctrl + Z)'" @click="undo()">
         <i-icon-park-outline:back />
       </span>
-      <span class="handler-item" :class="{ 'disable': !canRedo }" v-tooltip="'重做（Ctrl + Y）'" @click="redo()">
+      <span class="handler-item" :class="{ 'disable': !canRedo }" v-tooltip="'Повторить (Ctrl + Y)'" @click="redo()">
         <i-icon-park-outline:next />
       </span>
       <div class="more">
         <Divider type="vertical" style="height: 20px;" />
         <Popover class="more-icon" trigger="click" v-model:value="moreVisible" :offset="10">
           <template #content>
-            <PopoverMenuItem class="popover-menu-item" center @click="toggleNotesPanel(); moreVisible = false"><i-icon-park-outline:comment class="icon" />批注面板</PopoverMenuItem>
-            <PopoverMenuItem class="popover-menu-item" center @click="toggleSelectPanel(); moreVisible = false"><i-icon-park-outline:move-one class="icon" />选择窗格</PopoverMenuItem>
+            <PopoverMenuItem class="popover-menu-item" center @click="toggleNotesPanel(); moreVisible = false"><i-icon-park-outline:comment class="icon" />Панель заметок</PopoverMenuItem>
+            <PopoverMenuItem class="popover-menu-item" center @click="toggleSelectPanel(); moreVisible = false"><i-icon-park-outline:move-one class="icon" />Область выбора</PopoverMenuItem>
             <PopoverMenuItem class="popover-menu-item" center @click="toggleSraechPanel(); moreVisible = false"><i-icon-park-outline:search class="icon" />查找替换</PopoverMenuItem>
           </template>
           <span class="handler-item">
             <i-icon-park-outline:more />
           </span>
         </Popover>
-        <span class="handler-item" :class="{ 'active': showNotesPanel }" v-tooltip="'批注面板'" @click="toggleNotesPanel()">
+        <span class="handler-item" :class="{ 'active': showNotesPanel }" v-tooltip="'Панель заметок'" @click="toggleNotesPanel()">
           <i-icon-park-outline:comment />
         </span>
-        <span class="handler-item" :class="{ 'active': showSelectPanel }" v-tooltip="'选择窗格'" @click="toggleSelectPanel()">
+        <span class="handler-item" :class="{ 'active': showSelectPanel }" v-tooltip="'Область выбора'" @click="toggleSelectPanel()">
           <i-icon-park-outline:move-one />
         </span>
-        <span class="handler-item" :class="{ 'active': showSearchPanel }" v-tooltip="'查找/替换（Ctrl + F）'" @click="toggleSraechPanel()">
+        <span class="handler-item" :class="{ 'active': showSearchPanel }" v-tooltip="'Найти/Заменить (Ctrl + F)'" @click="toggleSraechPanel()">
           <i-icon-park-outline:search />
         </span>
       </div>
     </div>
 
     <div class="add-element-handler">
-      <div class="insert-handler-item group-btn" :class="{ 'active': creatingElement?.type === 'text' }" v-tooltip="'插入文字'">
+      <div class="insert-handler-item group-btn" :class="{ 'active': creatingElement?.type === 'text' }" v-tooltip="'Вставить текст'">
         <div class="group-btn-main" @click="drawText()"><i-icon-park-outline:font-size class="icon" /> <span class="text">文本框</span></div>
-        
+
         <Popover trigger="click" v-model:value="textTypeSelectVisible" style="height: 100%;" :offset="10">
           <template #content>
             <PopoverMenuItem center @click="() => { drawText(); textTypeSelectVisible = false }"><i-icon-park-outline:text-rotation-none class="icon" /> 横向文本框</PopoverMenuItem>
@@ -43,14 +43,14 @@
           <span class="arrow"><i-icon-park-outline:down /></span>
         </Popover>
       </div>
-      <div class="insert-handler-item group-btn" :class="{ 'active': creatingCustomShape || creatingElement?.type === 'shape' }" v-tooltip="'插入形状'" :offset="10">
+      <div class="insert-handler-item group-btn" :class="{ 'active': creatingCustomShape || creatingElement?.type === 'shape' }" v-tooltip="'Вставить фигуру'" :offset="10">
         <Popover trigger="click" style="height: 100%;" v-model:value="shapePoolVisible" :offset="10">
           <template #content>
             <ShapePool @select="shape => drawShape(shape)" />
           </template>
           <div class="group-btn-main"><i-icon-park-outline:graphic-design class="icon" /> <span class="text">形状</span></div>
         </Popover>
-        
+
         <Popover trigger="click" v-model:value="shapeMenuVisible" style="height: 100%;" :offset="10">
           <template #content>
             <PopoverMenuItem center @click="shapeMenuVisible = false; shapePoolVisible = true"><i-icon-park-outline:graphic-design class="icon" />预设形状</PopoverMenuItem>
@@ -60,11 +60,11 @@
           <span class="arrow"><i-icon-park-outline:down /></span>
         </Popover>
       </div>
-      <div class="insert-handler-item group-btn" v-tooltip="'插入图片'">
+      <div class="insert-handler-item group-btn" v-tooltip="'Вставить изображение'">
         <FileInput style="height: 100%;" @change="files => insertImageElement(files)">
           <div class="group-btn-main"><i-icon-park-outline:picture class="icon" /> <span class="text">图片</span></div>
         </FileInput>
-        
+
         <Popover trigger="click" v-model:value="imageMenuVisible" style="height: 100%;" :offset="10">
           <template #content>
             <FileInput @change="files => { insertImageElement(files); imageMenuVisible = false }">
@@ -79,7 +79,7 @@
         <template #content>
           <LinePool @select="line => drawLine(line)" />
         </template>
-        <div class="insert-handler-item" :class="{ 'active': creatingElement?.type === 'line' }" v-tooltip="'插入线条'">
+        <div class="insert-handler-item" :class="{ 'active': creatingElement?.type === 'line' }" v-tooltip="'Вставить линию'">
           <i-icon-park-outline:connection class="icon" /> <span class="text">线条</span>
         </div>
       </Popover>
@@ -87,7 +87,7 @@
         <template #content>
           <ChartPool @select="chart => { createChartElement(chart); chartPoolVisible = false }" />
         </template>
-        <div class="insert-handler-item" v-tooltip="'插入图表'">
+        <div class="insert-handler-item" v-tooltip="'Вставить диаграмму'">
           <i-icon-park-outline:chart-proportion class="icon" /> <span class="text">图表</span>
         </div>
       </Popover>
@@ -98,59 +98,59 @@
             @insert="({ row, col }) => { createTableElement(row, col); tableGeneratorVisible = false }"
           />
         </template>
-        <div class="insert-handler-item" v-tooltip="'插入表格'">
+        <div class="insert-handler-item" v-tooltip="'Вставить таблицу'">
           <i-icon-park-outline:insert-table class="icon" /> <span class="text">表格</span>
         </div>
       </Popover>
-      <div class="insert-handler-item" v-tooltip="'插入公式'" @click="latexEditorVisible = true">
+      <div class="insert-handler-item" v-tooltip="'Вставить формулу'" @click="latexEditorVisible = true">
         <i-icon-park-outline:formula class="icon" /> <span class="text">公式</span>
       </div>
       <Popover trigger="click" v-model:value="mediaInputVisible" :offset="10">
         <template #content>
-          <MediaInput 
+          <MediaInput
             @close="mediaInputVisible = false"
             @insertVideo="({ src, ext }) => { createVideoElement(src, ext); mediaInputVisible = false }"
             @insertAudio="({ src, ext }) => { createAudioElement(src, ext); mediaInputVisible = false }"
           />
         </template>
-        <div class="insert-handler-item" v-tooltip="'插入音视频'">
+        <div class="insert-handler-item" v-tooltip="'Вставить медиа'">
           <i-icon-park-outline:video-two class="icon" /> <span class="text">音视频</span>
         </div>
       </Popover>
-      <div class="insert-handler-item" :class="{ 'active': showSymbolPanel }" v-tooltip="'插入符号'" @click="toggleSymbolPanel()">
+      <div class="insert-handler-item" :class="{ 'active': showSymbolPanel }" v-tooltip="'Вставить символ'" @click="toggleSymbolPanel()">
         <i-icon-park-outline:symbol class="icon" /> <span class="text">符号</span>
       </div>
     </div>
 
     <div class="right-handler">
-      <span class="handler-item viewport-size" v-tooltip="'画布缩小（Ctrl + -）'" @click="scaleCanvas('-')">
+      <span class="handler-item viewport-size" v-tooltip="'Уменьшить масштаб (Ctrl + -)'" @click="scaleCanvas('-')">
         <i-icon-park-outline:minus />
       </span>
       <Popover trigger="click" v-model:value="canvasScaleVisible">
         <template #content>
           <PopoverMenuItem
             center
-            v-for="item in canvasScalePresetList" 
-            :key="item" 
+            v-for="item in canvasScalePresetList"
+            :key="item"
             @click="applyCanvasPresetScale(item)"
           >{{item}}%</PopoverMenuItem>
           <PopoverMenuItem center @click="resetCanvas(); canvasScaleVisible = false">适应屏幕</PopoverMenuItem>
         </template>
         <span class="text">{{ canvasScalePercentage }}</span>
       </Popover>
-      <span class="handler-item viewport-size" v-tooltip="'画布放大（Ctrl + =）'" @click="scaleCanvas('+')">
+      <span class="handler-item viewport-size" v-tooltip="'Увеличить масштаб (Ctrl + =)'" @click="scaleCanvas('+')">
         <i-icon-park-outline:plus />
       </span>
-      <span class="handler-item viewport-size-adaptation" v-tooltip="'适应屏幕（Ctrl + 0）'" @click="resetCanvas()">
+      <span class="handler-item viewport-size-adaptation" v-tooltip="'По размеру экрана (Ctrl + 0)'" @click="resetCanvas()">
         <i-icon-park-outline:full-screen />
       </span>
     </div>
 
     <Modal
-      v-model:visible="latexEditorVisible" 
+      v-model:visible="latexEditorVisible"
       :width="880"
     >
-      <LaTeXEditor 
+      <LaTeXEditor
         @close="latexEditorVisible = false"
         @update="data => { createLatexElement(data); latexEditorVisible = false }"
       />
@@ -422,7 +422,7 @@ const openImageLibPanel = () => {
         align-items: center;
         font-size: 12px;
         padding: 0 1px;
-  
+
         &:hover {
           background-color: #e9e9e9;
         }
