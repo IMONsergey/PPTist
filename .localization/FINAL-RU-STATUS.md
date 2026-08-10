@@ -1,10 +1,10 @@
-# PPTist Russian localization status
+# Статус русификации PPTist
 
-- User-facing source UI: Russian; Chinese Han remains only in developer comments.
-- Shipped `public` textual assets: zero Chinese Han text.
-- Shipped demo/template/AI JSON and Markdown content: translated to Russian.
-- ECharts runtime: explicitly initialized with the Russian locale object.
-- Production Vite build: passed.
-- Vue/TypeScript type-check: passed.
-- Built non-JS user-facing textual assets: zero Chinese Han text.
-- ECharts may still physically bundle its unused Chinese locale dictionary and CJK width probe inside vendor JavaScript; runtime charts use the explicit Russian locale.
+- Весь пользовательский интерфейс переведён на русский язык.
+- Китайские символы в исходниках остались только в комментариях разработчиков и не попадают в интерфейс.
+- Все поставляемые текстовые материалы из `public`, включая демо-презентации, шаблоны и AI-примеры, переведены на русский.
+- Диаграммы ECharts принудительно инициализируются с русской локалью.
+- Production-сборка Vite проходит успешно.
+- Проверка Vue/TypeScript (`vue-tsc`) проходит успешно.
+- В собранных пользовательских статических файлах китайского текста нет.
+- Внутри vendor JavaScript ECharts физически содержит неиспользуемый китайский словарь и технический CJK-символ для измерения ширины; интерфейс использует явную русскую локаль.
