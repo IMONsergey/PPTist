@@ -1,0 +1,210 @@
+name: Russianize PPTist UI
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.russianize-trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  russianize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Russian localization branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Fetch maintained PPTist i18n donor
+        run: git clone --depth 1 https://github.com/robbin2012/PPTist-i18n.git /tmp/pptist-i18n
+
+      - name: Apply donor Russian UI translations to current PPTist
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json, re
+
+          donor = Path('/tmp/pptist-i18n/src/locales')
+          zh = json.loads((donor / 'zh-CN.json').read_text(encoding='utf-8'))
+          en = json.loads((donor / 'en-US.json').read_text(encoding='utf-8'))
+          ru = json.loads((donor / 'ru-RU.json').read_text(encoding='utf-8'))
+
+          def flatten(value, prefix=''):
+              out = {}
+              if isinstance(value, dict):
+                  for k, v in value.items():
+                      key = f'{prefix}.{k}' if prefix else k
+                      out.update(flatten(v, key))
+              elif isinstance(value, str):
+                  out[prefix] = value
+              return out
+
+          zhf, enf, ruf = flatten(zh), flatten(en), flatten(ru)
+          han = re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff]')
+          cyr = re.compile(r'[А-Яа-яЁё]')
+
+          # Exact phrases known by the donor i18n layer. Phrase-first replacement avoids
+          # short terms corrupting longer labels (e.g. 幻灯片 inside 幻灯片放映).
+          pairs = {}
+          for key, source in zhf.items():
+              target = ruf.get(key)
+              if isinstance(source, str) and isinstance(target, str) and source != target and han.search(source):
+                  pairs[source] = target
+
+          # User-visible English strings are replaced only in Vue template markup and HTML
+          # attributes/text nodes below; do not globally rewrite TypeScript enum/string values.
+          en_pairs = {}
+          for key, source in enf.items():
+              target = ruf.get(key)
+              if isinstance(source, str) and isinstance(target, str) and source != target and cyr.search(target):
+                  if len(source.strip()) >= 2:
+                      en_pairs[source] = target
+
+          exts = {'.vue', '.ts', '.tsx', '.js', '.jsx', '.html'}
+          files = []
+          for root in (Path('src'),):
+              files.extend(p for p in root.rglob('*') if p.is_file() and p.suffix in exts)
+          if Path('index.html').exists():
+              files.append(Path('index.html'))
+
+          changed = []
+          zh_hits = 0
+          en_hits = 0
+          for path in sorted(set(files)):
+              text = path.read_text(encoding='utf-8')
+              original = text
+
+              for source, target in sorted(pairs.items(), key=lambda kv: len(kv[0]), reverse=True):
+                  count = text.count(source)
+                  if count:
+                      text = text.replace(source, target)
+                      zh_hits += count
+
+              # English donor phrases: only touch the <template> block in .vue files and
+              # the root index.html, keeping programmatic string values stable.
+              if path.suffix == '.vue':
+                  m = re.search(r'(<template\b[^>]*>)(.*?)(</template>)', text, flags=re.S)
+                  if m:
+                      body = m.group(2)
+                      translated = body
+                      for source, target in sorted(en_pairs.items(), key=lambda kv: len(kv[0]), reverse=True):
+                          count = translated.count(source)
+                          if count:
+                              translated = translated.replace(source, target)
+                              en_hits += count
+                      text = text[:m.start(2)] + translated + text[m.end(2):]
+              elif path.name == 'index.html':
+                  for source, target in sorted(en_pairs.items(), key=lambda kv: len(kv[0]), reverse=True):
+                      count = text.count(source)
+                      if count:
+                          text = text.replace(source, target)
+                          en_hits += count
+
+              if text != original:
+                  path.write_text(text, encoding='utf-8')
+                  changed.append(str(path))
+
+          # Brand/browser shell also belongs to the visible interface.
+          index = Path('index.html')
+          if index.exists():
+              text = index.read_text(encoding='utf-8')
+              text = re.sub(r'<html([^>]*)\blang=["\'][^"\']*["\']', r'<html\1lang="ru"', text, count=1)
+              text = re.sub(r'<title>.*?</title>', '<title>PPTist — редактор презентаций</title>', text, flags=re.S)
+              index.write_text(text, encoding='utf-8')
+
+          Path('.localization').mkdir(exist_ok=True)
+          report = {
+              'donor': 'robbin2012/PPTist-i18n',
+              'zh_ru_dictionary_entries': len(pairs),
+              'en_ru_dictionary_entries': len(en_pairs),
+              'chinese_replacements': zh_hits,
+              'english_template_replacements': en_hits,
+              'files_changed': len(changed),
+              'changed_files': changed,
+          }
+          Path('.localization/russianization-pass.json').write_text(
+              json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8'
+          )
+          print(json.dumps(report, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Re-audit residual non-Russian UI strings
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json, re
+
+          exts = {'.vue', '.ts', '.tsx', '.js', '.jsx', '.html'}
+          files = [p for p in Path('src').rglob('*') if p.is_file() and p.suffix in exts]
+          if Path('index.html').exists(): files.append(Path('index.html'))
+          han = re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff]')
+          quoted = re.compile(r'''(?P<q>["'`])(?P<s>[^"'`\n]*[\u3400-\u4dbf\u4e00-\u9fff][^"'`\n]*)(?P=q)''')
+          textnode = re.compile(r'>([^<>]*[\u3400-\u4dbf\u4e00-\u9fff][^<>]*)<')
+
+          residual = []
+          segments = set()
+          ui_likely = []
+          for path in sorted(set(files)):
+              content = path.read_text(encoding='utf-8')
+              in_template = False
+              for lineno, line in enumerate(content.splitlines(), 1):
+                  if '<template' in line: in_template = True
+                  if han.search(line):
+                      stripped = line.strip()
+                      comment = stripped.startswith('//') or stripped.startswith('/*') or stripped.startswith('*') or stripped.startswith('<!--')
+                      item = {'file': str(path), 'line': lineno, 'comment': comment, 'template': in_template, 'text': stripped}
+                      residual.append(item)
+                      if in_template and not comment: ui_likely.append(item)
+                      for m in quoted.finditer(line): segments.add(m.group('s').strip())
+                      for m in textnode.finditer(line): segments.add(re.sub(r'\s+', ' ', m.group(1)).strip())
+                  if '</template>' in line: in_template = False
+
+          payload = {
+              'stats': {
+                  'residual_han_lines': len(residual),
+                  'residual_unique_segments': len([s for s in segments if s]),
+                  'template_noncomment_han_lines': len(ui_likely),
+              },
+              'template_ui_likely': ui_likely,
+              'segments': sorted((s for s in segments if s), key=lambda s: (len(s), s)),
+              'all_residual_lines': residual,
+          }
+          Path('.localization/residual-after-donor.json').write_text(
+              json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8'
+          )
+          print(json.dumps(payload['stats'], ensure_ascii=False, indent=2))
+          PY
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        env:
+          HUSKY: 0
+        run: npm ci
+
+      - name: Production build
+        run: npm run build-only -- --base=/PPTist/
+
+      - name: Commit Russianization pass
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src index.html .localization
+          if git diff --cached --quiet; then
+            echo 'No localization changes generated'
+            exit 0
+          fi
+          git commit -m "feat: Russianize PPTist interface from maintained i18n donor"
+          git push origin HEAD:${{ github.head_ref }}
