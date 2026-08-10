@@ -1,0 +1,122 @@
+name: Russian localization audit
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.localization-audit-trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout localization branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Inventory user-facing strings
+        shell: bash
+        run: |
+          mkdir -p .localization
+          python - <<'PY'
+          from pathlib import Path
+          import json, re
+
+          exts = {'.vue', '.ts', '.tsx', '.js', '.jsx', '.json', '.html'}
+          files = []
+          for root in (Path('src'), Path('public')):
+              if root.exists():
+                  files.extend(p for p in root.rglob('*') if p.is_file() and p.suffix in exts)
+          if Path('index.html').exists():
+              files.append(Path('index.html'))
+
+          han = re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff]')
+          quoted = re.compile(r'''(?P<q>["'`])(?P<s>[^"'`\n]*[\u3400-\u4dbf\u4e00-\u9fff][^"'`\n]*)(?P=q)''')
+          textnode = re.compile(r'>([^<>]*[\u3400-\u4dbf\u4e00-\u9fff][^<>]*)<')
+          english_attr = re.compile(r'''(?:placeholder|title|aria-label|label)\s*=\s*["']([^"']*[A-Za-z][^"']*)["']''', re.I)
+          english_text = re.compile(r'>(\s*[A-Za-z][A-Za-z0-9 /+&()_.:,!?#-]{2,}\s*)<')
+
+          han_lines = []
+          han_unique = set()
+          english_candidates = set()
+          uncaptured = []
+
+          for path in sorted(set(files)):
+              try:
+                  content = path.read_text(encoding='utf-8')
+              except Exception:
+                  continue
+              in_template = False
+              for lineno, line in enumerate(content.splitlines(), 1):
+                  if '<template' in line:
+                      in_template = True
+                  if han.search(line):
+                      stripped = line.strip()
+                      is_comment = stripped.startswith('//') or stripped.startswith('/*') or stripped.startswith('*') or stripped.startswith('<!--')
+                      han_lines.append({
+                          'file': str(path),
+                          'line': lineno,
+                          'comment': is_comment,
+                          'text': stripped,
+                      })
+                      found = False
+                      for m in quoted.finditer(line):
+                          s = m.group('s').strip()
+                          if han.search(s):
+                              han_unique.add(s)
+                              found = True
+                      for m in textnode.finditer(line):
+                          s = re.sub(r'\s+', ' ', m.group(1)).strip()
+                          if han.search(s):
+                              han_unique.add(s)
+                              found = True
+                      if not found and not is_comment:
+                          uncaptured.append({'file': str(path), 'line': lineno, 'text': stripped})
+                  if in_template:
+                      for m in english_attr.finditer(line):
+                          s = m.group(1).strip()
+                          if not han.search(s):
+                              english_candidates.add(s)
+                      for m in english_text.finditer(line):
+                          s = re.sub(r'\s+', ' ', m.group(1)).strip()
+                          if s and not han.search(s):
+                              english_candidates.add(s)
+                  if '</template>' in line:
+                      in_template = False
+
+          payload = {
+              'stats': {
+                  'files_scanned': len(set(files)),
+                  'han_lines': len(han_lines),
+                  'unique_han_segments': len(han_unique),
+                  'uncaptured_noncomment_han_lines': len(uncaptured),
+                  'english_ui_candidates': len(english_candidates),
+              },
+              'han_segments': sorted(han_unique, key=lambda x: (len(x), x)),
+              'english_ui_candidates': sorted(english_candidates, key=lambda x: (x.lower(), x)),
+              'uncaptured_noncomment_han_lines': uncaptured,
+              'all_han_lines': han_lines,
+          }
+          Path('.localization/ui-string-inventory.json').write_text(
+              json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8'
+          )
+          print(json.dumps(payload['stats'], ensure_ascii=False, indent=2))
+          PY
+
+      - name: Commit inventory to localization branch
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .localization/ui-string-inventory.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "chore: inventory UI strings for Russian localization"
+          git push origin HEAD:${{ github.head_ref }}
