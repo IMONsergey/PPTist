@@ -23,7 +23,7 @@ jobs:
       - name: Fetch maintained PPTist i18n donor
         run: git clone --depth 1 https://github.com/robbin2012/PPTist-i18n.git /tmp/pptist-i18n
 
-      - name: Apply donor Russian UI translations to current PPTist
+      - name: Apply safe donor Chinese-to-Russian translations
         shell: bash
         run: |
           python - <<'PY'
@@ -32,7 +32,6 @@ jobs:
 
           donor = Path('/tmp/pptist-i18n/src/locales')
           zh = json.loads((donor / 'zh-CN.json').read_text(encoding='utf-8'))
-          en = json.loads((donor / 'en-US.json').read_text(encoding='utf-8'))
           ru = json.loads((donor / 'ru-RU.json').read_text(encoding='utf-8'))
 
           def flatten(value, prefix=''):
@@ -45,76 +44,43 @@ jobs:
                   out[prefix] = value
               return out
 
-          zhf, enf, ruf = flatten(zh), flatten(en), flatten(ru)
+          zhf, ruf = flatten(zh), flatten(ru)
           han = re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff]')
-          cyr = re.compile(r'[А-Яа-яЁё]')
 
-          # Exact phrases known by the donor i18n layer. Phrase-first replacement avoids
-          # short terms corrupting longer labels (e.g. 幻灯片 inside 幻灯片放映).
+          # Exact Chinese UI phrases from the maintained i18n donor. Chinese source strings
+          # are safe to replace phrase-first: unlike English words such as "Edit", they do
+          # not overlap Vue component names, JS identifiers or HTML tag names.
           pairs = {}
           for key, source in zhf.items():
               target = ruf.get(key)
               if isinstance(source, str) and isinstance(target, str) and source != target and han.search(source):
                   pairs[source] = target
 
-          # User-visible English strings are replaced only in Vue template markup and HTML
-          # attributes/text nodes below; do not globally rewrite TypeScript enum/string values.
-          en_pairs = {}
-          for key, source in enf.items():
-              target = ruf.get(key)
-              if isinstance(source, str) and isinstance(target, str) and source != target and cyr.search(target):
-                  if len(source.strip()) >= 2:
-                      en_pairs[source] = target
-
           exts = {'.vue', '.ts', '.tsx', '.js', '.jsx', '.html'}
-          files = []
-          for root in (Path('src'),):
-              files.extend(p for p in root.rglob('*') if p.is_file() and p.suffix in exts)
-          if Path('index.html').exists():
-              files.append(Path('index.html'))
+          files = [p for p in Path('src').rglob('*') if p.is_file() and p.suffix in exts]
+          if Path('index.html').exists(): files.append(Path('index.html'))
 
           changed = []
           zh_hits = 0
-          en_hits = 0
           for path in sorted(set(files)):
               text = path.read_text(encoding='utf-8')
               original = text
-
               for source, target in sorted(pairs.items(), key=lambda kv: len(kv[0]), reverse=True):
                   count = text.count(source)
                   if count:
                       text = text.replace(source, target)
                       zh_hits += count
-
-              # English donor phrases: only touch the <template> block in .vue files and
-              # the root index.html, keeping programmatic string values stable.
-              if path.suffix == '.vue':
-                  m = re.search(r'(<template\b[^>]*>)(.*?)(</template>)', text, flags=re.S)
-                  if m:
-                      body = m.group(2)
-                      translated = body
-                      for source, target in sorted(en_pairs.items(), key=lambda kv: len(kv[0]), reverse=True):
-                          count = translated.count(source)
-                          if count:
-                              translated = translated.replace(source, target)
-                              en_hits += count
-                      text = text[:m.start(2)] + translated + text[m.end(2):]
-              elif path.name == 'index.html':
-                  for source, target in sorted(en_pairs.items(), key=lambda kv: len(kv[0]), reverse=True):
-                      count = text.count(source)
-                      if count:
-                          text = text.replace(source, target)
-                          en_hits += count
-
               if text != original:
                   path.write_text(text, encoding='utf-8')
                   changed.append(str(path))
 
-          # Brand/browser shell also belongs to the visible interface.
           index = Path('index.html')
           if index.exists():
               text = index.read_text(encoding='utf-8')
-              text = re.sub(r'<html([^>]*)\blang=["\'][^"\']*["\']', r'<html\1lang="ru"', text, count=1)
+              if '<html lang=' in text:
+                  text = re.sub(r'<html([^>]*)\blang=["\'][^"\']*["\']', r'<html\1lang="ru"', text, count=1)
+              else:
+                  text = text.replace('<html', '<html lang="ru"', 1)
               text = re.sub(r'<title>.*?</title>', '<title>PPTist — редактор презентаций</title>', text, flags=re.S)
               index.write_text(text, encoding='utf-8')
 
@@ -122,11 +88,10 @@ jobs:
           report = {
               'donor': 'robbin2012/PPTist-i18n',
               'zh_ru_dictionary_entries': len(pairs),
-              'en_ru_dictionary_entries': len(en_pairs),
               'chinese_replacements': zh_hits,
-              'english_template_replacements': en_hits,
               'files_changed': len(changed),
               'changed_files': changed,
+              'english_strategy': 'deferred to context-safe second pass',
           }
           Path('.localization/russianization-pass.json').write_text(
               json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8'
@@ -147,10 +112,13 @@ jobs:
           han = re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff]')
           quoted = re.compile(r'''(?P<q>["'`])(?P<s>[^"'`\n]*[\u3400-\u4dbf\u4e00-\u9fff][^"'`\n]*)(?P=q)''')
           textnode = re.compile(r'>([^<>]*[\u3400-\u4dbf\u4e00-\u9fff][^<>]*)<')
+          english_attr = re.compile(r'''(?:placeholder|title|aria-label|label)\s*=\s*["']([^"']*[A-Za-z][^"']*)["']''', re.I)
+          english_text = re.compile(r'>(\s*[A-Za-z][A-Za-z0-9 /+&()_.:,!?#-]{2,}\s*)<')
 
           residual = []
           segments = set()
           ui_likely = []
+          english_candidates = []
           for path in sorted(set(files)):
               content = path.read_text(encoding='utf-8')
               in_template = False
@@ -164,6 +132,12 @@ jobs:
                       if in_template and not comment: ui_likely.append(item)
                       for m in quoted.finditer(line): segments.add(m.group('s').strip())
                       for m in textnode.finditer(line): segments.add(re.sub(r'\s+', ' ', m.group(1)).strip())
+                  if in_template:
+                      for rx in (english_attr, english_text):
+                          for m in rx.finditer(line):
+                              value = re.sub(r'\s+', ' ', m.group(1)).strip()
+                              if value:
+                                  english_candidates.append({'file': str(path), 'line': lineno, 'text': value})
                   if '</template>' in line: in_template = False
 
           payload = {
@@ -171,9 +145,11 @@ jobs:
                   'residual_han_lines': len(residual),
                   'residual_unique_segments': len([s for s in segments if s]),
                   'template_noncomment_han_lines': len(ui_likely),
+                  'english_template_candidates': len(english_candidates),
               },
               'template_ui_likely': ui_likely,
               'segments': sorted((s for s in segments if s), key=lambda s: (len(s), s)),
+              'english_template_candidates': english_candidates,
               'all_residual_lines': residual,
           }
           Path('.localization/residual-after-donor.json').write_text(
