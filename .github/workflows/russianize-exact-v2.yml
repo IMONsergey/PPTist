@@ -1,0 +1,73 @@
+name: Russianize PPTist UI — exact v2
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+    paths:
+      - '.run-russianize-v2'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pptist-russianize-v2
+  cancel-in-progress: false
+
+jobs:
+  russianize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout localization branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Require one-shot trigger
+        run: test -f .run-russianize-v2
+
+      - name: Load trusted localization tool from main
+        shell: bash
+        run: |
+          git fetch origin main
+          mkdir -p /tmp/pptist-localization
+          git show origin/main:tools/localization/russianize_exact.py > /tmp/pptist-localization/russianize_exact.py
+
+      - name: Fetch Russian localization donor
+        run: git clone --depth 1 https://github.com/robbin2012/PPTist-i18n.git /tmp/pptist-i18n
+
+      - name: Apply exact translations and audit residual UI
+        run: python /tmp/pptist-localization/russianize_exact.py --root . --donor-locales /tmp/pptist-i18n/src/locales
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        env:
+          HUSKY: 0
+        run: npm ci
+
+      - name: Production build
+        run: npm run build-only -- --base=/PPTist/
+
+      - name: Type check
+        run: npm run type-check
+
+      - name: Commit controlled localization pass
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -f .run-russianize-v2 .run-russianize-exact .russianize-trigger .localization-audit-trigger
+          git add -A
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'No localization changes generated'
+            exit 0
+          fi
+          git commit -m "feat: Russianize PPTist UI with exact translations"
+          git push origin HEAD:${{ github.head_ref }}
